@@ -7,7 +7,7 @@ import DetailedTable from "./DetailedTable.server";
 import { getPortData } from "@/lib/global-ports/PortData";
 import FAQSection from "@/app/Components/FAQ";
 
-const baseURL = process.env.NEXT_PUBLIC_BASE_URL;
+const baseURL = "https://eximtradedata.com"
 
 /* ---------------- METADATA ---------------- */
 export async function generateMetadata({ params }) {

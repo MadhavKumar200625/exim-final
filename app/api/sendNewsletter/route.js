@@ -84,7 +84,7 @@ export async function POST(req) {
        COMPANY EMAIL
     ========================= */
     const companyMailOptions = {
-      from: `"Exim Trade Data" <${"fmdn jlsa ifhi onuz"}>`,
+      from: `"Exim Trade Data" <contact@eximtradedata.com>`,
       to: "enquiry@eximtradedata.com",
       subject: "New Newsletter Subscription",
       html: `
@@ -105,7 +105,7 @@ export async function POST(req) {
        USER EMAIL
     ========================= */
     const userMailOptions = {
-      from: `"Exim Trade Data" <${"fmdn jlsa ifhi onuz"}>`,
+      from: `"Exim Trade Data" <contact@eximtradedata.com>`,
       to: safeEmail,
       subject: "Thanks for subscribing to Exim Trade Data",
       html: `
