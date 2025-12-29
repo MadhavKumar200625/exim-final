@@ -76,4 +76,10 @@ const Page = async ({ params }) => {
   );
 };
 
+export async function generateStaticParams() {
+  return Object.keys(industries).map((slug) => ({
+    slug,
+  }));
+}
+
 export default Page;
