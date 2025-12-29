@@ -35,7 +35,7 @@ function extractQuery(filters) {
 /* -------------------------------------------------
    ✅ generateMetadata (UNCHANGED)
 -------------------------------------------------- */
-export async function generateMetadata({ params }) {
+export const generateMetadata = async ({ params }) => {
   params = await params
   const raw = params.params || [];
   const applied = parseFilters(raw);

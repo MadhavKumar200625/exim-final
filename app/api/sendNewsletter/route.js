@@ -75,8 +75,8 @@ export async function POST(req) {
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: process.env.MAIL_USER, // contact@eximtradedata.com
-        pass: process.env.MAIL_PASS, // Gmail App Password
+        user: "contact@eximtradedata.com",   // e.g. support@gtdservice.com
+        pass: "fmdn jlsa ifhi onuz",   // app password from Gmail
       },
     });
 
@@ -84,7 +84,7 @@ export async function POST(req) {
        COMPANY EMAIL
     ========================= */
     const companyMailOptions = {
-      from: `"Exim Trade Data" <${process.env.MAIL_USER}>`,
+      from: `"Exim Trade Data" <${"fmdn jlsa ifhi onuz"}>`,
       to: "enquiry@eximtradedata.com",
       subject: "New Newsletter Subscription",
       html: `
@@ -105,7 +105,7 @@ export async function POST(req) {
        USER EMAIL
     ========================= */
     const userMailOptions = {
-      from: `"Exim Trade Data" <${process.env.MAIL_USER}>`,
+      from: `"Exim Trade Data" <${"fmdn jlsa ifhi onuz"}>`,
       to: safeEmail,
       subject: "Thanks for subscribing to Exim Trade Data",
       html: `
