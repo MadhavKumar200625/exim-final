@@ -229,19 +229,19 @@ export default function Footer() {
               Solutions
             </h4>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-2 text-sm text-black">
-              <a href="agribusiness">Agribusiness</a>
-              <a href="asset-management">Asset Management</a>
-              <a href="academic-and-education">Academic and Education</a>
-              <a href="automative">Automotive</a>
-              <a href="aerospace-and-defence">Aerospace and Defence</a>
-              <a href="construction">Construction</a>
-              <a href="chemical">Chemical</a>
-              <a href="energy">Energy Sector</a>
-              <a href="exporters">Exporters</a>
-              <a href="importers">Importers</a>
-              <a href="law-firms">Law Firms</a>
-              <a href="retail">Retail</a>
-              <a href="sales-and-marketing">Sales and Marketing</a>
+              <a href="/agribusiness">Agribusiness</a>
+              <a href="/asset-management">Asset Management</a>
+              <a href="/academic-and-education">Academic and Education</a>
+              <a href="/automative">Automotive</a>
+              <a href="/aerospace-and-defence">Aerospace and Defence</a>
+              <a href="/construction">Construction</a>
+              <a href="/chemical">Chemical</a>
+              <a href="/energy">Energy Sector</a>
+              <a href="/exporters">Exporters</a>
+              <a href="/importers">Importers</a>
+              <a href="/law-firms">Law Firms</a>
+              <a href="/retail">Retail</a>
+              <a href="/sales-and-marketing">Sales and Marketing</a>
             </div>
           </div>
 
