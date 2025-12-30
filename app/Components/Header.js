@@ -136,7 +136,7 @@ const Header = () => {
                     {solutions.map(({ title, link, icon: Icon }) => (
                       <Link
                         key={title}
-                        href={`/industries${link}`}
+                        href={`${link}`}
                         prefetch={false}
                         className="flex items-center gap-3 p-3 rounded-lg transition hover:bg-blue-100"
                       >
