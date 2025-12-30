@@ -5,9 +5,9 @@ const logos = [
   '/our-clients/lonza.webp',
   '/our-clients/duracell.webp',
   '/our-clients/absolute-advantage_logo.png',
-  '/our-clients/bcg.png',
+  '/our-clients/bcg.webp',
   '/our-clients/afepasa.png',
-  '/our-clients/neohealth.png',
+  '/our-clients/neohealth.webp',
 ];
 
 const ClientsSection = () => {

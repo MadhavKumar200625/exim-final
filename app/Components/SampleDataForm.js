@@ -191,9 +191,6 @@ const SampleDataForm = ({ isOpen, onClose }) => {
   const [country, setCountry] = useState("");
   const [loading, setLoading] = useState(false);
 
-  /* =======================
-     BASIC BOT GUARD
-  ======================= */
   const isBot =
     typeof navigator !== "undefined" &&
     (navigator.webdriver ||
@@ -221,7 +218,6 @@ const SampleDataForm = ({ isOpen, onClose }) => {
 
     try {
       setLoading(true);
-
       await fetch("/api/requestForm", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -268,14 +264,17 @@ const SampleDataForm = ({ isOpen, onClose }) => {
 
   if (!isOpen) return null;
 
+  const inputClass =
+    "w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500";
+
   return (
     <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
-      <div className="bg-white w-full max-w-3xl rounded-lg shadow-xl p-8 relative">
-        <button onClick={onClose} className="absolute top-4 right-4">
+      <div className="bg-white w-full max-w-3xl rounded-xl shadow-2xl p-8 relative">
+        <button onClick={onClose} className="absolute top-4 right-4 text-gray-500 hover:text-black">
           <X size={24} />
         </button>
 
-        <h2 className="text-2xl font-bold mb-6 text-center text-black">
+        <h2 className="text-2xl font-bold mb-6 text-center text-gray-900">
           Request Customized Data
         </h2>
 
@@ -288,14 +287,15 @@ const SampleDataForm = ({ isOpen, onClose }) => {
         >
           {/* Name + Company */}
           <div className="grid md:grid-cols-2 gap-4">
-            <input placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
-            <input placeholder="Company" value={company} onChange={(e) => setCompany(e.target.value)} />
+            <input className={inputClass} placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
+            <input className={inputClass} placeholder="Company" value={company} onChange={(e) => setCompany(e.target.value)} />
           </div>
 
           {/* Phone + Email */}
           <div className="grid md:grid-cols-2 gap-4">
-            <div className="flex">
+            <div className="flex gap-2">
               <select
+                className="border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500"
                 value={selectedCountryCode}
                 onChange={(e) => setSelectedCountryCode(e.target.value)}
               >
@@ -304,6 +304,7 @@ const SampleDataForm = ({ isOpen, onClose }) => {
                 ))}
               </select>
               <input
+                className={inputClass}
                 placeholder="Phone"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
@@ -311,6 +312,7 @@ const SampleDataForm = ({ isOpen, onClose }) => {
             </div>
 
             <input
+              className={inputClass}
               type="email"
               placeholder="Email"
               value={email}
@@ -320,18 +322,27 @@ const SampleDataForm = ({ isOpen, onClose }) => {
 
           {/* Data Type + Country */}
           <div className="grid md:grid-cols-2 gap-4">
-            <select value={type} onChange={(e) => setType(e.target.value)}>
+            <select
+              className={inputClass}
+              value={type}
+              onChange={(e) => setType(e.target.value)}
+            >
               <option value="import">Import</option>
               <option value="export">Export</option>
             </select>
 
             <div ref={dropdownRef} className="relative">
-              <button type="button" onClick={() => setShowDropdown(!showDropdown)}>
-                {selectedCountry || "Select Country"} <ChevronDown size={16} />
+              <button
+                type="button"
+                className={`${inputClass} flex items-center justify-between`}
+                onClick={() => setShowDropdown(!showDropdown)}
+              >
+                {selectedCountry || "Select Country"}
+                <ChevronDown size={16} />
               </button>
 
               {showDropdown && (
-                <div className="absolute bg-white shadow-lg grid grid-cols-2 gap-2 p-3 max-h-64 overflow-y-auto">
+                <div className="absolute z-10 mt-2 bg-white border border-gray-200 rounded-md shadow-lg grid grid-cols-2 gap-2 p-3 max-h-64 overflow-y-auto">
                   {filteredCountries.map(([c, flag]) => (
                     <div
                       key={c}
@@ -340,7 +351,7 @@ const SampleDataForm = ({ isOpen, onClose }) => {
                         setCountry(c);
                         setShowDropdown(false);
                       }}
-                      className="cursor-pointer flex gap-2"
+                      className="cursor-pointer flex items-center gap-2 p-2 rounded hover:bg-blue-50"
                     >
                       <img src={flag} width={16} height={16} alt={c} />
                       {c}
@@ -352,18 +363,21 @@ const SampleDataForm = ({ isOpen, onClose }) => {
           </div>
 
           <textarea
+            className={`${inputClass} h-28 resize-none`}
             placeholder="HS Code / Product details"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
           />
 
-          <button
-            type="submit"
-            disabled={loading}
-            className="bg-blue-600 text-white px-8 py-3"
-          >
-            {loading ? "Submitting..." : "Submit →"}
-          </button>
+          <div className="text-center">
+            <button
+              type="submit"
+              disabled={loading}
+              className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-3 rounded-md font-medium transition disabled:opacity-50"
+            >
+              {loading ? "Submitting..." : "Submit →"}
+            </button>
+          </div>
         </form>
       </div>
     </div>

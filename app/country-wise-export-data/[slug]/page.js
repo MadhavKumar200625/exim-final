@@ -31,6 +31,7 @@ const extractCountryFromSlug = (slug = "") =>
 
 /* ---------- METADATA ---------- */
 export async function generateMetadata({ params }) {
+  params = await params
   const slug = normalizeSlug(params.slug);
   const country = countriesData[`${slug}_export_section`];
 

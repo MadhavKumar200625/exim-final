@@ -1,40 +1,40 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
-/* ---------- STATIC DATA (OUTSIDE COMPONENT) ---------- */
+/* ---------- STATIC DATA ---------- */
 const continents = {
   ASIA: [
-    { name: "India", slug: "india", flag: "/flags/in.png" },
-    { name: "China", slug: "china", flag: "/flags/cn.png" },
-    { name: "Japan", slug: "japan", flag: "/flags/jp.png" },
-    { name: "Turkey", slug: "turkey", flag: "/flags/tr.png" },
-    { name: "South Korea", slug: "korea", flag: "/flags/kr.png" },
+    { name: "India", slug: "india", code: "in" },
+    { name: "China", slug: "china", code: "cn" },
+    { name: "Japan", slug: "japan", code: "jp" },
+    { name: "Turkey", slug: "turkey", code: "tr" },
+    { name: "South Korea", slug: "korea", code: "kr" },
   ],
   AFRICA: [
-    { name: "Chad", slug: "chad", flag: "/flags/td.png" },
-    { name: "Ghana", slug: "ghana", flag: "/flags/gh.png" },
-    { name: "Kenya", slug: "kenya", flag: "/flags/ke.png" },
-    { name: "Tanzania", slug: "tanzania", flag: "/flags/tz.png" },
-    { name: "South Africa", slug: "south-africa", flag: "/flags/za.png" },
+    { name: "Chad", slug: "chad", code: "td" },
+    { name: "Ghana", slug: "ghana", code: "gh" },
+    { name: "Kenya", slug: "kenya", code: "ke" },
+    { name: "Tanzania", slug: "tanzania", code: "tz" },
+    { name: "South Africa", slug: "south-africa", code: "za" },
   ],
   EUROPE: [
-    { name: "UK", slug: "uk", flag: "/flags/gb.png" },
-    { name: "Spain", slug: "spain", flag: "/flags/es.png" },
-    { name: "Netherlands", slug: "netherlands", flag: "/flags/nl.png" },
-    { name: "Germany", slug: "germany", flag: "/flags/de.png" },
-    { name: "France", slug: "france", flag: "/flags/fr.png" },
+    { name: "UK", slug: "uk", code: "gb" },
+    { name: "Spain", slug: "spain", code: "es" },
+    { name: "Netherlands", slug: "netherlands", code: "nl" },
+    { name: "Germany", slug: "germany", code: "de" },
+    { name: "France", slug: "france", code: "fr" },
   ],
   AMERICA: [
-    { name: "USA", slug: "usa", flag: "/flags/us.png" },
-    { name: "Mexico", slug: "mexico", flag: "/flags/mx.png" },
-    { name: "Argentina", slug: "argentina", flag: "/flags/ar.png" },
-    { name: "Canada", slug: "canada", flag: "/flags/ca.png" },
-    { name: "Brazil", slug: "brazil", flag: "/flags/br.png" },
+    { name: "USA", slug: "usa", code: "us" },
+    { name: "Mexico", slug: "mexico", code: "mx" },
+    { name: "Argentina", slug: "argentina", code: "ar" },
+    { name: "Canada", slug: "canada", code: "ca" },
+    { name: "Brazil", slug: "brazil", code: "br" },
   ],
   OCEANIA: [
-    { name: "Australia", slug: "australia", flag: "/flags/au.png" },
-    { name: "New Zealand", slug: "new-zealand", flag: "/flags/nz.png" },
-    { name: "Fiji", slug: "fiji", flag: "/flags/fj.png" },
+    { name: "Australia", slug: "australia", code: "au" },
+    { name: "New Zealand", slug: "new-zealand", code: "nz" },
+    { name: "Fiji", slug: "fiji", code: "fj" },
   ],
 };
 
@@ -65,7 +65,7 @@ export default function CountrySection() {
                       className="flex items-center gap-3 justify-center hover:translate-x-1 transition-transform"
                     >
                       <img
-                        src={c.flag}
+                        src={`https://flagcdn.com/w40/${c.code}.png`}
                         alt={`${c.name} flag`}
                         className="w-6 h-4 rounded-sm"
                         loading="lazy"

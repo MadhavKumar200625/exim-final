@@ -2,13 +2,44 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
-/* ===== STATIC DATA (SAFE) ===== */
+/* ===== STATIC DATA ===== */
 const continents = {
   ASIA: ["india", "china", "japan", "turkey", "south-korea"],
   AFRICA: ["chad", "ghana", "kenya", "tanzania", "south-africa"],
   EUROPE: ["uk", "spain", "vietnam", "netherlands", "germany"],
   AMERICA: ["us", "mexico", "argentina", "canada", "brazil"],
   OCEANIA: ["fiji", "australia", "new-zealand"],
+};
+
+/* ===== SLUG → ISO CODE MAP (REQUIRED) ===== */
+const flagCodes = {
+  india: "in",
+  china: "cn",
+  japan: "jp",
+  turkey: "tr",
+  "south-korea": "kr",
+
+  chad: "td",
+  ghana: "gh",
+  kenya: "ke",
+  tanzania: "tz",
+  "south-africa": "za",
+
+  uk: "gb",
+  spain: "es",
+  vietnam: "vn",
+  netherlands: "nl",
+  germany: "de",
+
+  us: "us",
+  mexico: "mx",
+  argentina: "ar",
+  canada: "ca",
+  brazil: "br",
+
+  fiji: "fj",
+  australia: "au",
+  "new-zealand": "nz",
 };
 
 const formatName = (slug) =>
@@ -39,8 +70,8 @@ export default function CountrySection() {
                       href={`/country-wise-${slug}-import-data`}
                       className="flex items-center gap-3 hover:translate-x-1 transition-transform"
                     >
-                      <Image
-                        src={`/flags/${slug}.webp`}
+                      <img
+                        src={`https://flagcdn.com/w40/${flagCodes[slug]}.png`}
                         alt={`${formatName(slug)} flag`}
                         width={24}
                         height={16}

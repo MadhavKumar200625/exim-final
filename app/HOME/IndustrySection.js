@@ -8,21 +8,25 @@ const industries = [
     name: "Importers",
     desc: "Leading Trade Intelligence Platform for Global Importers",
     img: "/importer_md_banner1.webp",
+    link: "importers"
   },
   {
     name: "Exporters",
     desc: "Enhance Your Sales Potential with Our Global Exporters Database",
     img: "/exporters_md_banner1.webp",
+    link: "importers"
   },
   {
     name: "Corporation",
     desc: "Best Market Intelligence Platform for Corporate Companies",
     img: "/corporation_md_banner1.webp",
+    link: "corporation"
   },
   {
     name: "Automotive",
     desc: "Identify the Current Market Trends & Demands in the Automotive Market",
     img: "/automative_md_banner1.webp",
+    link: "automative"
   },
 ];
 
@@ -105,7 +109,7 @@ export default function IndustrySection() {
                 <p className="text-sm text-black">{industry.desc}</p>
 
                 <Link
-                  href={`/${industry.name.toLowerCase()}`}
+                  href={`/${industry.link.toLowerCase()}`}
                   prefetch={false}
                 >
                   <button className="mt-2 w-fit bg-[#0067b8] text-white text-sm px-4 py-2 shadow-md hover:bg-[#005fa3] transition-all">

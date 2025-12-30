@@ -41,7 +41,7 @@ const Suppliers = ({ country, data = [] }) => {
         <div className="flex justify-center lg:justify-end">
           <Link href="/global-ports" className="w-full max-w-xs sm:max-w-sm">
             <img
-              src="https://old-net.eximtradedata.com/images/port-card.webp"
+              src="/countries/common-dashboard.webp"
               alt={`${country} Importers`}
               width={500}
               height={600}

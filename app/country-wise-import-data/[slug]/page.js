@@ -20,6 +20,11 @@ import CountrySection from "./CountryLinksSection";
 export const dynamic = "force-static";
 export const revalidate = 86400; // 24 hours (safe for bots + SEO)
 
+
+
+
+
+
 /* ---------- HELPERS ---------- */
 const normalizeSlug = (slug = "") =>
   slug.toLowerCase().trim().replace(/\s+/g, "-");

@@ -41,13 +41,13 @@ const MainSection = ({ heading, subheading, data, totalValues , letter , pg}) =>
   const handleSelect = (e) => {
     const letter = e.target.value;
     setSelectedLetter(selectedLetter);
-    router.push(`/ports-data/${heading}/${letter}-1`);
+    router.push(`/ports-data/${heading}/${letter.toLowerCase()}-1`);
   };
 
   // Handle page change
   const handlePageChange = (p) => {
     setPage(p);
-    router.push(`/ports-data/${heading}/${selectedLetter}-${p}`);
+    router.push(`/ports-data/${heading}/${selectedLetter.toLowerCase()}-${p}`);
   };
 
   const getPagination = () => {

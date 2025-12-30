@@ -290,26 +290,7 @@ export default function ContactUs() {
               Phone Number
             </label>
             <div className="flex">
-              <div className="flex items-center border border-gray-300 rounded-l-lg px-2">
-                <img
-                  src={countryCodes[selectedCountryCode].flag}
-                  alt={selectedCountryCode}
-                  className="w-5 h-5 mr-2"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <select
-                  value={selectedCountryCode}
-                  onChange={(e) => setSelectedCountryCode(e.target.value)}
-                  className="bg-transparent text-black focus:outline-none"
-                >
-                  {Object.entries(countryCodes).map(([n, { code }]) => (
-                    <option key={n} value={n}>
-                      {code}
-                    </option>
-                  ))}
-                </select>
-              </div>
+              
 
               <input
                 type="tel"
@@ -335,7 +316,7 @@ export default function ContactUs() {
             </button>
 
             {showDropdown && (
-              <div className="absolute z-10 mt-2 w-[150%] bg-white shadow-lg grid grid-cols-2 gap-2 p-3">
+              <div className="absolute z-10 mt-2 w-[20%] bg-white shadow-lg grid grid-cols-2 gap-2 p-3">
                 {Object.entries(countries).map(([c, flag]) => (
                   <div
                     key={c}

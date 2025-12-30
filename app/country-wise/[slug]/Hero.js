@@ -42,7 +42,7 @@ export default function Hero({ country, hero }) {
         {/* Image */}
         <div className="flex-1 flex justify-center md:justify-end">
           <div className="w-full max-w-sm">
-            <Image
+            <img
               src={imageSrc}
               alt={`${countryName} import export trade map`}
               width={400}

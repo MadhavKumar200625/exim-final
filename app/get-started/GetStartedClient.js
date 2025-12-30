@@ -8,9 +8,9 @@ export default function GetStartedClient() {
   const [company, setCompany] = useState("");
   const [mobile, setMobile] = useState("");
   const [loading, setLoading] = useState(false);
-  const [selectedCountryCode, setSelectedCountryCode] = useState("Afghanistan");
-  const [selectedCountry, setSelectedCountry] = useState("");
-
+const [selectedCountry, setSelectedCountry] = useState("");
+const [showCountryDropdown, setShowCountryDropdown] = useState(false);
+const [countrySearch, setCountrySearch] = useState("");
 
   const countryCodes = {
     Afghanistan: { code: "+93", flag: "https://flagcdn.com/w40/af.png" },
@@ -180,6 +180,12 @@ export default function GetStartedClient() {
     Zambia: { code: "+260", flag: "https://flagcdn.com/w40/zm.png" },
     Zimbabwe: { code: "+263", flag: "https://flagcdn.com/w40/zw.png" },
   };
+
+  const countries = Object.keys(countryCodes);
+
+const filteredCountries = countries.filter((c) =>
+  c.toLowerCase().includes(countrySearch.toLowerCase())
+);
   const sendEmail = async (e) => {
   e.preventDefault();
 
@@ -274,34 +280,60 @@ export default function GetStartedClient() {
               </div>
             </div>
 
+            <div className="relative">
+  <label className="block text-sm font-semibold mb-2 text-black">
+    Country
+  </label>
+
+  {/* Dropdown Button */}
+  <button
+    type="button"
+    onClick={() => setShowCountryDropdown(!showCountryDropdown)}
+    className="w-full border border-gray-300 rounded-lg px-4 py-2 text-left bg-white flex justify-between items-center"
+  >
+    <span className={selectedCountry ? "text-black" : "text-gray-400"}>
+      {selectedCountry || "Select Country"}
+    </span>
+    <span className="text-gray-500">▼</span>
+  </button>
+
+  {/* Dropdown */}
+  {showCountryDropdown && (
+    <div className="absolute z-50 mt-2 w-full bg-white border rounded-lg shadow-lg max-h-56 overflow-y-auto">
+      {/* Search */}
+      <input
+        type="text"
+        placeholder="Search country..."
+        className="w-full px-3 py-2 border-b outline-none"
+        value={countrySearch}
+        onChange={(e) => setCountrySearch(e.target.value)}
+      />
+
+      {/* List */}
+      {filteredCountries.map((country) => (
+        <div
+          key={country}
+          onClick={() => {
+            setSelectedCountry(country);
+            setShowCountryDropdown(false);
+            setCountrySearch("");
+          }}
+          className="px-4 py-2 cursor-pointer hover:bg-blue-50 text-black"
+        >
+          {country.replace(/_/g, " ")}
+        </div>
+      ))}
+    </div>
+  )}
+</div>
+
             <div>
               <label className="block text-sm font-semibold mb-2 text-black">
                 Phone Number
               </label>
               <div className="flex">
                 {/* Country Code Select */}
-                <div className="relative flex items-center border border-gray-300 rounded-l-lg px-2">
-                  <img
-                    src={countryCodes[selectedCountryCode].flag}
-                    alt={selectedCountryCode}
-                    className="w-5 h-5 mr-2"
-                  />
-                  <select
-                    value={selectedCountryCode}  
-                    onChange={(e) => setSelectedCountryCode(e.target.value)}
-                    onClick={() => {
-                      setSelectedCountry(country);
-                      setShowDropdown(false);
-                    }}
-                    className="bg-transparent appearance-none text-black focus:outline-none"
-                  >
-                    {Object.entries(countryCodes).map(([name, { code }]) => (
-                      <option key={name} value={name}>
-                        {code}
-                      </option>
-                    ))}
-                  </select>
-                </div>
+                
 
                 {/* Phone Input */}
                 <input

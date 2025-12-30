@@ -3,6 +3,7 @@ import { Roboto } from "next/font/google";
 import Script from "next/script";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
+import LoaderHandler from "./Components/LoaderHandler";
 // import Header from "./components/Header";
 // import Footer from "./components/Footer";
 
@@ -112,6 +113,8 @@ export default function RootLayout({ children }) {
                 }
               `}
         </Script>
+        <div id="top-loader"></div>
+        <LoaderHandler />
 
         <Header />
         <main>{children}</main>

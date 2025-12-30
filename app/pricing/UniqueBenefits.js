@@ -43,7 +43,7 @@ export default function EximBenefitsSection() {
             >
               <div className="w-24 h-24 mx-auto mb-4">
                 <img
-                  src={benefit.image}
+                  src={`/pricing${benefit.image}`}
                   alt={benefit.title}
                   loading="lazy"
                   decoding="async"
