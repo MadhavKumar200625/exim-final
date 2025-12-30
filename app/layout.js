@@ -4,6 +4,7 @@ import Script from "next/script";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import LoaderHandler from "./Components/LoaderHandler";
+import { GlobalLinkLoader } from "./Components/GlobalLinkLoader";
 // import Header from "./components/Header";
 // import Footer from "./components/Footer";
 
@@ -113,7 +114,10 @@ export default function RootLayout({ children }) {
                 }
               `}
         </Script>
-        <div id="top-loader"></div>
+          <div id="top-loader"></div>
+
+        <GlobalLinkLoader />
+
         <LoaderHandler />
 
         <Header />
