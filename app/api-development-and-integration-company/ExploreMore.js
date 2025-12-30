@@ -73,7 +73,7 @@ const ExploreMore = () => {
                   {industry.description}
                 </p>
                 <Link
-                  href={`/industries/${industry.link}`}
+                  href={`${industry.link}`}
                   className="mt-3 inline-block text-sm font-medium text-blue-600"
                 >
                   Learn more →
