@@ -1,5 +1,5 @@
 // /app/search/[...params]/page.jsx
-export const revalidate = 3600;
+export const revalidate = 86400;
 
 import React from "react";
 import Hero from "./Hero";
