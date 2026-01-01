@@ -77,7 +77,7 @@ export default function Countries() {
               className="relative group flex items-center gap-4 p-4 border border-blue-300 rounded-xl shadow hover:shadow-lg transition"
             >
               {/* Flag */}
-              <Link href={country.link_main}>
+              <a href={country.link_main}>
                 <img
                   src={country.flag}
                   alt={`${country.name} flag`}
@@ -87,30 +87,30 @@ export default function Countries() {
                   className="w-16 h-auto"
                   onError={e => (e.currentTarget.style.display = "none")}
                 />
-              </Link>
+              </a>
 
               {/* Info */}
               <div className="flex flex-col">
-                <Link
+                <a
                   href={country.link_main}
                   className="font-semibold text-lg hover:underline text-black hover:text-blue-600"
                 >
                   {country.name} Import Export Data
-                </Link>
+                </a>
 
                 <div className="flex gap-2 mt-2">
-                  <Link
+                  <a
                     href={country.link_imp}
                     className="text-sm px-3 py-1 border border-blue-600 text-black hover:bg-blue-600 hover:text-white transition"
                   >
                     Import Data
-                  </Link>
-                  <Link
+                  </a>
+                  <a
                     href={country.link_exp}
                     className="text-sm px-3 py-1 border border-orange-500 text-black hover:bg-orange-500 hover:text-white transition"
                   >
                     Export Data
-                  </Link>
+                  </a>
                 </div>
               </div>
 
@@ -122,31 +122,31 @@ export default function Countries() {
                   </h4>
                   <ul className="p-4 space-y-2">
                     <li>
-                      <Link
+                      <a
                         href={`/global-products/product-A/country-${slug}/type-export/pg-1`}
                         className="flex items-center text-sm underline"
                       >
                         {country.name} Export Products
                         <ArrowUpRight className="ml-1 w-4 h-4" />
-                      </Link>
+                      </a>
                     </li>
                     <li>
-                      <Link
+                      <a
                         href={`/global-products/product-A/country-${slug}/type-import/pg-1`}
                         className="flex items-center text-sm underline"
                       >
                         {country.name} Import Products
                         <ArrowUpRight className="ml-1 w-4 h-4" />
-                      </Link>
+                      </a>
                     </li>
                     <li>
-                      <Link
+                      <a
                         href={`/global-companies-list/${slug}/A-1`}
                         className="flex items-center text-sm underline"
                       >
                         {country.name} Companies
                         <ArrowUpRight className="ml-1 w-4 h-4" />
-                      </Link>
+                      </a>
                     </li>
                   </ul>
                 </div>

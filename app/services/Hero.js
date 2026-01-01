@@ -26,9 +26,9 @@ const Hero = () => {
           {/* <p className="text-black text-lg">
             Leverage our trade statistics and market access data to identify reliable suppliers and connect with high-quality sales prospects worldwide.
           </p> */}
-          <Link href="/pricing" className="relative cursor-pointer inline-flex items-center justify-center text-lg px-6 py-2 overflow-hidden font-semibold text-white transition-all duration-300  bg-blue-600  hover:scale-105 ">
+          <a href="/pricing" className="relative cursor-pointer inline-flex items-center justify-center text-lg px-6 py-2 overflow-hidden font-semibold text-white transition-all duration-300  bg-blue-600  hover:scale-105 ">
   Try Exim GTIS
-</Link>
+</a>
         </div>
       </div>
     </section>

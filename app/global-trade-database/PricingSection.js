@@ -127,13 +127,13 @@ export default function PricingSection() {
                     <li>✔️ {plan.validity} Validity</li>
                   </ul>
 
-                  <Link
+                  <a
                     href="/pricing"
-                    prefetch={false}
+                    
                     className="block text-center py-2 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 transition"
                   >
                     Explore More →
-                  </Link>
+                  </a>
                 </div>
               </div>
             ))}
@@ -172,13 +172,13 @@ export default function PricingSection() {
 
           {/* CTA */}
           <div className="text-center mt-12">
-            <Link
+            <a
               href="/get-started"
-              prefetch={false}
+              
               className="inline-block px-6 py-3 text-lg font-semibold text-white bg-[#0067b8] hover:scale-105 transition duration-300"
             >
               Get Free Trial
-            </Link>
+            </a>
           </div>
         </div>
       </section>

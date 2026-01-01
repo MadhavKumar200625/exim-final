@@ -15,12 +15,12 @@ const Hero = () => {
           </p>
 
           <div className="flex gap-4">
-            <Link
+            <a
               href="/contact"
               className="px-6 py-3 bg-blue-600 text-white text-base font-medium hover:scale-105 transition-transform duration-200"
             >
               Consult Our Expert
-            </Link>
+            </a>
           </div>
         </div>
 

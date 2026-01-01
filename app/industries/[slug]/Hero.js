@@ -24,11 +24,11 @@ const Hero = ({ title, description, image }) => {
             {description}
           </p>
 
-          <Link href="/pricing">
+          <a href="/pricing">
             <span className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 hover:scale-105 transition duration-300">
               Get Insight Reports →
             </span>
-          </Link>
+          </a>
         </div>
 
         {/* Right Image */}

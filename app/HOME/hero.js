@@ -22,13 +22,13 @@ export default function Hero() {
           </p>
 
           <div className="flex justify-center lg:justify-start">
-            <Link
+            <a
               href="/contact"
               className="relative inline-block px-6 py-3 text-white font-semibold text-sm md:text-lg overflow-hidden group bg-blue-600"
             >
               <span className="absolute inset-0 w-full h-full bg-linear-to-br from-white/10 to-white/5 opacity-0 group-hover:opacity-100 transition duration-300 blur-sm"></span>
               <span className="relative z-10">Consult Our Expert</span>
-            </Link>
+            </a>
           </div>
         </div>
 

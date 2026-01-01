@@ -69,7 +69,7 @@ export default function CountryLinksSection() {
 
                   return (
                     <li key={name}>
-                      <Link
+                      <a
                         href={`/country-wise-${slug}-import-data`}
                         className="flex items-center justify-center gap-3 hover:translate-x-1 transition-transform"
                       >
@@ -84,7 +84,7 @@ export default function CountryLinksSection() {
                         <span className="text-black hover:text-sky-600 hover:underline transition">
                           {name}
                         </span>
-                      </Link>
+                      </a>
                     </li>
                   );
                 })}
@@ -95,12 +95,12 @@ export default function CountryLinksSection() {
 
         {/* CTA */}
         <div className="flex justify-center mt-10">
-          <Link
+          <a
             href="/pricing"
             className="bg-blue-600 text-lg text-white px-6 py-2 flex items-center gap-2 shadow hover:scale-105 transition"
           >
             Enquire Now <ArrowRight size={18} />
-          </Link>
+          </a>
         </div>
 
       </div>

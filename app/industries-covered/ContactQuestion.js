@@ -12,12 +12,12 @@ const ContactQuestion = () => {
       Get an edge over your competitors with industry driven insights. Gain the market knowledge of different industries and plan a comprehensive marketing strategy based on our impressive business intelligence reports.
     </p>
 
-    <Link
+    <a
       href="/contact"
       className="inline-flex items-center justify-center gap-2 text-white bg-blue-600 transition-all px-6 py-3  text-sm sm:text-base font-semibold shadow-lg hover:scale-105 duration-300"
     >
       Contact Us →
-    </Link>
+    </a>
   </div>
 </section>  )
 }

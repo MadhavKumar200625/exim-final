@@ -19,13 +19,13 @@ export default function FindWhat({ country }) {
 
         <div className="flex flex-wrap justify-center gap-4">
           {relatedCountries.map((targetCountry) => (
-            <Link
+            <a
               key={targetCountry}
               href={`/${targetCountry.toLowerCase()}-export-data`}
               className="bg-blue-600 text-white px-6 py-3 text-lg font-semibold transition-transform duration-300 transform hover:scale-105"
             >
               {targetCountry}
-            </Link>
+            </a>
           ))}
         </div>
       </div>

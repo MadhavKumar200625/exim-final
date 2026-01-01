@@ -28,18 +28,18 @@ const Suppliers = ({ country, data = [] }) => {
 
           {/* CTA */}
           <div className="flex justify-start">
-            <Link
+            <a
               href="/contact"
               className="bg-blue-600 text-lg text-white px-6 py-2 shadow hover:scale-105 transition-transform inline-flex"
             >
               Get Global Buyers Details
-            </Link>
+            </a>
           </div>
         </div>
 
         {/* Right Column (Image) */}
         <div className="flex justify-center lg:justify-end">
-          <Link href="/global-ports" className="w-full max-w-xs sm:max-w-sm">
+          <a href="/global-ports" className="w-full max-w-xs sm:max-w-sm">
             <img
               src="/countries/common-dashboard.webp"
               alt={`${country} Importers`}
@@ -48,7 +48,7 @@ const Suppliers = ({ country, data = [] }) => {
               loading="lazy"
               className="rounded-lg shadow-md object-contain w-full h-auto"
             />
-          </Link>
+          </a>
         </div>
       </div>
     </section>

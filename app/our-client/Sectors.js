@@ -43,11 +43,11 @@ export default function Sectors() {
         <h2 className="text-3xl md:text-4xl font-bold text-black">
           Sectors We Work With
         </h2>
-        <Link href="/country-ports">
+        <a href="/country-ports">
           <span className="text-blue-600 font-medium hover:underline hover:underline-offset-4 transition-all text-lg cursor-pointer">
             View All →
           </span>
-        </Link>
+        </a>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

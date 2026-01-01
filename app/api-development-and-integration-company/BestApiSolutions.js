@@ -26,7 +26,7 @@ const benefits = [
     desc: (
       <>
         Through our trade API, companies can create an expert market intelligence platform that helps them achieve their business goals. In a trade API, you get complete{" "}
-        <Link href='/import-export-data-country-wise' className="text-blue-600">import export data</Link>{" "}
+        <a href='/import-export-data-country-wise' className="text-blue-600">import export data</a>{" "}
         information at one place and can perform various searches as per your intent (like importer/exporter, country, date, etc.).
       </>
     ),

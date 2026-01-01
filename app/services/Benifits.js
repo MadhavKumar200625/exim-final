@@ -10,12 +10,12 @@ const Benifits = () => {
         <>
           Discover a new marketplace for your import-export trade business with
           our analytically designed{" "}
-          <Link
+          <a
             href="/search-global-trade-data"
             className="text-blue-600 underline hover:text-blue-800 transition"
           >
             global import export database
-          </Link>
+          </a>
           .
         </>
       ),

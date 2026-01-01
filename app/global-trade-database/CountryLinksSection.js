@@ -59,7 +59,6 @@ export default function CountrySection() {
               <ul className="space-y-3">
                 {continent.countries.map((country) => (
                   <li key={country.label}>
-                    {/* ❗ Using <a> intentionally to avoid prefetch flood */}
                     <a
                       href={country.url}
                       className="flex items-center justify-center space-x-2 text-black hover:underline hover:scale-[1.02] transition-transform duration-200"
@@ -85,13 +84,13 @@ export default function CountrySection() {
 
         {/* CTA */}
         <div className="text-center mt-10">
-          <Link
+          <a
             href="/pricing"
-            prefetch={false}
+            
             className="px-6 py-3 bg-blue-600 text-white text-base font-medium hover:scale-105 transition-transform duration-200 cursor-pointer inline-block"
           >
             Check Pricing →
-          </Link>
+          </a>
         </div>
       </div>
     </section>

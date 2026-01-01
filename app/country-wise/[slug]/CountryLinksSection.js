@@ -66,7 +66,7 @@ export default function CountrySection() {
               <ul className="space-y-3">
                 {countries.map((slug) => (
                   <li key={slug}>
-                    <Link
+                    <a
                       href={`/country-wise-${slug}-import-data`}
                       className="flex items-center gap-3 hover:translate-x-1 transition-transform"
                     >
@@ -78,7 +78,7 @@ export default function CountrySection() {
                         loading="lazy"
                       />
                       <span>{formatName(slug)}</span>
-                    </Link>
+                    </a>
                   </li>
                 ))}
               </ul>
@@ -88,12 +88,12 @@ export default function CountrySection() {
 
         {/* CTA */}
         <div className="flex justify-center mt-10">
-          <Link
+          <a
             href="/pricing"
             className="bg-blue-600 text-white text-lg px-6 py-2 flex items-center gap-2 shadow hover:scale-105 transition"
           >
             Enquire Now <ArrowRight size={18} />
-          </Link>
+          </a>
         </div>
       </div>
     </section>

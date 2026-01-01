@@ -22,17 +22,17 @@ const Hero = ({countryName}) => {
 Get detailed insights into the top {countryName} sea ports with verified <strong>port data {countryName}</strong>. Find a comprehensive report on {countryName}&apos;s top seaports shipment volumes, top traded goods, country of origin, destination, districts, buyers and suppliers through {countryName} ports container data. Gain the latest insights on shipment activities across {countryName} sea ports. Access the export import port data {countryName} year wise with Exim Intelligence Platform.          </p>
     
           <div className="flex flex-col sm:flex-row gap-4 pt-2">
-      <Link
+      <a
         href="/pricing"
 className="relative overflow-hidden px-6 mx-1 py-3 bg-blue-600 cursor-pointer  text-white text-md hover:scale-105  transition-all    font-semibold shadow-xl group"      >
         Schedule a Demo
-      </Link>
-      <Link
+      </a>
+      <a
         href="/api-development-and-integration-company">
         <button className="relative overflow-hidden px-6 mx-1 py-3 bg-blue-600 cursor-pointer text-white text-md hover:scale-105  transition-all    font-semibold shadow-xl group">
               Get API Access
                 </button>
-      </Link>
+      </a>
     </div>
         </div>
       </div>

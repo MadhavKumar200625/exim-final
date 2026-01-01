@@ -27,12 +27,12 @@ export default function CtaImage({ portName }) {
 
         {/* CTA */}
         <div className="flex justify-center">
-          <Link
+          <a
             href="/pricing"
             className="px-8 py-4 bg-blue-600 text-white font-semibold shadow-md transition-transform hover:scale-105"
           >
             Explore Now
-          </Link>
+          </a>
         </div>
       </div>
     </section>

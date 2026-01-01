@@ -57,12 +57,12 @@ const GlobalImpact = ({ country, points }) => {
           </ul>
 
           <div className="flex md:justify-start md:ml-4 justify-center">
-            <Link
+            <a
               href="/pricing"
               className="bg-blue-600 text-lg text-white px-6 py-2 flex items-center justify-center shadow hover:scale-105 transition"
             >
               Get Free Trial
-            </Link>
+            </a>
           </div>
         </div>
       </div>

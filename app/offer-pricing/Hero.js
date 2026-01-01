@@ -273,12 +273,12 @@ export default function Hero() {
               </div>
 
               <div className="px-6 pb-6">
-                <Link
+                <a
                   href="/import-export-data-country-wise"
                   className={`block text-center py-2 rounded-lg ${plan.gradient} text-white font-semibold hover:scale-105 transition`}
                 >
                   Get Demo →
-                </Link>
+                </a>
               </div>
             </div>
           ))}

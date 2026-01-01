@@ -83,12 +83,12 @@ const ExclusiveFeatures = () => {
           <span className="font-semibold">
             To check our plans and pricing for other countries –
           </span>{" "}
-          <Link
+          <a
             href="/offer-pricing"
             className="cursor-pointer bg-blue-600 px-3 py-2 text-white font-bold animate-pulse"
           >
             Click Here
-          </Link>
+          </a>
         </p>
       </div>
     </section>

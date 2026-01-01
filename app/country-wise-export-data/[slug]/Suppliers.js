@@ -33,12 +33,12 @@ export default function Suppliers({ country, data = [] }) {
 
           {/* CTA */}
           <div className="flex justify-start">
-            <Link
+            <a
               href="/contact"
               className="bg-blue-600 text-lg text-white px-6 py-2 flex items-center justify-center shadow hover:scale-105 transition-transform"
             >
               Get Global Buyers Details
-            </Link>
+            </a>
           </div>
         </div>
 

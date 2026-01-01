@@ -18,13 +18,13 @@ const GrowthSection = () => {
           <p className="text-md text-black mb-6">
             <span className="font-semibold text-black">Exim GTIS</span> (global trade information service) is amongst the top global import export trade data providers and also the best platform for market intelligence that helps identify the key performance factors for your company and streamline your workflow. Find the latest market trends, most traded HS codes, countries, ports, competitors, and top import-export companies. Mitigate financial risk and reach out to the verified buyers and suppliers. Double your sales and generate the maximum revenue through our market research platform.
 
-            <Link
+            <a
               href="/global-hs-code-list"
-              prefetch={false}
+              
               className="text-blue-500 font-semibold hover:underline"
             >
               {" "}HS codes
-            </Link>
+            </a>
             , countries, ports, competitors and top import-export companies.
             Mitigate financial risk and reach out to the verified buyers and
             suppliers. Double your sales and generate the maximum revenue
@@ -33,22 +33,22 @@ const GrowthSection = () => {
 
           <div className="flex flex-wrap gap-4">
             {/* Explore Button */}
-            <Link
+            <a
               href="/global-trade-database"
-              prefetch={false}
+              
               className="relative px-6 py-3 bg-blue-600 text-white font-semibold shadow-xl hover:scale-105 hover:shadow-2xl transition-all duration-300"
             >
               <span className="z-10 relative">Explore Exim GTIS</span>
-            </Link>
+            </a>
 
             {/* Get API Access Button */}
-            <Link
+            <a
               href="/api-development-and-integration-company"
-              prefetch={false}
+              
               className="cursor-pointer relative px-6 py-3 bg-blue-600 text-white font-semibold shadow-xl hover:scale-105 hover:shadow-2xl transition-all duration-300"
             >
               <span className="relative z-10">Get API Access</span>
-            </Link>
+            </a>
           </div>
         </div>
 

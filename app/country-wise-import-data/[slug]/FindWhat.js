@@ -19,13 +19,13 @@ const FindWhat = ({ country }) => {
 
         <div className="flex flex-wrap justify-center gap-4">
           {relatedCountries.map((item) => (
-            <Link
+            <a
               key={item}
               href={`/${item.toLowerCase()}-import-data`}
               className="bg-blue-600 text-white px-6 py-3 text-lg font-semibold transition-transform duration-300 hover:scale-105"
             >
               {item}
-            </Link>
+            </a>
           ))}
         </div>
       </div>

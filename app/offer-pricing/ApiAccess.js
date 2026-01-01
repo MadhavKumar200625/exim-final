@@ -17,13 +17,13 @@ const ApiAccess = () => {
 
           {/* CTA */}
           <div className="flex justify-center">
-            <Link
+            <a
   href="/contact"
-  prefetch={false}
+  
   className="bg-blue-600 text-white font-semibold px-8 py-3 transition transform hover:scale-105"
 >
   Get Started →
-</Link>
+</a>
           </div>
         </div>
 

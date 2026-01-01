@@ -75,19 +75,19 @@ export default function Hero() {
 
       {/* Buttons */}
       <div className="flex justify-center gap-4 mb-12">
-        <Link
+        <a
           href="/contact"
           className="bg-blue-600 text-xl text-white px-6 py-2 shadow hover:scale-105 transition"
         >
           Online Data
-        </Link>
+        </a>
 
-        <Link
+        <a
           href="/contact"
           className="bg-green-600 text-xl text-white px-6 py-2 shadow hover:scale-105 transition"
         >
           Offline Data
-        </Link>
+        </a>
       </div>
 
       {/* Stats */}

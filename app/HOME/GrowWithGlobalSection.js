@@ -30,13 +30,13 @@ const GrowWithGlobalSection = () => {
           </h2>
 
           {/* CTA */}
-          <Link
+          <a
             href="/contact"
-            prefetch={false}
+            
             className="relative inline-flex items-center justify-center px-8 py-4 text-md overflow-hidden font-semibold text-white transition-all duration-300 bg-blue-600 shadow-md group"
           >
             <span className="relative z-10">Schedule A Demo</span>
-          </Link>
+          </a>
         </MotionWrapper>
       </div>
 

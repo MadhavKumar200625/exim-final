@@ -44,13 +44,13 @@ const Section5 = ({ industries }) => {
                   {industry.description}
                 </p>
 
-                <Link
+                <a
                   href={industry.link || "/industries-covered"}
-                  prefetch={false}
+                  
                   className="mt-3 inline-block text-sm font-medium text-blue-600 transition"
                 >
                   Learn more →
-                </Link>
+                </a>
               </div>
             </div>
           ))}
@@ -58,12 +58,12 @@ const Section5 = ({ industries }) => {
 
         {/* Bottom CTA */}
         <div className="mt-16 text-center">
-          <Link
+          <a
             href="/industries-covered"
             className="inline-block bg-blue-600 text-white font-semibold text-lg px-7 py-3 hover:scale-105 shadow-md transition-all duration-300"
           >
             Explore More
-          </Link>
+          </a>
         </div>
       </div>
     </section>

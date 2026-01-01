@@ -77,12 +77,12 @@ const Stats = ({ country, imports, exports }) => {
             transition={{ delay: i * 0.15 }}
             className="p-6 rounded-2xl shadow bg-white border flex flex-col items-center"
           >
-            <Link
+            <a
               href="/pricing"
               className="mb-4 border border-black px-3 py-2 text-sm hover:bg-slate-100 transition"
             >
               {stat.title}
-            </Link>
+            </a>
 
             <p className="text-2xl sm:text-3xl md:text-4xl font-semibold text-black my-3">
               ${counts[i].toLocaleString()}M

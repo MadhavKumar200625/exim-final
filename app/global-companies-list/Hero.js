@@ -15,18 +15,18 @@ const Hero = ({heading,subHeading}) => {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <Link
+          <a
             href="/pricing"
             className="bg-blue-600 text-white px-6 py-3 font-semibold uppercase tracking-wide shadow hover:scale-105 transition-transform duration-300"
           >
             Schedule a Demo
-          </Link>
-          <Link
+          </a>
+          <a
             href="/api-development-and-integration-company"
             className="bg-blue-600 text-white px-6 py-3 font-semibold uppercase tracking-wide shadow hover:scale-105 transition-transform duration-300"
           >
             Get API Access
-          </Link>
+          </a>
         </div>
       </div>
     </section>

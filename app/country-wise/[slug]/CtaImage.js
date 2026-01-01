@@ -50,13 +50,13 @@ export default function CtaImage({ description }) {
         )}
 
         {/* CTA */}
-        <Link
+        <a
           href="/contact"
           className="group mt-10 inline-flex items-center gap-3 px-7 py-4 bg-blue-600 text-white font-semibold shadow-md hover:shadow-lg hover:scale-[1.02] transition-all"
         >
           Get Full Report
           <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-        </Link>
+        </a>
       </div>
     </section>
   );

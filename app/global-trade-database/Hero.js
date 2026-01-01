@@ -16,18 +16,18 @@ const Hero = () => {
           </p>
 
           <div className="flex  gap-4">
-            <Link
+            <a
               href="/pricing"
               className="px-6 py-3 bg-blue-600 text-white text-base font-medium hover:scale-105 transition-transform duration-200 cursor-pointer"
             >
               Schedule a Demo
-            </Link>
-            <Link
+            </a>
+            <a
               href="/api-development-and-integration-company"
               className="px-6 py-3 bg-blue-600 text-white text-base font-medium hover:scale-105 transition-transform duration-200 cursor-pointer"
             >
               Learn More
-            </Link>
+            </a>
           </div>
         </div>
 

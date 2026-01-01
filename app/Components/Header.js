@@ -92,7 +92,7 @@ const Header = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-        <Link href="/" prefetch={false}>
+        <a href="/" >
           <img
             src="/logo.png"
             alt="Exim Trade Data"
@@ -100,7 +100,7 @@ const Header = () => {
             loading="eager"
             decoding="async"
           />
-        </Link>
+        </a>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex flex-1 items-center justify-center gap-6">
@@ -109,14 +109,14 @@ const Header = () => {
             ["/about", "About"],
             ["/services", "Services"],
           ].map(([href, label]) => (
-            <Link
+            <a
               key={href}
               href={href}
-              prefetch={false}
+              
               className="hover:text-blue-600 transition font-bold text-lg"
             >
               {label}
-            </Link>
+            </a>
           ))}
 
           {/* Solutions dropdown */}
@@ -134,17 +134,17 @@ const Header = () => {
                 <div className="w-250 bg-white border shadow-xl grid grid-cols-4 p-8 rounded-xl">
                   <div className="col-span-3 grid grid-cols-3 gap-x-6 gap-y-4 pr-4">
                     {solutions.map(({ title, link, icon: Icon }) => (
-                      <Link
+                      <a
                         key={title}
                         href={`${link}`}
-                        prefetch={false}
+                        
                         className="flex items-center gap-3 p-3 rounded-lg transition hover:bg-blue-100"
                       >
                         <Icon className="w-5 h-5 text-blue-600" />
                         <span className="text-gray-800 text-sm font-medium">
                           {title}
                         </span>
-                      </Link>
+                      </a>
                     ))}
                   </div>
 
@@ -155,13 +155,13 @@ const Header = () => {
                     <p className="text-sm text-gray-600 mb-4 leading-relaxed">
                       Gain industry specific insights through our trade intelligence platform.
                     </p>
-                    <Link
+                    <a
                       href="/industries-covered"
-                      prefetch={false}
+                      
                       className="text-white bg-blue-600 px-4 py-2 text-sm rounded-full hover:bg-blue-700 transition"
                     >
                       View All Industries
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -175,25 +175,25 @@ const Header = () => {
             ["/pricing", "Pricing"],
             ["/contact", "Contact Us"],
           ].map(([href, label]) => (
-            <Link
+            <a
               key={href}
               href={href}
-              prefetch={false}
+              
               className="hover:text-blue-600 transition font-bold text-lg"
             >
               {label}
-            </Link>
+            </a>
           ))}
         </nav>
 
         <div className="hidden md:block">
-          <Link
+          <a
             href="/pricing#pricing_section"
-            prefetch={false}
+            
             className="relative cursor-pointer inline-flex items-center justify-center px-6 py-2 overflow-hidden font-semibold text-white transition-all duration-300 bg-blue-600 hover:scale-105"
           >
             <span className="relative z-10">Get A Demo</span>
-          </Link>
+          </a>
         </div>
 
         {/* Mobile Toggle */}
@@ -217,14 +217,14 @@ const Header = () => {
             ["/pricing", "Pricing"],
             ["/contact", "Contact Us"],
           ].map(([href, label]) => (
-            <Link
+            <a
               key={href}
               href={href}
-              prefetch={false}
+              
               className="block text-gray-800 hover:text-blue-600"
             >
               {label}
-            </Link>
+            </a>
           ))}
         </div>
       )}

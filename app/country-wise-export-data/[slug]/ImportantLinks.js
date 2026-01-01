@@ -53,7 +53,7 @@ export default function ImportantLinks({ country }) {
         {/* Links Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-4">
           {links.map((item, idx) => (
-            <Link
+            <a
               key={idx}
               href={item.url}
               className="group flex items-center justify-between p-4 border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition bg-white"
@@ -69,7 +69,7 @@ export default function ImportantLinks({ country }) {
                 size={18}
                 className="text-black group-hover:text-sky-500 transition"
               />
-            </Link>
+            </a>
           ))}
         </div>
 

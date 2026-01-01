@@ -32,12 +32,12 @@ const Section4 = ({ heading }) => {
             {heading}
           </motion.h2>
 
-          <Link
+          <a
             href="/search-global-trade-data"
             className="inline-block bg-blue-600 text-white font-semibold text-md px-8 py-3 mt-3 shadow-md transition-all duration-200 hover:scale-105"
           >
             Explore More →
-          </Link>
+          </a>
         </div>
 
         {/* Right Image */}

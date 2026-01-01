@@ -198,7 +198,7 @@ const Hero = () => {
               key={industry.id}
               className="bg-white  overflow-hidden shadow-xl  hover:shadow-2xl transition-all  duration-300 border border-slate-200"
             >
-              <Link href={industry.link} prefetch={false}>
+              <a href={industry.link} >
                 <div className="h-48 overflow-hidden cursor-pointer">
                   <img
   src={industry.image}
@@ -207,10 +207,10 @@ const Hero = () => {
   className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
 />
                 </div>
-              </Link>
+              </a>
 
               <div className="p-6 space-y-3">
-                <Link href={industry.link}>
+                <a href={industry.link}>
                   <div className="space-y-1 cursor-pointer">
                     <h3 className="text-xl sm:text-2xl text-black  font-extrabold  tracking-tight">
                       {industry.name}
@@ -219,7 +219,7 @@ const Hero = () => {
                       {industry.subheading}
                     </h4>
                   </div>
-                </Link>
+                </a>
 
 <p className="text-black text-sm leading-relaxed h-16 overflow-hidden text-ellipsis line-clamp-4">
   {industry.description}
@@ -227,7 +227,7 @@ const Hero = () => {
                 <div className='w-full text-center'>
 
                 
-                <Link href={industry.link} >
+                <a href={industry.link} >
                   <span className="inline-flex text-md items-center mt-4  px-5 py-2 bg-blue-600 text-white hover:scale-105  font-semibold transition-all duration-300 shadow-md group">
                     Gain Insight
                     <svg
@@ -240,7 +240,7 @@ const Hero = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                     </svg>
                   </span>
-                </Link>
+                </a>
                 </div>
               </div>
             </div>

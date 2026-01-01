@@ -14,9 +14,9 @@ const ImportExportSection = () => {
       </p>
     </div>
     <div className="flex justify-center">
-      <Link href="/import-export-data-country-wise" className="relative text-xl cursor-pointer inline-flex items-center justify-center px-6 py-2 overflow-hidden font-semibold text-white transition-all duration-300  bg-blue-600  hover:scale-105">
+      <a href="/import-export-data-country-wise" className="relative text-xl cursor-pointer inline-flex items-center justify-center px-6 py-2 overflow-hidden font-semibold text-white transition-all duration-300  bg-blue-600  hover:scale-105">
              Explore More
-              </Link>
+              </a>
     </div>
   </div>
 </section>

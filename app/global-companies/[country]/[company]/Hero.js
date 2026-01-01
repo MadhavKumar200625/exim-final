@@ -39,13 +39,13 @@ const Hero = ({ heading }) => {
                 {tab.name}
               </span>
             ) : (
-              <Link
+              <a
               key={i}
               href="/pricing"
               className="px-5 py-2 border border-black/30 text-black/50 rounded-lg font-medium hover:text-black hover:border-black/50 transition cursor-pointer"
             >
               {tab.name}
-            </Link>
+            </a>
             
             )
           )}

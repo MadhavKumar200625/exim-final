@@ -59,13 +59,13 @@ export default function Page() {
             GET GLOBAL TRADE DATA ONLINE AT YOUR FINGERTIPS!
           </h2>
 
-          <Link
+          <a
             href="/contact"
             className="flex items-center gap-3 bg-blue-600 text-white text-lg px-6 py-3 font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200"
           >
             Schedule a Demo
             <ArrowRight size={20} />
-          </Link>
+          </a>
         </div>
       </section>
     </main>

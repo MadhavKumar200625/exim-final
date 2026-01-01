@@ -34,9 +34,9 @@ export default function CountryStatsSection() {
         {/* simple crawlable links only */}
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2 text-sm">
           {countries.map((c) => (
-            <Link prefetch={false} key={c.name} href={c.link_main} className="text-blue-700 hover:underline">
+            <a  key={c.name} href={c.link_main} className="text-blue-700 hover:underline">
               {c.name} Import Export Data
-            </Link>
+            </a>
           ))}
         </div>
       </section>
@@ -93,7 +93,7 @@ export default function CountryStatsSection() {
         <div className="w-full pb-10 h-94 overflow-y-auto">
           <div className="grid grid-cols-2 px-4 lg:grid-cols-3 xl:grid-cols-5">
             {filteredCountries.map((country) => (
-              <Link prefetch={false} key={country.name} href={country.link_main}>
+              <a  key={country.name} href={country.link_main}>
                 <div
                   className="cursor-pointer py-2 rounded-3xl hover:shadow-3xl hover:scale-[1.02] transition-all duration-300 text-center space-y-2"
                 >
@@ -110,7 +110,7 @@ export default function CountryStatsSection() {
                     {country.name}
                   </h3>
                 </div>
-              </Link>
+              </a>
             ))}
           </div>
         </div>

@@ -31,11 +31,11 @@ const Hero = () => {
             comprehensive data solution, then you can partner with us.
           </p>
 
-          <Link href="mailto:info@eximtradedata.com">
+          <a href="mailto:info@eximtradedata.com">
             <button className="relative overflow-hidden px-6 mx-1 py-3 bg-blue-600 cursor-pointer text-white text-md hover:scale-105  transition-all    font-semibold shadow-md group">
               Email Us 
             </button>
-          </Link>
+          </a>
         </div>
       </div>
     </section>

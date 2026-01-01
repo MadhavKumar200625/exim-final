@@ -77,12 +77,12 @@ export default function DetailedTable({ country }) {
 
         {/* CTA */}
         <div className="mt-12 text-center">
-          <Link
+          <a
             href="/contact"
             className="inline-block bg-sky-600 text-white font-semibold px-6 py-3 rounded hover:bg-sky-700 transition"
           >
             Unlock Complete Trade Data
-          </Link>
+          </a>
         </div>
       </div>
     </section>

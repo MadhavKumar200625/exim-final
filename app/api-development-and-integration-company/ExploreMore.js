@@ -72,24 +72,24 @@ const ExploreMore = () => {
                 <p className="text-black text-sm mt-2 line-clamp-3 leading-relaxed">
                   {industry.description}
                 </p>
-                <Link
+                <a
                   href={`${industry.link}`}
                   className="mt-3 inline-block text-sm font-medium text-blue-600"
                 >
                   Learn more →
-                </Link>
+                </a>
               </div>
             </div>
           ))}
         </div>
 
         <div className="mt-16 text-center">
-          <Link
+          <a
             href="/industries-covered"
             className="inline-block bg-blue-600 text-white font-semibold text-lg px-7 py-3 hover:scale-105 shadow-md transition-all duration-300"
           >
             Explore More
-          </Link>
+          </a>
         </div>
       </div>
     </section>

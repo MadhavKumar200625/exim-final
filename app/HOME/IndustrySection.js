@@ -108,14 +108,14 @@ export default function IndustrySection() {
                 </h3>
                 <p className="text-sm text-black">{industry.desc}</p>
 
-                <Link
+                <a
                   href={`/${industry.link.toLowerCase()}`}
-                  prefetch={false}
+                  
                 >
                   <button className="mt-2 w-fit bg-[#0067b8] text-white text-sm px-4 py-2 shadow-md hover:bg-[#005fa3] transition-all">
                     Read More →
                   </button>
-                </Link>
+                </a>
               </div>
             </div>
           ))}

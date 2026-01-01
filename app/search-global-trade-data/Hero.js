@@ -43,13 +43,13 @@ const Hero = () => {
             risk involved in the business.
           </p>
 
-          <Link
+          <a
             href="/pricing"
-            prefetch={false}
+            
             className="inline-block bg-blue-600 text-white text-lg px-6 py-3 font-medium shadow hover:scale-105 transition-transform"
           >
             Schedule Demo
-          </Link>
+          </a>
         </div>
       </div>
     </section>

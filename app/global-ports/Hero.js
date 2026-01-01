@@ -34,19 +34,19 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 pt-2">
-            <Link
+            <a
               href="/pricing"
               className="relative overflow-hidden px-6 mx-1 py-3 bg-blue-600 cursor-pointer text-white text-md hover:scale-105 transition-all font-semibold shadow-xl"
             >
               Schedule a Demo
-            </Link>
+            </a>
 
-            <Link
+            <a
               href="/api-development-and-integration-company"
               className="relative overflow-hidden px-6 mx-1 py-3 bg-blue-600 cursor-pointer text-white text-md hover:scale-105 transition-all font-semibold shadow-xl"
             >
               Get API Access
-            </Link>
+            </a>
           </div>
         </div>
 

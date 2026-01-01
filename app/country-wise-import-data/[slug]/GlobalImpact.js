@@ -40,12 +40,12 @@ const GlobalImpact = ({ points = [] }) => {
 
           {/* CTA */}
           <div className="flex justify-center md:justify-start">
-            <Link
+            <a
               href="/pricing"
               className="bg-blue-600 text-lg text-white px-6 py-2 shadow hover:scale-105 transition inline-flex"
             >
               Get Free Trial
-            </Link>
+            </a>
           </div>
         </div>
       </div>

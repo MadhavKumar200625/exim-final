@@ -23,19 +23,19 @@ export default function Hero({ country, hero }) {
           </p>
 
           <div className="flex gap-4">
-            <Link
+            <a
               href={hero?.onlineDataLink || "/pricing"}
               className="bg-blue-600 text-lg text-white px-6 py-2 shadow hover:scale-105 transition"
             >
               {hero?.onlineDataText || "Online Data"}
-            </Link>
+            </a>
 
-            <Link
+            <a
               href={hero?.offlineDataLink || "/contact"}
               className="bg-white border border-blue-600 text-lg text-black px-6 py-2 shadow hover:scale-105 transition"
             >
               {hero?.offlineDataText || "Offline Data"}
-            </Link>
+            </a>
           </div>
         </div>
 

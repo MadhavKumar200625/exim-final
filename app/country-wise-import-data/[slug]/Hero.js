@@ -39,19 +39,19 @@ const Hero = ({ country, hero }) => {
 
         {/* CTAs */}
         <div className="flex flex-wrap gap-4 pt-2">
-          <Link
+          <a
             href={hero?.onlineDataLink || "/pricing"}
             className="bg-blue-600 text-white text-lg px-6 py-2 shadow hover:scale-105 transition"
           >
             {hero?.onlineDataText || "Online Data"}
-          </Link>
+          </a>
 
-          <Link
+          <a
             href={hero?.offlineDataLink || "/contact"}
             className="border border-blue-600 text-black text-lg px-6 py-2 shadow hover:scale-105 transition"
           >
             {hero?.offlineDataText || "Offline Data"}
-          </Link>
+          </a>
         </div>
 
       </div>

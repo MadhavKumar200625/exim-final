@@ -47,12 +47,12 @@ const Overview = ({ companyName = "", data = {} }) => {
           trends with confidence.
         </p>
 
-        <Link
+        <a
           href="/pricing"
           className="inline-flex items-center justify-center bg-blue-600 text-white px-5 py-3 rounded-xl text-lg font-medium shadow hover:bg-blue-700 transition"
         >
           Schedule Demo <ArrowRight className="w-4 h-4 ml-2" />
-        </Link>
+        </a>
       </div>
     </section>
   );

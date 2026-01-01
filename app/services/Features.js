@@ -11,9 +11,9 @@ const features = [
   <>
     Easily organize fresh and old data. Dashboards, shipping records, and custom
     fields including{" "}
-    <Link href="/global-hs-code-list" className="text-blue-600 underline">
+    <a href="/global-hs-code-list" className="text-blue-600 underline">
       HS codes
-    </Link>{" "}
+    </a>{" "}
     are all accessible on the move.
   </>,
   "Access the latest import export trade data & business intelligence reports, equipped with cutting-edge features and reliable global trade.",

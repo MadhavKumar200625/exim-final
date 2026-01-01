@@ -47,12 +47,12 @@ export default function GlobalImpact({ points = [] }) {
 
           {/* CTA */}
           <div className="flex justify-center md:justify-start">
-            <Link
+            <a
               href="/pricing"
               className="bg-blue-600 text-lg text-white px-6 py-2 flex items-center justify-center shadow hover:scale-105 transition"
             >
               Get Free Trial
-            </Link>
+            </a>
           </div>
         </div>
 

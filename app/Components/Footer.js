@@ -357,52 +357,52 @@ const countries = Object.entries(countryCodes).filter(([name]) =>
             G-232, Noida Sector-63, Uttar Pradesh - 201301, India
             <br />
             <span className="block mt-2">+91-9625812393</span>
-            <Link
+            <a
               href="mailto:Info@eximtradedata.com"
-              prefetch={false}
+              
               className="underline"
             >
               Info@eximtradedata.com
-            </Link>
+            </a>
           </div>
 
           {/* Social Icons */}
           <div className="mt-12 flex gap-5">
-            <Link
+            <a
               href="https://www.facebook.com/eximtradedataofficial"
               target="_blank"
               rel="noopener noreferrer"
-              prefetch={false}
+              
             >
               <Facebook className="w-6 h-6 text-black" />
-            </Link>
+            </a>
 
-            <Link
+            <a
               href="https://www.instagram.com/eximtradedata/"
               target="_blank"
               rel="noopener noreferrer"
-              prefetch={false}
+              
             >
               <Instagram className="w-6 h-6 text-black" />
-            </Link>
+            </a>
 
-            <Link
+            <a
               href="https://www.linkedin.com/company/exim-trade-data"
               target="_blank"
               rel="noopener noreferrer"
-              prefetch={false}
+              
             >
-              <Linkedin className="w-6 h-6 text-black" />
-            </Link>
+              <aedin className="w-6 h-6 text-black" />
+            </a>
 
-            <Link
+            <a
               href="https://www.youtube.com/channel/UCsbKPsVwgAgqJi4EB20iBvg"
               target="_blank"
               rel="noopener noreferrer"
-              prefetch={false}
+              
             >
               <Youtube className="w-6 h-6 text-black" />
-            </Link>
+            </a>
           </div>
         </div>
 
@@ -417,9 +417,9 @@ const countries = Object.entries(countryCodes).filter(([name]) =>
                 Support
               </h4>
               <ul className="space-y-1 text-black">
-                <li><Link href="/contact" prefetch={false}>Contact Us</Link></li>
-                <li><Link href="/faq" prefetch={false}>Faqs</Link></li>
-                <li><Link href="/pricing" prefetch={false}>Pricing</Link></li>
+                <li><a href="/contact" >Contact Us</a></li>
+                <li><a href="/faq" >Faqs</a></li>
+                <li><a href="/pricing" >Pricing</a></li>
               </ul>
             </div>
 
@@ -429,9 +429,9 @@ const countries = Object.entries(countryCodes).filter(([name]) =>
                 Legal
               </h4>
               <ul className="space-y-1 text-black">
-                <li><Link href="/privacy" prefetch={false}>Privacy Policy</Link></li>
-                <li><Link href="/terms" prefetch={false}>Terms & Conditions</Link></li>
-                <li><Link href="/refund-policy" prefetch={false}>Refunds Policy</Link></li>
+                <li><a href="/privacy" >Privacy Policy</a></li>
+                <li><a href="/terms" >Terms & Conditions</a></li>
+                <li><a href="/refund-policy" >Refunds Policy</a></li>
               </ul>
             </div>
 
@@ -441,9 +441,9 @@ const countries = Object.entries(countryCodes).filter(([name]) =>
                 Company
               </h4>
               <ul className="space-y-1 text-black">
-                <li><Link href="/about" prefetch={false}>About</Link></li>
-                <li><Link href="/services" prefetch={false}>Why Choose Us</Link></li>
-                <li><Link href="/our-client" prefetch={false}>Our Clients</Link></li>
+                <li><a href="/about" >About</a></li>
+                <li><a href="/services" >Why Choose Us</a></li>
+                <li><a href="/our-client" >Our Clients</a></li>
               </ul>
             </div>
           </div>
