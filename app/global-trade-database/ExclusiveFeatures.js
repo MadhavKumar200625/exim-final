@@ -4,7 +4,7 @@ const benefits = [
   {
     title: "200+ Countries Shipment Records",
     desc: "Our Global trade information system gives you instant access to the 200+ countries shipment records including exclusive countries. You can explore new markets, top products in demand by quantity and value that helps you analyze production quantity and build a competitive pricing strategy.",
-    image: "/global-trade-database/200-plus-countries-shipment-records.webp",
+    image: "/global-trade-database/200-countries-shipment-records.webp",
   },
   {
     title: "Impressive Visual Reports",
@@ -47,7 +47,7 @@ const benefits = [
         .
       </>
     ),
-    image: "/global-trade-database/customer-support.webp",
+    image: "/global-trade-database/24×7-customer-support.webp",
   },
 ];
 

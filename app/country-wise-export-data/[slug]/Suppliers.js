@@ -46,7 +46,7 @@ export default function Suppliers({ country, data = [] }) {
         <div className="flex justify-center lg:justify-end">
           <div className="w-full max-w-xs sm:max-w-sm">
             <img
-              src="https://old-net.eximtradedata.com/images/port-card.webp"
+              src="/countries/common-dashboard.webp"
               alt={`${country} exporters and suppliers`}
               width={500}
               height={600}

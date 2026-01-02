@@ -35,7 +35,7 @@ const benefits = [
     desc: "Form your import-export trade strategy based on the current market scenario with our customized global import-export trade data and stay ahead of the market competition.",
   },
   {
-    img: "find-ideal-business-match.webp",
+    img: "find-an-ideal-match-to-meet-your-business.webp",
     title: "Find an Ideal Match to Meet Your Business",
     desc: "Target relevant and potential audiences and markets for your trade business with Exim's import-export trade data and enhance the overall productivity of your trade business.",
   },

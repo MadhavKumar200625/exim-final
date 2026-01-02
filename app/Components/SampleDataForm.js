@@ -214,11 +214,11 @@ const SampleDataForm = ({ isOpen, onClose }) => {
       return;
     }
 
-    const fullPhone = `${countryCodes[selectedCountryCode].code}${phone}`;
+    const fullPhone = `${selectedCountryCode}${phone}`;
 
     try {
       setLoading(true);
-      await fetch("/api/requestForm", {
+      await fetch("/api/get-started", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -226,7 +226,7 @@ const SampleDataForm = ({ isOpen, onClose }) => {
           company,
           type,
           email,
-          phone: fullPhone,
+          mobile: fullPhone,
           message,
           country,
         }),

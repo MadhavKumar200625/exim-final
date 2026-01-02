@@ -4,22 +4,22 @@ const benefits = [
   {
     title: "Visual Reports",
     desc: "Find the spot on visual reports for comprehensive market research. Discover top 10 HS codes, month wise, country wise, Importer Exporter wise shipment records. Utilize this information for crucial business decisions.",
-    image: "/offer-pricing-images/visual_reports.svg",
+    image: "/VISUAL-REPORT.webp",
   },
   {
     title: "Product Trends",
     desc: "Stay ahead of your competition with the latest market trends. Discover the latest product trends by HS Code, Chapter, Heading, Subheading, Destination Country, Exporter, Exporter District & State, Mode of Transport, and Port of Discharge/Loading etc.",
-    image: "/offer-pricing-images/product_trends.svg",
+    image: "/PRODUCT-TRENDS.webp",
   },
   {
     title: "Advance Search",
-    desc: "Keeping the user convenience in mind, we have advance search option that help you to sort the information as per your requirement. You can select country, data type, data duration, & product. Also, you can download your search query results in excel/pdf format.",
-    image: "/offer-pricing-images/advance_search.svg",
+    desc: "Keeping the user convenience in mind, we have an advanced search option that helps you sort the information as per your requirement. You can select country, data type, data duration, and product. Also, you can download your search query results in Excel/PDF format.",
+    image: "/ADVANCE-SEARCH.webp",
   },
   {
     title: "Importer Exporter Tree",
-    desc: "Find product sourcing, new buyers and suppliers through our Importer Exporter Tree. It helps you identify the 3 levels of the network of Importers and Exporters. That helps you gain quality business leads and expand your market at the international level.",
-    image: "/offer-pricing-images/import_export_tree.svg",
+    desc: "Find product sourcing, new buyers, and suppliers through our Importer Exporter Tree. It helps you identify the 3 levels of the network of Importers and Exporters. That helps you gain quality business leads and expand your market at the international level.",
+    image: "/Importer-Exporter-Tree.webp",
   },
 ];
 
@@ -40,11 +40,11 @@ export default function EximBenefitsSection() {
             >
               <div className="w-24 h-24 mx-auto mb-4">
                 <img
-  src={benefit.image}
+  src={`/pricing${benefit.image}`}
   alt={benefit.title}
   loading="lazy"
   decoding="async"
-  className="w-24 h-24 mx-auto bg-linear-to-br from-blue-800 to-blue-600 shadow-md"
+  className="w-24 h-24 mx-auto "
 />
               </div>
               <h3 className="text-lg md:text-xl font-semibold text-black my-3">{benefit.title}</h3>

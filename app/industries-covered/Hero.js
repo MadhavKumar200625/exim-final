@@ -33,7 +33,7 @@ image:"/solutions/energy.webp",
     id: 4,
     name: 'Research & Consulting',
     subheading: 'Global Trade Intelligence Platform for Research & Consulting Companies',
-image:"/solutions/research_and_consulting.webp",
+image:"/solutions/research-and-consulting.webp",
     description:
       'Empower your market research through our global trade intelligence platform. Make more accurate decisions based on our business intelligence reports. Identify the most profitable markets by HSN Code, product details, quantity, price, port shipments, country, buyers, and supplier details. Reach to the top trading companies through our global companies list and discover the potential business growth opportunities.',
     link: 'research-and-consulting'
@@ -51,7 +51,7 @@ image:"/solutions/corporation.webp",
     id: 6,
     name: 'Asset Management',
     subheading: 'Best Market Research Platform for Assets & Investment Companies',
-image:"/solutions/asset_management.webp",
+image:"/solutions/asset-management.webp",
     description:
       'Exim Trade Data provides the best market research platform for assets and investment companies. Explore the tons of global import and export companies’ profiles. Get into their shipment activities, identify their top assets and evaluate their market share. Identify the most profitable opportunities for investment and enhance your company’s assets.',
     link: 'asset-management'
@@ -60,7 +60,7 @@ image:"/solutions/asset_management.webp",
     id: 7,
     name: 'Goverment Agencies',
     subheading: 'Market Intelligence Platform for Government Agencies',
-image:"/solutions/government_agencies.webp",
+image:"/solutions/government-agencies.webp",
     description:
       'Exim Trade Data provides the best global market intelligence platform for government agencies. We help government bodies in analyzing the international market trends, demand, risks and trade forecasts. We provide comprehensive business reports that assist them in making accurate strategic decisions, framing trade policies, adding tariffs and generating more revenue on goods and services.',
     link: 'government-agencies'
@@ -69,7 +69,7 @@ image:"/solutions/government_agencies.webp",
     id: 8,
     name: 'Law Firms',
     subheading: 'Expert Trade Data Solutions for Law Firms & Legal Professionals',
-image:"/solutions/law_firms.webp",
+image:"/solutions/law-firms.webp",
     description:
       'Exim Trade Data provides the expert data solutions for Law firms & legal professionals. Get a track of the global market trends, trade policies regarding goods through our comprehensive market intelligence reports. Discover the key performing factors through our reports and identify the growth opportunities to expand your relationships.',
     link: 'law-firms'
@@ -78,7 +78,7 @@ image:"/solutions/law_firms.webp",
     id: 9,
     name: 'Importers',
     subheading: 'Leading Trade Intelligence Platform for Global Importers',
-image:"/solutions/importer.webp",
+image:"/solutions/importers.webp",
     description:
       'Reach out to the leading suppliers, retailers and distributers across the globe through our global exporters’ database. Get in-depth visibility into their shipment activities and find out the potential business prospects. Expand your network to the international market by identifying the most profitable investment opportunities.',
     link: 'importers'
@@ -96,7 +96,7 @@ image:"/solutions/exporters.webp",
     id: 11,
     name: 'Supply Chain & Logistics',
     subheading: 'The Leading Trade Intelligence Platform for Supply Chain & Logistics Companies',
-image:"/solutions/logistic.webp",
+image:"/solutions/logistics.webp",
     description:
       'Exim Trade Data provides the best market research platform for supply chain & logistics companies. Get the detailed insights on global ports shipments, cargo volumes, and import-export companies along with product description, HS Code, quantity, price, unit, and country of origin. Identify the sales opportunities and increase profitability. Our data assists you with the procurement and sourcing process for your business. Ensure efficient supply chain operations and achieve your business goals.',
     link: 'supply-chain-and-logistics'
@@ -105,7 +105,7 @@ image:"/solutions/logistic.webp",
     id: 12,
     name: 'IT & Consulting',
     subheading: 'Revolutionize your business through our Trade Intelligence Platform',
-image:"/solutions/it_and_consulting.webp",
+image:"/solutions/it-and-consulting.webp",
     description:
       'Transform your business through Exim Trade Data Market Intelligence Platform. Get in-depth insights into the global market trends, demand, and technologies. Utilize these valuable insights to refine your services and ensure seamless experience for your customers.',
     link: 'it-and-consulting'
@@ -114,7 +114,7 @@ image:"/solutions/it_and_consulting.webp",
     id: 13,
     name: 'Insurance Companies',
     subheading: 'Seek Business Growth with our Market Intelligence Platform',
-image:"/solutions/insurance_companies.webp",
+image:"/solutions/insurance-companies.webp",
     description:
       'Refine your services with expert business intelligence reports. Get a more detailed financial overview of global import export companies, trading goods and countries. Utilize these valuable statistics to identify risks, fraud claims and investment opportunities. Enhance your customer base through our Market Intelligence Platform.',
     link: 'insurance-companies'
@@ -159,7 +159,7 @@ image:"/solutions/chemical.webp",
     id: 18,
     name: 'Sales & Marketing',
     subheading: 'Boost your sales & Marketing Business with a Market Intelligence Report.',
-image:"/solutions/sales_and_marketing.webp",
+image:"/solutions/sales-and-marketing.webp",
     description:
       'Discover the business opportunities in the global trade market and facilitate your business growth through a research solution report of Exim Trade Data. Collect the in-depth international trade market insights report of top import-export commodities, top Buyers & suppliers, and top shipment data. for enhancing your Sales & Marketing Business.',
     link: 'sales-and-marketing'
@@ -168,7 +168,7 @@ image:"/solutions/sales_and_marketing.webp",
     id: 19,
     name: 'Academic & Education',
     subheading: 'Collect the customized market intelligence report of Academic & Educational Institutions',
-image:"/solutions/academic_and_education.webp",
+image:"/solutions/academic-and-education.webp",
     description:
       'Exim Trade Data is the best market intelligence platform for providing the in-depth market insight report on Academic & Educational Institutions. Our trade data helps you to stand out amongst your competitors and gather the most accurate knowledge of market trends, technologies, and customer base.',
     link: 'academic-and-education'
@@ -177,7 +177,7 @@ image:"/solutions/academic_and_education.webp",
     id: 20,
     name: 'Aerospace & Defence',
     subheading: 'Collect the Real-time analytic report of Aerospace & Defence',
-image:"/solutions/aerospace_and_defence.webp",
+image:"/solutions/aerospace-and-defence.webp",
     description:
       'Exim Trade Data is the most prominent global market intelligence platform for Aerospace & Defence. Our trade market intelligence report helps Aerospace & Defence agencies to stay up-to-date with the latest market trends, technologies, and demand. Explore the aerospace market through the Customized Trade Intelligence report.',
     link: 'aerospace-and-defence'

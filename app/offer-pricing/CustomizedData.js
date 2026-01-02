@@ -8,7 +8,7 @@ const CustomizedData = () => {
         {/* Left Image */}
         <div className="flex justify-center">
          <img
-  src="offer-pricing-images/custom-dashboard.png"
+  src="/countries/common-dashboard.webp"
   alt="Customized Import Export Data Dashboard"
   loading="lazy"
   decoding="async"

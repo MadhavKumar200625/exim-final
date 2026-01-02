@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Script from "next/script";
 import { useState, useEffect } from "react";
-import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Youtube ,XIcon} from "lucide-react";
 
 export default function Footer() {
   // 🤖 bot detection
@@ -393,7 +393,7 @@ const countries = Object.entries(countryCodes).filter(([name]) =>
               rel="noopener noreferrer"
               
             >
-              <aedin className="w-6 h-6 text-black" />
+              <Linkedin className="w-6 h-6 text-black" />
             </a>
 
             <a
@@ -404,6 +404,40 @@ const countries = Object.entries(countryCodes).filter(([name]) =>
             >
               <Youtube className="w-6 h-6 text-black" />
             </a>
+
+            <a
+  href="https://in.pinterest.com/Exim_Trade_Data"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    width="24"
+    height="24"
+    fill="currentColor"
+    className="text-black hover:text-red-600 transition-colors"
+  >
+    <path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.66 7.86 6.38 9.33-.09-.79-.17-2.01.03-2.88.18-.77 1.17-4.9 1.17-4.9s-.3-.6-.3-1.48c0-1.39.81-2.43 1.82-2.43.86 0 1.27.65 1.27 1.42 0 .86-.55 2.15-.83 3.35-.23.99.5 1.8 1.47 1.8 1.76 0 3.11-1.86 3.11-4.54 0-2.37-1.7-4.03-4.13-4.03-2.81 0-4.46 2.11-4.46 4.29 0 .86.33 1.78.74 2.28.08.1.09.19.07.3-.08.33-.25 1.04-.29 1.18-.05.19-.16.23-.38.14-1.41-.66-2.29-2.73-2.29-4.39 0-3.57 2.6-6.85 7.49-6.85 3.93 0 6.99 2.8 6.99 6.55 0 3.91-2.47 7.06-5.89 7.06-1.15 0-2.23-.6-2.6-1.3l-.71 2.71c-.26.99-.96 2.23-1.43 2.98A10 10 0 1 0 12 2z" />
+  </svg>
+</a>
+
+<a
+  href="https://x.com/eximtradedata"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    width="24"
+    height="24"
+    fill="currentColor"
+    className="text-black hover:text-gray-700 transition-colors"
+  >
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.656l-5.214-6.817-5.966 6.817H1.68l7.73-8.835L1.254 2.25h6.822l4.713 6.231 5.455-6.231Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z"/>
+  </svg>
+</a>
           </div>
         </div>
 

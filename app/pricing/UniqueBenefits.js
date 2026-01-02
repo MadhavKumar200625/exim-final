@@ -4,22 +4,22 @@ const benefits = [
   {
     title: "Visual Reports",
     desc: "Find the spot on visual reports for comprehensive market research. Discover top 10 HS codes, month wise, country wise, Importer Exporter wise shipment records. Utilize this information for crucial business decisions.",
-    image: "/visual_reports.svg",
+    image: "/VISUAL-REPORT.webp",
   },
   {
     title: "Product Trends",
     desc: "Stay ahead of your competition with the latest market trends. Discover the latest product trends by HS Code, Chapter, Heading, Subheading, Destination Country, Exporter, Exporter District & State, Mode of Transport, and Port of Discharge/Loading etc.",
-    image: "/product_trends.svg",
+    image: "/PRODUCT-TRENDS.webp",
   },
   {
     title: "Advance Search",
     desc: "Keeping the user convenience in mind, we have an advanced search option that helps you sort the information as per your requirement. You can select country, data type, data duration, and product. Also, you can download your search query results in Excel/PDF format.",
-    image: "/advance_search.svg",
+    image: "/ADVANCE-SEARCH.webp",
   },
   {
     title: "Importer Exporter Tree",
     desc: "Find product sourcing, new buyers, and suppliers through our Importer Exporter Tree. It helps you identify the 3 levels of the network of Importers and Exporters. That helps you gain quality business leads and expand your market at the international level.",
-    image: "/import_export_tree.svg",
+    image: "/Importer-Exporter-Tree.webp",
   },
 ];
 
@@ -47,7 +47,7 @@ export default function EximBenefitsSection() {
                   alt={benefit.title}
                   loading="lazy"
                   decoding="async"
-                  className="w-24 h-24 bg-linear-to-br from-blue-800 to-blue-600 shadow-md"
+                  className="w-24 h-24 "
                 />
               </div>
 
