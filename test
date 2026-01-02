@@ -4,6 +4,15 @@ rewrite ^/country-wise-(armenia)-import-data/?$ /country-wise-import-data/$1 bre
 rewrite ^/country-wise-(armenia)-export-data/?$ /country-wise-export-data/$1 break;
 
 
+rewrite ^/country-wise-(azerbaijan)-import-and-export-data/?$ /country-wise/$1 break;
+rewrite ^/country-wise-(azerbaijan)-import-data/?$ /country-wise-import-data/$1 break;
+rewrite ^/country-wise-(azerbaijan)-export-data/?$ /country-wise-export-data/$1 break;
+
+
+rewrite ^/country-wise-(korea)-import-and-export-data/?$ /country-wise/$1 break;
+rewrite ^/country-wise-(korea)-import-data/?$ /country-wise-import-data/$1 break;
+rewrite ^/country-wise-(korea)-export-data/?$ /country-wise-export-data/$1 break;
+
 # Bahrain
 rewrite ^/country-wise-(bahrain)-import-and-export-data/?$ /country-wise/$1 break;
 rewrite ^/country-wise-(bahrain)-import-data/?$ /country-wise-import-data/$1 break;
@@ -24,6 +33,14 @@ rewrite ^/country-wise-(hongkong)-import-and-export-data/?$ /country-wise/$1 bre
 rewrite ^/country-wise-(hongkong)-import-data/?$ /country-wise-import-data/$1 break;
 rewrite ^/country-wise-(hongkong)-export-data/?$ /country-wise-export-data/$1 break;
 
+rewrite ^/country-wise-(kuwait)-import-and-export-data/?$ /country-wise/$1 break;
+rewrite ^/country-wise-(kuwait)-import-data/?$ /country-wise-import-data/$1 break;
+rewrite ^/country-wise-(kuwait)-export-data/?$ /country-wise-export-data/$1 break;
+
+
+rewrite ^/country-wise-(maldives)-import-and-export-data/?$ /country-wise/$1 break;
+rewrite ^/country-wise-(maldives)-import-data/?$ /country-wise-import-data/$1 break;
+rewrite ^/country-wise-(maldives)-export-data/?$ /country-wise-export-data/$1 break;
 # Iran
 rewrite ^/country-wise-(iran)-import-and-export-data/?$ /country-wise/$1 break;
 rewrite ^/country-wise-(iran)-import-data/?$ /country-wise-import-data/$1 break;
@@ -76,9 +93,9 @@ rewrite ^/country-wise-(qatar)-import-data/?$ /country-wise-import-data/$1 break
 rewrite ^/country-wise-(qatar)-export-data/?$ /country-wise-export-data/$1 break;
 
 # Sri Lanka
-rewrite ^/country-wise-(srilanka)-import-and-export-data/?$ /country-wise/$1 break;
-rewrite ^/country-wise-(srilanka)-import-data/?$ /country-wise-import-data/$1 break;
-rewrite ^/country-wise-(srilanka)-export-data/?$ /country-wise-export-data/$1 break;
+rewrite ^/(sri-lanka)-import-and-export-data/?$ /country-wise/$1 break;
+rewrite ^/(sri-lanka)-import-data/?$ /country-wise-import-data/$1 break;
+rewrite ^/(sri-lanka)-export-data/?$ /country-wise-export-data/$1 break;
 
 
 # Syria
@@ -126,6 +143,16 @@ rewrite ^/country-wise-(burkina-faso)-export-data/?$ /country-wise-export-data/$
 rewrite ^/country-wise-(burundi)-import-and-export-data/?$ /country-wise/$1 break;
 rewrite ^/country-wise-(burundi)-import-data/?$ /country-wise-import-data/$1 break;
 rewrite ^/country-wise-(burundi)-export-data/?$ /country-wise-export-data/$1 break;
+
+
+rewrite ^/country-wise-(south-africa)-import-and-export-data/?$ /country-wise/$1 break;
+rewrite ^/country-wise-(south-africa)-import-data/?$ /country-wise-import-data/$1 break;
+rewrite ^/country-wise-(south-africa)-export-data/?$ /country-wise-export-data/$1 break;
+
+rewrite ^/country-wise-(tunisia)-import-and-export-data/?$ /country-wise/$1 break;
+rewrite ^/country-wise-(tunisia)-import-data/?$ /country-wise-import-data/$1 break;
+rewrite ^/country-wise-(tunisia)-export-data/?$ /country-wise-export-data/$1 break;
+
 
 # Austria
 rewrite ^/country-wise-(austria)-import-and-export-data/?$ /country-wise/$1 break;
@@ -277,6 +304,7 @@ rewrite ^/country-wise-(slovenia)-import-and-export-data/?$ /country-wise/$1 bre
 rewrite ^/country-wise-(slovenia)-import-data/?$ /country-wise-import-data/$1 break;
 rewrite ^/country-wise-(slovenia)-export-data/?$ /country-wise-export-data/$1 break;
 
+
 # Spain
 rewrite ^/country-wise-(spain)-import-and-export-data/?$ /country-wise/$1 break;
 rewrite ^/country-wise-(spain)-import-data/?$ /country-wise-import-data/$1 break;
@@ -347,21 +375,10 @@ rewrite ^/country-wise-(nicaragua)-import-and-export-data/?$ /country-wise/$1 br
 rewrite ^/country-wise-(nicaragua)-import-data/?$ /country-wise-import-data/$1 break;
 rewrite ^/country-wise-(nicaragua)-export-data/?$ /country-wise-export-data/$1 break;
 
-# Panama
-rewrite ^/country-wise-(panama)-import-and-export-data/?$ /country-wise/$1 break;
-rewrite ^/country-wise-(panama)-import-data/?$ /country-wise-import-data/$1 break;
-rewrite ^/country-wise-(panama)-export-data/?$ /country-wise-export-data/$1 break;
-
 # Chile
 rewrite ^/country-wise-(chile)-import-and-export-data/?$ /country-wise/$1 break;
 rewrite ^/country-wise-(chile)-import-data/?$ /country-wise-import-data/$1 break;
 rewrite ^/country-wise-(chile)-export-data/?$ /country-wise-export-data/$1 break;
-
-# Colombia
-rewrite ^/country-wise-(colombia)-import-and-export-data/?$ /country-wise/$1 break;
-rewrite ^/country-wise-(colombia)-import-data/?$ /country-wise-import-data/$1 break;
-rewrite ^/country-wise-(colombia)-export-data/?$ /country-wise-export-data/$1 break;
-
 
 # Colombia
 rewrite ^/country-wise-(colombia)-import-and-export-data/?$ /country-wise/$1 break;
@@ -418,21 +435,45 @@ rewrite ^/country-wise-(libya)-import-and-export-data/?$ /country-wise/$1 break;
 rewrite ^/country-wise-(libya)-import-data/?$ /country-wise-import-data/$1 break;
 rewrite ^/country-wise-(libya)-export-data/?$ /country-wise-export-data/$1 break;
 
-# Argentina
-rewrite ^/country-wise-(argentina)-import-and-export-data/?$ /country-wise/$1 break;
-rewrite ^/country-wise-(argentina)-import-data/?$ /country-wise-import-data/$1 break;
-rewrite ^/country-wise-(argentina)-export-data/?$ /country-wise-export-data/$1 break;
+rewrite ^/country-wise-(saudi-arabia)-import-and-export-data/?$ /country-wise/$1 break;
+rewrite ^/country-wise-(saudi-arabia)-import-data/?$ /country-wise-import-data/$1 break;
+rewrite ^/country-wise-(saudi-arabia)-export-data/?$ /country-wise-export-data/$1 break;
 
-# Brazil
-rewrite ^/country-wise-(brazil)-import-and-export-data/?$ /country-wise/$1 break;
-rewrite ^/country-wise-(brazil)-import-data/?$ /country-wise-import-data/$1 break;
-rewrite ^/country-wise-(brazil)-export-data/?$ /country-wise-export-data/$1 break;
+
+rewrite ^/country-wise-(cameroon)-import-and-export-data/?$ /country-wise/$1 break;
+rewrite ^/country-wise-(cameroon)-import-data/?$ /country-wise-import-data/$1 break;
+rewrite ^/country-wise-(cameroon)-export-data/?$ /country-wise-export-data/$1 break;
+
+
+rewrite ^/country-wise-(morocco)-import-and-export-data/?$ /country-wise/$1 break;
+rewrite ^/country-wise-(morocco)-import-data/?$ /country-wise-import-data/$1 break;
+rewrite ^/country-wise-(morocco)-export-data/?$ /country-wise-export-data/$1 break;
+
+rewrite ^/country-wise-(rwanda)-import-and-export-data/?$ /country-wise/$1 break;
+rewrite ^/country-wise-(rwanda)-import-data/?$ /country-wise-import-data/$1 break;
+rewrite ^/country-wise-(rwanda)-export-data/?$ /country-wise-export-data/$1 break;
+
+rewrite ^/country-wise-(bulgaria)-import-and-export-data/?$ /country-wise/$1 break;
+rewrite ^/country-wise-(bulgaria)-import-data/?$ /country-wise-import-data/$1 break;
+rewrite ^/country-wise-(bulgaria)-export-data/?$ /country-wise-export-data/$1 break;
+
+rewrite ^/country-wise-(madagascar)-import-and-export-data/?$ /country-wise/$1 break;
+rewrite ^/country-wise-(madagascar)-import-data/?$ /country-wise-import-data/$1 break;
+rewrite ^/country-wise-(madagascar)-export-data/?$ /country-wise-export-data/$1 break;
+
+
+
+
 
 # Turkey
-rewrite ^/country-wise-(turkey)-import-and-export-data/?$ /country-wise/$1 break;
-rewrite ^/country-wise-(turkey)-import-data/?$ /country-wise-import-data/$1 break;
-rewrite ^/country-wise-(turkey)-export-data/?$ /country-wise-export-data/$1 break;
+rewrite ^/(turkey)-import-and-export-data/?$ /country-wise/$1 break;
+rewrite ^/(turkey)-import-data/?$ /country-wise-import-data/$1 break;
+rewrite ^/(turkey)-export-data/?$ /country-wise-export-data/$1 break;
 
+
+rewrite ^/(india)-import-export-data/?$ /country-wise/$1 break;
+rewrite ^/(india)-import-data/?$ /country-wise-import-data/$1 break;
+rewrite ^/(india)-export-data/?$ /country-wise-export-data/$1 break;
 
 rewrite ^/(bangladesh)-import-export-data/?$ /country-wise/$1 break;
 rewrite ^/(bangladesh)-import-data/?$ /country-wise-import-data/$1 break;
@@ -566,9 +607,35 @@ rewrite ^/(liberia)-import-data/?$ /country-wise-import-data/$1 break;
 rewrite ^/(liberia)-export-data/?$ /country-wise-export-data/$1 break;
 
 # Malawai
-rewrite ^/(malawai)-import-export-data/?$ /country-wise/$1 break;
-rewrite ^/(malawai)-import-data/?$ /country-wise-import-data/$1 break;
-rewrite ^/(malawai)-export-data/?$ /country-wise-export-data/$1 break;
+rewrite ^/(malawi)-import-export-data/?$ /country-wise/$1 break;
+rewrite ^/(malawi)-import-data/?$ /country-wise-import-data/$1 break;
+rewrite ^/(malawi)-export-data/?$ /country-wise-export-data/$1 break;
+
+rewrite ^/country-wise-(mali)-import-and-export-data/?$ /country-wise/$1 break;
+rewrite ^/country-wise-(mali)-import-data/?$ /country-wise-import-data/$1 break;
+rewrite ^/country-wise-(mali)-export-data/?$ /country-wise-export-data/$1 break;
+
+rewrite ^/country-wise-(mauritania)-import-and-export-data/?$ /country-wise/$1 break;
+rewrite ^/country-wise-(mauritania)-import-data/?$ /country-wise-import-data/$1 break;
+rewrite ^/country-wise-(mauritania)-export-data/?$ /country-wise-export-data/$1 break;
+
+rewrite ^/country-wise-(mauritius)-import-and-export-data/?$ /country-wise/$1 break;
+rewrite ^/country-wise-(mauritius)-import-data/?$ /country-wise-import-data/$1 break;
+rewrite ^/country-wise-(mauritius)-export-data/?$ /country-wise-export-data/$1 break;
+
+
+
+rewrite ^/country-wise-(mozambique)-import-and-export-data/?$ /country-wise/$1 break;
+rewrite ^/country-wise-(mozambique)-import-data/?$ /country-wise-import-data/$1 break;
+rewrite ^/country-wise-(mozambique)-export-data/?$ /country-wise-export-data/$1 break;
+
+
+
+
+
+rewrite ^/(sao-tame-and-principe)-import-export-data/?$ /country-wise/$1 break;
+rewrite ^/(sao-tame-and-principe)-import-data/?$ /country-wise-import-data/$1 break;
+rewrite ^/(sao-tame-and-principe)-export-data/?$ /country-wise-export-data/$1 break;
 
 # Namibia
 rewrite ^/(namibia)-import-export-data/?$ /country-wise/$1 break;

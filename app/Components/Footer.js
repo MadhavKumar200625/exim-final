@@ -222,7 +222,7 @@ const countries = Object.entries(countryCodes).filter(([name]) =>
 
   if (isBot) return;
 
-  if (!nname || !nemail || !nmobile) {
+  if (!nname || !nemail || !nmobile || !selectedCountry) {
     alert("Please fill all the fields.");
     return;
   }
@@ -239,6 +239,7 @@ const countries = Object.entries(countryCodes).filter(([name]) =>
         nname,
         nemail,
         nmobile,
+        selectedCountry
       }),
     });
 

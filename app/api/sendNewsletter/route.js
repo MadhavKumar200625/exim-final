@@ -46,7 +46,7 @@ export async function POST(req) {
       );
     }
 
-    const { nname, nemail, nmobile } = await req.json();
+    const { nname, nemail, nmobile , selectedCountry } = await req.json();
 
     // Validation
     if (!nname || !nemail || !nmobile) {
@@ -68,6 +68,7 @@ export async function POST(req) {
     const safeName = escapeHtml(nname);
     const safeEmail = escapeHtml(nemail);
     const safeMobile = escapeHtml(nmobile);
+    const safeCountry = escapeHtml(selectedCountry);
 
     /* =========================
        MAIL TRANSPORTER
@@ -93,6 +94,7 @@ export async function POST(req) {
           <p><strong>Name:</strong> ${safeName}</p>
           <p><strong>Email:</strong> ${safeEmail}</p>
           <p><strong>Mobile:</strong> ${safeMobile}</p>
+          <p><strong>Country:</strong> ${safeCountry}</p>
           <hr />
           <p style="font-size:12px;color:#888;">
             Submitted from Exim Trade Data website

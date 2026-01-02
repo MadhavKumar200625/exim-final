@@ -47,7 +47,7 @@ export default function Hero({ country, hero }) {
               alt={`${countryName} import export trade map`}
               width={400}
               height={500}
-              priority
+              
               
               className="object-contain"
             />

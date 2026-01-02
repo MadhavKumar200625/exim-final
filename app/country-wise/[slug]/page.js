@@ -40,6 +40,14 @@ const pickSuppliers = (section4 = {}, slug) =>
   section4[`${slug}_suppliers_list`] ||
   { companies: [] };
 
+
+const formatCountryName = (slug = "") =>
+  slug
+    .replace(/^country-wise-/, "")
+    .replace(/-(import|export|import-export)-data$/, "")
+    .replace(/-/g, " ")
+    .replace(/\b\w/g, (c) => c.toUpperCase());
+
 const normalizeCountryData = (raw, slug) => ({
   hero_section: raw.hero_section,
   overview: raw.overview,
@@ -68,11 +76,34 @@ export async function generateMetadata({ params }) {
   }
 
   const country = countriesData[slug];
+  const formattedSlug = formatCountryName(slug)
+  
 
   if (!country) {
     return {
-      title: "Page Not Found | Exim Trade Data",
-      robots: { index: false, follow: false },
+      title: `${formattedSlug} Import Export Data | ${formattedSlug} Customs Data - Exim Trade Data`,
+      description: `Access up-to-date ${formattedSlug} import export data, customs reports and shipment details.`,
+      keywords: [
+        `${slug} import data`,
+        `${slug} export data`,
+        `${slug} customs data`,
+        `${slug} shipment data`,
+        `${slug} importers`,
+        `${slug} exporters`,
+      ],
+      alternates: {
+        canonical: `https://eximtradedata.com/country-wise-${slug}-import-data`,
+      },
+      openGraph: {
+        title: `${formattedSlug} Import Export Data`,
+        description: `Access detailed ${formattedSlug} shipment and customs data.`,
+        images: [{ url: "https://eximtradedata.com/images/logo.png" }],
+      },
+      twitter: {
+        card: "summary",
+        title: `${formattedSlug} Trade Data`,
+        images: ["https://eximtradedata.com/images/logo.png"],
+      },
     };
   }
 
@@ -238,6 +269,8 @@ export default async function Page({ params }) {
 
 const countrySlug = extractCountryFromSlug(slug);
 
+const countryname = formatCountryName(countrySlug)
+
 const country = normalizeCountryData(
   { ...DEFAULT_COUNTRY_DATA, ...rawCountry },
   slug
@@ -247,12 +280,12 @@ const country = normalizeCountryData(
 
   return (
     <main>
-      <Hero hero={country.hero_section} country={countrySlug} />
+      <Hero hero={country.hero_section} country={countryname} />
 
       <CountryLinksSection />
 
       <Stats
-        country={countrySlug}
+        country={countryname}
         imports={country.overview?.total_imports}
         exports={country.overview?.total_exports}
       />
@@ -260,29 +293,29 @@ const country = normalizeCountryData(
       
 
       <GlobalImpact
-        country={countrySlug}
+        country={countryname}
         points={safeArray(country.benefits_section?.points)}
       />
 
       <MarketIntel
-        country={countrySlug}
+        country={countryname}
         desc={country.section3?.description}
         data={country.section4}
       />
 
       {country.detailed_info && (
         <DetailedTable
-          country={countrySlug}
+          country={countryname}
           description={country.detailed_info.description}
         />
       )}
 
       <CtaImage
-        country={countrySlug}
+        country={countryname}
         description={country.leads_section?.description}
       />
 
-      <ImportantLinks country={countrySlug} />
+      <ImportantLinks country={countryname} />
 
       {country.faq_section?.faqs?.length > 0 && (
         <FAQSection faqs={country.faq_section.faqs} />

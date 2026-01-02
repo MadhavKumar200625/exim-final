@@ -111,16 +111,19 @@ const ContactInfo = () => {
       <div className="grid md:grid-cols-1 gap-10">
         {/* Support */}
         <div className="bg-white/70 border border-gray-200 p-8 shadow-2xl">
-          <h2 className="text-2xl font-bold text-black mb-4">Support Enquiry</h2>
-          <a href="tel:+919625812393" className="text-blue-600">
-            +91 96258 12393
-          </a>
+          <h2 className="text-2xl font-bold text-black mb-4">Support</h2>
+          <p className="text-black text-lg">
+            <p className="mt-5"><span className="text-xl text-blue-600 font-bold">Support & Other Enquiries:</span> 8826195070 <br></br></p>
+            <p className="mt-5"><span className="text-xl text-blue-600 font-bold">Partner with Us:</span> 9625812393<br></br></p>
+            <p className="mt-5"><span className="text-xl text-blue-600 font-bold">Mail us:</span> info@eximtradedata.com</p>
+          </p>
         </div>
 
         {/* Address */}
         <div className="bg-white/70 border border-gray-200 p-8 shadow-2xl">
           <h2 className="text-2xl font-bold text-black mb-4">Reach Us</h2>
-          <p>G-232, Sector-63, Noida, Uttar Pradesh – 201301</p>
+          <p>Shpere Eximia Research Pvt Ltd<br></br>
+G-232 , Noida Sector-63<br></br> Uttar Pradesh - 201301, India</p>
         </div>
       </div>
 
