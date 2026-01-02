@@ -67,94 +67,103 @@ export default function Countries() {
       </h3>
 
       {/* Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 xl:px-20">
-        {filteredCountries.map(country => {
-          const slug = slugify(country.name);
+      {/* Cards */}
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 xl:px-20">
+  {filteredCountries.map(country => {
+    const slug = slugify(country.name);
 
-          return (
-            <div
-              key={`${country.name}-${country.continent}`}
-              className="relative group flex items-center gap-4 p-4 border border-blue-300 rounded-xl shadow hover:shadow-lg transition"
+    return (
+      <div
+        key={`${country.name}-${country.continent}`}
+        className="relative group flex items-center gap-4 p-4 border border-blue-300 rounded-xl shadow hover:shadow-lg transition"
+      >
+        {/* Flag */}
+        <a href={country.link_main}>
+          <img
+            src={country.flag}
+            alt={`${country.name} flag`}
+            width={64}
+            height={48}
+            loading="lazy"
+            className="w-16 h-auto"
+            onError={e => (e.currentTarget.style.display = "none")}
+          />
+        </a>
+
+        {/* Info */}
+        <div className="flex flex-col">
+          <a
+            href={country.link_main}
+            className="font-semibold text-lg hover:underline text-black hover:text-blue-600"
+          >
+            {country.name} Import Export Data
+          </a>
+
+          <div className="flex gap-2 mt-2">
+            <a
+              href={country.link_imp}
+              className="text-sm px-3 py-1 border border-blue-600 text-black hover:bg-blue-600 hover:text-white transition"
             >
-              {/* Flag */}
-              <a href={country.link_main}>
-                <img
-                  src={country.flag}
-                  alt={`${country.name} flag`}
-                  width={64}
-                  height={48}
-                  loading="lazy"
-                  className="w-16 h-auto"
-                  onError={e => (e.currentTarget.style.display = "none")}
-                />
-              </a>
+              Import Data
+            </a>
+            <a
+              href={country.link_exp}
+              className="text-sm px-3 py-1 border border-orange-500 text-black hover:bg-orange-500 hover:text-white transition"
+            >
+              Export Data
+            </a>
+          </div>
+        </div>
 
-              {/* Info */}
-              <div className="flex flex-col">
+        {/* Other Links (UNCHANGED VISUALLY) */}
+        {country.otherLinks && (
+          <div
+            className="
+              absolute top-full right-0 mt-2 w-full bg-white border rounded-lg shadow-lg z-50
+              opacity-0 translate-y-1
+              group-hover:opacity-100 group-hover:translate-y-0
+              transition
+              pointer-events-none group-hover:pointer-events-auto
+            "
+          >
+            <h4 className="px-4 py-2 font-semibold border-b">
+              Other Links
+            </h4>
+            <ul className="p-4 space-y-2">
+              <li>
                 <a
-                  href={country.link_main}
-                  className="font-semibold text-lg hover:underline text-black hover:text-blue-600"
+                  href={`/global-products/product-A/country-${slug}/type-export/pg-1`}
+                  className="flex items-center text-sm underline"
                 >
-                  {country.name} Import Export Data
+                  {country.name} Export Products
+                  <ArrowUpRight className="ml-1 w-4 h-4" />
                 </a>
-
-                <div className="flex gap-2 mt-2">
-                  <a
-                    href={country.link_imp}
-                    className="text-sm px-3 py-1 border border-blue-600 text-black hover:bg-blue-600 hover:text-white transition"
-                  >
-                    Import Data
-                  </a>
-                  <a
-                    href={country.link_exp}
-                    className="text-sm px-3 py-1 border border-orange-500 text-black hover:bg-orange-500 hover:text-white transition"
-                  >
-                    Export Data
-                  </a>
-                </div>
-              </div>
-
-              {/* Other Links */}
-              {country.otherLinks && (
-                <div className="absolute top-full right-0 mt-2 w-full bg-white border rounded-lg shadow-lg z-50 opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition">
-                  <h4 className="px-4 py-2 font-semibold border-b">
-                    Other Links
-                  </h4>
-                  <ul className="p-4 space-y-2">
-                    <li>
-                      <a
-                        href={`/global-products/product-A/country-${slug}/type-export/pg-1`}
-                        className="flex items-center text-sm underline"
-                      >
-                        {country.name} Export Products
-                        <ArrowUpRight className="ml-1 w-4 h-4" />
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href={`/global-products/product-A/country-${slug}/type-import/pg-1`}
-                        className="flex items-center text-sm underline"
-                      >
-                        {country.name} Import Products
-                        <ArrowUpRight className="ml-1 w-4 h-4" />
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href={`/global-companies-list/${slug}/A-1`}
-                        className="flex items-center text-sm underline"
-                      >
-                        {country.name} Companies
-                        <ArrowUpRight className="ml-1 w-4 h-4" />
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              )}
-            </div>
-          );
-        })}
+              </li>
+              <li>
+                <a
+                  href={`/global-products/product-A/country-${slug}/type-import/pg-1`}
+                  className="flex items-center text-sm underline"
+                >
+                  {country.name} Import Products
+                  <ArrowUpRight className="ml-1 w-4 h-4" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`/global-companies-list/${slug}/A-1`}
+                  className="flex items-center text-sm underline"
+                >
+                  {country.name} Companies
+                  <ArrowUpRight className="ml-1 w-4 h-4" />
+                </a>
+              </li>
+            </ul>
+          </div>
+        )}
       </div>
+    );
+  })}
+</div>
     </section>
   );
 }

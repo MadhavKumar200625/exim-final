@@ -39,11 +39,11 @@ export default async function Page({ params }) {
       />
 
       <Companies
-        country={country}
-        defaultLetter={data.defaultLetter}
+        defaultCountry={country}
+        defaultLetter={page.split("-")[0]}
         companies={data.companies}
         totalValues={data.totalValues}
-        page={data.page}
+        currentPage={Number(page.split("-")[1])}
       />
     </main>
   );

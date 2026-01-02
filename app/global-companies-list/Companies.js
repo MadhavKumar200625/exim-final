@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import React from "react";
 import { ChevronDown } from "lucide-react";
 
@@ -124,34 +124,73 @@ const countryFlags = {
 ------------------------------------------ */
 const Companies = ({
   defaultLetter = "A",
-  companies = [],            // <-- ARRAY OF STRINGS
-  totalValues = 0,
   defaultCountry = "Vietnam",
+  currentPage = 1,
+  companies = [],
+  totalValues = 0,
 }) => {
   const [letter, setLetter] = useState(defaultLetter);
   const [country, setCountry] = useState(defaultCountry);
-  const [currentPage] = useState(1);
   const [showDropdown, setShowDropdown] = useState(false);
 
-  const totalPages = Math.ceil(totalValues / 100);
+  const totalPages = Math.max(1, Math.ceil(totalValues / 100));
 
   /* -----------------------------------------
-     Pagination
+     Sync state with parent props
+  ------------------------------------------ */
+  useEffect(() => setLetter(defaultLetter), [defaultLetter]);
+  useEffect(() => setCountry(defaultCountry), [defaultCountry]);
+
+  /* -----------------------------------------
+     Helpers
+  ------------------------------------------ */
+  const slugify = (v = "") =>
+  String(v)
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, "-");
+
+  const buildUrl = (page, newLetter = letter, newCountry = country) => {
+  const safeCountry = slugify(newCountry || defaultCountry);
+  const safeLetter = (newLetter || defaultLetter).toLowerCase();
+
+  return `/global-companies-list/${safeCountry}/${safeLetter}-${page}`;
+};
+
+  /* -----------------------------------------
+     Pagination numbers (stable)
   ------------------------------------------ */
   const pageNumbers = (() => {
     const pages = [];
+
     if (totalPages <= 5) {
       for (let i = 1; i <= totalPages; i++) pages.push(i);
     } else {
-      pages.push(1, "...", totalPages);
+      if (currentPage <= 3) {
+        pages.push(1, 2, 3, 4, "...", totalPages);
+      } else if (currentPage >= totalPages - 2) {
+        pages.push(
+          1,
+          "...",
+          totalPages - 3,
+          totalPages - 2,
+          totalPages - 1,
+          totalPages
+        );
+      } else {
+        pages.push(
+          1,
+          "...",
+          currentPage - 1,
+          currentPage,
+          currentPage + 1,
+          "...",
+          totalPages
+        );
+      }
     }
     return pages;
   })();
-
-  const buildUrl = (page) =>
-    `/global-companies-list/${country
-      .toLowerCase()
-      .replace(/\s+/g, "-")}/${letter.toLowerCase()}-${page}`;
 
   /* -----------------------------------------
      Render
@@ -172,15 +211,15 @@ const Companies = ({
             {/* Country Dropdown */}
             <div className="relative">
               <button
-                onClick={() => setShowDropdown(!showDropdown)}
-                className="w-full border border-gray-300 rounded-md px-4 py-2 flex justify-between bg-white text-black"
+                onClick={() => setShowDropdown((s) => !s)}
+                className="w-full border rounded-md px-4 py-2 flex justify-between bg-white"
               >
                 {country}
                 <ChevronDown size={18} />
               </button>
 
               {showDropdown && (
-                <div className="absolute z-10 mt-2 w-full max-h-60 overflow-y-auto bg-white border rounded shadow">
+                <div className="absolute z-20 mt-2 w-full max-h-64 overflow-y-auto bg-white border rounded shadow">
                   {Object.entries(countries).map(([name, flag]) => (
                     <div
                       key={name}
@@ -190,7 +229,7 @@ const Companies = ({
                       }}
                       className="flex items-center gap-2 p-2 cursor-pointer hover:bg-gray-100"
                     >
-                      <img src={flag} alt={name} width={20} />
+                      <img src={flag} alt={name} width={20} height={14} />
                       <span>{name}</span>
                     </div>
                   ))}
@@ -210,28 +249,29 @@ const Companies = ({
 
         {/* ---------------- Companies Grid ---------------- */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-10">
-          {companies.slice(0, 100).map((name, idx) => (
+          {companies.map((item, idx) => (
             <div
               key={idx}
-              className="bg-white border rounded-xl p-4 shadow-sm hover:shadow-lg transition"
+              className="bg-white border rounded-xl p-4 hover:shadow-lg transition"
             >
-              <p className="text-gray-800 font-medium hover:text-blue-600">
-                <a
-                  href={`/global-companies/${country
-                    .toLowerCase()
-                    .replace(/\s+/g, "-")}/${name
-                    .toLowerCase()
-                    .replace(/\s+/g, "-")}`}
-                >
-                  {name}
-                </a>
-              </p>
+              <a
+                href={`/global-companies/${slugify(country)}/${slugify(item)}`}
+                className="font-medium hover:text-blue-600"
+              >
+                {item}
+              </a>
             </div>
           ))}
         </div>
 
         {/* ---------------- Pagination ---------------- */}
-        <div className="flex justify-center gap-2 mb-12">
+        <div className="flex justify-center gap-2 mb-10">
+          {currentPage > 1 && (
+            <a href={buildUrl(currentPage - 1)} className="px-3 py-1 border">
+              &lt;&lt;
+            </a>
+          )}
+
           {pageNumbers.map((p, i) =>
             p === "..." ? (
               <span key={i} className="px-3 py-1">…</span>
@@ -239,24 +279,48 @@ const Companies = ({
               <a
                 key={i}
                 href={buildUrl(p)}
-                className="px-3 py-1 border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
+                className={`px-3 py-1 border ${
+                  p === currentPage
+                    ? "bg-blue-600 text-white"
+                    : "text-blue-600"
+                }`}
               >
                 {p}
               </a>
             )
           )}
+
+          {currentPage < totalPages && (
+            <a href={buildUrl(currentPage + 1)} className="px-3 py-1 border">
+              &gt;&gt;
+            </a>
+          )}
+        </div>
+
+        {/* ---------------- Browse by Letter ---------------- */}
+        <div className="mb-10">
+          <h3 className="text-xl font-bold mb-4">Browse by Letter</h3>
+          <div className="flex flex-wrap gap-2">
+            {"ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").map((char) => (
+              <a
+                key={char}
+                href={buildUrl(1, char)}
+                className="px-3 py-1 border hover:bg-blue-600 hover:text-white"
+              >
+                {char}
+              </a>
+            ))}
+          </div>
         </div>
 
         {/* ---------------- Browse by Country ---------------- */}
         <div>
           <h3 className="text-xl font-bold mb-4">Browse by Country</h3>
-          <div className="flex gap-4 flex-wrap">
+          <div className="flex flex-wrap gap-4">
             {Object.entries(countryFlags).map(([name, flag]) => (
               <a
                 key={name}
-                href={`/global-companies-list/${name
-                  .toLowerCase()
-                  .replace(/\s+/g, "-")}/${letter.toLowerCase()}-1`}
+                href={buildUrl(1, letter, name)}
                 className="border shadow p-2"
               >
                 <img src={flag} alt={name} className="w-20" />

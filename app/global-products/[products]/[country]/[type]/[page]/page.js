@@ -36,17 +36,26 @@ export default async function Page({ params }) {
     page,
   });
 
+  const normalizeCountry = (v) =>
+  v
+    .replace(/_/g, " ")
+    .toLowerCase()
+    .replace(/\b\w/g, (c) => c.toUpperCase());
+
   return (
     <main>
       <Hero heading={`Products Starting With ${letter.toUpperCase()}`} />
 
-      <Products
-        defaultLetter={letter.toUpperCase()}
-        defaultCountry={country.replace(/_/g, " ")}
-        defaultTradeType={type === "import" ? "Import" : "Export"}
-        products={data.products}
-        totalValues={data.total}
-      />
+      
+
+<Products
+  defaultLetter={letter}
+  defaultCountry={normalizeCountry(country)}
+  defaultTradeType={type === "import" ? "Import" : "Export"}
+  currentPage={page}
+  products={data.products}
+  totalValues={data.total}
+/>
     </main>
   );
 }
