@@ -4,6 +4,7 @@ import Image from "next/image";
 export default function Hero({ country, hero }) {
   const countryName =
     country?.charAt(0).toUpperCase() + country?.slice(1);
+    
 
   const imageSrc = `/homepage/${country}-import-export-data.webp`;
 
@@ -43,7 +44,7 @@ export default function Hero({ country, hero }) {
         <div className="flex-1 flex justify-center md:justify-end">
           <div className="w-full max-w-sm">
             <img
-              src={imageSrc}
+              src={imageSrc.replaceAll(" ","-")}
               alt={`${countryName} import export trade map`}
               width={400}
               height={500}
