@@ -2,6 +2,9 @@ import React from 'react'
 import Search from './Search'
 import { getHSChapters } from '@/lib/global-hs-code/getHsChapters';
 
+export const dynamic = "force-dynamic";
+export const revalidate = false;
+
 const HSCodeFAQ = [
   {
     question: "What is HS Code/HSN Code?",
