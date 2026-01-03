@@ -209,7 +209,8 @@ function parseSegment(seg) {
   return null;
 }
 export default async function Page({ params }) {
-  const segments = await params.searchresult;
+  params = await params
+  const segments = params.searchresult;
 
   let type = "";
   let value = "";
