@@ -209,7 +209,7 @@ function parseSegment(seg) {
   return null;
 }
 export default async function Page({ params }) {
-  const segments = params.searchresult;
+  const segments = await params.searchresult;
 
   let type = "";
   let value = "";
