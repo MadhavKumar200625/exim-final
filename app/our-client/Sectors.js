@@ -1,8 +1,4 @@
 'use client';
-
-;
-import Link from 'next/link';
-
 const sectors = [
   {
     title: 'Agribusiness',

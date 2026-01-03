@@ -2,7 +2,6 @@
 "use client";
 
 const images = [
-  "/our-clients/biomech.webp",
   "/our-clients/blickle.webp",
   "/our-clients/buyofuel.webp",
   "/our-clients/cerbios.webp",
