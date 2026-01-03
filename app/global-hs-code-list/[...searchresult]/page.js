@@ -187,19 +187,62 @@ const HSCodeFAQ = [
     `
   }
 ]
-
-const page = async ({ params }) => {
-  const { searchresult } = await params;
-  const type = searchresult.split("-")[0];
-  const value = searchresult.split("-").pop();
-
-const data = await getHSCodeData(type, value);
-
-if (!data) {
-  return <p className="p-8 text-red-600">Invalid search type.</p>;
+function parseSegment(seg) {
+  if (seg.startsWith("hs-code-")) {
+    return { type: "hs", value: seg.replace("hs-code-", "") };
+  }
+  if (seg.startsWith("hs-")) {
+    return { type: "hs", value: seg.replace("hs-", "") };
+  }
+  if (seg.startsWith("product-")) {
+    return {
+      type: "product",
+      value: seg.replace("product-", "").replace(/-/g, " "),
+    };
+  }
+  if (seg.startsWith("chapter-")) {
+    return { type: "chapter", value: seg.replace("chapter-", "") };
+  }
+  if (seg.startsWith("heading-")) {
+    return { type: "heading", value: seg.replace("heading-", "") };
+  }
+  return null;
 }
+export default async function Page({ params }) {
+  const segments = params.searchresult;
 
-const { rows, heading, tc1Heading } = data;
+  let type = "";
+  let value = "";
+  let extra = "";
+
+  // ONE segment
+  if (segments.length === 1) {
+    const parsed = parseSegment(segments[0]);
+    if (!parsed) return <p>Invalid search</p>;
+
+    type = parsed.type;
+    value = parsed.value;
+  }
+
+  // TWO segments (HS + PRODUCT)
+  if (segments.length === 2) {
+    const p1 = parseSegment(segments[0]);
+    const p2 = parseSegment(segments[1]);
+
+    if (p1?.type === "hs" && p2?.type === "product") {
+      type = "hs-product";
+      value = p1.value;
+      extra = p2.value;
+    }
+  }
+
+  const data = await getHSCodeData(type, value, extra);
+
+  if (!data) {
+    return <p className="p-8 text-red-600">Invalid search.</p>;
+  }
+
+  const { rows, heading, tc1Heading } = data;
   const rowColors = ["bg-white", "bg-slate-50", "bg-slate-100"];
   return (
     <main>
@@ -306,7 +349,6 @@ const { rows, heading, tc1Heading } = data;
   );
 };
 
-export default page;
 // import React from 'react'
 
 // const page = () => {

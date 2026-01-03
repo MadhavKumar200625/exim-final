@@ -1,21 +1,37 @@
-import Link from "next/link";
 import { ChevronRight, ArrowUpRight } from "lucide-react";
+import { countries } from "@/lib/CountriesPageData";
+
+/* normalize slug → name */
+const normalize = (str = "") =>
+  str
+    .toLowerCase()
+    .replace(/-/g, " ")
+    .replace(/\band\b/g, "and")
+    .trim();
 
 export default function ImportantLinks({ country }) {
-  const countryName =
-    country.charAt(0).toUpperCase() + country.slice(1);
+  const normalizedCountry = normalize(country);
+
+  const countryData = countries.find(
+    (c) => normalize(c.name) === normalizedCountry
+  );
+
+  // Fallback (SEO-safe, never crash)
+  if (!countryData) {
+    console.warn("Country not found:", country);
+  }
 
   const links = [
     {
-      title: `${countryName} Import Data`,
-      url: `/country-wise-${country}-import-data`,
+      title: `${ country} Import Data`,
+      url: countryData?.link_imp || "#",
     },
     {
-      title: `${countryName} Export Data`,
-      url: `/country-wise-${country}-export-data`,
+      title: `${ country} Export Data`,
+      url: countryData?.link_exp || "#",
     },
     {
-      title: `${countryName} Import Export Product`,
+      title: `${countryData?.name || country} Import Export Products`,
       url: `/global-products`,
     },
     {
@@ -39,33 +55,32 @@ export default function ImportantLinks({ country }) {
   return (
     <section className="px-6 md:px-16 py-12 bg-white">
       <div className="container mx-auto">
-        {/* Heading */}
-        <p className="text-sm font-semibold text-sky-600 uppercase tracking-wider mb-2">
+        <p className="text-sm font-semibold text-sky-600 uppercase mb-2">
           Important Links
         </p>
 
         <h2 className="text-3xl font-bold text-black mb-8">
-          Important links related to {countryName} Import and Export data
+          Important links related to {countryData?.name || country} Import and
+          Export data
         </h2>
 
-        {/* Links Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-4">
           {links.map((item) => (
             <a
-              key={item.url}
+              key={item.title}
               href={item.url}
-              className="group flex items-center justify-between p-4 border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition bg-white"
+              className="group flex items-center justify-between p-4 border rounded-lg shadow-sm hover:shadow-md transition"
             >
               <div className="flex items-center gap-3">
-                <ChevronRight size={18} className="text-sky-500 shrink-0" />
-                <span className="text-black font-medium underline group-hover:text-sky-600 transition">
+                <ChevronRight size={18} className="text-sky-500" />
+                <span className="font-medium underline group-hover:text-sky-600">
                   {item.title}
                 </span>
               </div>
 
               <ArrowUpRight
                 size={18}
-                className="text-black group-hover:text-sky-500 transition"
+                className="group-hover:text-sky-500 transition"
               />
             </a>
           ))}

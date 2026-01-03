@@ -6,7 +6,6 @@ import ImportantLinks from "./ImportantLinks";
 import MarketIntel from "./MarketIntel";
 import CtaImage from "./CtaImage";
 import { countriesData } from "@/lib/data/countries";
-import { notFound } from "next/navigation";
 import Hero from "./Hero";
 import FAQSection from "@/app/Components/FAQ";
 
