@@ -134,9 +134,9 @@ const HSCodeFAQ = [
     `
   },
   {
-    question: "How are HS Codes categorized in India?",
+    question: "How are HS Codes categorized in vietnam?",
     answer: `
-      <p class="mb-2">In India, ITC HS Codes are divided into two schedules:</p>
+      <p class="mb-2">In vietnam, ITC HS Codes are divided into two schedules:</p>
       <ul class="list-disc list-inside space-y-1">
         <li><strong>Schedule I</strong> – Rules and procedures for import policies.</li>
         <li><strong>Schedule II</strong> – Rules and procedures for export operations.</li>
@@ -144,10 +144,10 @@ const HSCodeFAQ = [
     `
   },
   {
-    question: "What does HS/HSN Code list of India cover?",
+    question: "What does HS/HSN Code list of vietnam cover?",
     answer: `
       <p>
-        The Indian HS/HSN Code list covers 21 sections, 99 chapters, 1244 headings, and 5222 subheadings. 
+        The vietnamn HS/HSN Code list covers 21 sections, 99 chapters, 1244 headings, and 5222 subheadings. 
         Each section is classified into chapters, chapters into headings, and headings into subheadings.
       </p>
     `
@@ -177,10 +177,10 @@ const HSCodeFAQ = [
     `
   },
   {
-    question: "What is the HS Code system of India?",
+    question: "What is the HS Code system of vietnam?",
     answer: `
       <p>
-        In India, HS Codes are known as <strong>ITC HS Codes</strong> (Indian Trade Clarification / Indian Tariff Code). 
+        In vietnam, HS Codes are known as <strong>ITC HS Codes</strong> (vietnamn Trade Clarification / vietnamn Tariff Code). 
         These 8-digit codes classify goods for export-import operations. The first six digits follow WCO rules, 
         and the last two are assigned by the DGFT.
       </p>
@@ -279,7 +279,7 @@ const { rows, heading, tc1Heading } = data;
                     </td>
                     <td className="px-4 py-4 border-b border-gray-200 border-l">
                       <a
-                        href={`/search/country-India/type-import/hscode-${row.hs_code}`}
+                        href={`/search/country-vietnam/type-import/hscode-${row.hs_code}`}
                         className="block bg-blue-600 text-white p-2 text-x cursor-pointer underline text-center w-full"
                       >
                         HS Code - {row.hs_code}
@@ -287,7 +287,7 @@ const { rows, heading, tc1Heading } = data;
                     </td>
                     <td className="px-4 py-4 border-b border-gray-200 border-l">
                       <a
-                        href={`/search/country-India/type-import/hscode-${row.hs_code}`}
+                        href={`/search/country-vietnam/type-import/hscode-${row.hs_code}`}
                         className="block text-center bg-gray-400 p-2 text-white underline cursor-pointer  w-full"
                       >
                         HS Code - {row.hs_code}
