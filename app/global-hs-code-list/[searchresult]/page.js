@@ -252,7 +252,7 @@ const { rows, heading, tc1Heading } = data;
                     } hover:bg-gray-100 transition`}
                   >
                     <td className="px-6 py-4 font-semibold border-b border-gray-200">
-                      <Link
+                      <a
                         href={`/global-hs-code-list/${
                           type == "heading"
                             ? `hs-code-${row.hs_code}`
@@ -263,10 +263,10 @@ const { rows, heading, tc1Heading } = data;
                         {type == "chapter"
                           ? `Heading ${row.hs_code}`
                           : row.hs_code}
-                      </Link>
+                      </a>
                     </td>
                     <td className="px-6 py-4 border-b border-gray-200 border-l">
-                      <Link
+                      <a
                         href={`/global-hs-code-list/${
                           type == "heading"
                             ? `hs-code-${row.hs_code}`
@@ -275,23 +275,23 @@ const { rows, heading, tc1Heading } = data;
                         className="block  w-full"
                       >
                         {row.item_description}
-                      </Link>
+                      </a>
                     </td>
                     <td className="px-4 py-4 border-b border-gray-200 border-l">
-                      <Link
+                      <a
                         href={`/search/country-India/type-import/hscode-${row.hs_code}`}
                         className="block bg-blue-600 text-white p-2 text-x cursor-pointer underline text-center w-full"
                       >
                         HS Code - {row.hs_code}
-                      </Link>
+                      </a>
                     </td>
                     <td className="px-4 py-4 border-b border-gray-200 border-l">
-                      <Link
+                      <a
                         href={`/search/country-India/type-import/hscode-${row.hs_code}`}
                         className="block text-center bg-gray-400 p-2 text-white underline cursor-pointer  w-full"
                       >
                         HS Code - {row.hs_code}
-                      </Link>
+                      </a>
                     </td>
                   </tr>
                 ))}
