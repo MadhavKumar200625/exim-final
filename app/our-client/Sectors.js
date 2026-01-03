@@ -47,7 +47,7 @@ export default function Sectors() {
         <h2 className="text-3xl md:text-4xl font-bold text-black">
           Sectors We Work With
         </h2>
-        <a href="/country-ports">
+        <a href="/industries-covered">
           <span className="text-blue-600 font-medium hover:underline hover:underline-offset-4 transition-all text-lg cursor-pointer">
             View All →
           </span>
