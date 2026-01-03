@@ -305,7 +305,7 @@ const { rows, heading, tc1Heading } = data;
   );
 };
 
-// export default page;
+export default page;
 // import React from 'react'
 
 // const page = () => {
