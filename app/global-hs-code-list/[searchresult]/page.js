@@ -2,6 +2,7 @@ import React from "react";
 import Search from "../Search";
 import Link from "next/link";
 import FAQSection from "@/app/Components/FAQ";
+import { getHSCodeData } from "@/lib/global-hs-code/getHsCodeData";
 
 const HSCodeFAQ = [
   {
