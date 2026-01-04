@@ -187,6 +187,112 @@ const HSCodeFAQ = [
     `
   }
 ]
+
+export async function generateMetadata({ params }) {
+  params = await params
+  const segments = params?.searchresult || [];
+
+  // Base defaults
+  let title =
+    "Global HS Code List | Harmonized System Codes for Import Export";
+  let description =
+    "Explore the global HS Code list for import export trade. Find Harmonized system codes, product classifications, custom tariffs, and international trade data by HS Code, Chapter and Heading.";
+  let keywords =
+    "global hs code list, hs code search, harmonized system codes, import export hs code, custom tariffs codes, international trade hs codes";
+
+  // ROOT PAGE
+  if (segments.length === 0) {
+    return { title, description, keywords };
+  }
+
+  const seg1 = segments[0];
+  const seg2 = segments[1];
+
+  // -----------------------------
+  // CHAPTER
+  // -----------------------------
+  if (seg1.startsWith("chapter-")) {
+    const chapter = seg1.replace("chapter-", "");
+
+    title = `Chapter ${chapter} | Global HS Code List | Exim Trade Data`;
+    description = `Explore Chapter ${chapter} of the Global HS Code List with detailed Harmonized System (HS) classification codes used in international trade.`;
+    keywords = `Chapter ${chapter}, HS Codes Chapter ${chapter}, harmonized system chapter, global hs code list`;
+
+    return { title, description, keywords };
+  }
+
+  // -----------------------------
+  // HEADING
+  // -----------------------------
+  if (seg1.startsWith("heading-")) {
+    const heading = seg1.replace("heading-", "");
+
+    title = `Heading ${heading} | Global HS Code List | Exim Trade Data`;
+    description = `Explore Heading ${heading} in the Global HS Code List with detailed harmonized system classification codes used in global import export trade.`;
+    keywords = `Heading ${heading}, HS Code Heading ${heading}, harmonized system heading, global hs code list`;
+
+    return { title, description, keywords };
+  }
+
+  // -----------------------------
+  // HS CODE ONLY
+  // -----------------------------
+  if (seg1.startsWith("hs-code-") && segments.length === 1) {
+    const hs = seg1.replace("hs-code-", "");
+
+    title = `HS Code ${hs} | Global HS Code List | Exim Trade Data`;
+    description = `Discover HS Code ${hs} in the Global HS Code List. Learn about harmonized system classification, product coverage, and international trade usage.`;
+    keywords = `HS Code ${hs}, harmonized system code ${hs}, hsn code ${hs}, global hs code list`;
+
+    return { title, description, keywords };
+  }
+
+  // -----------------------------
+  // PRODUCT ONLY
+  // -----------------------------
+  if (seg1.startsWith("product-") && segments.length === 1) {
+    const product = seg1
+      .replace("product-", "")
+      .replace(/-/g, " ")
+      .toLowerCase();
+
+    const productTitle =
+      product.charAt(0).toUpperCase() + product.slice(1);
+
+    title = `HS Codes for ${productTitle} Products | Global HS Code List`;
+    description = `Explore Harmonized System Codes for ${productTitle} products in the Global HS Code List. Find accurate HS classifications for import export documentation.`;
+    keywords = `HS Code ${productTitle}, ${productTitle} hs code, harmonized system code ${productTitle}, global hs code list`;
+
+    return { title, description, keywords };
+  }
+
+  // -----------------------------
+  // HS + PRODUCT (COMBO)
+  // /hs-code-85/product-mobile
+  // -----------------------------
+  if (
+    seg1.startsWith("hs-code-") &&
+    seg2?.startsWith("product-")
+  ) {
+    const hs = seg1.replace("hs-code-", "");
+    const product = seg2
+      .replace("product-", "")
+      .replace(/-/g, " ")
+      .toLowerCase();
+
+    const productTitle =
+      product.charAt(0).toUpperCase() + product.slice(1);
+
+    title = `HS Code ${hs} - ${productTitle} | Global HS Code List | Exim Trade Data`;
+    description = `Browse HS Code ${hs} entries for ${productTitle} products in the Global HS Code List. Find harmonized system codes used in international import export classification.`;
+    keywords = `HS Code ${hs}, ${productTitle} hs code, harmonized system code ${productTitle}, global hs code list`;
+
+    return { title, description, keywords };
+  }
+
+  // FALLBACK
+  return { title, description, keywords };
+}
 function parseSegment(seg) {
   if (seg.startsWith("hs-code-")) {
     return { type: "hs", value: seg.replace("hs-code-", "") };
