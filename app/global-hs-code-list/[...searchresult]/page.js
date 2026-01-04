@@ -437,7 +437,7 @@ export default async function Page({ params }) {
                     </td>
                     <td className="px-4 py-4 border-b border-gray-200 border-l">
                       <a
-                        href={`/search/country-vietnam/type-import/hscode-${row.hs_code}`}
+                        href={`/search/country-vietnam/type-export/hscode-${row.hs_code}`}
                         className="block text-center bg-gray-400 p-2 text-white underline cursor-pointer  w-full"
                       >
                         HS Code - {row.hs_code}

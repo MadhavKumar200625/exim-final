@@ -251,7 +251,7 @@ const page = async () => {
                       <a href={`/search/country-vietnam/type-import/hscode-${row.hs_code}`} className="block bg-blue-600 text-white p-2 text-x cursor-pointer underline text-center w-full">Chapter - {row.hs_code}</a>
                     </td>
                     <td className="px-4 py-4 border-b border-gray-200 border-l">
-                      <a href={`/search/country-vietnam/type-import/hscode-${row.hs_code}`} className="block text-center bg-gray-400 p-2 text-white underline cursor-pointer  w-full">Chapter - {row.hs_code}</a>
+                      <a href={`/search/country-vietnam/type-export/hscode-${row.hs_code}`} className="block text-center bg-gray-400 p-2 text-white underline cursor-pointer  w-full">Chapter - {row.hs_code}</a>
                     </td>
                   </tr>
                 ))}
