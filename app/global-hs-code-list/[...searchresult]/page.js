@@ -189,6 +189,7 @@ const HSCodeFAQ = [
 ]
 
 export async function generateMetadata({ params }) {
+  params = await params
   const segments = params?.searchresult || [];
 
   /* -------------------------
