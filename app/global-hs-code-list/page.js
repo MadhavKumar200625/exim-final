@@ -6,6 +6,19 @@ import FAQSection from '../Components/FAQ';
 export const dynamic = "force-dynamic";
 export const revalidate = false;
 
+export async function generateMetadata() {
+  return {
+    title:
+      "Global HS Code List | Harmonized System Codes for Import Export",
+
+    description:
+      "Explore the global HS Code list for import export trade. Find Harmonized system codes, product classifications, custom tariffs, and international trade data by HS Code, Chapter and Heading.",
+
+    keywords:
+      "global hs code list, hs code search, harmonized system codes, import export hs code, custom tariffs codes, international trade hs codes",
+  };
+}
+
 const HSCodeFAQ = [
   {
     question: "What is HS Code/HSN Code?",

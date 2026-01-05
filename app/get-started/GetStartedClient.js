@@ -207,7 +207,7 @@ const filteredCountries = countries.filter((c) =>
   try {
     setLoading(true);
 
-    const res = await fetch("/get-started/api/sendEmail", {
+    const res = await fetch("/api/sendEmail", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -217,6 +217,7 @@ const filteredCountries = countries.filter((c) =>
         email,
         company,
         mobile,
+        country:selectedCountry
       }),
     });
 
