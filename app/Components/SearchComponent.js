@@ -53,7 +53,6 @@ export default function SearchComponent({ heading, subHeading }) {
   const [hsCode, setHsCode] = useState("");
   const [selectedType, setSelectedType] = useState("");
   const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
 
   const dropdownRef = useRef(null);
 
@@ -85,7 +84,6 @@ export default function SearchComponent({ heading, subHeading }) {
     }
 
     setError("");
-    setLoading(true);
 
     let url = `/search/type-${selectedType
       .replace(/\s+/g, "-")
@@ -97,7 +95,7 @@ export default function SearchComponent({ heading, subHeading }) {
       url += `/product-${product.replace(/\s+/g, "-").toLowerCase()}`;
     if (hsCode) url += `/hscode-${hsCode.toLowerCase()}`;
 
-    router.push(url);
+    window.location.href= url;
   }
 
   return (
@@ -193,21 +191,30 @@ export default function SearchComponent({ heading, subHeading }) {
             <option value="export">Export</option>
           </select>
 
-          <button
-            onClick={handleSearch}
-            disabled={loading}
-            className={`px-10 py-3 rounded-full text-white font-semibold flex items-center justify-center ${
-              loading ? "bg-gray-400" : "bg-blue-600 hover:scale-105"
-            }`}
-          >
-            {loading ? (
-              "Loading..."
-            ) : (
-              <>
-                <Search className="w-4 h-4 mr-1" /> Search
-              </>
-            )}
-          </button>
+          <a
+  href={
+    selectedCountry && selectedType
+      ? `/search/type-${selectedType
+          .replace(/\s+/g, "-")
+          .toLowerCase()}/country-${selectedCountry
+          .replace(/\s+/g, "-")
+          .toLowerCase()}${
+          product
+            ? `/product-${product.replace(/\s+/g, "-").toLowerCase()}`
+            : ""
+        }${hsCode ? `/hscode-${hsCode.toLowerCase()}` : ""}`
+      : "#"
+  }
+  onClick={(e) => {
+    if (!selectedCountry || !selectedType) {
+      e.preventDefault();
+      setError("Country and Type are required!");
+    }
+  }}
+  className="px-10 py-3 rounded-full bg-blue-600 text-white font-semibold flex items-center justify-center hover:scale-105"
+>
+  <Search className="w-4 h-4 mr-1" /> Search
+</a>
         </div>
 
         {error && <p className="text-red-500 text-center mt-2">{error}</p>}
