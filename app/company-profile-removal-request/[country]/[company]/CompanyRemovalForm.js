@@ -1,13 +1,12 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
-import { ChevronDown } from "lucide-react";
-import { countries } from "@/lib/data";
+import { useState ,useRef,useEffect} from "react";
+import { useParams } from "next/navigation";
 
-/* =======================
-   STATIC DATA
-======================= */
-const countryCodes = {
+/* =============================
+   SELECTABLE COUNTRIES
+============================= */
+const selectableCountries = {
   Afghanistan: { code: "+93", flag: "https://flagcdn.com/w40/af.png" },
   Albania: { code: "+355", flag: "https://flagcdn.com/w40/al.png" },
   Algeria: { code: "+213", flag: "https://flagcdn.com/w40/dz.png" },
@@ -176,226 +175,231 @@ const countryCodes = {
   Zimbabwe: { code: "+263", flag: "https://flagcdn.com/w40/zw.png" },
 };
 
+/* =============================
+   INPUT STYLE (Tailwind only)
+============================= */
+const inputClass =
+  "w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500";
 
-export default function ContactUs() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [mobile, setMobile] = useState("");
-  const [message, setMessage] = useState("");
-  const [country, setCountry] = useState("");
-  const [selectedCountry, setSelectedCountry] = useState(null);
-  const [selectedCountryCode, setSelectedCountryCode] = useState("India");
-  const [showDropdown, setShowDropdown] = useState(false);
+export default function CompanyRemovalFormPage() {
+  const { country, company } = useParams();
+
+  /* =============================
+     STATE
+  ============================= */
   const [countryQuery, setCountryQuery] = useState("");
-  const [loading, setLoading] = useState(false);
-
+  const [showCountryList, setShowCountryList] = useState(false);
   const dropdownRef = useRef(null);
 
-  /* =======================
-     BOT DETECTION
-  ======================= */
-  const isBot =
-    typeof navigator !== "undefined" &&
-    (navigator.webdriver ||
-      /bot|crawler|spider|headless/i.test(navigator.userAgent));
+  const filteredCountries = Object.keys(selectableCountries).filter((c) =>
+    c.replaceAll("_", " ").toLowerCase().includes(countryQuery.toLowerCase())
+  );
 
-  /* =======================
-     CLOSE ON OUTSIDE CLICK
-  ======================= */
+  const [form, setForm] = useState({
+    name: "",
+    company: "",
+    phone: "",
+    email: "",
+    website: "",
+    submitAs: "",
+    requestType: "",
+    otherRequest: "",
+    message: "",
+    confirm1: false,
+    confirm2: false,
+    confirm3: false,
+  });
+const [isSubmitting, setIsSubmitting] = useState(false);
+  /* =============================
+     OUTSIDE CLICK CLOSE
+  ============================= */
   useEffect(() => {
     function handleClickOutside(e) {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
-        setShowDropdown(false);
+        setShowCountryList(false);
       }
     }
     document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    return () =>
+      document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  /* =======================
-     FILTERED COUNTRIES
-  ======================= */
-  const filteredCountries = Object.entries(countries).filter(([c]) =>
-    c.toLowerCase().includes(countryQuery.toLowerCase())
-  );
-
-  /* =======================
-     SUBMIT HANDLER
-  ======================= */
-  const aboutEmail = async () => {
-    if (loading || isBot) return;
-
-    if (!name || !email || !mobile || !message || !country) {
-      alert("Please fill all the fields.");
-      return;
-    }
-
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      alert("Please enter a valid email address.");
-      return;
-    }
-
-    if (!/^\d{10,}$/.test(mobile)) {
-      alert("Please enter a valid phone number.");
-      return;
-    }
-
-    const fullPhone =
-      `${countryCodes[selectedCountryCode]?.code || ""}${mobile}`;
-
-    try {
-      setLoading(true);
-
-      const res = await fetch("/api/aboutEmail", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name,
-          email,
-          message,
-          mobile: fullPhone,
-          country,
-        }),
-      });
-
-      if (!res.ok) throw new Error("Request failed");
-
-      alert("Message sent successfully!");
-    } catch (err) {
-      alert("Something went wrong!");
-    } finally {
-      setLoading(false);
-      setName("");
-      setEmail("");
-      setMobile("");
-      setMessage("");
-      setCountry("");
-      setSelectedCountry(null);
-      setCountryQuery("");
-    }
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setForm((p) => ({
+      ...p,
+      [name]: type === "checkbox" ? checked : value,
+    }));
   };
 
+  /* =============================
+     SUBMIT
+  ============================= */
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+  if (isSubmitting) return;
+
+  setIsSubmitting(true);
+
+  try {
+    const payload = {
+      ...form,
+      country: countryQuery,
+      urlCountry: country,
+      urlCompany: company,
+    };
+
+    const res = await fetch("/api/request-of-removal", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+
+    const json = await res.json();
+    alert(json.message || json.error);
+  } catch (err) {
+    alert("Something went wrong. Please try again.");
+  } finally {
+    setIsSubmitting(false);
+  }
+};
+
   return (
-    <section className="w-full px-4 py-16 bg-slate-100">
-      <div className="max-w-5xl mx-auto bg-white shadow-lg p-8 md:p-12">
-        <h2 className="text-3xl md:text-4xl font-bold text-black text-center mb-10">
-          Contact Us
-        </h2>
+    <main className="mx-auto max-w-5xl px-6 py-32">
+      <h1 className="mb-4 text-3xl font-semibold text-gray-900">
+        Company Profile Removal – {company?.replace(/-/g, " ")}
+      </h1>
 
-        <form className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Name */}
-          <div>
-            <label className="block text-sm font-medium text-black mb-1">
-              Your Name
-            </label>
-            <input
-              type="text"
-              className="w-full border border-gray-300 rounded-md px-4 py-2"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-          </div>
+      <p className="mb-10 text-gray-600">
+        If you own rights to this company profile and want the information
+        removed or restricted, please submit this form.
+      </p>
 
-          {/* Email */}
-          <div>
-            <label className="block text-sm font-medium text-black mb-1">
-              Your Email
-            </label>
-            <input
-              type="email"
-              className="w-full border border-gray-300 rounded-md px-4 py-2"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
+      <form onSubmit={handleSubmit} className="space-y-8">
+        {/* BASIC DETAILS */}
+        <div className="grid gap-6 md:grid-cols-2">
+          <input required name="name" placeholder="Name*" className={inputClass} onChange={handleChange} />
+          <input required name="company" placeholder="Company*" className={inputClass} onChange={handleChange} />
+          <input name="phone" placeholder="Phone No." className={inputClass} onChange={handleChange} />
+          <input required type="email" name="email" placeholder="Email ID*" className={inputClass} onChange={handleChange} />
 
-          {/* Phone */}
-          <div>
-            <label className="block text-sm font-semibold mb-2 text-black">
-              Phone Number
-            </label>
-            <input
-              type="tel"
-              className="w-full border border-gray-300 rounded-lg px-4 py-2"
-              value={mobile}
-              onChange={(e) => setMobile(e.target.value)}
-            />
-          </div>
-
-          {/* Country (SEARCHABLE DROPDOWN) */}
+          {/* SEARCHABLE COUNTRY */}
           <div className="relative" ref={dropdownRef}>
-            <label className="block text-sm font-medium text-black mb-1">
-              Select Country
-            </label>
+            <input
+              required
+              placeholder="Select Country*"
+              className={inputClass}
+              value={countryQuery}
+              onFocus={() => setShowCountryList(true)}
+              onChange={(e) => {
+                setCountryQuery(e.target.value);
+                setShowCountryList(true);
+              }}
+            />
 
-            <div
-              onClick={() => setShowDropdown((prev) => !prev)}
-              className="w-full border border-gray-300 rounded-md px-4 py-2 flex justify-between cursor-pointer bg-white"
-            >
-              {selectedCountry || "Select Country"}
-              <ChevronDown size={18} />
-            </div>
+            {showCountryList && (
+              <div className="absolute z-20 mt-1 w-full max-h-56 overflow-auto rounded-xl border bg-white shadow-lg">
+                {filteredCountries.length === 0 && (
+                  <div className="px-4 py-2 text-sm text-gray-500">
+                    No results
+                  </div>
+                )}
 
-            {showDropdown && (
-              <div className="absolute z-20 mt-2 w-full bg-white shadow-lg rounded-md border">
-                <input
-                  type="text"
-                  placeholder="Search country..."
-                  value={countryQuery}
-                  onChange={(e) => setCountryQuery(e.target.value)}
-                  className="w-full border-b px-3 py-2 text-sm focus:outline-none"
-                />
-
-                <div className="max-h-56 overflow-auto">
-                  {filteredCountries.length === 0 && (
-                    <div className="px-4 py-2 text-sm text-gray-500">
-                      No results
-                    </div>
-                  )}
-
-                  {filteredCountries.map(([c, flag]) => (
-                    <div
-                      key={c}
-                      onClick={() => {
-                        setSelectedCountry(c);
-                        setCountry(c);
-                        setShowDropdown(false);
-                        setCountryQuery("");
-                      }}
-                      className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 cursor-pointer"
-                    >
-                      <img src={flag} alt={c} width={16} height={16} />
-                      <span>{c}</span>
-                    </div>
-                  ))}
-                </div>
+                {filteredCountries.map((c) => (
+                  <button
+                    type="button"
+                    key={c}
+                    className="flex w-full items-center gap-2 px-4 py-2 text-left text-sm hover:bg-blue-50"
+                    onClick={() => {
+                      setCountryQuery(c.replaceAll("_", " "));
+                      setShowCountryList(false);
+                    }}
+                  >
+                    <img
+                      src={selectableCountries[c].flag}
+                      alt={c}
+                      className="h-4 w-6 rounded"
+                    />
+                    {c.replaceAll("_", " ")}
+                  </button>
+                ))}
               </div>
             )}
           </div>
 
-          {/* Message */}
-          <div className="md:col-span-3">
-            <textarea
-              rows={4}
-              className="w-full border border-gray-300 rounded-md px-4 py-2"
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-            />
-          </div>
+          <input name="website" placeholder="Website URL" className={inputClass} onChange={handleChange} />
+        </div>
 
-          {/* Submit */}
-          <div className="md:col-span-3 flex justify-center mt-4">
-            <button
-              type="button"
-              disabled={loading}
-              onClick={aboutEmail}
-              className="px-6 py-3 bg-blue-600 text-white hover:scale-105 transition disabled:opacity-60"
-            >
-              {loading ? "Sending..." : "Send Message"}
-            </button>
-          </div>
-        </form>
-      </div>
-    </section>
+        {/* SUBMITTING AS */}
+        <div>
+          <p className="mb-2 font-medium">You are submitting as</p>
+          <label className="block">
+            <input type="radio" name="submitAs" value="owner" onChange={handleChange} /> Owner / Parent / Guardian
+          </label>
+          <label className="block">
+            <input type="radio" name="submitAs" value="agent" onChange={handleChange} /> Authorized Agent
+          </label>
+        </div>
+
+        {/* REQUEST TYPE */}
+        <div>
+          <p className="mb-2 font-medium">I am submitting a request to</p>
+          {[
+            "Know what information is collected",
+            "Have my information deleted",
+            "Opt out of having my data sold",
+            "Other",
+          ].map((t) => (
+            <label key={t} className="block">
+              <input type="radio" name="requestType" value={t} onChange={handleChange} /> {t}
+            </label>
+          ))}
+
+          {form.requestType === "Other" && (
+            <input
+              name="otherRequest"
+              placeholder="Please specify"
+              className={`${inputClass} mt-3`}
+              onChange={handleChange}
+            />
+          )}
+        </div>
+
+        {/* MESSAGE */}
+        <textarea
+          name="message"
+          placeholder="Please provide additional details"
+          rows={4}
+          className={inputClass}
+          onChange={handleChange}
+        />
+
+        {/* CONFIRMATIONS */}
+        <div className="space-y-3 text-sm">
+          <label className="block">
+            <input type="checkbox" name="confirm1" required onChange={handleChange} /> I confirm the information provided is accurate.
+          </label>
+          <label className="block">
+            <input type="checkbox" name="confirm2" required onChange={handleChange} /> I understand deletion is irreversible.
+          </label>
+          <label className="block">
+            <input type="checkbox" name="confirm3" required onChange={handleChange} /> I understand verification by email may be required.
+          </label>
+        </div>
+
+        {/* SUBMIT */}
+        <button
+  type="submit"
+  disabled={isSubmitting}
+  className={`rounded-xl px-8 py-3 font-medium text-white transition
+    ${isSubmitting
+      ? "bg-blue-400 cursor-not-allowed"
+      : "bg-blue-600 hover:bg-blue-700"}
+  `}
+>
+  {isSubmitting ? "Submitting..." : "Submit Request"}
+</button>
+      </form>
+    </main>
   );
 }

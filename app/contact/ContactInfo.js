@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { ChevronDown, Send } from "lucide-react";
 import { countries } from "@/lib/data";
 
@@ -45,6 +45,8 @@ const countryCodes = {
   United_Kingdom: { code: "+44", flag: "https://flagcdn.com/w40/gb.png" },
 };
 
+
+
 const ContactInfo = () => {
   const [country, setCountry] = useState("India");
   const [name, setName] = useState("");
@@ -55,6 +57,22 @@ const ContactInfo = () => {
   const [loading, setLoading] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState("India");
   const [showDropdown, setShowDropdown] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const dropdownRef = useRef(null);
+
+  /* =============================
+     CLOSE ON OUTSIDE CLICK
+  ============================= */
+  useEffect(() => {
+    function handleClickOutside(e) {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setShowDropdown(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   const sendEmail = async () => {
     if (!name || !email || !company || !mobile || !message || !country) {
@@ -103,8 +121,16 @@ const ContactInfo = () => {
       setMessage("");
       setCountry("India");
       setSelectedCountry("India");
+      setSearchQuery("");
     }
   };
+
+  /* =============================
+     FILTERED COUNTRIES
+  ============================= */
+  const filteredCountries = Object.entries(countries).filter(([c]) =>
+    c.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
     <section className="relative z-10 pb-20 bg-slate-100 grid md:grid-cols-2 py-12 mt-10 px-4 gap-16 md:px-20">
@@ -113,17 +139,34 @@ const ContactInfo = () => {
         <div className="bg-white/70 border border-gray-200 p-8 shadow-2xl">
           <h2 className="text-2xl font-bold text-black mb-4">Support</h2>
           <p className="text-black text-lg">
-            <p className="mt-5"><span className="text-xl text-blue-600 font-bold">Support & Other Enquiries:</span> 8826195070 <br></br></p>
-            <p className="mt-5"><span className="text-xl text-blue-600 font-bold">Partner with Us:</span> 9625812393<br></br></p>
-            <p className="mt-5"><span className="text-xl text-blue-600 font-bold">Mail us:</span> info@eximtradedata.com</p>
+            <p className="mt-5">
+              <span className="text-xl text-blue-600 font-bold">
+                Support & Other Enquiries:
+              </span>{" "}
+              8826195070
+            </p>
+            <p className="mt-5">
+              <span className="text-xl text-blue-600 font-bold">
+                Partner with Us:
+              </span>{" "}
+              9625812393
+            </p>
+            <p className="mt-5">
+              <span className="text-xl text-blue-600 font-bold">Mail us:</span>{" "}
+              info@eximtradedata.com
+            </p>
           </p>
         </div>
 
         {/* Address */}
         <div className="bg-white/70 border border-gray-200 p-8 shadow-2xl">
           <h2 className="text-2xl font-bold text-black mb-4">Reach Us</h2>
-          <p>Shpere Eximia Research Pvt Ltd<br></br>
-G-232 , Noida Sector-63<br></br> Uttar Pradesh - 201301, India</p>
+          <p>
+            Shpere Eximia Research Pvt Ltd
+            <br />
+            G-232 , Noida Sector-63
+            <br /> Uttar Pradesh - 201301, India
+          </p>
         </div>
       </div>
 
@@ -161,30 +204,46 @@ G-232 , Noida Sector-63<br></br> Uttar Pradesh - 201301, India</p>
             onChange={(e) => setMobile(e.target.value)}
           />
 
-          {/* Country */}
-          <div className="md:col-span-2 relative">
+          {/* COUNTRY DROPDOWN */}
+          <div className="md:col-span-2 relative" ref={dropdownRef}>
             <button
               type="button"
-              onClick={() => setShowDropdown(!showDropdown)}
-              className="border px-4 py-2 w-full flex justify-between"
+              onClick={() => setShowDropdown((prev) => !prev)}
+              className="border px-4 py-2 w-full flex justify-between items-center"
             >
               {selectedCountry}
               <ChevronDown />
             </button>
 
             {showDropdown && (
-              <div className="absolute bg-white border w-full max-h-60 overflow-y-scroll z-20">
-                {Object.entries(countries).map(([c, flag]) => (
+              <div className="absolute bg-white border w-full max-h-64 overflow-y-auto z-20">
+                {/* SEARCH */}
+                <input
+                  type="text"
+                  placeholder="Search country..."
+                  className="w-full px-3 py-2 border-b outline-none"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                />
+
+                {filteredCountries.length === 0 && (
+                  <div className="p-3 text-sm text-gray-500">
+                    No countries found
+                  </div>
+                )}
+
+                {filteredCountries.map(([c, flag]) => (
                   <div
                     key={c}
                     className="flex gap-2 p-2 cursor-pointer hover:bg-gray-100"
                     onClick={() => {
                       setSelectedCountry(c);
-                      setCountry(c); // ✅ FIX
+                      setCountry(c);
                       setShowDropdown(false);
+                      setSearchQuery("");
                     }}
                   >
-                    <img src={flag} width={16} height={16} />
+                    <img src={flag} width={16} height={16} alt={c} />
                     {c}
                   </div>
                 ))}
@@ -201,9 +260,10 @@ G-232 , Noida Sector-63<br></br> Uttar Pradesh - 201301, India</p>
 
           <div className="md:col-span-2 flex justify-center">
             <button
-              type="button" // ✅ FIX
+              type="button"
+              disabled={loading}
               onClick={sendEmail}
-              className="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white"
+              className="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white disabled:opacity-60"
             >
               <Send size={18} />
               {loading ? "Sending..." : "Submit"}

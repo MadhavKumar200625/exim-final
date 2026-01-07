@@ -15,7 +15,15 @@ export default function SearchComponent({ heading, subHeading }) {
 
   if (isBot) {
   return (
-    <section className="w-full px-6 pt-8 pb-16 bg-linear-to-br from-sky-200 via-sky-50 to-sky-200">
+    <section
+      className={`w-full px-6 pt-8 ${
+        heading && subHeading
+          ? "pb-8"
+          : heading
+          ? "pb-16 bg-linear-to-br from-sky-200 via-sky-50 to-sky-200"
+          : "pb-8"
+      }`}
+    >
       {heading && (
         <h2 className="text-3xl font-black text-center mb-8 text-black">
           {heading}
@@ -93,7 +101,14 @@ export default function SearchComponent({ heading, subHeading }) {
   }
 
   return (
-    <section className="w-full px-6 pt-8 pb-16 bg-linear-to-br from-sky-200 via-sky-50 to-sky-200">
+     <section
+      className={`w-full px-6 pt-8 ${
+        heading && subHeading
+          ? "pb-8"
+          : heading
+          ? "pb-16 bg-linear-to-br from-sky-200 via-sky-50 to-sky-200"
+          : "pb-8"
+      }`}>
       {heading && (
         <h2 className="text-3xl font-black text-center mb-8 text-black">
           {heading}
@@ -135,7 +150,7 @@ export default function SearchComponent({ heading, subHeading }) {
             </button>
 
             {showDropdown && (
-              <div className="absolute z-20 mt-2 bg-white rounded-xl shadow-lg p-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 max-h-80 overflow-y-auto">
+              <div className="absolute z-20 mt-2 bg-white rounded-xl shadow-lg p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 max-h-80 overflow-y-auto">
                 <input
                   type="text"
                   placeholder="Search countries..."

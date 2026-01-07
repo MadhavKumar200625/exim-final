@@ -132,7 +132,7 @@ export default function Countries() {
             <ul className="p-4 space-y-2">
               <li>
                 <a
-                  href={`/global-products/product-A/country-${slug}/type-export/pg-1`}
+                  href={`/global-products/product-a/country-${slug}/type-export/pg-1`}
                   className="flex items-center text-sm underline"
                 >
                   {country.name} Export Products
@@ -141,7 +141,7 @@ export default function Countries() {
               </li>
               <li>
                 <a
-                  href={`/global-products/product-A/country-${slug}/type-import/pg-1`}
+                  href={`/global-products/product-a/country-${slug}/type-import/pg-1`}
                   className="flex items-center text-sm underline"
                 >
                   {country.name} Import Products
@@ -150,7 +150,7 @@ export default function Countries() {
               </li>
               <li>
                 <a
-                  href={`/global-companies-list/${slug}/A-1`}
+                  href={`/global-companies-list/${slug}/a-1`}
                   className="flex items-center text-sm underline"
                 >
                   {country.name} Companies

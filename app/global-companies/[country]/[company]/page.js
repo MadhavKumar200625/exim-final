@@ -4,6 +4,7 @@ export const revalidate = 86400;
 import Hero from "./Hero";
 import CompanyView from "./CompanyView";
 import { getCompanyData } from "@/lib/companies/getCompanyData";
+import CompanyRemovalCTA from "./CompanyRemovalCta";
 
 export async function generateMetadata({ params }) {
   params = await params
@@ -35,11 +36,13 @@ export async function generateMetadata({ params }) {
 export default async function Page({ params }) {
   params = await params
   const data = await getCompanyData(params);
+   const { country = "", company = "" } = params;
 
   return (
     <main>
       <Hero companyName={data.companyName} />
       <CompanyView data={data} />
+      <CompanyRemovalCTA country={country} company={company}></CompanyRemovalCTA>
     </main>
   );
 }
