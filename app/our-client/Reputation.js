@@ -37,7 +37,6 @@ const images = [
   "/our-clients/mips.webp",
   "/our-clients/mtek.webp",
   "/our-clients/neohealth.webp",
-  "/our-clients/netease.webp",
   "/our-clients/orientbell_logo.webp",
   "/our-clients/rizir.webp",
   "/our-clients/SA-Law.webp",
