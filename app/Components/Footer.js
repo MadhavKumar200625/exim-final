@@ -555,9 +555,22 @@ const countries = Object.entries(countryCodes).filter(([name]) =>
         </svg>
       </a>
 
-      <div className="mt-12 border-t border-gray-700 pt-6 text-sm text-black text-center">
-        &copy; {2025} Shpere Eximia Research Pvt Ltd. All rights reserved.
-      </div>
+      <div className="mt-12 border-t border-gray-700 pt-6 text-sm text-black">
+  <div className="flex flex-col md:flex-row items-center justify-between gap-3">
+    {/* Left */}
+    <a
+      href="/sitemap.xml"
+      className="underline text-md w-30 hover:text-blue-600"
+    >
+      Sitemap XML
+    </a>
+
+    {/* Center / Right */}
+    <div className="text-center w-full md:text-center md:mr-32 ">
+      &copy; {2025} Shpere Eximia Research Pvt Ltd. All rights reserved.
+    </div>
+  </div>
+</div>
     </footer>
   );
 }
