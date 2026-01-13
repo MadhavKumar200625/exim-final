@@ -5,22 +5,6 @@ import Script from "next/script";
 import { useState, useEffect } from "react";
 import { Facebook, Instagram, Linkedin, Youtube ,XIcon} from "lucide-react";
 
-export default function Footer() {
-  // 🤖 bot detection
-  const isBot =
-    typeof navigator !== "undefined" &&
-    (navigator.webdriver ||
-      /bot|crawler|spider|headless/i.test(navigator.userAgent));
-
-  
-
-
-  /* ======================
-     WhatsApp Float Scroll
-     ====================== */
-  const [scrolled, setScrolled] = useState(false);
-
-
   const countryCodes = {
   Afghanistan: { code: "+93", flag: "https://flagcdn.com/w40/af.png" },
   Albania: { code: "+355", flag: "https://flagcdn.com/w40/al.png" },
@@ -189,6 +173,24 @@ export default function Footer() {
   Zambia: { code: "+260", flag: "https://flagcdn.com/w40/zm.png" },
   Zimbabwe: { code: "+263", flag: "https://flagcdn.com/w40/zw.png" },
 };
+
+export default function Footer() {
+  // 🤖 bot detection
+  const isBot =
+    typeof navigator !== "undefined" &&
+    (navigator.webdriver ||
+      /bot|crawler|spider|headless/i.test(navigator.userAgent));
+
+  
+
+
+  /* ======================
+     WhatsApp Float Scroll
+     ====================== */
+  const [scrolled, setScrolled] = useState(false);
+
+
+
   const [selectedCountry, setSelectedCountry] = useState("India");
 const [showCodes, setShowCodes] = useState(false);
 const [searchCode, setSearchCode] = useState("");

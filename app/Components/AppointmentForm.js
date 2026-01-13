@@ -280,7 +280,7 @@ const AppointmentForm = ({ isOpen, onClose }) => {
   const handlePrev = () => setStep((p) => p - 1);
 
   const handleSubmit = async () => {
-   
+   if (loading) return;
 
     if (!selectedDate || !selectedTime || !formData.Timezone) {
       alert(`Please select timezone, date and time.${selectedDate,selectedTime,formData.Timezone}`);
@@ -678,7 +678,7 @@ const AppointmentForm = ({ isOpen, onClose }) => {
                 rows="3"
                 className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
                 placeholder="Enter your message..."
-                required
+                
               ></textarea>
             </div>
 
@@ -693,12 +693,17 @@ const AppointmentForm = ({ isOpen, onClose }) => {
                 ← Previous
               </button>
               <button
-                type="button"
-                onClick={handleSubmit}
-                className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
-              >
-                Next →
-              </button>
+  type="button"
+  onClick={handleSubmit}
+  disabled={loading}
+  className={`px-6 py-2 rounded-lg transition ${
+    loading
+      ? "bg-gray-400 cursor-not-allowed"
+      : "bg-blue-600 hover:bg-blue-700 text-white"
+  }`}
+>
+  {loading ? "Booking..." : "Next →"}
+</button>
             </div>
           </form>
         )}
