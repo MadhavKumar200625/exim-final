@@ -6,9 +6,9 @@ const num = (v) =>
   typeof v === "number" && !Number.isNaN(v) ? v : 0;
 
 const Overview = ({ portName = "", stats = {} }) => {
-  const shipments = num(stats.shipments);
-  const buyers = num(stats.buyers);
-  const suppliers = num(stats.suppliers);
+  const shipments = (stats.shipments);
+  const buyers = (stats.buyers);
+  const suppliers = (stats.suppliers);
 
   return (
     <section className="relative bg-linear-to-br from-gray-50 via-white to-gray-100 py-16">
