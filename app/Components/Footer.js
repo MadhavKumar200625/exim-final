@@ -425,7 +425,7 @@ const countries = Object.entries(countryCodes).filter(([name]) =>
 </a>
 
 <a
-  href="https://x.com/eximtradedata"
+  href="https://x.com/eximtradedataa"
   target="_blank"
   rel="noopener noreferrer"
 >
