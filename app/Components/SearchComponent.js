@@ -5,7 +5,7 @@ import { ChevronDown, Search } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { countries } from "@/lib/data";
 
-export default function SearchComponent({ heading, subHeading }) {
+export default function SearchComponent({ heading, subHeading ,defaults = {} }) {
   const router = useRouter();
 
   const isBot =
@@ -46,13 +46,26 @@ export default function SearchComponent({ heading, subHeading }) {
   );
 }
 
-  const [showDropdown, setShowDropdown] = useState(false);
-  const [selectedCountry, setSelectedCountry] = useState("");
-  const [searchTerm, setSearchTerm] = useState("");
-  const [product, setProduct] = useState("");
-  const [hsCode, setHsCode] = useState("");
-  const [selectedType, setSelectedType] = useState("");
-  const [error, setError] = useState("");
+const [showDropdown, setShowDropdown] = useState(false);
+
+const [selectedCountry, setSelectedCountry] = useState(
+  defaults.country || ""
+);
+const [searchTerm, setSearchTerm] = useState("");
+
+const [product, setProduct] = useState(
+  defaults.product || ""
+);
+
+const [hsCode, setHsCode] = useState(
+  defaults.hscode || ""
+);
+
+const [selectedType, setSelectedType] = useState(
+  defaults.type || ""
+);
+
+const [error, setError] = useState("");
 
   const dropdownRef = useRef(null);
 

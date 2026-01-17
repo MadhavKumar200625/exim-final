@@ -1,9 +1,13 @@
+"use client"
 import React from "react";
-import Link from "next/link";
+import { useState } from "react";
 import { ChevronDown } from "lucide-react"; // <-- Import Lucide icon
+import UnlockDataForm from "@/app/Components/UnlockDataForm";
 
-const MainSection = ({ data, appliedFilters }) => {
+
+const MainSection = ({ data, appliedFilters ,country}) => {
   const { filters, table } = data;
+  const [showUnlockForm, setShowUnlockForm] = useState(false);
 
   const baseUrl = "/search";
   const buildUrl = (filters) => {
@@ -36,9 +40,9 @@ const MainSection = ({ data, appliedFilters }) => {
   };
 
   return (
-    <section className="w-full grid grid-cols-1 md:grid-cols-12 gap-4 mt-10 px-2">
+    <section className="w-full grid grid-cols-1 md:grid-cols-12 gap-4 mt-6 md:mt-10 px-2 md:px-4">
       {/* Left Filters */}
-      <aside className="col-span-2 bg-blue-600 shadow-md rounded-2xl p-6 space-y-8 border border-gray-200">
+      <aside className="col-span-1 md:col-span-2 bg-blue-600 shadow-md rounded-2xl p-4 md:p-6 space-y-6 md:space-y-8 border border-gray-200">
         <h3 className="text-lg font-semibold text-white border-b pb-3">
           Filters
         </h3>
@@ -91,7 +95,7 @@ const MainSection = ({ data, appliedFilters }) => {
             <div>Port of Unloading <span className="text-white">({filters.ports.length})</span></div>
             <ChevronDown size={16} className="text-white" />
           </summary>
-<ul className="list-disc list-outside space-y-2 px-4 marker:text-white">
+<ul className="list-disc list-outside space-y-2 px-4 marker:text-white text-sm break-words">
               {filters.ports.map((port, i) => (
               <li key={i}>
                 <a
@@ -110,8 +114,8 @@ const MainSection = ({ data, appliedFilters }) => {
       <div className="col-span-10 bg-white shadow-md rounded-2xl p-6">
         <h3 className="text-xl font-semibold text-black mb-4">Trade Data</h3>
 
-        <div className="overflow-hidden rounded-lg border border-gray-200">
-          <table className="w-full text-sm border-collapse table-fixed">
+<div className="overflow-x-auto rounded-lg border border-gray-200">
+            <table className="w-full text-xs sm:text-sm border-collapse table-fixed min-w-[1200px]">
             <thead className="bg-gray-100 text-black">
               <tr>
                 {table.headers.map((head, i) => (
@@ -124,7 +128,8 @@ const MainSection = ({ data, appliedFilters }) => {
                     ${head.toLowerCase() === "quantity" ? "w-26" : ""} 
                     ${head.toLowerCase() === "unit" ? "w-14" : ""} 
                     ${head.toLowerCase() === "value" ? "w-24" : ""} 
-                    ${head.toLowerCase() === "product description" ? "w-64" : ""}`}
+                    ${head.toLowerCase() === "product description" ? "w-40" : ""}
+                    ${head.toLowerCase() === "action" ? "w-40 text-center" : ""}`}
                   >
                     {head}
                   </th>
@@ -141,18 +146,26 @@ const MainSection = ({ data, appliedFilters }) => {
                   <td className="px-3 py-2">{row.hsCode}</td>
                   <td className="px-3 py-2 max-w-xs">
                     <p
-                      className="truncate overflow-hidden whitespace-nowrap"
-                      title={row.product}
-                    >
-                      {row.product}
-                    </p>
+  className="overflow-hidden text-ellipsis line-clamp-3 break-words"
+  title={row.product}
+>
+  {row.product}
+</p>
                   </td>
                   <td className="px-3 py-2">{row.exporter}</td>
                   <td className="px-3 py-2 text-center">{row.qty}</td>
-                  <td className="px-3 py-2">{row.unit}</td>
-                  <td className="px-3 text-center py-2">{row.value}</td>
-                  <td className="px-3 py-2 text-center">{row.origin}</td>
+                  <td className="px-3 py-2 text-center">{row.unit}</td>
+                  <td className="px-3  py-2">{row.value}</td>
+                  <td className="px-3 py-2 ">{row.origin}</td>
                   <td className="px-3 py-2">{row.port}</td>
+                  <td className="px-3 py-2 ">
+  <button
+    onClick={() => setShowUnlockForm(true)}
+    className="px-3 sm:px-4 py-2 bg-blue-600 text-white text-[15px] sm:text-md cursor-pointer rounded-lg hover:bg-blue-700 transition shadow whitespace-nowrap"
+  >
+    Unlock Full Data
+  </button>
+</td>
                 </tr>
               ))}
             </tbody>
@@ -160,39 +173,46 @@ const MainSection = ({ data, appliedFilters }) => {
         </div>
 
         {/* Pagination */}
-        <div className="flex justify-center items-center mt-6 gap-2">
+        <div className="flex flex-wrap justify-center items-center mt-6 gap-2 px-2">
           {Array.from({ length: 5 }, (_, i) => {
             const page = i + 1;
             const isActive = page === table.pagination.currentPage;
 
             return isActive ? (
-              <span
-                key={page}
-                className="px-4 py-2 bg-blue-600 text-white text-sm rounded-lg shadow cursor-default"
+              <button
+              key={i}
+                className="px-4 py-2 bg-blue-600 cursor-pointer text-white text-sm rounded-lg shadow "
               >
                 {page}
-              </span>
+              </button>
             ) : (
-              <a
-                key={page}
-                href="/pricing"
-                className="px-4 py-2 bg-gray-100 text-black text-sm rounded-lg hover:bg-gray-200 transition"
+              <button
+              key={i}
+              onClick={()=>{setShowUnlockForm(true)}}
+               
+                className="px-4 cursor-pointer py-2 bg-gray-100 text-black text-sm rounded-lg hover:bg-gray-200 transition"
               >
                 {page}
-              </a>
+              </button>
             );
           })}
 
           {table.pagination.currentPage < table.pagination.totalPages && (
-            <a
-              href={table.pagination.nextPageUrl}
+            <button
+              onClick={()=>{setShowUnlockForm(true)}}
               className="px-4 py-2 bg-blue-600 text-white text-sm rounded-lg shadow hover:bg-blue-700 transition"
             >
               Next Page →
-            </a>
+            </button>
           )}
         </div>
       </div>
+
+      <UnlockDataForm
+  isOpen={showUnlockForm}
+  onClose={() => setShowUnlockForm(false)}
+  country={country}
+/>
     </section>
   );
 };

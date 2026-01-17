@@ -2,7 +2,7 @@
 import SearchComponent from "@/app/Components/SearchComponent";
 import Link from "next/link";
 import React from "react";
-const Hero = ({data}) => {
+const Hero = ({data,query}) => {
   return (
     <section className="px-6   pt-28 bg-linear-to-b from-blue-100 via-sky-50 to-white">
       <div className=" mx-auto space-y-12">
@@ -22,7 +22,7 @@ const Hero = ({data}) => {
 
           {/* Search Bar Placeholder */}
           <div className="mb-8">
-              <SearchComponent></SearchComponent>
+              <SearchComponent defaults={query}></SearchComponent>
           </div>
         </div>
       </div>

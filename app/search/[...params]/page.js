@@ -224,6 +224,7 @@ export default async function Page({ params }) {
   params = await params
   const raw = params.params || [];
   const appliedFilters = parseFilters(raw);
+  
   const query = extractQuery(appliedFilters);
 
   let api;
@@ -353,6 +354,7 @@ export default async function Page({ params }) {
           query.type === "export"
             ? "PORT OF LOADING"
             : "PORT OF UNLOADING",
+            "Action"
         ],
         rows,
         pagination: {
@@ -373,11 +375,12 @@ export default async function Page({ params }) {
   -------------------------------------------------- */
   return (
     <main>
-      <Hero data={data.section1} />
+      <Hero data={data.section1} query={query} />
       <ShowFilters appliedFilters={data.section3.appliedFilters} />
       <MainSection
         data={data.section4}
         appliedFilters={data.section3.appliedFilters}
+        country = {query.country}
       />
       <SearchGlobalData data={data.section5} />
     </main>
