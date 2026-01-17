@@ -114,7 +114,7 @@ export default function RootLayout({ children }) {
                 }
               `}
         </Script>
-          <div id="top-loader"></div>
+        <div id="top-loader"></div>
 
         <GlobalLinkLoader />
 
