@@ -54,7 +54,7 @@ export async function POST(req) {
     for (const f of required) {
 
       if (!data[f]) {
-        console.log(f)
+      
         return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
       }
     }

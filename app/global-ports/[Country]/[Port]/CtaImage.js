@@ -8,7 +8,7 @@ export default function CtaImage({ portName }) {
         className="absolute inset-0 bg-cover bg-center opacity-30"
         style={{
           backgroundImage:
-            "url('https://old-net.eximtradedata.com/images/port_shipmet_data.png')",
+            "url('/global-ports/global-ports-data.webp')",
         }}
         aria-hidden="true"
       />
