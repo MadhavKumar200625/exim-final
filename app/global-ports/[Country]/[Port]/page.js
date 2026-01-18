@@ -64,7 +64,7 @@ export default async function Page({ params }) {
 
   return (
     <main>
-      <Hero heading={`${data.portName} Port Data`} />
+      <Hero heading={`${data.portName} Port Data`} country/>
 
       <Overview portName={data.portName} stats={data.section2} />
 

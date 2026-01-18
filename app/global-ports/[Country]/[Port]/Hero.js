@@ -16,7 +16,7 @@ const tabs = [
   { name: "Contact", active: false },
 ];
 
-const Hero = ({ companyName,heading }) => {
+const Hero = ({ companyName,heading,country }) => {
 
   const [showUnlockForm, setShowUnlockForm] = useState(false);
 
@@ -60,7 +60,7 @@ const Hero = ({ companyName,heading }) => {
       <UnlockDataForm
         isOpen={showUnlockForm}
         onClose={() => setShowUnlockForm(false)}
-        country={companyName}
+        country={country}
       />
     </section>
   );
