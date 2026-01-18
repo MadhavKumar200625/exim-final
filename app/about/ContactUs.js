@@ -325,7 +325,7 @@ export default function ContactUs() {
           {/* Country (SEARCHABLE DROPDOWN) */}
           <div className="relative" ref={dropdownRef}>
             <label className="block text-sm font-medium text-black mb-1">
-              Select Country
+              Select Country of Residence
             </label>
 
             <div
