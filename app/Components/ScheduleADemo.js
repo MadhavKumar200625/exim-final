@@ -204,9 +204,7 @@ const validateForm = () => {
     newErrors.requirement = "Select data requirement";
   }
 
-  if (!form.message.trim()) {
-    newErrors.message = "Please describe your requirement";
-  }
+  
 
   setErrors(newErrors);
   return Object.keys(newErrors).length === 0;
@@ -412,8 +410,7 @@ useEffect(() => {
                 onChange={handleChange}
                 className="w-full h-24 bg-white border rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-blue-500 outline-none"
               />
-              {errors.message && (
-  <p className="text-xs text-red-500 mt-1">{errors.message}</p>)}
+              
               
             </div>
           </div>
