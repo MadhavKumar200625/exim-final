@@ -313,16 +313,20 @@ useEffect(() => {
 
                 {/* Phone input */}
                 <input
-                  type="tel"
-                  placeholder="Phone / WhatsApp number"
-                  onChange={(e) =>
-                    setForm({
-                      ...form,
-                      phone: `${countryCode} ${e.target.value}`,
-                    })
-                  }
-                  className="w-full border-t border-b border-r rounded-r-lg px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500 outline-none"
-                />
+  type="tel"
+  inputMode="numeric"
+  pattern="[0-9]*"
+  placeholder="Phone / WhatsApp number"
+  value={form.phone.replace(countryCode, "").trim()}
+  onChange={(e) => {
+    const digitsOnly = e.target.value.replace(/\D/g, "");
+    setForm({
+      ...form,
+      phone: `${countryCode} ${digitsOnly}`,
+    });
+  }}
+  className="w-full border-t border-b border-r rounded-r-lg px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500 outline-none"
+/>
                 
 
                 {/* Dropdown */}
