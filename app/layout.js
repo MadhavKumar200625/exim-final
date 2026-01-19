@@ -6,6 +6,7 @@ import Footer from "./Components/Footer";
 import LoaderHandler from "./Components/LoaderHandler";
 import { GlobalLinkLoader } from "./Components/GlobalLinkLoader";
 import AllPageForm from "./Components/AllPageForm";
+import ScrollArrows from "./Components/ScrollArrows";
 // import Header from "./components/Header";
 // import Footer from "./components/Footer";
 
@@ -124,6 +125,7 @@ export default function RootLayout({ children }) {
         <Header />
         <AllPageForm></AllPageForm>
         <main>{children}</main>
+        <ScrollArrows />
         <Footer />
       </body>
     </html>

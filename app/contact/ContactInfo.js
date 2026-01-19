@@ -207,7 +207,7 @@ const ContactInfo = () => {
           {/* COUNTRY DROPDOWN */}
           <div className="md:col-span-2 relative" ref={dropdownRef}>
             <label className="block text-sm font-medium text-gray-700 mb-1">
-    Country of Residence
+    Select The Country You Live In
   </label>
             <button
               type="button"

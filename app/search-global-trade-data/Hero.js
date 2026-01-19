@@ -1,10 +1,13 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import SearchComponent from "../Components/SearchComponent";
+import ScheduleADemo from "../Components/ScheduleADemo";
 
 const Hero = () => {
+        const [showForm, setShowForm] = useState(false);
+  
   return (
     <section className="px-6 pb-12 pt-28 bg-linear-to-b from-blue-100 via-sky-50 to-white">
       <div className="mx-auto space-y-12">
@@ -43,15 +46,17 @@ const Hero = () => {
             risk involved in the business.
           </p>
 
-          <a
-            href="/pricing"
-            
-            className="inline-block bg-blue-600 text-white text-lg px-6 py-3 font-medium shadow hover:scale-105 transition-transform"
+          <button onClick={()=>{setShowForm(true)}}
+            className="inline-block bg-blue-600 text-white cursor-pointer text-lg px-6 py-3 font-medium shadow hover:scale-105 transition-transform"
           >
             Schedule Demo
-          </a>
+          </button>
         </div>
       </div>
+      <ScheduleADemo
+                                isOpen={showForm}
+                                onClose={() => setShowForm(false)}
+                              />
     </section>
   );
 };

@@ -1,10 +1,13 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import ScheduleADemo from '../Components/ScheduleADemo';
 
 const GrowWithGlobalSection = () => {
+    const [showForm, setShowForm] = useState(false);
+  
   // 🤖 bot detection (logic only)
   const isBot =
     typeof navigator !== "undefined" &&
@@ -31,7 +34,7 @@ const GrowWithGlobalSection = () => {
 
           {/* CTA */}
           <a
-            href="/contact"
+           onClick={()=>{setShowForm(true)}}
             
             className="relative inline-flex items-center justify-center px-8 py-4 text-md overflow-hidden font-semibold text-white transition-all duration-300 bg-blue-600 shadow-md group"
           >
@@ -49,6 +52,10 @@ const GrowWithGlobalSection = () => {
           decoding="async"
         />
       </div>
+      <ScheduleADemo
+                    isOpen={showForm}
+                    onClose={() => setShowForm(false)}
+                  />
     </section>
   );
 };

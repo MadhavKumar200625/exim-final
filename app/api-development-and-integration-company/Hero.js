@@ -1,7 +1,11 @@
+"use client"
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
+import UnlockDataForm from "../Components/UnlockDataForm";
 
 const Hero = () => {
+          const [showForm, setShowForm] = useState(false);
+  
   return (
     <section className="bg-linear-to-r from-blue-50 via-white to-blue-50 pb-8 pt-10 px-4 md:px-20">
       <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-12">
@@ -15,12 +19,12 @@ const Hero = () => {
           </p>
 
           <div className="flex gap-4">
-            <a
-              href="/contact"
+            <button
+              onClick={()=>{setShowForm(true)}}
               className="px-6 py-3 bg-blue-600 text-white text-base font-medium hover:scale-105 transition-transform duration-200"
             >
               Consult Our Expert
-            </a>
+            </button>
           </div>
         </div>
 
@@ -37,6 +41,10 @@ const Hero = () => {
           />
         </div>
       </div>
+      <UnlockDataForm
+                                      isOpen={showForm}
+                                      onClose={() => setShowForm(false)}
+                                    />
     </section>
   );
 };

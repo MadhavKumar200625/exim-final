@@ -1,7 +1,11 @@
-import React from "react";
+"use client"
+import React, { useState } from "react";
 import Link from "next/link";
+import UnlockDataForm from "@/app/Components/UnlockDataForm";
 
 const Hero = ({ title, description, image }) => {
+      const [showForm, setShowForm] = useState(false);
+
   const safeImage =
     image
       ? image
@@ -24,11 +28,11 @@ const Hero = ({ title, description, image }) => {
             {description}
           </p>
 
-          <a href="/pricing">
-            <span className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 hover:scale-105 transition duration-300">
+          <button onClick={()=>{setShowForm(true)}}>
+            <span className="inline-block cursor-pointer bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 hover:scale-105 transition duration-300">
               Get Insight Reports →
             </span>
-          </a>
+          </button>
         </div>
 
         {/* Right Image */}
@@ -42,6 +46,10 @@ const Hero = ({ title, description, image }) => {
           />
         </div>
       </div>
+       <UnlockDataForm
+                          isOpen={showForm}
+                          onClose={() => setShowForm(false)}
+                        />
     </section>
   );
 };

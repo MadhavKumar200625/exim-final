@@ -1,6 +1,11 @@
+"use client"
+import UnlockDataForm from "@/app/Components/UnlockDataForm";
 import Link from "next/link";
+import React, { useState } from "react";
 
 export default function CtaImage({ portName }) {
+              const [showForm, setShowForm] = useState(false);
+  
   return (
     <section className="relative text-black py-20 overflow-hidden">
       {/* Background image */}
@@ -27,14 +32,18 @@ export default function CtaImage({ portName }) {
 
         {/* CTA */}
         <div className="flex justify-center">
-          <a
-            href="/pricing"
+          <button
+             onClick={()=>{setShowForm(true)}}
             className="px-8 py-4 bg-blue-600 text-white font-semibold shadow-md transition-transform hover:scale-105"
           >
             Explore Now
-          </a>
+          </button>
         </div>
       </div>
+      <UnlockDataForm
+                                      isOpen={showForm}
+                                      onClose={() => setShowForm(false)}
+                                    />
     </section>
   );
 }

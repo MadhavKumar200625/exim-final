@@ -21,9 +21,9 @@ const continentData = [
   {
     name: "EUROPE",
     countries: [
-      { label: "UK", code: "gb", url: "/country-wise-uk-import-export-data" },
-      { label: "Moldova", code: "md", url: "/country-wise-moldova-import-export-data" },
-      { label: "Ukraine", code: "ua", url: "/country-wise-ukraine-import-export-data" },
+      { label: "UK", code: "gb", url: "/country-wise-uk-import-and-export-data" },
+      { label: "Moldova", code: "md", url: "/country-wise-moldova-import-and-export-data" },
+      { label: "Ukraine", code: "ua", url: "/country-wise-ukraine-import-and-export-data" },
     ],
   },
   {
@@ -39,7 +39,7 @@ const continentData = [
     name: "OCEANIA",
     countries: [
       { label: "Australia", code: "au", url: "/australia-import-export-data" },
-      { label: "Fiji", code: "fj", url: "/country-wise-fiji-import-export-data" },
+      { label: "Fiji", code: "fj", url: "/country-wise-fiji-import-and-export-data" },
     ],
   },
 ];

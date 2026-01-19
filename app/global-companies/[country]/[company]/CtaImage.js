@@ -1,9 +1,14 @@
 "use client";
 
+import UnlockDataForm from "@/app/Components/UnlockDataForm";
 import { motion } from "framer-motion"
 import { ArrowRight, BarChart3 } from "lucide-react"
+import React, { useState } from "react";
+
 
 const CtaImage = ({ portName }) => {
+    const [showForm, setShowForm] = useState(false);
+
   return (
     <section className="relative w-full py-12 overflow-hidden bg-gradient-to-br from-white via-slate-50 to-slate-100 text-gray-900">
       {/* Background Glow */}
@@ -52,8 +57,10 @@ const CtaImage = ({ portName }) => {
         </motion.p>
 
         {/* CTA Button */}
-        <a href="/pricing">
-        <motion.button
+        <button onClick={() => {
+              setShowForm(true);
+            }}>
+        <motion.span
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           className="group mt-10 inline-flex items-center gap-3 px-6 py-4   bg-blue-600 text-white font-semibold shadow-md hover:shadow-lg transition-all"
@@ -62,9 +69,10 @@ const CtaImage = ({ portName }) => {
 
           Get Full Report
           <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-        </motion.button>
-        </a>
+        </motion.span>
+        </button>
       </div>
+          <UnlockDataForm isOpen={showForm} onClose={() => setShowForm(false)} />
     </section>
   );
 };

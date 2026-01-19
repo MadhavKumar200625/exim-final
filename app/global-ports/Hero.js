@@ -1,7 +1,11 @@
-import React from 'react'
+"use client"
+import React, { useState } from 'react'
 import Link from 'next/link'
+import ScheduleADemo from '../Components/ScheduleADemo';
 
 const Hero = () => {
+            const [showForm, setShowForm] = useState(false);
+  
   return (
     <section className="w-full bg-white pt-32 pb-14 px-6 md:px-16">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
@@ -34,12 +38,12 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 pt-2">
-            <a
-              href="/pricing"
+            <button
+              onClick={()=>{setShowForm(true)}}
               className="relative overflow-hidden px-6 mx-1 py-3 bg-blue-600 cursor-pointer text-white text-md hover:scale-105 transition-all font-semibold shadow-xl"
             >
               Schedule a Demo
-            </a>
+            </button>
 
             <a
               href="/api-development-and-integration-company"
@@ -51,6 +55,10 @@ const Hero = () => {
         </div>
 
       </div>
+      <ScheduleADemo
+                                            isOpen={showForm}
+                                            onClose={() => setShowForm(false)}
+                                          />
     </section>
   )
 }

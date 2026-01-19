@@ -283,7 +283,7 @@ const filteredCountries = countries.filter((c) =>
 
             <div className="relative">
   <label className="block text-sm font-semibold mb-2 text-black">
-    Country
+    Select The Country You Live In
   </label>
 
   {/* Dropdown Button */}

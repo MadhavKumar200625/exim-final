@@ -1,4 +1,7 @@
+"use client"
+import React, { useState } from "react";
 import DetailedTableTabs from "./DetailedTableTabs.client";
+import UnlockDataForm from "@/app/Components/UnlockDataForm";
 
 /* ---------------- FALLBACK DATA ---------------- */
 
@@ -59,6 +62,8 @@ const FALLBACK_EXPORT_DATA = [
 /* ---------------- COMPONENT ---------------- */
 
 export default function DetailedTable({ portName, importData, exportData }) {
+                const [showForm, setShowForm] = useState(false);
+
   const safeImportData =
     Array.isArray(importData) && importData.length > 0
       ? importData
@@ -82,14 +87,18 @@ export default function DetailedTable({ portName, importData, exportData }) {
         />
 
         <div className="flex justify-center mt-8">
-          <a
-            href="/pricing"
+          <button
+             onClick={()=>{setShowForm(true)}}
             className="px-8 py-3 bg-blue-600 text-white font-semibold shadow-md hover:scale-105 transition-transform"
           >
             View All
-          </a>
+          </button>
         </div>
       </div>
+      <UnlockDataForm
+                                      isOpen={showForm}
+                                      onClose={() => setShowForm(false)}
+                                    />
     </section>
   );
 }

@@ -1,8 +1,12 @@
 
+"use client"
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
+import ScheduleADemo from "../Components/ScheduleADemo";
 
 const Hero = () => {
+      const [showForm, setShowForm] = useState(false);
+
   return (
     <section className="bg-linear-to-r pt-32 from-blue-50 via-white to-blue-50 pb-4 px-4 md:px-20">
       <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-12">
@@ -16,12 +20,14 @@ const Hero = () => {
           </p>
 
           <div className="flex  gap-4">
-            <a
-              href="/pricing"
+            <button
+              onClick={() => {
+              setShowForm(true);
+            }}
               className="px-6 py-3 bg-blue-600 text-white text-base font-medium hover:scale-105 transition-transform duration-200 cursor-pointer"
             >
               Schedule a Demo
-            </a>
+            </button>
             <a
               href="/api-development-and-integration-company"
               className="px-6 py-3 bg-blue-600 text-white text-base font-medium hover:scale-105 transition-transform duration-200 cursor-pointer"
@@ -45,6 +51,7 @@ const Hero = () => {
         </div>
         
       </div>
+      <ScheduleADemo isOpen={showForm} onClose={() => setShowForm(false)} />
     </section>
   );
 };

@@ -171,7 +171,7 @@ const countryCodes = {
   Zimbabwe: { code: "+263", flag: "https://flagcdn.com/w40/zw.png" },
 };
 
-export default function ScheduleADemo({ isOpen, onClose, country }) {
+export default function ScheduleADemo({ isOpen, onClose, country = "" }) {
   const [countryCode, setCountryCode] = useState("+91");
   const [errors, setErrors] = useState({});
 const [showCodeDropdown, setShowCodeDropdown] = useState(false);

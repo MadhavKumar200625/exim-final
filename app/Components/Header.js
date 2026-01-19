@@ -24,6 +24,7 @@ import {
   ShoppingCart,
   Megaphone,
 } from "lucide-react";
+import ScheduleADemo from "./ScheduleADemo";
 
 const solutions = [
   { title: "Agribusiness", link: "/agribusiness", icon: Tractor },
@@ -49,6 +50,8 @@ const solutions = [
 ];
 
 const Header = () => {
+  const [showForm, setShowForm] = useState(false);
+  
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
@@ -187,13 +190,13 @@ const Header = () => {
         </nav>
 
         <div className="hidden md:block">
-          <a
-            href="/pricing#pricing_section"
+          <button
+            onClick={()=>{setShowForm(true)}}
             
             className="relative cursor-pointer inline-flex items-center justify-center px-6 py-2 overflow-hidden font-semibold text-white transition-all duration-300 bg-blue-600 hover:scale-105"
           >
             <span className="relative z-10">Get A Demo</span>
-          </a>
+          </button>
         </div>
 
         {/* Mobile Toggle */}
@@ -228,6 +231,11 @@ const Header = () => {
           ))}
         </div>
       )}
+
+      <ScheduleADemo
+              isOpen={showForm}
+              onClose={() => setShowForm(false)}
+            />
     </header>
   );
 };

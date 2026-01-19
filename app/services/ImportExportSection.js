@@ -1,7 +1,12 @@
-import React from 'react'
+"use client"
+import React, { useState } from 'react'
 import Link from 'next/link'
+import UnlockDataForm from '../Components/UnlockDataForm';
+
 
 const ImportExportSection = () => {
+    const [showForm, setShowForm] = useState(false);
+
   return (
     <section className="w-full py-20 bg-linear-to-br from-white via-sky-50 to-white ">
   <div className="container mx-auto px-6 md:px-12 lg:px-20">
@@ -14,11 +19,15 @@ const ImportExportSection = () => {
       </p>
     </div>
     <div className="flex justify-center">
-      <a href="/import-export-data-country-wise" className="relative text-xl cursor-pointer inline-flex items-center justify-center px-6 py-2 overflow-hidden font-semibold text-white transition-all duration-300  bg-blue-600  hover:scale-105">
+      <button onClick={()=>{setShowForm(true)}}  className="relative text-xl cursor-pointer inline-flex items-center justify-center px-6 py-2 overflow-hidden font-semibold text-white transition-all duration-300  bg-blue-600  hover:scale-105">
              Explore More
-              </a>
+              </button>
     </div>
   </div>
+   <UnlockDataForm
+                      isOpen={showForm}
+                      onClose={() => setShowForm(false)}
+                    />
 </section>
   )
 }
