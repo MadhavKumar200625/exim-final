@@ -173,8 +173,44 @@ const countryCodes = {
 
 export default function ScheduleADemo({ isOpen, onClose, country }) {
   const [countryCode, setCountryCode] = useState("+91");
+  const [errors, setErrors] = useState({});
 const [showCodeDropdown, setShowCodeDropdown] = useState(false);
+const validateForm = () => {
+  const newErrors = {};
 
+  if (!form.name.trim()) {
+    newErrors.name = "Full name is required";
+  }
+
+  if (!form.email.trim()) {
+    newErrors.email = "Email is required";
+  } else if (
+    !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(form.email)
+  ) {
+    newErrors.email = "Enter a valid business email";
+  }
+
+  if (!form.phone.trim()) {
+    newErrors.phone = "Phone number is required";
+  } else if (form.phone.replace(/\D/g, "").length < 8) {
+    newErrors.phone = "Enter a valid phone number";
+  }
+
+  if (!form.company.trim()) {
+    newErrors.company = "Company name is required";
+  }
+
+  if (!form.requirement) {
+    newErrors.requirement = "Select data requirement";
+  }
+
+  if (!form.message.trim()) {
+    newErrors.message = "Please describe your requirement";
+  }
+
+  setErrors(newErrors);
+  return Object.keys(newErrors).length === 0;
+};
 const [codeSearch, setCodeSearch] = useState("");
 const codeRef = useRef(null);
 
@@ -206,23 +242,25 @@ useEffect(() => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (loading) return;
+  e.preventDefault();
+  if (loading) return;
 
-    setLoading(true);
-    try {
-      const res = await fetch("/api/unlock-data", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
+  if (!validateForm()) return;
 
-      if (!res.ok) throw new Error("Failed");
-      onClose();
-    } catch {
-      setLoading(false);
-    }
-  };
+  setLoading(true);
+  try {
+    const res = await fetch("/api/schedule-demo", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(form),
+    });
+
+    if (!res.ok) throw new Error("Failed");
+    onClose();
+  } catch {
+    setLoading(false);
+  }
+};
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm px-4">
@@ -246,8 +284,8 @@ useEffect(() => {
 
         <form onSubmit={handleSubmit} className="space-y-5">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <Input label="Full Name" name="name" placeholder="Enter your full name" onChange={handleChange} />
-            <Input label="Business Email" name="email" placeholder="Enter your work email address" onChange={handleChange} />
+            <Input label="Full Name" name="name" placeholder="Enter your full name" onChange={handleChange} errors={errors}/>
+            <Input label="Business Email" name="email" placeholder="Enter your work email address" errors={errors} onChange={handleChange} />
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
                 Phone Number
@@ -285,6 +323,7 @@ useEffect(() => {
                   }
                   className="w-full border-t border-b border-r rounded-r-lg px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500 outline-none"
                 />
+                
 
                 {/* Dropdown */}
                 {showCodeDropdown && (
@@ -335,8 +374,11 @@ useEffect(() => {
                   </div>
                 )}
               </div>
+              {errors.phone && (
+  <p className="text-xs text-red-500 mt-1">{errors.phone}</p>
+)}
             </div>
-            <Input label="Company Name" name="company" placeholder="Enter your company name" onChange={handleChange} />
+            <Input label="Company Name" name="company" placeholder="Enter your company name" errors={errors} onChange={handleChange} />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -366,6 +408,9 @@ useEffect(() => {
                 onChange={handleChange}
                 className="w-full h-24 bg-white border rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-blue-500 outline-none"
               />
+              {errors.message && (
+  <p className="text-xs text-red-500 mt-1">{errors.message}</p>)}
+              
             </div>
           </div>
 
@@ -398,16 +443,20 @@ useEffect(() => {
   );
 }
 
-function Input({ label, ...props }) {
+function Input({ label, name , errors, ...props }) {
   return (
     <div>
       <label className="block text-sm font-medium text-gray-700 mb-1">
         {label}
       </label>
       <input
+        name={name}
         {...props}
         className="w-full bg-white border rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-blue-500 outline-none"
       />
+      {errors?.[name] && (
+        <p className="text-xs text-red-500 mt-1">{errors[name]}</p>
+      )}
     </div>
   );
 }

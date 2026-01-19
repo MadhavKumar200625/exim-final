@@ -186,9 +186,47 @@ const countryCodes = {
 export default function UnlockDataForm({ isOpen, onClose, country }) {
   const [countryCode, setCountryCode] = useState("+91");
   const [showCodeDropdown, setShowCodeDropdown] = useState(false);
+  const [errors, setErrors] = useState({});
 
   const [codeSearch, setCodeSearch] = useState("");
   const codeRef = useRef(null);
+
+  const validateForm = () => {
+  const newErrors = {};
+
+  if (!form.name.trim()) {
+    newErrors.name = "Full name is required";
+  }
+
+  if (!form.email.trim()) {
+    newErrors.email = "Email is required";
+  } else if (
+    !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(form.email)
+  ) {
+    newErrors.email = "Enter a valid business email";
+  }
+
+  if (!form.phone.trim()) {
+    newErrors.phone = "Phone number is required";
+  } else if (form.phone.replace(/\D/g, "").length < 8) {
+    newErrors.phone = "Enter a valid phone number";
+  }
+
+  if (!form.company.trim()) {
+    newErrors.company = "Company name is required";
+  }
+
+  if (!form.requirement) {
+    newErrors.requirement = "Select data requirement";
+  }
+
+  if (!form.message.trim()) {
+    newErrors.message = "Please describe your requirement";
+  }
+
+  setErrors(newErrors);
+  return Object.keys(newErrors).length === 0;
+};
 
   useEffect(() => {
     function handleClickOutside(e) {
@@ -216,28 +254,25 @@ export default function UnlockDataForm({ isOpen, onClose, country }) {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
+  if (loading) return;
 
-    if (loading) return; // ⛔ prevent double click
-    setLoading(true);
+  if (!validateForm()) return;
 
-    try {
-      const res = await fetch("/api/unlock-data", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
+  setLoading(true);
+  try {
+    const res = await fetch("/api/unlock-data", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(form),
+    });
 
-      if (!res.ok) {
-        throw new Error("Failed to submit");
-      }
-
-      onClose(); // ✅ button stays disabled till success
-    } catch (err) {
-      console.error(err);
-      setLoading(false); // 🔄 allow retry on failure
-    }
-  };
+    if (!res.ok) throw new Error("Failed");
+    onClose();
+  } catch {
+    setLoading(false);
+  }
+};
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm">
@@ -257,6 +292,7 @@ export default function UnlockDataForm({ isOpen, onClose, country }) {
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <Input
+            errors={errors}
               label="Name"
               name="name"
               placeholder="Enter your full name"
@@ -299,6 +335,7 @@ export default function UnlockDataForm({ isOpen, onClose, country }) {
                   }
                   className="w-full border-t border-b border-r rounded-r-lg px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500 outline-none"
                 />
+                
 
                 {/* Dropdown */}
                 {showCodeDropdown && (
@@ -349,14 +386,19 @@ export default function UnlockDataForm({ isOpen, onClose, country }) {
                   </div>
                 )}
               </div>
+              {errors.phone && (
+  <p className="text-xs text-red-500 mt-1">{errors.phone}</p>
+)}
             </div>
             <Input
+            errors={errors}
               label="Email ID"
               name="email"
               placeholder="Enter your email address"
               onChange={handleChange}
             />
             <Input
+            errors={errors}
               label="Company Name"
               name="company"
               placeholder="Enter your company name"
@@ -375,6 +417,8 @@ export default function UnlockDataForm({ isOpen, onClose, country }) {
                 onChange={handleChange}
                 className="w-full h-24 border rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500 outline-none"
               />
+              {errors.message && (
+  <p className="text-xs text-red-500 mt-1">{errors.message}</p>)}
             </div>
 
             <div>
@@ -415,16 +459,20 @@ export default function UnlockDataForm({ isOpen, onClose, country }) {
   );
 }
 
-function Input({ label, ...props }) {
+function Input({ label,errors, name, ...props }) {
   return (
     <div>
       <label className="block text-sm font-medium text-gray-700 mb-1">
         {label}
       </label>
       <input
+        name={name}
         {...props}
-        className="w-full border rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500 outline-none"
+        className="w-full bg-white border rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-blue-500 outline-none"
       />
+      {errors?.[name] && (
+        <p className="text-xs text-red-500 mt-1">{errors[name]}</p>
+      )}
     </div>
   );
 }
