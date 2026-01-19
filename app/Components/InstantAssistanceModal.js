@@ -262,11 +262,15 @@ const validate = () => {
 };
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm flex items-center justify-center px-4">
+    <div
+  className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm flex items-center justify-center px-4"
+  onClick={onClose}
+>
       <div
-        ref={ref}
-        className="bg-slate-50 w-full max-w-md rounded-2xl shadow-2xl p-6 animate-slideUp relative"
-      >
+  ref={ref}
+  onClick={(e) => e.stopPropagation()}
+  className="bg-slate-50 w-full max-w-md rounded-2xl shadow-2xl p-6 animate-slideUp relative"
+>
         <button
           onClick={onClose}
           className="absolute top-4 right-4 text-gray-400 hover:text-black"
@@ -306,7 +310,7 @@ const validate = () => {
           {/* Phone with country code */}
           <div>
   <label className="block text-sm font-medium mb-1">
-    Phone / WhatsApp (Optional)
+    Phone / WhatsApp 
   </label>
 
   <div
@@ -318,7 +322,7 @@ const validate = () => {
     <button
       type="button"
       onClick={() => setShowCodeDropdown((v) => !v)}
-      className="flex items-center gap-2 px-3 py-2 border rounded-l-lg bg-gray-50"
+      className="flex items-center gap-2 px-3 pr-5 py-2 border rounded-l-lg bg-gray-50"
     >
       <img
         src={
@@ -345,6 +349,54 @@ const validate = () => {
   }}
   className="w-full border-t border-b border-r rounded-r-lg px-3 py-2 text-sm outline-none"
 />
+
+{showCodeDropdown && (
+  <div className="absolute top-full left-0 mt-1 w-32 bg-white border rounded-xl shadow-xl z-50">
+    {/* Search */}
+    <input
+      type="text"
+      placeholder="Search country or code"
+      value={codeSearch}
+      onChange={(e) => setCodeSearch(e.target.value)}
+      className="w-full px-3 py-2 text-sm border-b outline-none"
+      autoFocus
+    />
+
+    {/* List */}
+    <div className="max-h-50 overflow-y-auto">
+      {Object.entries(countryCodes)
+        .filter(([name, data]) => {
+          const q = codeSearch.toLowerCase();
+          return (
+            name.replace(/_/g, " ").toLowerCase().includes(q) ||
+            data.code.includes(q)
+          );
+        })
+        .map(([name, data]) => (
+          <button
+            key={name}
+            type="button"
+            onClick={() => {
+              setCountryCode(data.code);
+              setShowCodeDropdown(false);
+              setCodeSearch("");
+            }}
+            className="w-full flex items-center gap-3 px-3 py-2 hover:bg-blue-50 transition text-sm"
+          >
+            <img
+              src={data.flag}
+              alt=""
+              className="w-6 h-4 rounded-sm"
+              loading="lazy"
+            />
+            <span className="ml-auto font-medium text-gray-700">
+              {data.code}
+            </span>
+          </button>
+        ))}
+    </div>
+  </div>
+)}
   </div>
 
   {errors.phone && (
