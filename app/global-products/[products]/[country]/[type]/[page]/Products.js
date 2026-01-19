@@ -12,19 +12,19 @@ const Products = ({
   currentPage = 1,
   products = [],
   totalValues = 0,
-  countries = [
-    "India",
-    "Bangladesh",
-    "Brazil",
-    "Indonesia",
-    "Mexico",
-    "Pakistan",
-    "Philippines",
-    "Russia",
-    "Sri Lanka",
-    "Tanzania",
-    "Vietnam",
-  ],
+   countries = [
+  { name: "India", code: "in" },
+  { name: "Bangladesh", code: "bd" },
+  { name: "Brazil", code: "br" },
+  { name: "Indonesia", code: "id" },
+  { name: "Mexico", code: "mx" },
+  { name: "Pakistan", code: "pk" },
+  { name: "Philippines", code: "ph" },
+  { name: "Russia", code: "ru" },
+  { name: "Sri Lanka", code: "lk" },
+  { name: "Tanzania", code: "tz" },
+  { name: "Vietnam", code: "vn" },
+],
   types = ["Import", "Export"],
 }) => {
   const [letter, setLetter] = useState(defaultLetter);
@@ -67,7 +67,11 @@ const Products = ({
           <div className="text-4xl text-black">{letter.toUpperCase()}</div>
 
           <select value={country} onChange={(e) => setCountry(e.target.value)}>
-            {countries.map((c) => <option key={c}>{c}</option>)}
+            {countries.map(({ name }) => (
+  <option key={name} value={name}>
+    {name}
+  </option>
+))}
           </select>
 
           <select value={tradeType} onChange={(e) => setTradeType(e.target.value)}>
@@ -144,20 +148,20 @@ const Products = ({
   </h3>
 
   <div className="flex flex-wrap gap-4">
-    {countries.map((c) => (
-      <a
-        key={c}
-        href={buildUrl(1, letter, c, tradeType)}
-        className="border border-gray-200 shadow-sm p-2 hover:shadow-md transition"
-      >
-        <img
-          src={`https://flagcdn.com/w160/${slugify(c).slice(0, 2)}.png`}
-          alt={c}
-          className="w-24 h-auto"
-          loading="lazy"
-        />
-      </a>
-    ))}
+    {countries.map(({ name, code }) => (
+  <a
+    key={name}
+    href={buildUrl(1, letter, name, tradeType)}
+    className="border border-gray-200 shadow-sm p-2 hover:shadow-md transition"
+  >
+    <img
+      src={`https://flagcdn.com/w160/${code}.png`}
+      alt={name}
+      className="w-24 h-auto"
+      loading="lazy"
+    />
+  </a>
+))}
   </div>
 </div>
 
