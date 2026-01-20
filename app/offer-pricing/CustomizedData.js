@@ -1,6 +1,14 @@
-import React from 'react'
+"use client"
+import React, { useState } from 'react'
+import SampleDataForm from '../Components/SampleDataForm';
 
 const CustomizedData = () => {
+  const [open, setOpen] = useState(false);
+  
+    const handleOpen = () => {
+      if (open) return; // prevents duplicate opens (bot & user safe)
+      setOpen(true);
+    };
   return (
     <section className="py-12 bg-linear-to-t from-white to-blue-50 text-black">
       <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -38,11 +46,18 @@ const CustomizedData = () => {
           </p>
 
           {/* CTA */}
-          <button className="bg-blue-600 text-white font-semibold px-8 py-3 transition transform hover:scale-105">
+          <button onClick={handleOpen} className="bg-blue-600 text-white font-semibold px-8 py-3 transition transform hover:scale-105">
             Get Started →
           </button>
         </div>
       </div>
+
+      {open && (
+                <SampleDataForm
+                  isOpen={open}
+                  onClose={() => setOpen(false)}
+                />
+              )}
     </section>
   )
 }

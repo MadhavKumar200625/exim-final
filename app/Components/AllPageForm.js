@@ -19,7 +19,7 @@ export default function AllPageForm() {
           "instant_assistance_shown",
           "true"
         );
-      }, 2000);
+      }, 10000);
     }
   }, []);
   return (

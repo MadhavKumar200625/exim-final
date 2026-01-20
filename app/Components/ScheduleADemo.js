@@ -200,9 +200,7 @@ const validateForm = () => {
     newErrors.company = "Company name is required";
   }
 
-  if (!form.requirement) {
-    newErrors.requirement = "Select data requirement";
-  }
+  
 
   
 
@@ -227,7 +225,6 @@ useEffect(() => {
     email: "",
     company: "",
     message: "",
-    requirement: "Import",
     country: country || "",
   });
 
@@ -383,37 +380,7 @@ useEffect(() => {
             <Input label="Company Name" name="company" placeholder="Enter your company name" errors={errors} onChange={handleChange} />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Data Requirement
-              </label>
-              <select
-                name="requirement"
-                onChange={handleChange}
-                className="w-full bg-white border rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-blue-500 outline-none"
-              >
-                <option>Import</option>
-                <option>Export</option>
-                <option>Both</option>
-                <option>API</option>
-              </select>
-            </div>
-
-            <div className="md:col-span-2">
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                What would you like to see in the demo?
-              </label>
-              <textarea
-                name="message"
-                placeholder="Example: shipments, competitor analysis, supplier discovery, API usage…"
-                onChange={handleChange}
-                className="w-full h-24 bg-white border rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-blue-500 outline-none"
-              />
-              
-              
-            </div>
-          </div>
+          
 
           {/* CTA */}
           <div className="flex justify-center pt-4">

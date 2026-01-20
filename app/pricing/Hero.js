@@ -177,7 +177,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <AppointmentForm isOpen={isOpen} onClose={() => setIsOpen(false)} />
+      <AppointmentForm isOpen={isOpen} onClose={() => setIsOpen(false)} /> 
     </section>
   );
 }

@@ -63,7 +63,7 @@ function ArrowButton({ onClick, children, label }) {
         flex items-center justify-center
         w-11 h-11 md:w-12 md:h-12
         rounded-full
-        bg-orange-300 backdrop-blur-xl
+        bg-orange-400 backdrop-blur-xl
         border border-white/40
         shadow-[0_8px_30px_rgba(0,0,0,0.12)]
         transition-all duration-300
@@ -74,7 +74,7 @@ function ArrowButton({ onClick, children, label }) {
     >
       <span
         className="
-          text-gray-700
+          text-black
           group-hover:text-white
           transition-colors duration-300
         "

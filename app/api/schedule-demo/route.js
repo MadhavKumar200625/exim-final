@@ -11,7 +11,6 @@ export async function POST(req) {
       company,
       country,
       message,
-      requirement,
     } = data;
 
     const transporter = nodemailer.createTransport({
@@ -42,7 +41,6 @@ const companyMailOptions = {
       <p><strong>Company:</strong> ${company || "-"}</p>
       <p><strong>Mobile:</strong> ${phone || "-"}</p>
       <p><strong>Country:</strong> ${country || "-"}</p>
-      <p><strong>Data Requirement:</strong> ${requirement || "-"}</p>
       <p><strong>Demo Expectations:</strong><br/>${message || "-"}</p>
     </div>
   `,
