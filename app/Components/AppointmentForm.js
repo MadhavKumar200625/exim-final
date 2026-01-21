@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
+
 import { useRouter } from "next/navigation";
 import {
   X,
@@ -10,6 +11,7 @@ import {
   CheckCircle,
   ChevronDown,
 } from "lucide-react";
+import { getCachedCountryPhone } from "@/lib/geoPhone";
 
 const countryCodes = {
   Afghanistan: { code: "+93", flag: "https://flagcdn.com/w40/af.png" },
@@ -183,6 +185,7 @@ const countryCodes = {
 const countries = Object.keys(countryCodes)
 
 const AppointmentForm = ({ isOpen, onClose }) => {
+  const geo = getCachedCountryPhone()
   const router = useRouter();
   const [loading, setLoading] = useState(false);
 
@@ -213,7 +216,12 @@ const AppointmentForm = ({ isOpen, onClose }) => {
     const nextMonth = () =>
     setCurrentMonth(
       new Date(currentMonth.getFullYear(), currentMonth.getMonth() + 1, 1)
+      
     );
+
+    const today = new Date();
+today.setHours(0, 0, 0, 0); // normalize to start of day
+
 
   const [formData, setFormData] = useState({
     fullName: "",
@@ -221,7 +229,7 @@ const AppointmentForm = ({ isOpen, onClose }) => {
     CompanyName: "",
     CompanyType: "",
     Designation: "",
-    ddlcountry: "",
+    ddlcountry: geo?.countryKey || "",
     txtwebsite: "",
     txtphone: "",
     Timezone: "",
@@ -443,7 +451,7 @@ const AppointmentForm = ({ isOpen, onClose }) => {
                 className={`${inputClass} flex justify-between items-center`}
                 onClick={() => setShowCountryDropdown(!showCountryDropdown)}
               >
-                {formData.ddlcountry || "Select Country"}
+                {formData.ddlcountry.toString().replace("_"," ") || "Select Country"}
                 <ChevronDown size={16} />
               </button>
 
@@ -465,7 +473,7 @@ const AppointmentForm = ({ isOpen, onClose }) => {
                       }}
                       className="px-3 py-2 cursor-pointer rounded hover:bg-blue-50"
                     >
-                      {c}
+                      {c.toString().replace("_" , " ")}
                     </div>
                   ))}
                 </div>
@@ -596,30 +604,38 @@ const AppointmentForm = ({ isOpen, onClose }) => {
                     </div>
                     {/* Dates */}
                     <div className="grid grid-cols-7 gap-2" id="AppointmentDate">
-                      {generateDays().map((day, idx) => (
+                      {generateDays().map((day, idx) => {
+                        const isPastDate = day < today;
+                        return (
+
                         <div key={idx} className="text-center">
+                          
                           {day ? (
+                            
                             <button
-                              type="button"
-                              onClick={() => {
-                                setSelectedDate(day);
-                                setShowCalendar(false);
-                              }}
-                              className={`w-10 h-10 rounded-full transition ${
-                                selectedDate &&
-                                day.toDateString() ===
-                                  selectedDate.toDateString()
-                                  ? "bg-blue-600 text-white"
-                                  : "hover:bg-blue-100"
-                              }`}
-                            >
-                              {day.getDate()}
-                            </button>
+  type="button"
+  disabled={isPastDate}
+  onClick={() => {
+    if (isPastDate) return;
+    setSelectedDate(day);
+    setShowCalendar(false);
+  }}
+  className={`w-10 h-10 cursor-pointer rounded-full transition ${
+    isPastDate
+      ? "text-gray-300 cursor-not-allowed"
+      : selectedDate &&
+        day.toDateString() === selectedDate.toDateString()
+        ? "bg-blue-600 text-white"
+        : "hover:bg-blue-100"
+  }`}
+>
+  {day.getDate()}
+</button>
                           ) : (
                             <span className="w-10 h-10 inline-block"></span>
                           )}
                         </div>
-                      ))}
+                      )})}
                     </div>
                   </div>
                 )}

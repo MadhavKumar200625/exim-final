@@ -7,6 +7,7 @@ import LoaderHandler from "./Components/LoaderHandler";
 import { GlobalLinkLoader } from "./Components/GlobalLinkLoader";
 import AllPageForm from "./Components/AllPageForm";
 import ScrollArrows from "./Components/ScrollArrows";
+import GeoBootstrap from "./Components/GeoBootstrap";
 // import Header from "./components/Header";
 // import Footer from "./components/Footer";
 
@@ -121,6 +122,7 @@ export default function RootLayout({ children }) {
         <GlobalLinkLoader />
 
         <LoaderHandler />
+        <GeoBootstrap />
 
         <Header />
         <AllPageForm></AllPageForm>
