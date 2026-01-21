@@ -1,4 +1,5 @@
 "use client";
+import { getCachedCountryPhone } from "@/lib/geoPhone";
 
 import Link from "next/link";
 import Script from "next/script";
@@ -188,6 +189,19 @@ export default function Footer() {
      WhatsApp Float Scroll
      ====================== */
   const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+  // bots should not touch localStorage
+  if (isBot) return;
+
+  const geo = getCachedCountryPhone();
+  if (!geo) return;
+
+  // safety: ensure country exists in your object
+  if (countryCodes[geo.countryKey]) {
+    setSelectedCountry(geo.countryKey);
+  }
+}, [isBot]);
 
 
 

@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import { ChevronDown, X } from "lucide-react";
 import { countries } from "@/lib/data";
 import React from "react";
+import { getCachedCountryPhone } from "@/lib/geoPhone";
 
 
 const countryCodes = {
@@ -182,6 +183,9 @@ const SampleDataForm = ({ isOpen, onClose }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const dropdownRef = useRef(null);
 
+
+
+
   const [name, setName] = useState("");
   const [company, setCompany] = useState("");
   const [email, setEmail] = useState("");
@@ -195,6 +199,23 @@ const SampleDataForm = ({ isOpen, onClose }) => {
     typeof navigator !== "undefined" &&
     (navigator.webdriver ||
       /bot|crawler|spider|headless/i.test(navigator.userAgent));
+
+
+    useEffect(() => {
+  if (isBot) return;
+
+  const geo = getCachedCountryPhone();
+  if (!geo) return;
+
+  // ensure code exists in your list
+  const match = Object.values(countryCodes).find(
+    (c) => c.code === geo.phoneCode
+  );
+
+  if (match) {
+    setSelectedCountryCode(geo.phoneCode);
+  }
+}, [isOpen, isBot]);
 
   const submitRequest = async () => {
     if (loading || isBot) return;

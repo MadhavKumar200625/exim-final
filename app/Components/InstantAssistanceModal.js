@@ -1,4 +1,5 @@
 "use client";
+import { getCachedCountryPhone } from "@/lib/geoPhone";
 import { X } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
 
@@ -179,6 +180,18 @@ export default function InstantAssistanceModal({ open, onClose }) {
   const [errors, setErrors] = useState({});
 const [apiError, setApiError] = useState("");
 
+useEffect(() => {
+  // do nothing if modal is closed
+
+  // geo is client-only
+  const geo = getCachedCountryPhone();
+  if (!geo) return;
+
+  // safety check
+  if (countryCodes[geo.countryKey]) {
+    setCountryCode(geo.phoneCode);
+  }
+}, [open]);
 const validate = () => {
   const newErrors = {};
 

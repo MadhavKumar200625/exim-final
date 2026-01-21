@@ -1,4 +1,5 @@
 "use client";
+import { getCachedCountryPhone } from "@/lib/geoPhone";
 import { X } from "lucide-react";
 import { useState , useEffect,useRef } from "react";
 
@@ -175,6 +176,21 @@ export default function ScheduleADemo({ isOpen, onClose, country = "" }) {
   const [countryCode, setCountryCode] = useState("+91");
   const [errors, setErrors] = useState({});
 const [showCodeDropdown, setShowCodeDropdown] = useState(false);
+
+useEffect(() => {
+
+  const geo = getCachedCountryPhone();
+  if (!geo) return;
+
+  // ensure this code exists in your countryCodes list
+  const exists = Object.values(countryCodes).some(
+    (c) => c.code === geo.phoneCode
+  );
+
+  if (exists) {
+    setCountryCode(geo.phoneCode);
+  }
+}, [isOpen]);
 const validateForm = () => {
   const newErrors = {};
 

@@ -1,4 +1,5 @@
 "use client";
+import { getCachedCountryPhone } from "@/lib/geoPhone";
 import { X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
@@ -190,6 +191,21 @@ export default function UnlockDataForm({ isOpen, onClose, country }) {
 
   const [codeSearch, setCodeSearch] = useState("");
   const codeRef = useRef(null);
+
+  useEffect(() => {
+
+  const geo = getCachedCountryPhone();
+  if (!geo) return;
+
+  // ensure this code exists in your countryCodes list
+  const exists = Object.values(countryCodes).some(
+    (c) => c.code === geo.phoneCode
+  );
+
+  if (exists) {
+    setCountryCode(geo.phoneCode);
+  }
+}, [isOpen]);
 
   const validateForm = () => {
     const newErrors = {};
