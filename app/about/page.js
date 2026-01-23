@@ -5,6 +5,7 @@ import CodeOfConductSection from "./CodeConduct";
 import ClientsSection from "../Components/ClientSection";
 import TestimonialsSection from "../Components/TestimonialsSection";
 import ContactUs from "./ContactUs";
+import Head from "next/head";
 // import BenifitsSection from "../components/About/BenifitsSection";
 // import ClientsSection from "../components/ClientsSection";
 // import CodeOfConductSection from "../components/About/CodeOfConductSection";

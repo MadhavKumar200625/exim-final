@@ -6,6 +6,7 @@ import PricingClientsClient from "./PricingClientsClient";
 import FAQSection from "../Components/FAQ";
 import ContactUs from "../about/ContactUs";
 import ExclusiveFeatures from "./ExclusiveFeatures";
+import Head from "next/head";
 
 
 export const metadata = {

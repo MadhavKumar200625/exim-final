@@ -1,6 +1,8 @@
 import React from 'react'
 import Hero from './Hero'
 import ContactQuestion from './ContactQuestion'
+import Head from "next/head";
+
 
  export const metadata = {
   title: "Import Export Data by Industries | Global Trade Data of 200+ Countries",

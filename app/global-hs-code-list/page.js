@@ -2,6 +2,8 @@ import React from 'react'
 import Search from './Search'
 import { getHSChapters } from '@/lib/global-hs-code/getHsChapters';
 import FAQSection from '../Components/FAQ';
+import Head from "next/head";
+
 
 export const dynamic = "force-dynamic";
 export const revalidate = false;

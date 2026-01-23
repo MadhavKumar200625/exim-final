@@ -1,6 +1,7 @@
 import React from 'react'
 import ContactInfo from './ContactInfo';
 import Hero from './Hero';
+import Head from "next/head";
 
 
 export const metadata = {

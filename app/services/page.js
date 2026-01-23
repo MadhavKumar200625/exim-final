@@ -5,6 +5,8 @@ import BenefitsSection from './BenifitsSection';
 import ContactUs from '../about/ContactUs';
 import ImportExportSection from './ImportExportSection';
 import Hero from './Hero';
+import Head from "next/head";
+
 
 
 
