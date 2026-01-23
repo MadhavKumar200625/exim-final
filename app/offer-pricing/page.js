@@ -117,6 +117,233 @@ const faqs = [
 
 const page = () => {
   return (
+    <>
+    <head>
+      <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: `
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "@id": "https://eximtradedata.com/offer-pricing#product",
+  "name": "Import Export Trade Data – Offer Plans",
+  "description": "Special offer pricing plans for one-country and all-country import export trade data subscriptions with flexible validity options.",
+  "brand": {
+    "@type": "Brand",
+    "name": "Exim Trade Data"
+  },
+  "offers": [
+
+    /* ================= ONE COUNTRY PLANS ================= */
+
+    {
+      "@type": "Offer",
+      "name": "Micro – One Country Plan",
+      "url": "https://eximtradedata.com/offer-pricing",
+      "priceCurrency": "INR",
+      "price": "30000",
+      "availability": "https://schema.org/InStock",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "30000",
+        "priceCurrency": "INR",
+        "valueAddedTaxIncluded": false
+      },
+      "eligibleDuration": {
+        "@type": "QuantitativeValue",
+        "value": 3,
+        "unitText": "Months"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Micro – One Country Plan",
+      "url": "https://eximtradedata.com/offer-pricing",
+      "priceCurrency": "USD",
+      "price": "450",
+      "availability": "https://schema.org/InStock",
+      "eligibleDuration": {
+        "@type": "QuantitativeValue",
+        "value": 3,
+        "unitText": "Months"
+      }
+    },
+
+    {
+      "@type": "Offer",
+      "name": "SME – One Country Plan",
+      "url": "https://eximtradedata.com/offer-pricing",
+      "priceCurrency": "INR",
+      "price": "50000",
+      "availability": "https://schema.org/InStock",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "50000",
+        "priceCurrency": "INR",
+        "valueAddedTaxIncluded": false
+      },
+      "eligibleDuration": {
+        "@type": "QuantitativeValue",
+        "value": 6,
+        "unitText": "Months"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "SME – One Country Plan",
+      "url": "https://eximtradedata.com/offer-pricing",
+      "priceCurrency": "USD",
+      "price": "700",
+      "availability": "https://schema.org/InStock",
+      "eligibleDuration": {
+        "@type": "QuantitativeValue",
+        "value": 6,
+        "unitText": "Months"
+      }
+    },
+
+    {
+      "@type": "Offer",
+      "name": "Corporate – One Country Plan",
+      "url": "https://eximtradedata.com/offer-pricing",
+      "priceCurrency": "INR",
+      "price": "80000",
+      "availability": "https://schema.org/InStock",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "80000",
+        "priceCurrency": "INR",
+        "valueAddedTaxIncluded": false
+      },
+      "eligibleDuration": {
+        "@type": "QuantitativeValue",
+        "value": 12,
+        "unitText": "Months"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Corporate – One Country Plan",
+      "url": "https://eximtradedata.com/offer-pricing",
+      "priceCurrency": "USD",
+      "price": "1000",
+      "availability": "https://schema.org/InStock",
+      "eligibleDuration": {
+        "@type": "QuantitativeValue",
+        "value": 12,
+        "unitText": "Months"
+      }
+    },
+
+    /* ================= ALL COUNTRY PLANS ================= */
+
+    {
+      "@type": "Offer",
+      "name": "Micro – All Country Plan",
+      "url": "https://eximtradedata.com/offer-pricing",
+      "priceCurrency": "INR",
+      "price": "124999",
+      "availability": "https://schema.org/InStock",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "124999",
+        "priceCurrency": "INR",
+        "valueAddedTaxIncluded": false
+      },
+      "eligibleDuration": {
+        "@type": "QuantitativeValue",
+        "value": 12,
+        "unitText": "Months"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Micro – All Country Plan",
+      "url": "https://eximtradedata.com/offer-pricing",
+      "priceCurrency": "USD",
+      "price": "1499",
+      "availability": "https://schema.org/InStock",
+      "eligibleDuration": {
+        "@type": "QuantitativeValue",
+        "value": 12,
+        "unitText": "Months"
+      }
+    },
+
+    {
+      "@type": "Offer",
+      "name": "SME – All Country Plan",
+      "url": "https://eximtradedata.com/offer-pricing",
+      "priceCurrency": "INR",
+      "price": "249999",
+      "availability": "https://schema.org/InStock",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "249999",
+        "priceCurrency": "INR",
+        "valueAddedTaxIncluded": false
+      },
+      "eligibleDuration": {
+        "@type": "QuantitativeValue",
+        "value": 12,
+        "unitText": "Months"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "SME – All Country Plan",
+      "url": "https://eximtradedata.com/offer-pricing",
+      "priceCurrency": "USD",
+      "price": "2999",
+      "availability": "https://schema.org/InStock",
+      "eligibleDuration": {
+        "@type": "QuantitativeValue",
+        "value": 12,
+        "unitText": "Months"
+      }
+    },
+
+    {
+      "@type": "Offer",
+      "name": "Corporate – All Country Plan",
+      "url": "https://eximtradedata.com/offer-pricing",
+      "priceCurrency": "INR",
+      "price": "399999",
+      "availability": "https://schema.org/InStock",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "399999",
+        "priceCurrency": "INR",
+        "valueAddedTaxIncluded": false
+      },
+      "eligibleDuration": {
+        "@type": "QuantitativeValue",
+        "value": 24,
+        "unitText": "Months"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Corporate – All Country Plan",
+      "url": "https://eximtradedata.com/offer-pricing",
+      "priceCurrency": "USD",
+      "price": "4999",
+      "availability": "https://schema.org/InStock",
+      "eligibleDuration": {
+        "@type": "QuantitativeValue",
+        "value": 24,
+        "unitText": "Months"
+      }
+    }
+
+  ]
+}
+            `,
+          }}
+        />
+    </head>
+    
     <main>
         <Hero></Hero>
         <ApiAccess></ApiAccess>
@@ -124,6 +351,7 @@ const page = () => {
         <EximBenefitsSection></EximBenefitsSection>
         <FAQSection faqs={faqs}></FAQSection>
     </main>
+    </>
   )
 }
 

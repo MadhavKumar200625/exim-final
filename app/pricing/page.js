@@ -219,6 +219,162 @@ const page = () => {
 }
 `}
         </script>
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: `
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://eximtradedata.com/pricing#service",
+  "name": "Global Import Export Trade Data Services",
+  "description": "Customs import-export data, global trade intelligence, market analytics, and API-based trade data solutions for businesses worldwide.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Exim Trade Data",
+    "url": "https://eximtradedata.com/"
+  },
+  "areaServed": {
+    "@type": "Place",
+    "name": "Worldwide"
+  },
+  "serviceType": [
+    "Import Export Data",
+    "Customs Data",
+    "Trade Intelligence",
+    "API Trade Data Services"
+  ]
+}
+            `,
+          }}
+        />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: `
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "@id": "https://eximtradedata.com/pricing#product",
+  "name": "Import Export Trade Data Subscription",
+  "description": "Subscription-based access to global import export trade data, customs records, shipment details, HS codes, and market intelligence.",
+  "brand": {
+    "@type": "Brand",
+    "name": "Exim Trade Data"
+  },
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Starter Plan",
+      "url": "https://eximtradedata.com/pricing",
+      "priceCurrency": "INR",
+      "price": "4999",
+      "availability": "https://schema.org/InStock",
+      "eligibleDuration": {
+        "@type": "QuantitativeValue",
+        "value": 6,
+        "unitText": "Months"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Starter Plan",
+      "url": "https://eximtradedata.com/pricing",
+      "priceCurrency": "USD",
+      "price": "70",
+      "availability": "https://schema.org/InStock",
+      "eligibleDuration": {
+        "@type": "QuantitativeValue",
+        "value": 6,
+        "unitText": "Months"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Basic Plan",
+      "url": "https://eximtradedata.com/pricing",
+      "priceCurrency": "INR",
+      "price": "9999",
+      "availability": "https://schema.org/InStock",
+      "eligibleDuration": {
+        "@type": "QuantitativeValue",
+        "value": 12,
+        "unitText": "Months"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Basic Plan",
+      "url": "https://eximtradedata.com/pricing",
+      "priceCurrency": "USD",
+      "price": "140",
+      "availability": "https://schema.org/InStock",
+      "eligibleDuration": {
+        "@type": "QuantitativeValue",
+        "value": 12,
+        "unitText": "Months"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Plus Plan",
+      "url": "https://eximtradedata.com/pricing",
+      "priceCurrency": "INR",
+      "price": "19999",
+      "availability": "https://schema.org/InStock",
+      "eligibleDuration": {
+        "@type": "QuantitativeValue",
+        "value": 24,
+        "unitText": "Months"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Plus Plan",
+      "url": "https://eximtradedata.com/pricing",
+      "priceCurrency": "USD",
+      "price": "300",
+      "availability": "https://schema.org/InStock",
+      "eligibleDuration": {
+        "@type": "QuantitativeValue",
+        "value": 24,
+        "unitText": "Months"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Premium Plan",
+      "url": "https://eximtradedata.com/pricing",
+      "priceCurrency": "INR",
+      "price": "29999",
+      "availability": "https://schema.org/InStock",
+      "eligibleDuration": {
+        "@type": "QuantitativeValue",
+        "value": 30,
+        "unitText": "Months"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Premium Plan",
+      "url": "https://eximtradedata.com/pricing",
+      "priceCurrency": "USD",
+      "price": "350",
+      "availability": "https://schema.org/InStock",
+      "eligibleDuration": {
+        "@type": "QuantitativeValue",
+        "value": 30,
+        "unitText": "Months"
+      }
+    }
+  ]
+}
+            `,
+          }}
+        />
+        
       </head>
     <main>
       <Hero></Hero>

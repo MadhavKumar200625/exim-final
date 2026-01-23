@@ -635,7 +635,209 @@ const PricingPlans = [
 ];
 
 const page = () => {
+
   return (
+    <>
+    <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Exim Trade Data?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Exim Trade Data is the most trusted data service provider company across the world. We provide in-depth insights into the global market through our exclusive database of over 60+ countries."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are your services?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We provide customized data solutions to meet our clients’ requirements. We offer BI-powered import-export analytics, customs data, ports data, global products and global companies’ data reports."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many countries do you cover in your database?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We provide verified import-export data of over 60+ countries."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why should I use Exim Trade Data?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Exim Trade Data gives instant access to 60+ countries data, global products data, global companies shipments data, global HS Code list, free sample data, and unlimited data search on its portal."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can Exim Trade Data help my business?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We help identify global market trends, demand and risks, track competitors through our global companies database, discover genuine buyers and suppliers, and generate quality leads to boost sales."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is Exim Trade Data different from other Market Intelligence Platforms?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Exim Trade Data offers exclusive services including 60+ countries data, global ports shipment data, importer and exporter shipment data, global products shipment data, global HS Code list, free sample data, unlimited free data search, and customized reports."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who are your clients?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We have worked with top clients including Dell, Bajaj, Mahindra, Hero Motorcorp, and Orient Bell Tiles."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide verified data? What are the sources of data and its accuracy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our data is sourced from global bills of lading, commercial invoices, customs data, port shipments, government bodies, trade associations, logistics partners, and other trusted sources, ensuring high accuracy and reliability."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can I get additional assistance using Exim Trade Data services?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can contact us via email at info@eximtradedata.com, use live chat, or call us at +91-9625812393."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the different types of data you provide?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We provide statistical data, customs data, mirror data, and bill of lading data, each offering different trade and shipment insights."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I decide which data is best suited to my needs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For market trends and pricing insights, statistical data is ideal. For genuine importer and exporter leads, customs data is recommended."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which data fields do you cover in your data reports?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our reports include product HS code, description, quantity, unit, value, country of origin or destination, importer name, exporter name, port, and shipment details."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How frequently is your database revised?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our database is updated weekly to ensure accuracy and freshness."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I find the HSN Code for my product?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can use our HS Code Finder to search HSN codes for over 5000+ products."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide a global companies list?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we provide a comprehensive database of global importers and exporters to help generate verified leads."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I track competitor shipment activities?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, you can track competitor shipment activities using our global companies shipment database."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I perform online searches for global trade data?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, you can perform unlimited searches by country, HS code, and product through our online portal."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I download customs data? In what formats?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, you can download sample customs data, HS code lists, and GST rates in Excel or PDF formats."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is pricing structured for subscriptions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pricing varies by country and data type. We offer flexible plans including weekly, monthly, quarterly, and yearly subscriptions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide free sample data before buying?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we provide free sample data so users can evaluate data quality before purchasing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How soon do you deliver data after payment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Data is delivered within 2–3 hours after payment confirmation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I contact Exim Trade Data for support or queries?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can reach us via email, live chat, or phone at +91-9625812393 for quick assistance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer a money-back guarantee?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we offer a 100% money-back guarantee if you are not satisfied."
+      }
+    }
+  ]
+}
+            `,
+          }}
+        />
+      </head>
+
     <main>
         <FAQSection faqs={AboutEximTradeData} title={"About Exim Trade Data"}></FAQSection>
         <FAQSection faqs={FeaturesAndBenefits} title={"Features & Benefits of Global Import Export Data"}></FAQSection>
@@ -644,6 +846,7 @@ const page = () => {
 
 
     </main>
+    </>
   )
 }
 
