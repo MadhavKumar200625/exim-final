@@ -50,7 +50,7 @@ const Page = () => {
   return (
 
     <>
-    <Head>
+    <head>
         <script type="application/ld+json">
 {`
 {
@@ -73,7 +73,7 @@ const Page = () => {
 }
 `}
         </script>
-      </Head>
+      </head>
     <main>
       <Hero />
       <ContactInfo />

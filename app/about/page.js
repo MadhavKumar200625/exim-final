@@ -64,7 +64,7 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <><Head>
+    <><head>
         <script type="application/ld+json">
 {`
 {
@@ -87,7 +87,7 @@ export default function Page() {
 }
 `}
         </script>
-      </Head>
+      </head>
     <main id="main-content">
       <HeroSection />
       <BenifitsSection />

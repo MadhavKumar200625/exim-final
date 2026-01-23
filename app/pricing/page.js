@@ -196,7 +196,7 @@ Feel free to connect with our experts for any kind of assistance.
 const page = () => {
   return (
     <>
-    <Head>
+    <head>
         <script type="application/ld+json">
 {`
 {
@@ -219,7 +219,7 @@ const page = () => {
 }
 `}
         </script>
-      </Head>
+      </head>
     <main>
       <Hero></Hero>
       <CustomPlan></CustomPlan>

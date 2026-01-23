@@ -15,7 +15,7 @@ import Head from "next/head";
 export default function Home() {
   return (
     <>
-      <Head>
+      <head>
         <script type="application/ld+json">
           {`
 {
@@ -32,7 +32,7 @@ export default function Home() {
 }
 `}
         </script>
-      </Head>
+      </head>
       <main>
         {/* SEO-critical */}
         <Hero />

@@ -213,7 +213,7 @@ const page = async () => {
       const rowColors = ["bg-white", "bg-slate-50", "bg-slate-100"];
   return (
     <>
-    <Head>
+    <head>
         <script type="application/ld+json">
 {`
 {
@@ -236,7 +236,7 @@ const page = async () => {
 }
 `}
         </script>
-      </Head>
+      </head>
     
     <main>
             <Search></Search>

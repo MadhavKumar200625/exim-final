@@ -108,7 +108,7 @@ const faq = [
 const page = () => {
   return (
     <>
-    <Head>
+    <head>
         <script type="application/ld+json">
 {`
 {
@@ -131,7 +131,7 @@ const page = () => {
 }
 `}
         </script>
-      </Head>
+      </head>
     <main>
 
         <Hero></Hero>
