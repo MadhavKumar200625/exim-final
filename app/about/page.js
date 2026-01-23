@@ -63,6 +63,30 @@ export const metadata = {
 
 export default function Page() {
   return (
+    <><Head>
+        <script type="application/ld+json">
+{`
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://eximtradedata.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "About",
+      "item": "https://eximtradedata.com/about"
+    }
+  ]
+}
+`}
+        </script>
+      </Head>
     <main id="main-content">
       <HeroSection />
       <BenifitsSection />
@@ -71,5 +95,6 @@ export default function Page() {
       <TestimonialsSection />
       <ContactUs/>  
     </main>
+    </>
   );
 }

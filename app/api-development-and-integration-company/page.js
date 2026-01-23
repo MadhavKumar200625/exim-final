@@ -106,7 +106,33 @@ const faq = [
 
 const page = () => {
   return (
+    <>
+    <Head>
+        <script type="application/ld+json">
+{`
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://eximtradedata.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "API",
+      "item": "https://eximtradedata.com/api-development-and-integration-company"
+    }
+  ]
+}
+`}
+        </script>
+      </Head>
     <main>
+
         <Hero></Hero>
         <CustomApi></CustomApi>
         <BestApiSolutions></BestApiSolutions>
@@ -117,6 +143,7 @@ const page = () => {
         <FAQSection faqs={faq}></FAQSection>
         
     </main>
+    </>
   )
 }
 

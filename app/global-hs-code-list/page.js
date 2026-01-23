@@ -210,6 +210,32 @@ const page = async () => {
     
       const rowColors = ["bg-white", "bg-slate-50", "bg-slate-100"];
   return (
+    <>
+    <Head>
+        <script type="application/ld+json">
+{`
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://eximtradedata.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Global HS Code List",
+      "item": "https://eximtradedata.com/global-hs-code-list"
+    }
+  ]
+}
+`}
+        </script>
+      </Head>
+    
     <main>
             <Search></Search>
 
@@ -276,6 +302,7 @@ const page = async () => {
 
         <FAQSection faqs={HSCodeFAQ}/>
     </main>
+    </>
   )
 }
 

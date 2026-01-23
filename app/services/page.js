@@ -59,6 +59,31 @@ import Hero from './Hero';
 
 const page = () => {
   return (
+
+    <><Head>
+        <script type="application/ld+json">
+{`
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://eximtradedata.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Services",
+      "item": "https://eximtradedata.com/services"
+    }
+  ]
+}
+`}
+        </script>
+      </Head>
     <main>
         <Hero></Hero>
         <Benifits></Benifits>
@@ -67,6 +92,7 @@ const page = () => {
         <ImportExportSection></ImportExportSection>
         <ContactUs></ContactUs>
     </main>
+    </>
   )
 }
 

@@ -99,6 +99,46 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={roboto.className}>
+      <head>
+        <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Exim Trade Data",
+              "url": "https://eximtradedata.com/",
+              "logo": "https://eximtradedata.com/logo.png",
+              "description":
+                "Exim Trade Data is a global import-export data provider offering customs data, analytics, and international trade intelligence across 200+ countries.",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "G-232, G Block, Sector 63",
+                "addressLocality": "Noida",
+                "addressRegion": "Uttar Pradesh",
+                "postalCode": "201301",
+                "addressCountry": "IN"
+              },
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+91-9625812393",
+                "contactType": "customer support",
+                "email": "info@eximtradedata.com"
+              },
+              "sameAs": [
+                "https://www.facebook.com/eximtradedataofficial",
+                "https://www.instagram.com/eximtradedata/",
+                "https://x.com/eximtradedataa",
+                "https://www.linkedin.com/company/exim-trade-data",
+                "https://in.pinterest.com/exim_trade_data/",
+                "https://www.youtube.com/channel/UCsbKPsVwgAgqJi4EB20iBvg"
+              ]
+            })
+          }}
+        />
+      </head>
+      </head>
       <body className="antialiased font-sans">
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-WC3TFBQ989"

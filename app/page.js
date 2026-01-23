@@ -10,29 +10,48 @@ import WhyChooseUs from "./HOME/WhyChooseUs";
 import HomeSearchClient from "./HOME/HomeSearchClient";
 import HomeClientsClient from "./HOME/HomeClientsClient";
 import HomeTestimonialsClient from "./HOME/HomeTestimonialSection";
-
-
+import Head from "next/head";
 
 export default function Home() {
   return (
-    <main>
-      {/* SEO-critical */}
-      <Hero />
+    <>
+      <Head>
+        <script type="application/ld+json">
+          {`
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://eximtradedata.com/"
+    }
+  ]
+}
+`}
+        </script>
+      </Head>
+      <main>
+        {/* SEO-critical */}
+        <Hero />
 
-      {/* Interactive (humans only) */}
-      <HomeSearchClient></HomeSearchClient>
+        {/* Interactive (humans only) */}
+        <HomeSearchClient></HomeSearchClient>
 
-      <CountryExportSection />
+        <CountryExportSection />
 
-      <GrowthSection />
-      <IndustrySection />
-      <CustomsSection />
-      <GrowWithGlobalSection />
-      <WhyChooseUs />
+        <GrowthSection />
+        <IndustrySection />
+        <CustomsSection />
+        <GrowWithGlobalSection />
+        <WhyChooseUs />
 
-      {/* Heavy sliders */}
-      <HomeClientsClient />
-      <HomeTestimonialsClient />
-    </main>
+        {/* Heavy sliders */}
+        <HomeClientsClient />
+        <HomeTestimonialsClient />
+      </main>
+    </>
   );
 }
