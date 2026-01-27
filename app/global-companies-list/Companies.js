@@ -323,7 +323,7 @@ const Companies = ({
                 href={buildUrl(1, letter, name)}
                 className="border shadow p-2"
               >
-                <img src={flag} alt={name} className="w-20" />
+                <img src={flag} alt={`${name} companies list`} className="w-20" />
               </a>
             ))}
           </div>

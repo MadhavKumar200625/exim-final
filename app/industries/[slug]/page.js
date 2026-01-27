@@ -27,13 +27,13 @@ export async function generateMetadata({ params }) {
     title: industry.meta?.title || `${slug} Industry Trade Data`,
     description: industry.meta?.description,
       alternates: {
-  canonical: `https://eximtradedata.com${slug}`,
+  canonical: `https://eximtradedata.com/${slug}`,
 },
     openGraph: {
       title: industry.openGraph?.title || industry.meta?.title,
       url:
         industry.openGraph?.url ||
-        `https://eximtradedata.com${slug}`,
+        `https://eximtradedata.com/${slug}`,
       images: [{ url: industry.openGraph?.image || "/logo.png" }],
     },
     twitter: industry.twitter || {

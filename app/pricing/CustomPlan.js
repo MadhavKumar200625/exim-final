@@ -49,7 +49,7 @@ export default function CustomPlan() {
                     <li key={code}>
                       <img
   src={`https://flagcdn.com/w40/${code}.png`}
-  alt={countryName(code)}
+  alt={`${countryName(code)} import export trade data`}
   loading="lazy"
   decoding="async"
   className="inline w-6 h-4 mr-2"

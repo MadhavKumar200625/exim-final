@@ -72,7 +72,7 @@ export default function CountrySection() {
                     >
                       <img
                         src={`https://flagcdn.com/w40/${flagCodes[slug]}.png`}
-                        alt={`${formatName(slug)} flag`}
+                        alt={`${formatName(slug)} import export data`}
                         width={24}
                         height={16}
                         loading="lazy"

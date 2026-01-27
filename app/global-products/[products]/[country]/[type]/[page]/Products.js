@@ -156,7 +156,7 @@ const Products = ({
   >
     <img
       src={`https://flagcdn.com/w160/${code}.png`}
-      alt={name}
+      alt={`${name} products`}
       className="w-24 h-auto"
       loading="lazy"
     />

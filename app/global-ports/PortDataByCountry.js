@@ -89,7 +89,7 @@ const PortDataByCountry = () => {
               <div className="flex items-center mb-4">
                 <img
                   src={`https://flagcdn.com/w40/${countryFlags[country.name]}.png`}
-                  alt={`${country.name} flag`}
+                  alt={`${country.name} ports data`}
                   loading="lazy"
                   decoding="async"
                   className="mr-3 w-8 h-auto"

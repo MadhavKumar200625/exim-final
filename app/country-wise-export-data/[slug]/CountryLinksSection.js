@@ -75,7 +75,7 @@ export default function CountryLinksSection() {
                       >
                         <img
                           src={`https://flagcdn.com/w40/${code}.png`}
-                          alt={`${name} flag`}
+                          alt={`${name} export data`}
                           width={24}
                           height={16}
                           loading="lazy"

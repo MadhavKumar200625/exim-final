@@ -9,7 +9,7 @@ const HeroSection = () => {
           <div className="flex justify-center">
             <img
               src="/about/about-us.webp"
-              alt="About Exim Trade Data – global import export trade data provider"
+              alt="About Exim Trade Data"
               className="h-96"
               loading="eager"
               decoding="async"

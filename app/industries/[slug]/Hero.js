@@ -39,7 +39,7 @@ const Hero = ({ title, description, image }) => {
         <div className="flex justify-center md:justify-end">
           <img
             src={`/solutions/${safeImage}.webp`}
-            alt={title}
+            alt={safeImage}
             width={500}
             height={400}
             className="md:min-w-xl"

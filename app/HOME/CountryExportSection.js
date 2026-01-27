@@ -99,7 +99,7 @@ export default function CountryStatsSection() {
                 >
                   <img
                     src={country.flag}
-                    alt=""
+                    alt={`${country.name} import export data`}
                     width={40}
                     height={30}
                     loading="lazy"

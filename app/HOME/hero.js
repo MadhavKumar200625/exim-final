@@ -42,7 +42,7 @@ export default function Hero() {
         <div className="flex-1">
           <Image
             src="/homepage/home.webp"
-            alt="Global import export trade data platform dashboard illustration"
+            alt="Global import export trade data platform"
             width={600}
             height={300}
             priority

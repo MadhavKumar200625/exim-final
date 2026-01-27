@@ -50,7 +50,7 @@ const ClientsSection = () => {
               <img
                 key={i}
                 src={src}
-                alt="Client company logo"
+                alt={i.toString().replace(".webp","").replace(".png","")}
                 width={136}
                 height={136}
                 className="drop-shadow-md object-contain"

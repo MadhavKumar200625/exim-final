@@ -17,7 +17,7 @@ const CustomsSection = () => {
         <div className="bg-white shadow-xl p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 transform animate-fadeUp delay-100">
           <img
             src="/homepage/actionable-insights.webp"
-            alt="Actionable insights from global import export customs data"
+            alt="Actionable insights"
             className="px-2 pb-10 pt-2 mx-auto"
             loading="lazy"
             decoding="async"
@@ -34,7 +34,7 @@ const CustomsSection = () => {
         <div className="bg-white shadow-xl p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 transform animate-fadeUp delay-200">
           <img
             src="/homepage/know-your-market.webp"
-            alt="Know your market using global shipment and trade data"
+            alt="Know your market"
             className="px-2 pb-10 pt-2 mx-auto"
             loading="lazy"
             decoding="async"
@@ -51,7 +51,7 @@ const CustomsSection = () => {
         <div className="bg-white shadow-xl p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 transform animate-fadeUp delay-300">
           <img
             src="/homepage/streamline-your-business.webp"
-            alt="Streamline business operations with import export trade data"
+            alt="Streamline business operations"
             className="px-2 pb-10 pt-2 mx-auto"
             loading="lazy"
             decoding="async"

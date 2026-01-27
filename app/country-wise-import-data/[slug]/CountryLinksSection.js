@@ -66,7 +66,7 @@ export default function CountrySection() {
                     >
                       <img
                         src={`https://flagcdn.com/w40/${c.code}.png`}
-                        alt={`${c.name} flag`}
+                        alt={`${c.name} import data`}
                         className="w-6 h-4 rounded-sm"
                         loading="lazy"
                       />

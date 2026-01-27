@@ -56,7 +56,7 @@ const GrowthSection = () => {
         <div className="flex justify-center">
           <img
             src="/homepage/best-market-research-platform.webp"
-            alt="Market research platform for global import export trade data"
+            alt="Market research platform "
             className="max-w-md w-full"
             loading="lazy"
             decoding="async"

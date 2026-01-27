@@ -8,7 +8,7 @@ const CodeOfConductSection = () => {
         <div className="w-full lg:w-1/3">
           <img
             src="/about/code-of-conduct.webp"
-            alt="Exim Trade Data code of conduct and business ethics"
+            alt="code of conduct"
             className="w-full object-cover"
             loading="lazy"
             decoding="async"

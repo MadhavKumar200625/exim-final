@@ -81,7 +81,7 @@ export default function Countries() {
         <a href={country.link_main}>
           <img
             src={country.flag}
-            alt={`${country.name} flag`}
+            alt={`${country.name} import export data`}
             width={64}
             height={48}
             loading="lazy"

@@ -51,7 +51,7 @@ const BenifitsSection = () => {
             <div className="w-20 h-20 mx-auto mb-5">
               <img
                 src={`/about/${card.img}`}
-                alt={card.text}
+                alt={card.text.replace("by data-analysis-based decision & avoid risk.","").replace("with global strategic planning & stay ahead.","").replace("& grab the upcoming business opportunity.","").replace("Exim trade data is equipped with the ","").replace("to uncover hidden insights.","")}
                 width={400}
                 height={300}
                 className="object-contain w-full h-full"
