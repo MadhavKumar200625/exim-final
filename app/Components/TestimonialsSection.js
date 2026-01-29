@@ -7,30 +7,36 @@ import "swiper/css/pagination";
 
 const testimonials = [
   {
-    name: "Arun Singh",
-    content: `Vietnam trade data intelligence reports from Exim Trade Data helped us in building an impactful marketing strategy. We were able to find verified Vietnamese buyers for our business and achieved significant business growth.`,
+    name: "Jeffry Kurniawan",
+    content: `My RM Mr. Gautam, He helps me a lot at every stage, also they have good data quality, fast
+response whenever I have bug or issue with the link.
+Data is also very accurate and up to date. It is very worth the price and help our busoness to
+further more and gain more market insight and intelligence. Top service from Exim Trade!`,
     rating: 5,
   },
   {
-    name: "Ankush Pant",
+    name: "Bhavya Sri Nadella",
     content:
-      "Tea import data of China from Exim Trade Data assisted me in starting a successful Tea export business from India. It helped me reduce financial risk and generate high ROI for my business",
+      "We had a great experience working with Goutam for the EXIM website data. He was incredibly helpful in guiding us through the portal, patiently explaining how to access and interpret the data effectively. His support made it easy for us to get started, and the information provided through the 6-month subscription has been clear, well-structured, and valuable for our analysis. A big thanks to Goutam for his proactive assistance and smooth onboarding experience!",
     rating: 5,
   },
   {
-    name: "Naveen Kumar ",
-    content: `I was looking to expand my garment business to the global market. Exim Trade Data provided me with quality global trade data statistics that helped me identify the potential buyers for my product. I must thanks Exim Trade Data for my business success.`,
+    name: "Prince Rudra",
+    content: `Very good services. Pushpmala is always helpful to us for any kind of doubts and help. Very
+good import export data provider. Reasonable than other competition.
+Recommended for buying their services`,
     rating: 5,
   },
   {
-    name: "Brayden",
+    name: "Mukesh Kumar Deepak",
     content:
-      "Anyone who wants to build their business in the import industry will find Exim Trade Data to be extremely helpful. Exim trade data consists of every single detail of shipment activities occurring throughout the world.",
+      "I’ve had a great experience using the Exim Trade platform. It’s user-friendly and efficient. The support provided by Ms. PushpMala has been outstanding—prompt, knowledgeable, and always ready to assist",
     rating: 5,
   },
   {
     name: "Toshima Sahani Electronics",
-    content: `I found the data very useful provide by the Exim Trade data. It help me to grow my business
+    content:
+`I found the data very useful provide by the Exim Trade data. It help me to grow my business
 and provide me more clients.
 Also the customer support team is very active and provide me the quick responce whenever
 I have any problem.`,
@@ -38,9 +44,11 @@ I have any problem.`,
   },
   {
     name: "Sonali More",
-    content: `Good portal with all HSN data ..Service is also prompt...`,
+    content:
+      `Good portal with all HSN data ..Service is also prompt...`,
     rating: 5,
   },
+  
 ];
 
 const TestimonialsSection = () => {

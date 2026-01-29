@@ -41,7 +41,7 @@ export default async function Page({ params }) {
   return (
     <main>
       <Hero companyName={data.companyName}  />
-      <CompanyView data={data} country={country} />
+      <CompanyView companyName={data.companyName} data={data} country={country} />
       <CompanyRemovalCTA country={country} company={company}></CompanyRemovalCTA>
     </main>
   );
