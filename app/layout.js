@@ -166,7 +166,6 @@ export default function RootLayout({ children }) {
         <GeoBootstrap />
 
         <Header />
-        <AllPageForm></AllPageForm>
         <main>{children}</main>
         <ScrollArrows />
         <Footer />
