@@ -583,7 +583,7 @@ const countries = Object.entries(countryCodes).filter(([name]) =>
 
     {/* Center / Right */}
     <div className="text-center w-full md:text-center md:mr-32 ">
-      &copy; {2025-2026} Shpere Eximia Research Pvt Ltd. All rights reserved.
+      &copy; 2025-2026 Shpere Eximia Research Pvt Ltd. All rights reserved.
     </div>
   </div>
 </div>

@@ -5,6 +5,7 @@ import Hero from "./Hero";
 import CompanyView from "./CompanyView";
 import { getCompanyData } from "@/lib/companies/getCompanyData";
 import CompanyRemovalCTA from "./CompanyRemovalCta";
+import CompanyNotFound from "./CompanyNotFound";
 
 export async function generateMetadata({ params }) {
   params = await params
@@ -35,14 +36,27 @@ export async function generateMetadata({ params }) {
 
 export default async function Page({ params }) {
   params = await params
-  const data = await getCompanyData(params);
+  
    const { country = "", company = "" } = params;
+  const data = await getCompanyData(params);
+
+  if (data?.notFound) {
+    return (
+      <main>
+        <CompanyNotFound companyName={data.companyName} />
+      </main>
+    );
+  }
 
   return (
     <main>
-      <Hero companyName={data.companyName}  />
-      <CompanyView companyName={data.companyName} data={data} country={country} />
-      <CompanyRemovalCTA country={country} company={company}></CompanyRemovalCTA>
+      <Hero companyName={data.companyName} />
+      <CompanyView
+        companyName={data.companyName}
+        data={data}
+        country={country}
+      />
+      <CompanyRemovalCTA country={country} company={company} />
     </main>
   );
 }
