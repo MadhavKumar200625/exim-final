@@ -6,103 +6,102 @@ import React from "react";
 import { ChevronDown } from "lucide-react";
 
 const countries = {
-   "Bangladesh": "https://flagcdn.com/w20/bd.png" ,
-   "Brazil": "https://flagcdn.com/w20/br.png" ,
-   "Indonesia": "https://flagcdn.com/w20/id.png" ,
-   "Pakistan": "https://flagcdn.com/w20/pk.png" ,
-   "Philippines": "https://flagcdn.com/w20/ph.png" ,
-   "Russia": "https://flagcdn.com/w20/ru.png" ,
-   "Sri Lanka": "https://flagcdn.com/w20/lkng" ,
-   "Tanzania": "https://flagcdn.com/w20/tz.png" ,
-   "Vietnam": "https://flagcdn.com/w20/vn.png" ,
-   "Argentina": "https://flagcdn.com/w20/ar.png" ,
-   "Bolivia": "https://flagcdn.com/w20/bo.png" ,
-   "Botswana": "https://flagcdn.com/w20/bw.png" ,
-   "Chile": "https://flagcdn.com/w20/cl.png" ,
-   "Nigeria": "https://flagcdn.com/w20/ng.png" ,
-   "Colombia": "https://flagcdn.com/w20/co.png" ,
-   "Costa Rica": "https://flagcdn.com/w20/crng" ,
-   "DR Congo": "https://flagcdn.com/w20/cdng" ,
-   "Kazakhstan": "https://flagcdn.com/w20/kz.png" ,
-   "Kenya": "https://flagcdn.com/w20/ke.png" ,
-   "Moldova": "https://flagcdn.com/w20/md.png" ,
-   "Uganda": "https://flagcdn.com/w20/ug.png" ,
-   "Ukraine": "https://flagcdn.com/w20/ua.png" ,
-   "Uzbekistan": "https://flagcdn.com/w20/uz.png" ,
-   "Australia": "https://flagcdn.com/w20/au.png" ,
-   "Spain": "https://flagcdn.com/w20/es.png" ,
-   "United Kingdom": "https://flagcdn.com/w20/gbng" ,
-   "Netherland": "https://flagcdn.com/w20/nl.png" ,
-   "Germany": "https://flagcdn.com/w20/de.png" ,
-   "United Arab Emirates": "https://flagcdn.com/w20/.png",
-   "Saudi Arabia": "https://flagcdn.com/w20/sang" ,
-   "Oman": "https://flagcdn.com/w20/om.png" ,
-   "Singapore": "https://flagcdn.com/w20/sg.png" ,
-   "Canada": "https://flagcdn.com/w20/ca.png" ,
-   "China": "https://flagcdn.com/w20/cn.png" ,
-   "USA": "https://flagcdn.com/w20/us.png" ,
-   "Afghanistan": "https://flagcdn.com/w20/af.png" ,
-   "Algeria": "https://flagcdn.com/w20/dz.png" ,
-   "Angola": "https://flagcdn.com/w20/ao.png" ,
-   "Armenia": "https://flagcdn.com/w20/am.png" ,
-   "Austria": "https://flagcdn.com/w20/at.png" ,
-   "Azerbaijan": "https://flagcdn.com/w20/az.png" ,
-   "Bahrain": "https://flagcdn.com/w20/bh.png" ,
-   "Barbados": "https://flagcdn.com/w20/bb.png" ,
-   "Belgium": "https://flagcdn.com/w20/be.png" ,
-   "Belarus": "https://flagcdn.com/w20/by.png" ,
-   "Benin": "https://flagcdn.com/w20/bj.png" ,
-   "Bermuda": "https://flagcdn.com/w20/bm.png" ,
-   "Bhutan": "https://flagcdn.com/w20/bt.png" ,
-   "Bulgaria": "https://flagcdn.com/w20/bg.png" ,
-   "Burundi": "https://flagcdn.com/w20/bi.png" ,
-   "Cambodia": "https://flagcdn.com/w20/kh.png" ,
-   "Cameroon": "https://flagcdn.com/w20/cm.png" ,
-   "Chad": "https://flagcdn.com/w20/td.png" ,
-   "Cote d ivoire": "https://flagcdn.com/w20/.png",
-   "Croatia": "https://flagcdn.com/w20/hr.png" ,
-   "Cyprus": "https://flagcdn.com/w20/cy.png" ,
-   "Czech Republic": "https://flagcdn.com/w20/czng" ,
-   "Denmark": "https://flagcdn.com/w20/dk.png" ,
-   "Dominican Republic": "https://flagcdn.com/w20/dong" ,
-   "Ecuador": "https://flagcdn.com/w20/ec.png" ,
-   "Egypt": "https://flagcdn.com/w20/eg.png" ,
-   "Estonia": "https://flagcdn.com/w20/ee.png" ,
-   "Ethiopia": "https://flagcdn.com/w20/et.png" ,
-   "El Salvador": "https://flagcdn.com/w20/svng" ,
-   "Fiji": "https://flagcdn.com/w20/fj.png" ,
-   "Finland": "https://flagcdn.com/w20/fi.png" ,
-   "France": "https://flagcdn.com/w20/fr.png" ,
-   "Gabon": "https://flagcdn.com/w20/ga.png" ,
-   "Georgia": "https://flagcdn.com/w20/ge.png" ,
-   "Ghana": "https://flagcdn.com/w20/gh.png" ,
-   "Greece": "https://flagcdn.com/w20/gr.png" ,
-   "Guatemala": "https://flagcdn.com/w20/gt.png" ,
-   "Guinea": "https://flagcdn.com/w20/gn.png" ,
-   "Guyana": "https://flagcdn.com/w20/gy.png" ,
-   "Hungary": "https://flagcdn.com/w20/hu.png" ,
-   "Honduras": "https://flagcdn.com/w20/hn.png" ,
-   "Iran": "https://flagcdn.com/w20/ir.png" ,
-   "Iraq": "https://flagcdn.com/w20/iq.png" ,
-   "Ireland": "https://flagcdn.com/w20/ie.png" ,
-   "Israel": "https://flagcdn.com/w20/il.png" ,
-   "Italy": "https://flagcdn.com/w20/it.png" ,
-   "Jamaica": "https://flagcdn.com/w20/jm.png" ,
-   "Japan": "https://flagcdn.com/w20/jp.png" ,
-   "Jordan": "https://flagcdn.com/w20/jo.png" ,
-   "Kosovo": "https://flagcdn.com/w20/xk.png" ,
-   "Kuwait": "https://flagcdn.com/w20/kw.png" ,
-   "Kyrgyzstan": "https://flagcdn.com/w20/kg.png" ,
-   "Latvia": "https://flagcdn.com/w20/lv.png" ,
-   "Lesotho": "https://flagcdn.com/w20/ls.png" ,
-   "Liberia": "https://flagcdn.com/w20/lr.png" ,
-   "Libya": "https://flagcdn.com/w20/ly.png" ,
-   "Lithuania": "https://flagcdn.com/w20/lt.png" ,
-   "Luxembourg": "https://flagcdn.com/w20/lu.png" ,
-   "Malawi": "https://flagcdn.com/w20/mw.png" ,
-   "Malaysia": "https://flagcdn.com/w20/my.png",
+  "Bangladesh": "https://flagcdn.com/w20/bd.png",
+  "Brazil": "https://flagcdn.com/w20/br.png",
+  "Indonesia": "https://flagcdn.com/w20/id.png",
+  "Pakistan": "https://flagcdn.com/w20/pk.png",
+  "Philippines": "https://flagcdn.com/w20/ph.png",
+  "Russia": "https://flagcdn.com/w20/ru.png",
+  "Sri Lanka": "https://flagcdn.com/w20/lk.png",
+  "Tanzania": "https://flagcdn.com/w20/tz.png",
+  "Vietnam": "https://flagcdn.com/w20/vn.png",
+  "Argentina": "https://flagcdn.com/w20/ar.png",
+  "Bolivia": "https://flagcdn.com/w20/bo.png",
+  "Botswana": "https://flagcdn.com/w20/bw.png",
+  "Chile": "https://flagcdn.com/w20/cl.png",
+  "Nigeria": "https://flagcdn.com/w20/ng.png",
+  "Colombia": "https://flagcdn.com/w20/co.png",
+  "Costa Rica": "https://flagcdn.com/w20/cr.png",
+  "DR Congo": "https://flagcdn.com/w20/cd.png",
+  "Kazakhstan": "https://flagcdn.com/w20/kz.png",
+  "Kenya": "https://flagcdn.com/w20/ke.png",
+  "Moldova": "https://flagcdn.com/w20/md.png",
+  "Uganda": "https://flagcdn.com/w20/ug.png",
+  "Ukraine": "https://flagcdn.com/w20/ua.png",
+  "Uzbekistan": "https://flagcdn.com/w20/uz.png",
+  "Australia": "https://flagcdn.com/w20/au.png",
+  "Spain": "https://flagcdn.com/w20/es.png",
+  "United Kingdom": "https://flagcdn.com/w20/gb.png",
+  "Netherland": "https://flagcdn.com/w20/nl.png",
+  "Germany": "https://flagcdn.com/w20/de.png",
+  "United Arab Emirates": "https://flagcdn.com/w20/ae.png",
+  "Saudi Arabia": "https://flagcdn.com/w20/sa.png",
+  "Oman": "https://flagcdn.com/w20/om.png",
+  "Singapore": "https://flagcdn.com/w20/sg.png",
+  "Canada": "https://flagcdn.com/w20/ca.png",
+  "China": "https://flagcdn.com/w20/cn.png",
+  "USA": "https://flagcdn.com/w20/us.png",
+  "Afghanistan": "https://flagcdn.com/w20/af.png",
+  "Algeria": "https://flagcdn.com/w20/dz.png",
+  "Angola": "https://flagcdn.com/w20/ao.png",
+  "Armenia": "https://flagcdn.com/w20/am.png",
+  "Austria": "https://flagcdn.com/w20/at.png",
+  "Azerbaijan": "https://flagcdn.com/w20/az.png",
+  "Bahrain": "https://flagcdn.com/w20/bh.png",
+  "Barbados": "https://flagcdn.com/w20/bb.png",
+  "Belgium": "https://flagcdn.com/w20/be.png",
+  "Belarus": "https://flagcdn.com/w20/by.png",
+  "Benin": "https://flagcdn.com/w20/bj.png",
+  "Bermuda": "https://flagcdn.com/w20/bm.png",
+  "Bhutan": "https://flagcdn.com/w20/bt.png",
+  "Bulgaria": "https://flagcdn.com/w20/bg.png",
+  "Burundi": "https://flagcdn.com/w20/bi.png",
+  "Cambodia": "https://flagcdn.com/w20/kh.png",
+  "Cameroon": "https://flagcdn.com/w20/cm.png",
+  "Chad": "https://flagcdn.com/w20/td.png",
+  "Cote d ivoire": "https://flagcdn.com/w20/ci.png",
+  "Croatia": "https://flagcdn.com/w20/hr.png",
+  "Cyprus": "https://flagcdn.com/w20/cy.png",
+  "Czech Republic": "https://flagcdn.com/w20/cz.png",
+  "Denmark": "https://flagcdn.com/w20/dk.png",
+  "Dominican Republic": "https://flagcdn.com/w20/do.png",
+  "Ecuador": "https://flagcdn.com/w20/ec.png",
+  "Egypt": "https://flagcdn.com/w20/eg.png",
+  "Estonia": "https://flagcdn.com/w20/ee.png",
+  "Ethiopia": "https://flagcdn.com/w20/et.png",
+  "El Salvador": "https://flagcdn.com/w20/sv.png",
+  "Fiji": "https://flagcdn.com/w20/fj.png",
+  "Finland": "https://flagcdn.com/w20/fi.png",
+  "France": "https://flagcdn.com/w20/fr.png",
+  "Gabon": "https://flagcdn.com/w20/ga.png",
+  "Georgia": "https://flagcdn.com/w20/ge.png",
+  "Ghana": "https://flagcdn.com/w20/gh.png",
+  "Greece": "https://flagcdn.com/w20/gr.png",
+  "Guatemala": "https://flagcdn.com/w20/gt.png",
+  "Guinea": "https://flagcdn.com/w20/gn.png",
+  "Guyana": "https://flagcdn.com/w20/gy.png",
+  "Hungary": "https://flagcdn.com/w20/hu.png",
+  "Honduras": "https://flagcdn.com/w20/hn.png",
+  "Iran": "https://flagcdn.com/w20/ir.png",
+  "Iraq": "https://flagcdn.com/w20/iq.png",
+  "Ireland": "https://flagcdn.com/w20/ie.png",
+  "Israel": "https://flagcdn.com/w20/il.png",
+  "Italy": "https://flagcdn.com/w20/it.png",
+  "Jamaica": "https://flagcdn.com/w20/jm.png",
+  "Japan": "https://flagcdn.com/w20/jp.png",
+  "Jordan": "https://flagcdn.com/w20/jo.png",
+  "Kosovo": "https://flagcdn.com/w20/xk.png",
+  "Kuwait": "https://flagcdn.com/w20/kw.png",
+  "Kyrgyzstan": "https://flagcdn.com/w20/kg.png",
+  "Latvia": "https://flagcdn.com/w20/lv.png",
+  "Lesotho": "https://flagcdn.com/w20/ls.png",
+  "Liberia": "https://flagcdn.com/w20/lr.png",
+  "Libya": "https://flagcdn.com/w20/ly.png",
+  "Lithuania": "https://flagcdn.com/w20/lt.png",
+  "Luxembourg": "https://flagcdn.com/w20/lu.png",
+  "Malawi": "https://flagcdn.com/w20/mw.png",
+  "Malaysia": "https://flagcdn.com/w20/my.png",
 };
-
 const countryFlags = {
   "Bangladesh":"https://flagcdn.com/w640/bd.png", // Bangladesh
   "Brazil":"https://flagcdn.com/w640/br.png", // Brazil
@@ -134,7 +133,7 @@ const Companies = ({
   const [showDropdown, setShowDropdown] = useState(false);
 
   const totalPages = Math.max(1, Math.ceil(totalValues / 100));
-
+const [search, setSearch] = useState("");
   /* -----------------------------------------
      Sync state with parent props
   ------------------------------------------ */
@@ -153,9 +152,13 @@ const Companies = ({
   const buildUrl = (page, newLetter = letter, newCountry = country) => {
   const safeCountry = slugify(newCountry || defaultCountry);
   const safeLetter = (newLetter || defaultLetter).toLowerCase();
+  
 
   return `/global-companies-list/${safeCountry}/${safeLetter}-${page}`;
 };
+const filteredCountries = Object.entries(countries).filter(([name]) =>
+  name.toLowerCase().includes(search.toLowerCase())
+);
 
   /* -----------------------------------------
      Pagination numbers (stable)
@@ -219,22 +222,44 @@ const Companies = ({
               </button>
 
               {showDropdown && (
-                <div className="absolute z-20 mt-2 w-full max-h-64 overflow-y-auto bg-white border rounded shadow">
-                  {Object.entries(countries).map(([name, flag]) => (
-                    <div
-                      key={name}
-                      onClick={() => {
-                        setCountry(name);
-                        setShowDropdown(false);
-                      }}
-                      className="flex items-center gap-2 p-2 cursor-pointer hover:bg-gray-100"
-                    >
-                      <img src={flag} alt={name} width={20} height={14} />
-                      <span>{name}</span>
-                    </div>
-                  ))}
-                </div>
-              )}
+  <div className="absolute z-20 mt-2 w-full bg-white border rounded shadow">
+    
+    {/* Search bar */}
+    <div className="p-2 border-b">
+      <input
+        type="text"
+        placeholder="Search country..."
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        className="w-full px-3 py-1.5 text-sm border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+    </div>
+
+    {/* Country list */}
+    <div className="max-h-56 overflow-y-auto">
+      {filteredCountries.length ? (
+        filteredCountries.map(([name, flag]) => (
+          <div
+            key={name}
+            onClick={() => {
+              setCountry(name);
+              setShowDropdown(false);
+              setSearch("");
+            }}
+            className="flex items-center gap-2 p-2 cursor-pointer hover:bg-gray-100"
+          >
+            <img src={flag} alt={name} width={20} height={14} />
+            <span>{name}</span>
+          </div>
+        ))
+      ) : (
+        <div className="p-2 text-sm text-gray-500">
+          No countries found
+        </div>
+      )}
+    </div>
+  </div>
+)}
             </div>
 
             {/* Search */}
