@@ -27,7 +27,7 @@ const [isOpen, setIsOpen] = useState(false);
         "Unlimited HSCode & Product Search",
         "Unlimited Company search",
         "Unlimited Port Data Search Shipment",
-        "Choose Any One country (except restricted list)",
+        "All country except(Turkey, Vietnam, Russia, Bangladesh, Cameroon, Uzbekistan, China, Italy,Germany, Congo, Brazil, France, Egypt, Australia, Switzerland, USA, Ghana, Zambia, Kenya, Kazakhstan, Peru, Indonesia, and Mexico)",
         "3 Month Validity",
       ],
       gradient: "bg-gradient-to-r from-orange-400 to-yellow-400",
