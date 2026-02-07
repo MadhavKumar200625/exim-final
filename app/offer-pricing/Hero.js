@@ -100,7 +100,7 @@ const [isOpen, setIsOpen] = useState(false);
         "Unlimited HS Code & Product Search",
         "Unlimited Company search",
         "Unlimited Port Data Search Shipment",
-        "All countries except restricted list",
+        "All country except(Turkey, Vietnam, Russia, Bangladesh, Cameroon, Uzbekistan, China, Italy,Germany, Congo, Brazil, France, Egypt, Australia, Switzerland, USA, Ghana, Zambia, Kenya, Kazakhstan, Peru, Indonesia, and Mexico)",
         "One Year Validity",
       ],
       gradient: "bg-gradient-to-r from-orange-400 to-yellow-400",
@@ -123,7 +123,7 @@ const [isOpen, setIsOpen] = useState(false);
         "Unlimited HS Code & Product Search",
         "Unlimited Company search",
         "Unlimited Port Data Search Shipment",
-        "All country except(Turkey, Vietnam, Russia, Bangladesh, Cameroon, Uzbekistan, China, Italy,Germany, Congo, Brazil, France, Egypt, Australia, Switzerland, USA, Ghana, Zambia, Kenya, Kazakhstan, Peru, Indonesia, and Mexico)",
+        "All 200+ Countries",
         "One Year Validity",
       ],
       gradient: "bg-gradient-to-r from-red-500 to-orange-400",
@@ -258,7 +258,7 @@ const [isOpen, setIsOpen] = useState(false);
                 {plan.description}
               </div>
 
-              <div className="px-6 py-4 text-sm">
+              <div className="px-6 py-4 text-sm min-h-110">
                 <ul className="space-y-2">
                   {plan.features.map((f, i) => (
                     <li key={i}>
