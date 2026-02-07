@@ -17,14 +17,33 @@ const parseNumericValue = (val) => {
 };
 
 /* ---------- COMPONENT ---------- */
-const Stats = ({ country, imports, exports }) => {
-  const importValue = parseNumericValue(imports);
+const Stats = ({ country, imports, exports, data }) => {
+  const statsFromStrapi = data?.figures?.length
+  ? data.figures.map((item) => ({
+      value: Number(item.imp_exp_dynamic_fig),
+      label: item.Title,
+      title: item.button?.[0]?.button_text,
+      link: item.button?.[0]?.button_link || "/pricing",
+    }))
+  : null;
+
+    const importValue = parseNumericValue(imports);
   const exportValue = parseNumericValue(exports);
 
-  const stats = [
-    { value: importValue, label: "Total Import Value", title: `${country.toUpperCase()} Import Data` },
-    { value: exportValue, label: "Total Export Value", title: `${country.toUpperCase()} Export Data` },
-  ];
+  const stats = statsFromStrapi || [
+  {
+    value: importValue,
+    label: "Total Import Value",
+    title: `${country.toUpperCase()} Import Data`,
+    link: "/pricing",
+  },
+  {
+    value: exportValue,
+    label: "Total Export Value",
+    title: `${country.toUpperCase()} Export Data`,
+    link: "/pricing",
+  },
+];
 
   const [counts, setCounts] = useState(() => stats.map(() => 0));
 

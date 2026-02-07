@@ -10,8 +10,50 @@ import Hero from "./Hero";
 import FAQSection from "@/app/Components/FAQ";
 
 /* ================== STATIC CONFIG ================== */
-export const dynamic = "force-static";
-export const revalidate = 86400; // 24 hours (SEO + bot safe)
+// export const dynamic = "force-static";
+// export const revalidate = 86400; // 24 hours (SEO + bot safe)
+const mapHeroSection = (entry) => {
+  if (!entry?.section_1) return null;
+
+  return {
+    title: entry.section_1.Title,
+    description: entry.section_1.Description,
+
+    // buttons
+    onlineDataText: entry.section_1.button?.[0]?.button_text,
+    onlineDataLink: entry.section_1.button?.[0]?.button_link,
+
+    offlineDataText: entry.section_1.button?.[1]?.button_text,
+    offlineDataLink: entry.section_1.button?.[1]?.button_link,
+
+    // image (optional for later use)
+    image: entry.section_1.image?.[0],
+  };
+};
+
+async function fetchCountryFromStrapi(slug) {
+  try {
+    const res = await fetch(
+      `http://72.61.239.34:1337/api/country-common-pages?filters[slug][$eq]=${slug}&status=published&locale=en&populate[section_1][populate][button]=*&populate[section_1][populate][image]=*&populate[section_2][populate][Continent_name][populate][button_with_image]=*&populate[section_2][populate][button]=*&populate[section_3][populate][imp_exp_dynamic_fig][populate][button]=*&populate[section_4][populate][button]=*&populate[section_5]=true&populate[section_6][populate][button]=*&populate[section_7][populate][button]=*&populate[section_8][populate][faq_section]=*`,
+      {
+        headers: {
+      Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
+    },
+        next: { revalidate: 86400 },
+      }
+    );
+
+
+    if (!res.ok) return null;
+
+    const json = await res.json();
+    return json?.data?.[0] || null;
+  } catch (err) {
+    console.error("Strapi fetch failed:", err);
+    return null;
+  }
+}
+
 
 /* ================== HELPERS ================== */
 const normalizeSlug = (slug = "") =>
@@ -144,7 +186,8 @@ export async function generateMetadata({ params }) {
 export default async function Page({ params }) {
   params=await params
   const slug = getSlug(params);
-  
+  const strapiEntry = await fetchCountryFromStrapi(slug);
+  const strapiHero = strapiEntry ? mapHeroSection(strapiEntry) : null;
 
   const DEFAULT_COUNTRY_DATA = {
     hero_section: {
@@ -275,32 +318,96 @@ const country = normalizeCountryData(
   slug
 );
 
-  
+const section2Data = strapiEntry?.section_2
+  ? {
+      title: strapiEntry.section_2.Title,
+      continents: strapiEntry.section_2.Continent_name,
+      cta: strapiEntry.section_2.button?.[0],
+    }
+  : null;
+
+  const section3Data = strapiEntry?.section_3
+  ? {
+      title: strapiEntry.section_3.Title,
+      figures: strapiEntry.section_3.imp_exp_dynamic_fig,
+    }
+  : null;
+const section4Data = strapiEntry?.section_4
+  ? {
+      heading: strapiEntry.section_4.Heading_1,
+      points: strapiEntry.section_4.Description
+        ?.split("\n")
+        .map(p => p.trim())
+        .filter(Boolean),
+      ctaText: strapiEntry.section_4.button?.[0]?.button_text,
+      ctaLink: strapiEntry.section_4.button?.[0]?.button_link,
+    }
+  : null;
+
+  const section5Data = strapiEntry?.section_5
+  ? {
+      title: strapiEntry.section_5.Title,
+      description: strapiEntry.section_5.Description,
+    }
+  : null;
+
+  const section6Data = strapiEntry?.section_6
+  ? {
+      title: strapiEntry.section_6.Title,
+      description: strapiEntry.section_6.Description,
+      buttonText: strapiEntry.section_6.button?.[0]?.button_text,
+      buttonLink: strapiEntry.section_6.button?.[0]?.button_link,
+    }
+  : null;
+
+  const section7Data = strapiEntry?.section_7
+  ? {
+      title: strapiEntry.section_7.Title,
+      links: strapiEntry.section_7.button?.map((b) => ({
+        title: b.button_text,
+        url: b.button_link,
+      })),
+    }
+  : null;
+
+  const section8Data = strapiEntry?.section_8
+  ? {
+      title: strapiEntry.section_8.Title,
+      faqs: strapiEntry.section_8.faq_section?.map((f) => ({
+        question: f.question_text,
+        answer: f.answer_text,
+      })),
+    }
+  : null;
 
   return (
     <main>
-      <Hero hero={country.hero_section} country={countryname} />
+      
+      <Hero hero={strapiHero?strapiHero: country.hero_section} country={countryname} />
 
-      <CountryLinksSection />
+      <CountryLinksSection data={section2Data} />
 
       <Stats
-        country={countryname}
-        imports={country.overview?.total_imports}
-        exports={country.overview?.total_exports}
-      />
+  country={countryname}
+  imports={country.overview?.total_imports}
+  exports={country.overview?.total_exports}
+  data={section3Data}
+/>
 
       
 
       <GlobalImpact
-        country={countryname}
-        points={safeArray(country.benefits_section?.points)}
-      />
+  country={countryname}
+  points={country.benefits_section?.points}
+  data={section4Data}
+/>
 
-      <MarketIntel
-        country={countryname}
-        desc={country.section3?.description}
-        data={country.section4}
-      />
+     <MarketIntel
+  country={countryname}
+  desc={country.section3?.description} // existing behavior stays
+  data={country.section4}               // existing behavior stays
+  section5={section5Data}
+/>
 
       {country.detailed_info && (
         <DetailedTable
@@ -310,15 +417,20 @@ const country = normalizeCountryData(
       )}
 
       <CtaImage
-        country={countryname}
-        description={country.leads_section?.description}
-      />
+  description={country.leads_section?.description}
+  section6={section6Data}
+/>
+      <ImportantLinks
+  country={countryname}
+  section7={section7Data}
+/>
 
-      <ImportantLinks country={countryname} />
-
-      {country.faq_section?.faqs?.length > 0 && (
-        <FAQSection faqs={country.faq_section.faqs} />
-      )}
+     {section8Data?.faqs?.length > 0 && (
+  <FAQSection
+    title={section8Data.title}
+    faqs={section8Data.faqs}
+  />
+)}
     </main>
   );
 }

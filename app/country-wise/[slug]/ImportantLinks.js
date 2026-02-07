@@ -9,8 +9,8 @@ const normalize = (str = "") =>
     .replace(/\band\b/g, "and")
     .trim();
 
-export default function ImportantLinks({ country }) {
-  const normalizedCountry = normalize(country);
+export default function ImportantLinks({ country, section7 }) {
+    const normalizedCountry = normalize(country);
 
   const countryData = countries.find(
     (c) => normalize(c.name) === normalizedCountry
@@ -51,6 +51,12 @@ export default function ImportantLinks({ country }) {
       url: `/api-development-and-integration-company`,
     },
   ];
+  /* ---------- STRAPI OVERRIDE ---------- */
+const strapiTitle = section7?.title;
+const strapiLinks = Array.isArray(section7?.links)
+  ? section7.links
+  : null;
+const finalLinks = strapiLinks || links;
 
   return (
     <section className="px-6 md:px-16 py-12 bg-white">
@@ -60,31 +66,31 @@ export default function ImportantLinks({ country }) {
         </p>
 
         <h2 className="text-3xl font-bold text-black mb-8">
-          Important links related to {countryData?.name || country} Import and
-          Export data
-        </h2>
+  {strapiTitle ||
+    `Important links related to ${countryData?.name || country} Import and Export data`}
+</h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-          {links.map((item) => (
-            <a
-              key={item.title}
-              href={item.url}
-              className="group flex items-center justify-between p-4 border rounded-lg shadow-sm hover:shadow-md transition"
-            >
-              <div className="flex items-center gap-3">
-                <ChevronRight size={18} className="text-sky-500" />
-                <span className="font-medium underline group-hover:text-sky-600">
-                  {item.title}
-                </span>
-              </div>
+  {finalLinks.map((item) => (
+    <a
+      key={item.title}
+      href={item.url}
+      className="group flex items-center justify-between p-4 border rounded-lg shadow-sm hover:shadow-md transition"
+    >
+      <div className="flex items-center gap-3">
+        <ChevronRight size={18} className="text-sky-500" />
+        <span className="font-medium underline group-hover:text-sky-600">
+          {item.title}
+        </span>
+      </div>
 
-              <ArrowUpRight
-                size={18}
-                className="group-hover:text-sky-500 transition"
-              />
-            </a>
-          ))}
-        </div>
+      <ArrowUpRight
+        size={18}
+        className="group-hover:text-sky-500 transition"
+      />
+    </a>
+  ))}
+</div>
       </div>
     </section>
   );

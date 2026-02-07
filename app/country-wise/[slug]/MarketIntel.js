@@ -3,8 +3,12 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
-const MarketIntel = ({ country, desc, data }) => {
-  const [activeTab, setActiveTab] = useState("import");
+const MarketIntel = ({ country, desc, data, section5 }) => {
+
+  
+
+
+    const [activeTab, setActiveTab] = useState("import");
 
   const countryName =
     country?.replace(/^./, (s) => s.toUpperCase()) || "Country";
@@ -20,6 +24,14 @@ const MarketIntel = ({ country, desc, data }) => {
 
   const buyers = safeArray(data?.buyers?.companies);
   const suppliers = safeArray(data?.suppliers?.companies);
+  
+
+  const finalTitle =
+  section5?.title ||
+  `${countryName} Import Export Data 2024–25`;
+
+const finalDescription =
+  section5?.description || desc;
 
   const renderTable = (type) => (
     <div className="grid gap-8 md:grid-cols-3">
@@ -105,22 +117,22 @@ const MarketIntel = ({ country, desc, data }) => {
       <div className="container mx-auto px-6">
         {/* Header */}
         <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-          className="text-3xl md:text-4xl font-bold text-black text-center mb-4"
-        >
-          {countryName} Import Export Data 2024–25
-        </motion.h1>
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.4 }}
+  className="text-3xl md:text-4xl font-bold text-black text-center mb-4"
+>
+  {finalTitle}
+</motion.h1>
 
         <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-lg md:text-xl text-black text-center mb-10"
-        >
-          {desc}
-        </motion.p>
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.5 }}
+  className="text-lg md:text-xl text-black text-center mb-10"
+>
+  {finalDescription}
+</motion.p>
 
         {/* Tabs */}
         <div className="flex justify-center gap-4 mb-10">

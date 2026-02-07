@@ -4,8 +4,20 @@ import { motion } from "framer-motion";
 import { ArrowRight, BarChart3 } from "lucide-react";
 import Link from "next/link";
 
-export default function CtaImage({ description }) {
-  return (
+export default function CtaImage({ description, section6 }) {
+
+  const finalTitle =
+  section6?.title || "Get High-Quality Trade Leads with Exim GTIS";
+
+const finalDescription =
+  section6?.description || description;
+
+const finalButtonText =
+  section6?.buttonText || "Get Full Report";
+
+const finalButtonLink =
+  section6?.buttonLink || "/contact";
+    return (
     <section className="relative w-full py-14 bg-linear-to-br from-white via-slate-50 to-slate-100 text-gray-900 overflow-hidden">
       {/* Soft background accents (NO infinite animation) */}
       <div className="absolute inset-0 -z-10">
@@ -27,36 +39,36 @@ export default function CtaImage({ description }) {
 
         {/* Heading */}
         <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-3xl md:text-5xl font-extrabold tracking-tight text-gray-900"
-        >
-          Get High-Quality Trade Leads with Exim GTIS
-        </motion.h2>
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.6 }}
+  className="text-3xl md:text-5xl font-extrabold tracking-tight text-gray-900"
+>
+  {finalTitle}
+</motion.h2>
 
         {/* Description */}
-        {description && (
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-4 max-w-2xl text-lg md:text-xl text-gray-600 leading-relaxed"
-          >
-            {description}
-          </motion.p>
-        )}
+        {finalDescription && (
+  <motion.p
+    initial={{ opacity: 0, y: 16 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.6, delay: 0.1 }}
+    className="mt-4 max-w-2xl text-lg md:text-xl text-gray-600 leading-relaxed"
+  >
+    {finalDescription}
+  </motion.p>
+)}
 
         {/* CTA */}
-        <a
-          href="/contact"
-          className="group mt-10 inline-flex items-center gap-3 px-7 py-4 bg-blue-600 text-white font-semibold shadow-md hover:shadow-lg hover:scale-[1.02] transition-all"
-        >
-          Get Full Report
-          <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-        </a>
+       <a
+  href={finalButtonLink}
+  className="group mt-10 inline-flex items-center gap-3 px-7 py-4 bg-blue-600 text-white font-semibold shadow-md hover:shadow-lg hover:scale-[1.02] transition-all"
+>
+  {finalButtonText}
+  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+</a>
       </div>
     </section>
   );
