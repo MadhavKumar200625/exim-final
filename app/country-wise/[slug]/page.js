@@ -34,7 +34,7 @@ const mapHeroSection = (entry) => {
 async function fetchCountryFromStrapi(slug) {
   try {
     const res = await fetch(
-      `http://72.61.239.34:1337/api/country-common-pages?filters[slug][$eq]=${slug}&status=published&locale=en&populate[section_1][populate][button]=*&populate[section_1][populate][image]=*&populate[section_2][populate][Continent_name][populate][button_with_image]=*&populate[section_2][populate][button]=*&populate[section_3][populate][imp_exp_dynamic_fig][populate][button]=*&populate[section_4][populate][button]=*&populate[section_5]=true&populate[section_6][populate][button]=*&populate[section_7][populate][button]=*&populate[section_8][populate][faq_section]=*`,
+      `http://72.61.239.34:1337/api/country-common-pages?filters[slug][$eq]=${slug}&status=published&locale=en&populate[section_1][populate][button]=*&populate[section_1][populate][image]=*&populate[section_2][populate][Continent_name][populate][button_with_image]=*&populate[section_2][populate][button]=*&populate[section_3][populate][imp_exp_dynamic_fig][populate][button]=*&populate[section_4][populate][button]=*&populate[section_6][populate][button]=*&populate[section_7][populate][button]=*&populate[section_8][populate][faq_section]=*&populate[meta_tags][populate]=*&populate[section_5][populate][trade_tabs][populate][table_with_values][populate][table_row]=*`,
       {
         headers: {
       Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
@@ -107,7 +107,7 @@ const normalizeCountryData = (raw, slug) => ({
 
 /* ================== METADATA ================== */
 export async function generateMetadata({ params }) {
-  params=await params
+  params = await params;
   const slug = getSlug(params);
 
   if (!slug) {
@@ -116,72 +116,70 @@ export async function generateMetadata({ params }) {
     };
   }
 
-  const country = countriesData[slug];
-  const formattedSlug = formatCountryName(slug)
-  
+  // 🔥 Fetch Strapi data
+  const strapiEntry = await fetchCountryFromStrapi(slug);
+  const strapiMeta = strapiEntry?.meta_tags?.[0];
 
-  if (!country) {
-    return {
-      title: `${formattedSlug} Import Export Data | ${formattedSlug} Customs Data - Exim Trade Data`,
-      description: `Access up-to-date ${formattedSlug} import export data, customs reports and shipment details.`,
-      keywords: [
-        `${slug} import data`,
-        `${slug} export data`,
-        `${slug} customs data`,
-        `${slug} shipment data`,
-        `${slug} importers`,
-        `${slug} exporters`,
-      ],
-      alternates: {
-        canonical: `https://eximtradedata.com/country-wise-${slug}-import-data`,
-      },
-      openGraph: {
-        title: `${formattedSlug} Import Export Data`,
-        description: `Access detailed ${formattedSlug} shipment and customs data.`,
-        images: [{ url: "https://eximtradedata.com/images/logo.png" }],
-      },
-      twitter: {
-        card: "summary",
-        title: `${formattedSlug} Trade Data`,
-        images: ["https://eximtradedata.com/images/logo.png"],
-      },
-    };
-  }
+  const country = countriesData[slug];
+  const formattedSlug = formatCountryName(slug);
+
+  /* ---------------- PRIORITY LOGIC ----------------
+     1️⃣ Strapi meta_tags
+     2️⃣ JS country.meta
+     3️⃣ Fallback default
+  -------------------------------------------------- */
+
+  const finalTitle =
+    strapiMeta?.meta_title ||
+    country?.meta?.title ||
+    `${formattedSlug} Import Export Data | ${formattedSlug} Customs Data - Exim Trade Data`;
+
+  const finalDescription =
+    strapiMeta?.meta_description ||
+    country?.meta?.description ||
+    `Access up-to-date ${formattedSlug} import export data, customs reports and shipment details.`;
+
+  const finalKeywords =
+    strapiMeta?.meta_keywords ||
+    country?.meta?.keywords ||
+    [
+      `${slug} import data`,
+      `${slug} export data`,
+      `${slug} customs data`,
+      `${slug} shipment data`,
+      `${slug} importers`,
+      `${slug} exporters`,
+    ];
 
   const canonical =
-    country.meta?.canonical ||
+    country?.meta?.canonical ||
     `https://eximtradedata.com/${slug}-import-export-data`;
 
   return {
-    title:
-      country.meta?.title ||
-      `${slug.toUpperCase()} Import Export Data | Exim Trade Data`,
-    description:
-      country.meta?.description ||
-      `Access ${slug} import export customs data, shipment data, buyers and suppliers.`,
+    title: finalTitle,
+    description: finalDescription,
+    keywords: finalKeywords,
+
     alternates: {
       canonical,
     },
+
     openGraph: {
-      title:
-        country.meta?.title ||
-        `${slug.toUpperCase()} Import Export Data`,
-      description: country.meta?.description,
+      title: finalTitle,
+      description: finalDescription,
       url: canonical,
       images: [{ url: "/logo.png" }],
       type: "website",
     },
+
     twitter: {
       card: "summary",
-      title:
-        country.meta?.title ||
-        `${slug.toUpperCase()} Import Export Data`,
-      description: country.meta?.description,
+      title: finalTitle,
+      description: finalDescription,
       images: ["/logo.png"],
     },
   };
 }
-
 /* ================== PAGE ================== */
 export default async function Page({ params }) {
   params=await params
@@ -348,6 +346,27 @@ const section4Data = strapiEntry?.section_4
   ? {
       title: strapiEntry.section_5.Title,
       description: strapiEntry.section_5.Description,
+
+      trade_tabs: Array.isArray(strapiEntry.section_5.trade_tabs)
+        ? strapiEntry.section_5.trade_tabs.map((tab) => ({
+            tab_type: tab.tab_type,
+
+            table_with_values: Array.isArray(tab.table_with_values)
+              ? tab.table_with_values.map((table) => ({
+                  title: table.Tittle,
+                  label_1: table.label_1,
+                  label_2: table.label_2,
+
+                  table_row: Array.isArray(table.table_row)
+                    ? table.table_row.map((row) => ({
+                        label_1_text: row.label_1_text,
+                        label_2__text: row.label_2__text,
+                      }))
+                    : [],
+                }))
+              : [],
+          }))
+        : [],
     }
   : null;
 
@@ -379,6 +398,8 @@ const section4Data = strapiEntry?.section_4
       })),
     }
   : null;
+
+  
 
   return (
     <main>

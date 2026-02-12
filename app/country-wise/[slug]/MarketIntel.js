@@ -1,19 +1,24 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { motion } from "framer-motion";
 
 const MarketIntel = ({ country, desc, data, section5 }) => {
-
-  
-
-
-    const [activeTab, setActiveTab] = useState("import");
-
   const countryName =
     country?.replace(/^./, (s) => s.toUpperCase()) || "Country";
 
-  /* ---------- SAFE ACCESS HELPERS ---------- */
+  /* ---------------- STRAPI TRADE TABS ---------------- */
+  const tradeTabs = section5?.trade_tabs || [];
+
+  const hasStrapiTabs = Array.isArray(tradeTabs) && tradeTabs.length > 0;
+
+  const [activeTab, setActiveTab] = useState(
+    hasStrapiTabs
+      ? tradeTabs[0]?.tab_type?.toLowerCase()
+      : "import"
+  );
+
+  /* ---------------- OLD FALLBACK DATA ---------------- */
   const safeArray = (arr) => (Array.isArray(arr) ? arr : []);
 
   const importCountries = safeArray(data?.top_import_countries?.data);
@@ -24,18 +29,67 @@ const MarketIntel = ({ country, desc, data, section5 }) => {
 
   const buyers = safeArray(data?.buyers?.companies);
   const suppliers = safeArray(data?.suppliers?.companies);
-  
 
   const finalTitle =
-  section5?.title ||
-  `${countryName} Import Export Data 2024–25`;
+    section5?.title || `${countryName} Import Export Data 2024–25`;
 
-const finalDescription =
-  section5?.description || desc;
+  const finalDescription =
+    section5?.description || desc;
 
-  const renderTable = (type) => (
+  /* ---------------- STRAPI RENDER TABLE ---------------- */
+  const renderStrapiTables = () => {
+    const currentTab = tradeTabs.find(
+      (tab) => tab.tab_type?.toLowerCase() === activeTab
+    );
+
+    if (!currentTab) return null;
+
+    return (
+      <div className="grid gap-8 md:grid-cols-3">
+        {currentTab.table_with_values?.map((table, index) => (
+          <div
+            key={index}
+            className="bg-white shadow-md border border-gray-200 p-6 rounded-xl"
+          >
+            <h3 className="text-lg font-semibold">
+              {table.title}
+            </h3>
+
+            <table className="w-full text-left text-black mt-4">
+              {(table.label_1 || table.label_2) && (
+                <thead className="border-b">
+                  <tr>
+                    {table.label_1 && (
+                      <th className="py-2">{table.label_1}</th>
+                    )}
+                    {table.label_2 && (
+                      <th className="py-2">{table.label_2}</th>
+                    )}
+                  </tr>
+                </thead>
+              )}
+
+              <tbody>
+                {table.table_row?.map((row, idx) => (
+                  <tr key={idx} className="border-b last:border-0">
+                    <td className="py-2">{row.label_1_text}</td>
+                    {table.label_2 && (
+                      <td className="py-2">{row.label_2__text}</td>
+                    )}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        ))}
+      </div>
+    );
+  };
+
+  /* ---------------- OLD RENDER (FALLBACK) ---------------- */
+  const renderFallback = (type) => (
     <div className="grid gap-8 md:grid-cols-3">
-      {/* Top Countries */}
+      {/* Countries */}
       <div className="bg-white shadow-md border border-gray-200 p-6 rounded-xl">
         <h3 className="text-lg font-semibold">
           {type === "import"
@@ -51,19 +105,20 @@ const finalDescription =
             </tr>
           </thead>
           <tbody>
-            {(type === "import" ? importCountries : exportCountries).map(
-              (item, idx) => (
-                <tr key={idx} className="border-b last:border-0">
-                  <td className="py-2">{item.country}</td>
-                  <td className="py-2">{item.value}</td>
-                </tr>
-              )
-            )}
+            {(type === "import"
+              ? importCountries
+              : exportCountries
+            ).map((item, idx) => (
+              <tr key={idx} className="border-b last:border-0">
+                <td className="py-2">{item.country}</td>
+                <td className="py-2">{item.value}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
 
-      {/* Top Products */}
+      {/* Products */}
       <div className="bg-white shadow-md border border-gray-200 p-6 rounded-xl">
         <h3 className="text-lg font-semibold">
           {type === "import"
@@ -79,14 +134,15 @@ const finalDescription =
             </tr>
           </thead>
           <tbody>
-            {(type === "import" ? importProducts : exportProducts).map(
-              (item, idx) => (
-                <tr key={idx} className="border-b last:border-0">
-                  <td className="py-2">{item.product}</td>
-                  <td className="py-2">{item.value}</td>
-                </tr>
-              )
-            )}
+            {(type === "import"
+              ? importProducts
+              : exportProducts
+            ).map((item, idx) => (
+              <tr key={idx} className="border-b last:border-0">
+                <td className="py-2">{item.product}</td>
+                <td className="py-2">{item.value}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
@@ -101,42 +157,47 @@ const finalDescription =
 
         <table className="w-full text-left text-black mt-4">
           <tbody>
-            {(type === "import" ? buyers : suppliers).map((item, idx) => (
-              <tr key={idx} className="border-b last:border-0">
-                <td className="py-2">{item}</td>
-              </tr>
-            ))}
+            {(type === "import" ? buyers : suppliers).map(
+              (item, idx) => (
+                <tr key={idx} className="border-b last:border-0">
+                  <td className="py-2">{item}</td>
+                </tr>
+              )
+            )}
           </tbody>
         </table>
       </div>
     </div>
   );
 
+  /* ---------------- RENDER ---------------- */
   return (
     <section className="bg-gray-50 py-16">
       <div className="container mx-auto px-6">
-        {/* Header */}
         <motion.h1
-  initial={{ opacity: 0, y: 20 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.4 }}
-  className="text-3xl md:text-4xl font-bold text-black text-center mb-4"
->
-  {finalTitle}
-</motion.h1>
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+          className="text-3xl md:text-4xl font-bold text-black text-center mb-4"
+        >
+          {finalTitle}
+        </motion.h1>
 
         <motion.p
-  initial={{ opacity: 0, y: 30 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.5 }}
-  className="text-lg md:text-xl text-black text-center mb-10"
->
-  {finalDescription}
-</motion.p>
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-lg md:text-xl text-black text-center mb-10"
+        >
+          {finalDescription}
+        </motion.p>
 
         {/* Tabs */}
         <div className="flex justify-center gap-4 mb-10">
-          {["import", "export"].map((tab) => (
+          {(hasStrapiTabs
+            ? tradeTabs.map((tab) => tab.tab_type.toLowerCase())
+            : ["import", "export"]
+          ).map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
@@ -146,12 +207,14 @@ const finalDescription =
                   : "bg-white text-black border-gray-300 hover:bg-gray-100"
               }`}
             >
-              {tab === "import" ? "Import" : "Export"}
+              {tab.charAt(0).toUpperCase() + tab.slice(1)}
             </button>
           ))}
         </div>
 
-        {renderTable(activeTab)}
+        {hasStrapiTabs
+          ? renderStrapiTables()
+          : renderFallback(activeTab)}
       </div>
     </section>
   );
