@@ -341,6 +341,7 @@ const section4Data = strapiEntry?.section_4
       ctaLink: strapiEntry.section_4.button?.[0]?.button_link,
     }
   : null;
+  
 
   const section5Data = strapiEntry?.section_5
   ? {
