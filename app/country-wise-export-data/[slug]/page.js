@@ -12,6 +12,28 @@ import ImportantLinks from "./ImportantLinks";
 import FindWhat from "./FindWhat";
 import GetTradeData from "./GetTradeData";
 
+
+async function fetchExportPageFromStrapi(slug) {
+  try {
+    const res = await fetch(
+      `http://72.61.239.34:1337/api/country-export-pages?filters[slug][$eq]=${slug}&status=published&locale=en&populate[meta_tags][populate][meta_tags]=*&populate[section_1][populate][button]=*&populate[section_2][populate][Continent_name][populate][button_with_image]=*&populate[section_2][populate][button]=*&populate[section_3][populate][table][populate][table_row]=*&populate[section_4]=*&populate[section_5][populate][button]=*&populate[section_6][populate][button]=*&populate[section_7][populate][image]=*&populate[section_8][populate][image]=*&populate[section_8][populate][button]=*&populate[section_9][populate][button]=*&populate[section_10][populate][button]=*&populate[section_11][populate][button]=*`,
+      {
+        headers: {
+          Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
+        },
+        next: { revalidate: 86400 }, // 24h cache
+      }
+    );
+
+    if (!res.ok) return null;
+
+    const json = await res.json();
+    return json?.data?.[0] || null;
+  } catch (err) {
+    console.error("Strapi export fetch failed:", err);
+    return null;
+  }
+}
 /* ---------- DATA ---------- */
 import { countriesData } from "@/lib/data/countries_exp";
 import ExportClientsClient from "./ExportClientsClient";
@@ -30,16 +52,31 @@ const extractCountryFromSlug = (slug = "") =>
     .replace(/-(import|export|import-export)-data$/, "");
 
 /* ---------- METADATA ---------- */
+/* ---------- METADATA ---------- */
 export async function generateMetadata({ params }) {
-  params = await params
+  params = await params;
   const slug = normalizeSlug(params.slug);
+
+  /* ---------- FETCH STRAPI ---------- */
+  const strapiEntry = await fetchExportPageFromStrapi(slug);
+
+  /* ---------- STRAPI META ---------- */
+  const strapiMeta = strapiEntry?.meta_tags?.meta_tags;
+
+  const strapiTitle = strapiMeta?.meta_title;
+  const strapiDescription = strapiMeta?.meta_description;
+  const strapiKeywords = strapiMeta?.meta_keywords;
+
+  /* ---------- STATIC FALLBACK ---------- */
   const country = countriesData[`${slug}_export_section`];
 
   const title =
+    strapiTitle ||
     country?.meta?.title ||
     `${slug.toUpperCase()} Export Data | ${slug.toUpperCase()} Customs Data - Exim Trade Data`;
 
   const description =
+    strapiDescription ||
     country?.meta?.description ||
     `Get verified ${slug} Export Data, ${slug} customs data and shipment data including exporters, buyers, trade patterns, HS codes and port information at Exim Trade Data.`;
 
@@ -47,20 +84,24 @@ export async function generateMetadata({ params }) {
     country?.meta?.canonical ||
     `https://eximtradedata.com/country-wise-${slug}-export-data`;
 
+  const keywords =
+    strapiKeywords
+      ? strapiKeywords.split(",").map((k) => k.trim())
+      : country?.meta?.keywords || [
+          `${slug} Export Data`,
+          `${slug} Customs Data`,
+          `${slug} Shipment Data`,
+          `${slug} Trade Statistics`,
+          `${slug} Exporters`,
+          `${slug} Importers`,
+          `${slug} Trade Data`,
+          `${slug} Market Analysis`,
+        ];
+
   return {
     title,
     description,
-    keywords:
-      country?.meta?.keywords || [
-        `${slug} Export Data`,
-        `${slug} Customs Data`,
-        `${slug} Shipment Data`,
-        `${slug} Trade Statistics`,
-        `${slug} Exporters`,
-        `${slug} Importers`,
-        `${slug} Trade Data`,
-        `${slug} Market Analysis`,
-      ],
+    keywords,
     alternates: { canonical },
     openGraph: {
       title,
@@ -91,6 +132,7 @@ export async function generateMetadata({ params }) {
 export default async function Page({ params }) {
   params= await params
   const slug = normalizeSlug(params.slug);
+  
   const countryKey = `${slug}_export_section`;
   const formattedSlug = slug.replace(/^./, (s) => s.toUpperCase())
   /* ---------- SAFE FALLBACK (NO 404 = BETTER SEO) ---------- */
@@ -157,6 +199,8 @@ export default async function Page({ params }) {
         ]
       }
     };
+  
+  const strapiEntry = await fetchExportPageFromStrapi(slug);
 
   const countryData = countriesData[countryKey] || defaultData;
   const country = extractCountryFromSlug(slug);
@@ -165,48 +209,75 @@ export default async function Page({ params }) {
     <main>
       {/* HERO */}
       <Hero
-        country={country}
-        hero={{
-          title: countryData.title,
-          description: countryData.description,
-        }}
-      />
+  country={country}
+  hero={{
+    title:
+      strapiEntry?.section_1?.Title ||
+      countryData.title,
 
-      <CountryLinksSection />
+    description:
+      strapiEntry?.section_1?.Description ||
+      countryData.description,
 
-      <Includes
-        country={country}
-        desc1={countryData.what_included?.desc_1 || ""}
-        desc2={countryData.what_included?.desc_2 || ""}
-      />
+    onlineDataText:
+      strapiEntry?.section_1?.button?.[0]?.button_text,
+
+    onlineDataLink:
+      strapiEntry?.section_1?.button?.[0]?.button_link,
+
+    offlineDataText:
+      strapiEntry?.section_1?.button?.[1]?.button_text,
+
+    offlineDataLink:
+      strapiEntry?.section_1?.button?.[1]?.button_link,
+  }}
+/>
+
+      <CountryLinksSection section2={strapiEntry?.section_2} />
+
+    <Includes
+  country={country}
+  desc1={countryData.what_included?.desc_1 || ""}
+  desc2={countryData.what_included?.desc_2 || ""}
+  section3={strapiEntry?.section_3}
+/>
 
       <What
-        country={countryData.top_export_products?.title || ""}
-        description={countryData.top_export_products?.description || ""}
-        data={countryData.top_export_products?.data || []}
-      />
+  country={country}
+  description={countryData.top_export_products?.description || ""}
+  data={countryData.top_export_products?.data || []}
+  section4={strapiEntry?.section_4}
+/>
 
       <Who
-        country={countryData.export_destinations?.title || ""}
-        description={countryData.export_destinations?.description || ""}
-        data={countryData.export_destinations?.data || []}
-      />
+  country={country}
+  description={countryData.export_destinations?.description || ""}
+  data={countryData.export_destinations?.data || []}
+  section5={strapiEntry?.section_5}
+/>
 
       <Suppliers
-        title={countryData.trusted_clients?.title || ""}
-        description={countryData.trusted_clients?.description || ""}
-        data={countryData.trusted_clients?.data || []}
-      />
+  country={country}
+  data={countryData.trusted_clients?.data || []}
+  section6={strapiEntry?.section_6}
+/>
 
-      <ExportClientsClient />
+      <ExportClientsClient section7={strapiEntry?.section_7}/>
 
       <GlobalImpact
-        points={countryData.grow_with_intelligence?.benefits || []}
-      />
+  points={countryData.grow_with_intelligence?.benefits || []}
+  section8={strapiEntry?.section_8}
+/>
 
-      <ImportantLinks country={country} />
-      <FindWhat country={country} />
-      <GetTradeData />
+      <ImportantLinks
+  country={country}
+  section9={strapiEntry?.section_9}
+/>
+      <FindWhat
+  country={country}
+  section10={strapiEntry?.section_10}
+/>
+      <GetTradeData section11={strapiEntry?.section_11} />
     </main>
   );
 }

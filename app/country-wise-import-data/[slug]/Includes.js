@@ -8,7 +8,7 @@ import {
   BarChart,
 } from "lucide-react";
 
-/* ---------- STATIC DATA ---------- */
+/* ---------- STATIC FEATURES (Fallback) ---------- */
 const FEATURES = [
   { icon: Package, text: "HS Code Wise Data" },
   { icon: Globe, text: "Global Buyer Details" },
@@ -18,8 +18,30 @@ const FEATURES = [
   { icon: BarChart, text: "Market Analysis" },
 ];
 
-export default function Includes({ country, desc1 = "", desc2 = "" }) {
+export default function Includes({
+  country,
+  desc1 = "",
+  desc2 = "",
+  section3,
+}) {
   const COUNTRY = country?.toUpperCase() || "";
+
+  /* ---------- STRAPI SECTION ---------- */
+  const strapiSection = section3?.[0]; // because repeatable
+
+  const hasStrapiData =
+    strapiSection &&
+    strapiSection.Description &&
+    strapiSection.table;
+
+  const heading =
+    strapiSection?.Title ||
+    `What Does ${COUNTRY} Import Data Include?`;
+
+  const description =
+    strapiSection?.Description || desc1;
+
+  const table = strapiSection?.table;
 
   return (
     <section className="py-16 bg-white text-black">
@@ -30,18 +52,17 @@ export default function Includes({ country, desc1 = "", desc2 = "" }) {
         </p>
 
         <h2 className="text-3xl font-bold mt-2">
-          What Does {COUNTRY} Import Data Include?
+          {heading}
         </h2>
 
-        {/* Controlled HTML (trusted source only) */}
-        {desc1 && (
+        {description && (
           <p
             className="mt-4 text-base leading-relaxed"
-            dangerouslySetInnerHTML={{ __html: desc1 }}
+            dangerouslySetInnerHTML={{ __html: description }}
           />
         )}
 
-        {desc2 && (
+        {desc2 && !hasStrapiData && (
           <p
             className="mt-4 text-base leading-relaxed"
             dangerouslySetInnerHTML={{ __html: desc2 }}
@@ -51,7 +72,7 @@ export default function Includes({ country, desc1 = "", desc2 = "" }) {
 
       {/* ---------- CONTENT ---------- */}
       <div className="max-w-7xl mx-auto mt-12 px-4 grid lg:grid-cols-2 gap-10">
-        {/* FEATURES */}
+        {/* ---------- FEATURES (Always Static for now) ---------- */}
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
           {FEATURES.map((item) => (
             <div
@@ -77,39 +98,63 @@ export default function Includes({ country, desc1 = "", desc2 = "" }) {
           ))}
         </div>
 
-        {/* SAMPLE TABLE */}
+        {/* ---------- TABLE ---------- */}
         <div className="overflow-x-auto rounded-xl shadow-lg border border-gray-200">
           <table className="w-full text-left border-collapse">
             <thead>
               <tr className="bg-linear-to-r from-gray-100 to-gray-200">
                 <th className="p-3 font-semibold border-r border-gray-300">
-                  Field Name
+                  {table?.label_1 || "Field Name"}
                 </th>
-                <th className="p-3 font-semibold">Detail</th>
+                <th className="p-3 font-semibold">
+                  {table?.label_2 || "Detail"}
+                </th>
               </tr>
             </thead>
+
             <tbody>
-              {[
-                ["Date", "Jan 31, 2024"],
-                ["HS Code", "84831099"],
-                ["Product Details", `Sample Product from ${country}`],
-                ["Quantity", "3111"],
-                ["Quantity Unit", "Kilo"],
-                ["Value ($)", "2,190"],
-                ["Country of Origin", country],
-                ["Destination Country", "Multiple Countries"],
-                ["Importer", "Verified Global Buyer"],
-              ].map(([field, detail], idx) => (
-                <tr
-                  key={field}
-                  className={idx % 2 === 0 ? "bg-white" : "bg-gray-50"}
-                >
-                  <td className="p-3 font-medium border-r border-gray-300">
-                    {field}
-                  </td>
-                  <td className="p-3">{detail}</td>
-                </tr>
-              ))}
+              {hasStrapiData
+                ? table.table_row?.map((row, idx) => (
+                    <tr
+                      key={row.id || idx}
+                      className={
+                        idx % 2 === 0 ? "bg-white" : "bg-gray-50"
+                      }
+                    >
+                      <td className="p-3 font-medium border-r border-gray-300">
+                        {row.label_1_text}
+                      </td>
+                      <td className="p-3">
+                        {row.label_2__text}
+                      </td>
+                    </tr>
+                  ))
+                : [
+                    ["Date", "Jan 31, 2024"],
+                    ["HS Code", "84831099"],
+                    [
+                      "Product Details",
+                      `Sample Product from ${country}`,
+                    ],
+                    ["Quantity", "3111"],
+                    ["Quantity Unit", "Kilo"],
+                    ["Value ($)", "2,190"],
+                    ["Country of Origin", country],
+                    ["Destination Country", "Multiple Countries"],
+                    ["Importer", "Verified Global Buyer"],
+                  ].map(([field, detail], idx) => (
+                    <tr
+                      key={field}
+                      className={
+                        idx % 2 === 0 ? "bg-white" : "bg-gray-50"
+                      }
+                    >
+                      <td className="p-3 font-medium border-r border-gray-300">
+                        {field}
+                      </td>
+                      <td className="p-3">{detail}</td>
+                    </tr>
+                  ))}
             </tbody>
           </table>
         </div>

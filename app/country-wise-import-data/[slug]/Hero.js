@@ -10,6 +10,8 @@ const formatCountry = (country = "") =>
 const Hero = ({ country, hero }) => {
   const countryName = formatCountry(country);
 
+  const buttons = Array.isArray(hero?.buttons) ? hero.buttons : [];
+
   return (
     <section className="w-full bg-white text-black pt-28 pb-14 px-6">
       <div className="max-w-7xl mx-auto flex flex-col items-start space-y-6">
@@ -39,21 +41,38 @@ const Hero = ({ country, hero }) => {
 
         {/* CTAs */}
         <div className="flex flex-wrap gap-4 pt-2">
-          <a
-            href={hero?.onlineDataLink || "/pricing"}
-            className="bg-blue-600 text-white text-lg px-6 py-2 shadow hover:scale-105 transition"
-          >
-            {hero?.onlineDataText || "Online Data"}
-          </a>
+          {buttons.length > 0 ? (
+            buttons.map((btn, index) => (
+              <a
+                key={index}
+                href={btn.button_link || "#"}
+                className={
+                  index === 0
+                    ? "bg-blue-600 text-white text-lg px-6 py-2 shadow hover:scale-105 transition"
+                    : "border border-blue-600 text-black text-lg px-6 py-2 shadow hover:scale-105 transition"
+                }
+              >
+                {btn.button_text}
+              </a>
+            ))
+          ) : (
+            <>
+              <a
+                href="/pricing"
+                className="bg-blue-600 text-white text-lg px-6 py-2 shadow hover:scale-105 transition"
+              >
+                Online Data
+              </a>
 
-          <a
-            href={hero?.offlineDataLink || "/contact"}
-            className="border border-blue-600 text-black text-lg px-6 py-2 shadow hover:scale-105 transition"
-          >
-            {hero?.offlineDataText || "Offline Data"}
-          </a>
+              <a
+                href="/contact"
+                className="border border-blue-600 text-black text-lg px-6 py-2 shadow hover:scale-105 transition"
+              >
+                Offline Data
+              </a>
+            </>
+          )}
         </div>
-
       </div>
     </section>
   );

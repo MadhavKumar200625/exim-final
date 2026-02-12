@@ -22,7 +22,27 @@ export const revalidate = 86400; // 24 hours (safe for bots + SEO)
 
 
 
+async function fetchImportPageFromStrapi(slug) {
+  try {
+    const res = await fetch(
+      `http://72.61.239.34:1337/api/country-import-pages?filters[slug][$eq]=${slug}&status=published&locale=en&populate[meta_tags]=*&populate[section_1][populate][button]=*&populate[section_2][populate][Continent_1][populate][button_with_image]=*&populate[section_2][populate][button]=*&populate[section_3][populate][table][populate][table_row]=*&populate[section_5][populate][button]=*&populate[section_6][populate][button]=*&populate[section_7][populate][image]=*&populate[section_8][populate][image]=*&populate[section_8][populate][button]=*&populate[section_9][populate][button]=*&populate[section_10][populate][button]=*&populate[section_11][populate][button]=*&populate[section_4][populate]=*`,
+      {
+        headers: {
+          Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
+        },
+        next: { revalidate: 86400 }, // 24 hours cache
+      }
+    );
 
+    if (!res.ok) return null;
+
+    const json = await res.json();
+    return json?.data?.[0] || null;
+  } catch (err) {
+    console.error("Strapi fetch failed:", err);
+    return null;
+  }
+}
 
 
 /* ---------- HELPERS ---------- */
@@ -36,17 +56,39 @@ const extractCountryFromSlug = (slug = "") =>
 
 /* ---------- METADATA ---------- */
 export async function generateMetadata({ params }) {
-  params = await params
+  params = await params;
   const slug = normalizeSlug(params.slug);
+
+  // 🔥 Fetch Strapi entry for meta
+  const strapiEntry = await fetchImportPageFromStrapi(slug);
+
   const country = countriesData[`${slug}_import_section`];
 
+  const strapiMeta = strapiEntry?.meta_tags;
+
   const title =
+    strapiMeta?.meta_title ||
     country?.meta?.title ||
     `${slug.toUpperCase()} Import Data | ${slug.toUpperCase()} Customs Data - Exim Trade Data`;
 
   const description =
+    strapiMeta?.meta_description ||
     country?.meta?.description ||
     `Get verified ${slug} Import Data, ${slug} customs data and shipment data including importers, exporters, trade patterns, HS codes and port information at Exim Trade Data.`;
+
+  const keywords =
+    strapiMeta?.meta_keywords
+      ? strapiMeta.meta_keywords.split(",").map(k => k.trim())
+      : country?.meta?.keywords || [
+          `${slug} Import Data`,
+          `${slug} Customs Data`,
+          `${slug} Shipment Data`,
+          `${slug} Trade Statistics`,
+          `${slug} Exporters`,
+          `${slug} Importers`,
+          `${slug} Trade Data`,
+          `${slug} Market Analysis`,
+        ];
 
   const canonical =
     country?.meta?.canonical ||
@@ -55,18 +97,9 @@ export async function generateMetadata({ params }) {
   return {
     title,
     description,
-    keywords:
-      country?.meta?.keywords || [
-        `${slug} Import Data`,
-        `${slug} Customs Data`,
-        `${slug} Shipment Data`,
-        `${slug} Trade Statistics`,
-        `${slug} Exporters`,
-        `${slug} Importers`,
-        `${slug} Trade Data`,
-        `${slug} Market Analysis`,
-      ],
+    keywords,
     alternates: { canonical },
+
     openGraph: {
       title,
       description,
@@ -80,6 +113,7 @@ export async function generateMetadata({ params }) {
         },
       ],
     },
+
     twitter: {
       card: "summary",
       title,
@@ -91,11 +125,11 @@ export async function generateMetadata({ params }) {
     },
   };
 }
-
 /* ---------- PAGE ---------- */
 export default async function Page({ params }) {
   params= await params
   const slug = normalizeSlug(params.slug);
+  const strapiEntry = await fetchImportPageFromStrapi(slug);
   const countryKey = `${slug}_import_section`;
 
   /* ---------- SAFE FALLBACK (NO 404 = BETTER SEO) ---------- */
@@ -153,51 +187,70 @@ export default async function Page({ params }) {
   const countryData = countriesData[countryKey] || defaultData;
   const country = extractCountryFromSlug(slug);
 
+
+
   return (
     <main>
-      {/* HERO */}
       <Hero
-        country={country}
-        hero={{
-          title: countryData.title,
-          description: countryData.description,
-        }}
-      />
+  country={country}
+  hero={{
+    title:
+      strapiEntry?.section_1?.Title ||
+      countryData.title,
 
-      <CountrySection />
+    description:
+      strapiEntry?.section_1?.Description ||
+      countryData.description,
+
+    buttons:
+      strapiEntry?.section_1?.button || [],
+  }}
+/>
+
+      <CountrySection section2={strapiEntry?.section_2} />
 
       <Includes
-        country={country}
-        desc1={countryData.what_included?.desc_1 || ""}
-        desc2={countryData.what_included?.desc_2 || ""}
-      />
-
-      <What
-        country={country}
-        description={countryData.top_import_products?.description || ""}
-        data={countryData.top_import_products?.data || []}
-      />
+  country={country}
+  desc1={countryData.what_included?.desc_1 || ""}
+  desc2={countryData.what_included?.desc_2 || ""}
+  section3={strapiEntry?.section_3}
+/>
+<What
+  country={country}
+  description={countryData.top_import_products?.description || ""}
+  data={countryData.top_import_products?.data || []}
+  section4={strapiEntry?.section_4}
+/>
 
       <Who
-        country={country}
-        description={countryData.import_sources?.description || ""}
-        data={countryData.import_sources?.data || []}
-      />
+  country={country}
+  description={countryData.import_sources?.description || ""}
+  data={countryData.import_sources?.data || []}
+  section5={strapiEntry?.section_5}
+/>
 
-      <Suppliers
-        description={countryData.trusted_clients?.description || ""}
-        data={countryData.trusted_clients?.companies || []}
-      />
+     <Suppliers
+  country={country}
+  data={countryData.trusted_clients?.companies || []}
+  section6={strapiEntry?.section_6?.[0]}
+/>
 
-      <ImportClientsClient />
+      <ImportClientsClient section7={strapiEntry?.section_7}/>
 
       <GlobalImpact
-        points={countryData.grow_with_intelligence?.benefits || []}
-      />
+  section8={strapiEntry?.section_8?.[0]}
+  points={countryData.grow_with_intelligence?.benefits || []}
+/>
 
-      <ImportantLinks country={country} />
-      <FindWhat country={country} />
-      <GetTradeData />
+      <ImportantLinks
+  country={country}
+  section9={strapiEntry?.section_9}
+/>
+      <FindWhat
+  country={country}
+  section10={strapiEntry?.section_10}
+/>
+      <GetTradeData section11={strapiEntry?.section_11?.[0]} />
     </main>
   );
 }

@@ -1,11 +1,17 @@
-import Link from "next/link";
 import React from "react";
 import { ChevronRight, ArrowUpRight } from "lucide-react";
 
-const ImportantLinks = ({ country }) => {
+const ImportantLinks = ({ country, section9 }) => {
   const normalizedCountry = country?.toLowerCase();
 
-  const links = [
+  /* ---------- STRAPI LINKS ---------- */
+  const strapiLinks = section9?.button?.map((btn) => ({
+    title: btn.button_text,
+    url: btn.button_link,
+  }));
+
+  /* ---------- FALLBACK LINKS ---------- */
+  const defaultLinks = [
     {
       title: `${country.toUpperCase()} Import Data`,
       url: `/country-wise-${normalizedCountry}-import-data`,
@@ -36,6 +42,18 @@ const ImportantLinks = ({ country }) => {
     },
   ];
 
+  const links =
+    Array.isArray(strapiLinks) && strapiLinks.length > 0
+      ? strapiLinks
+      : defaultLinks;
+
+  const finalTitle =
+    section9?.Title ||
+    `Important links related to ${country.replace(
+      /^./,
+      (s) => s.toUpperCase()
+    )} Import and Export Data`;
+
   return (
     <section className="px-6 md:px-16 py-12 bg-white">
       <div className="container mx-auto">
@@ -45,8 +63,7 @@ const ImportantLinks = ({ country }) => {
         </p>
 
         <h2 className="text-3xl font-bold text-black mb-8">
-          Important links related to{" "}
-          {country.replace(/^./, (s) => s.toUpperCase())} Import and Export Data
+          {finalTitle}
         </h2>
 
         {/* Links Grid */}
@@ -58,7 +75,10 @@ const ImportantLinks = ({ country }) => {
               className="group flex items-center justify-between p-4 border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition bg-white"
             >
               <div className="flex items-center gap-3">
-                <ChevronRight size={18} className="text-sky-500 shrink-0" />
+                <ChevronRight
+                  size={18}
+                  className="text-sky-500 shrink-0"
+                />
                 <span className="text-black font-medium underline group-hover:text-sky-600 transition">
                   {item.title}
                 </span>

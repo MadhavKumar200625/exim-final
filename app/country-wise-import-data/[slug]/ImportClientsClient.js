@@ -7,6 +7,6 @@ const ClientsSection = dynamic(
   { ssr: false }
 );
 
-export default function ImportClientsClient() {
-  return <ClientsSection />;
+export default function ImportClientsClient({section7}) {
+  return <ClientsSection section7={section7}/>;
 }

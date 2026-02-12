@@ -16,12 +16,14 @@ const Hero = ({ country, hero }) => {
           {hero?.title || `Get Latest ${country} Export Customs Shipment Trade Data`}
         </h2>
 
-        {/* Description from JSON */}
-        <p className="text-lg leading-relaxed">
-          {hero?.description}
-        </p>
+        {/* Description */}
+        {hero?.description && (
+          <p className="text-lg leading-relaxed">
+            {hero.description}
+          </p>
+        )}
 
-        {/* Optional CTA Text (If Added Later) */}
+        {/* Optional CTA Text */}
         {hero?.ctaText && (
           <p className="italic text-gray-700">{hero.ctaText}</p>
         )}

@@ -1,7 +1,37 @@
 import React from "react";
-import Link from "next/link";
 
-export default function GlobalImpact({ points = [] }) {
+export default function GlobalImpact({
+  points = [],
+  section8,
+}) {
+  /* ---------- STRAPI DATA ---------- */
+  const strapiTitle = section8?.Title;
+
+  const strapiPoints = section8?.Description
+    ? section8.Description.split("\n")
+        .map((p) => p.trim())
+        .filter(Boolean)
+    : [];
+
+  const finalPoints =
+    strapiPoints.length > 0 ? strapiPoints : points;
+
+  const imageUrl =
+    section8?.image?.[0]?.image_url ||
+    "/countries/common-dashboard.webp";
+
+  const imageAlt =
+    section8?.image?.[0]?.image_text ||
+    "Global Trade Intelligence Dashboard";
+
+  const buttonText =
+    section8?.button?.[0]?.button_text ||
+    "Get Free Trial";
+
+  const buttonLink =
+    section8?.button?.[0]?.button_link ||
+    "/pricing";
+
   return (
     <section className="px-6 sm:px-10 lg:px-16 py-12 bg-gray-100">
       <div className="container mx-auto grid lg:grid-cols-2 gap-10 items-center">
@@ -10,8 +40,8 @@ export default function GlobalImpact({ points = [] }) {
         <div className="flex justify-center">
           <div className="relative w-full h-96">
             <img
-              src="/countries/common-dashboard.webp"
-              alt="Global Trade Intelligence Dashboard"
+              src={imageUrl}
+              alt={imageAlt}
               width={800}
               height={400}
               loading="lazy"
@@ -27,13 +57,13 @@ export default function GlobalImpact({ points = [] }) {
           </p>
 
           <h2 className="text-3xl font-bold text-black mb-6">
-            Make an impact in the global market
+            {strapiTitle || "Make an impact in the global market"}
           </h2>
 
           {/* Points */}
-          {points.length > 0 && (
+          {finalPoints.length > 0 && (
             <ul className="mb-8 space-y-3">
-              {points.map((item, idx) => (
+              {finalPoints.map((item, idx) => (
                 <li
                   key={idx}
                   className="flex items-start gap-3"
@@ -48,10 +78,10 @@ export default function GlobalImpact({ points = [] }) {
           {/* CTA */}
           <div className="flex justify-center md:justify-start">
             <a
-              href="/pricing"
+              href={buttonLink}
               className="bg-blue-600 text-lg text-white px-6 py-2 flex items-center justify-center shadow hover:scale-105 transition"
             >
-              Get Free Trial
+              {buttonText}
             </a>
           </div>
         </div>

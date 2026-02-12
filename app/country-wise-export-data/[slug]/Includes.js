@@ -20,8 +20,17 @@ const imageSlug = (text) =>
     .replace(/\s+/g, "-");
 
 /* ---------- COMPONENT ---------- */
-export default function Includes({ country, desc1, desc2 }) {
+export default function Includes({
+  country,
+  desc1,
+  desc2,
+  section3,
+}) {
   const countryName = capitalize(country);
+
+  const hasStrapiTable =
+    section3?.table?.table_row &&
+    Array.isArray(section3.table.table_row);
 
   return (
     <section className="py-16 bg-white">
@@ -32,21 +41,33 @@ export default function Includes({ country, desc1, desc2 }) {
         </p>
 
         <h2 className="text-3xl font-bold mt-2 text-black">
-          What Does {countryName} Export Data Include?
+          {section3?.Title ||
+            `What Does ${countryName} Export Data Include?`}
         </h2>
 
-        {desc1 && (
+        {/* STRAPI DESCRIPTION */}
+        {section3?.Description ? (
           <p
             className="mt-4 text-base leading-relaxed text-black"
-            dangerouslySetInnerHTML={{ __html: desc1 }}
+            dangerouslySetInnerHTML={{
+              __html: section3.Description,
+            }}
           />
-        )}
-
-        {desc2 && (
-          <p
-            className="mt-4 text-base leading-relaxed text-black"
-            dangerouslySetInnerHTML={{ __html: desc2 }}
-          />
+        ) : (
+          <>
+            {desc1 && (
+              <p
+                className="mt-4 text-base leading-relaxed text-black"
+                dangerouslySetInnerHTML={{ __html: desc1 }}
+              />
+            )}
+            {desc2 && (
+              <p
+                className="mt-4 text-base leading-relaxed text-black"
+                dangerouslySetInnerHTML={{ __html: desc2 }}
+              />
+            )}
+          </>
         )}
       </div>
 
@@ -81,39 +102,64 @@ export default function Includes({ country, desc1, desc2 }) {
             <thead>
               <tr className="bg-linear-to-r from-gray-100 to-gray-200">
                 <th className="p-3 font-semibold text-black border-r border-gray-300">
-                  Field Name
+                  {section3?.table?.label_1 || "Field Name"}
                 </th>
                 <th className="p-3 font-semibold text-black">
-                  Detail
+                  {section3?.table?.label_2 || "Detail"}
                 </th>
               </tr>
             </thead>
 
             <tbody>
-              {[
-                ["Date", "Jan 31 2024"],
-                ["HS Code", "84831099"],
-                ["Product Details", `Sample Product from ${countryName}`],
-                ["Quantity", "3111"],
-                ["Quantity Unit", "Kilo"],
-                ["Value ($)", "2190"],
-                ["Country of Origin", countryName],
-                ["Destination Country", "Multiple Countries"],
-                ["Exporter", "Sample Exporter LLC"],
-                ["Importer", "Verified Global Buyer"],
-              ].map(([field, detail], idx) => (
-                <tr
-                  key={idx}
-                  className={idx % 2 === 0 ? "bg-white" : "bg-gray-50"}
-                >
-                  <td className="p-3 font-medium text-black border-r border-gray-300">
-                    {field}
-                  </td>
-                  <td className="p-3 text-black">
-                    {detail}
-                  </td>
-                </tr>
-              ))}
+              {hasStrapiTable
+                ? section3.table.table_row.map((row, idx) => (
+                    <tr
+                      key={row.id || idx}
+                      className={
+                        idx % 2 === 0
+                          ? "bg-white"
+                          : "bg-gray-50"
+                      }
+                    >
+                      <td className="p-3 font-medium text-black border-r border-gray-300">
+                        {row.label_1_text}
+                      </td>
+                      <td className="p-3 text-black">
+                        {row.label_2__text}
+                      </td>
+                    </tr>
+                  ))
+                : [
+                    ["Date", "Jan 31 2024"],
+                    ["HS Code", "84831099"],
+                    [
+                      "Product Details",
+                      `Sample Product from ${countryName}`,
+                    ],
+                    ["Quantity", "3111"],
+                    ["Quantity Unit", "Kilo"],
+                    ["Value ($)", "2190"],
+                    ["Country of Origin", countryName],
+                    ["Destination Country", "Multiple Countries"],
+                    ["Exporter", "Sample Exporter LLC"],
+                    ["Importer", "Verified Global Buyer"],
+                  ].map(([field, detail], idx) => (
+                    <tr
+                      key={idx}
+                      className={
+                        idx % 2 === 0
+                          ? "bg-white"
+                          : "bg-gray-50"
+                      }
+                    >
+                      <td className="p-3 font-medium text-black border-r border-gray-300">
+                        {field}
+                      </td>
+                      <td className="p-3 text-black">
+                        {detail}
+                      </td>
+                    </tr>
+                  ))}
             </tbody>
           </table>
         </div>
