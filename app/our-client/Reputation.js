@@ -51,7 +51,7 @@ const images = [
   "/our-clients/vashi.webp",
   "/our-clients/vijay.webp",
   "/our-clients/yes_bank.webp",
-
+"/our-clients/casio.webp"
   
 
   
