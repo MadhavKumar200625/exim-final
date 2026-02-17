@@ -1,0 +1,3 @@
+{
+  "/api/redis-test/route": "app/api/redis-test/route.js"
+}

@@ -1,0 +1,22 @@
+module.exports=[93695,(a,b,c)=>{b.exports=a.x("next/dist/shared/lib/no-fallback-error.external.js",()=>require("next/dist/shared/lib/no-fallback-error.external.js"))},62250,a=>{a.n(a.i(59982))},74152,a=>{a.n(a.i(74926))},80502,a=>{a.n(a.i(50682))},61802,a=>{a.n(a.i(82042))},45800,a=>{a.n(a.i(55108))},28072,(a,b,c)=>{"use strict";function d(){return null}Object.defineProperty(c,"__esModule",{value:!0}),Object.defineProperty(c,"default",{enumerable:!0,get:function(){return d}}),("function"==typeof c.default||"object"==typeof c.default&&null!==c.default)&&void 0===c.default.__esModule&&(Object.defineProperty(c.default,"__esModule",{value:!0}),Object.assign(c.default,c),b.exports=c.default)},65853,a=>{"use strict";a.s(["default",()=>b]);let b=(0,a.i(10819).registerClientReference)(function(){throw Error("Attempted to call the default export of [project]/Developer/freelance/exim/exim/app/contact/ContactInfo.js <module evaluation> from the server, but it's on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.")},"[project]/Developer/freelance/exim/exim/app/contact/ContactInfo.js <module evaluation>","default")},1391,a=>{"use strict";a.s(["default",()=>b]);let b=(0,a.i(10819).registerClientReference)(function(){throw Error("Attempted to call the default export of [project]/Developer/freelance/exim/exim/app/contact/ContactInfo.js from the server, but it's on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.")},"[project]/Developer/freelance/exim/exim/app/contact/ContactInfo.js","default")},18063,a=>{"use strict";a.i(65853);var b=a.i(1391);a.n(b)},47837,a=>{"use strict";var b=a.i(50252);a.i(43013);var c=a.i(18063);let d=()=>(0,b.jsx)("section",{className:"relative bg-white text-black pt-28",children:(0,b.jsxs)("div",{className:"relative z-10 max-w-7xl mx-auto px-4 text-center",children:[(0,b.jsx)("h2",{className:"text-3xl md:text-4xl font-bold mb-6",children:"Contact Us"}),(0,b.jsxs)("p",{className:"text-md md:text-lg text-black",children:["Exim Trade Data specializes in providing all-around export and import trade data for different nations. By taking a close look at worldwide trade deals, we assist companies in the decision-making process, explore new market chances, and gain the lead over others in the international trading sector.",(0,b.jsx)("br",{className:"hidden md:block"}),(0,b.jsx)("br",{}),(0,b.jsx)("strong",{children:"To get the information, reach out to us today"})," ","to access reliable and up-to-date global import-export trade data for your business needs."]})]})});a.i(28072),a.s(["default",0,()=>(0,b.jsxs)(b.Fragment,{children:[(0,b.jsx)("head",{children:(0,b.jsx)("script",{type:"application/ld+json",children:`
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://eximtradedata.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Contact",
+      "item": "https://eximtradedata.com/contact"
+    }
+  ]
+}
+`})}),(0,b.jsxs)("main",{children:[(0,b.jsx)(d,{}),(0,b.jsx)(c.default,{})]})]}),"metadata",0,{title:"Contact US - Get Expert Insights on Import-Export Market Trends | Exim Trade Data",description:"Get in touch with Exim Trade Data for reliable global trade data. Reach out for inquiries, support, or to learn more about how we can help your business grow.",keywords:["export and import data","60 countries global trade data","contact us","usa export and import data","global trade data","data by hs code","hs code list"],alternates:{canonical:"https://eximtradedata.com/contact"},openGraph:{title:"Exim Trade Data:- Contact Us",type:"website",url:"https://eximtradedata.com/contact",description:"To get information, reach out to us today to access reliable and up-to-date global import-export trade data for your business needs.",siteName:"Exim Trade Data",images:[{url:"/logo.png",alt:"Exim Trade Data Logo"}]},twitter:{card:"summary",title:"Exim Trade Data:- Contact Us",description:"To get information, reach out to us today to access reliable and up-to-date global import-export trade data for your business needs.",site:"@eximtradedata",creator:"@eximtradedata",url:"https://eximtradedata.com/contact",images:["/logo.png"]}}],47837)}];
+
+//# sourceMappingURL=%5Broot-of-the-server%5D__a5877557._.js.map

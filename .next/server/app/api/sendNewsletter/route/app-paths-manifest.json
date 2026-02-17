@@ -1,0 +1,3 @@
+{
+  "/api/sendNewsletter/route": "app/api/sendNewsletter/route.js"
+}
