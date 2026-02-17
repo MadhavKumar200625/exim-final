@@ -39,7 +39,7 @@ import { countriesData } from "@/lib/data/countries_exp";
 import ExportClientsClient from "./ExportClientsClient";
 
 // /* ---------- NEXT CONFIG ---------- */
-export const dynamic = "force-static";
+// // export const dynamic = "force-static";
 export const revalidate = 86400; // 24h – ideal for bots + SEO
 
 /* ---------- HELPERS ---------- */

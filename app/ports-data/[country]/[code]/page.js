@@ -2,7 +2,7 @@ import Hero from "./Hero";
 import MainSection from "./MainSection";
 import { getPortsData } from "@/lib/global-ports/getPortsData";
 
-export const dynamic = "force-static";
+// export const dynamic = "force-static";
 export const revalidate = 86400; // bots + SEO safe
 
 export async function generateMetadata({ params }) {

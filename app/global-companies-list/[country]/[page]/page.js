@@ -2,7 +2,7 @@ import Hero from "@/app/global-companies-list/Hero";
 import Companies from "@/app/global-companies-list/Companies";
 import { getCompaniesList } from "@/lib/companies/getCompaniesList";
 
-export const dynamic = "force-static";
+// export const dynamic = "force-static";
 export const revalidate = 86400;
 
 function cap(str) {

@@ -10,7 +10,7 @@ import Hero from "./Hero";
 import FAQSection from "@/app/Components/FAQ";
 
 /* ================== STATIC CONFIG ================== */
-// export const dynamic = "force-static";
+// // export const dynamic = "force-static";
 // export const revalidate = 86400; // 24 hours (SEO + bot safe)
 const mapHeroSection = (entry) => {
   if (!entry?.section_1) return null;

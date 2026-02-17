@@ -17,7 +17,7 @@ import ImportClientsClient from "./ImportClientsClient";
 import CountrySection from "./CountryLinksSection";
 
 // /* ---------- NEXT CONFIG ---------- */
-export const dynamic = "force-static";
+// export const dynamic = "force-static";
 export const revalidate = 86400; // 24 hours (safe for bots + SEO)
 
 

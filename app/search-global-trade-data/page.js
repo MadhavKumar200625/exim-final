@@ -2,7 +2,7 @@ import React from "react";
 import Hero from "./Hero";
 import IndustriesSection from "./IndustriesSection";
 
-export const dynamic = "force-static";
+// export const dynamic = "force-static";
 export const revalidate = 86400; // 24 hours
 
 export const metadata = {
