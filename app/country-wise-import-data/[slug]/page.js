@@ -25,7 +25,7 @@ export const revalidate = 86400; // 24 hours (safe for bots + SEO)
 async function fetchImportPageFromStrapi(slug) {
   try {
     const res = await fetch(
-      `http://72.61.239.34:1337/api/country-import-pages?filters[slug][$eq]=${slug}&status=published&locale=en&populate[meta_tags]=*&populate[section_1][populate][button]=*&populate[section_2][populate][Continent_1][populate][button_with_image]=*&populate[section_2][populate][button]=*&populate[section_3][populate][table][populate][table_row]=*&populate[section_5][populate][button]=*&populate[section_6][populate][button]=*&populate[section_7][populate][image]=*&populate[section_8][populate][image]=*&populate[section_8][populate][button]=*&populate[section_9][populate][button]=*&populate[section_10][populate][button]=*&populate[section_11][populate][button]=*&populate[section_4][populate]=*`,
+      `https://content-admin.eximtradedata.com/api/country-import-pages?filters[slug][$eq]=${slug}&status=published&locale=en&populate[meta_tags]=*&populate[section_1][populate][button]=*&populate[section_2][populate][Continent_1][populate][button_with_image]=*&populate[section_2][populate][button]=*&populate[section_3][populate][table][populate][table_row]=*&populate[section_5][populate][button]=*&populate[section_6][populate][button]=*&populate[section_7][populate][image]=*&populate[section_8][populate][image]=*&populate[section_8][populate][button]=*&populate[section_9][populate][button]=*&populate[section_10][populate][button]=*&populate[section_11][populate][button]=*&populate[section_4][populate]=*`,
       {
         headers: {
           Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
@@ -33,6 +33,7 @@ async function fetchImportPageFromStrapi(slug) {
         next: { revalidate: 86400 }, // 24 hours cache
       }
     );
+    
 
     if (!res.ok) return null;
 

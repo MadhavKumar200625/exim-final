@@ -34,7 +34,7 @@ const mapHeroSection = (entry) => {
 async function fetchCountryFromStrapi(slug) {
   try {
     const res = await fetch(
-      `http://72.61.239.34:1337/api/country-common-pages?filters[slug][$eq]=${slug}&status=published&locale=en&populate[section_1][populate][button]=*&populate[section_1][populate][image]=*&populate[section_2][populate][Continent_name][populate][button_with_image]=*&populate[section_2][populate][button]=*&populate[section_3][populate][imp_exp_dynamic_fig][populate][button]=*&populate[section_4][populate][button]=*&populate[section_6][populate][button]=*&populate[section_7][populate][button]=*&populate[section_8][populate][faq_section]=*&populate[meta_tags][populate]=*&populate[section_5][populate][trade_tabs][populate][table_with_values][populate][table_row]=*`,
+      `https://content-admin.eximtradedata.com/api/country-common-pages?filters[slug][$eq]=${slug}&status=published&locale=en&populate[section_1][populate][button]=*&populate[section_1][populate][image]=*&populate[section_2][populate][Continent_name][populate][button_with_image]=*&populate[section_2][populate][button]=*&populate[section_3][populate][imp_exp_dynamic_fig][populate][button]=*&populate[section_4][populate][button]=*&populate[section_6][populate][button]=*&populate[section_7][populate][button]=*&populate[section_8][populate][faq_section]=*&populate[meta_tags][populate]=*&populate[section_5][populate][trade_tabs][populate][table_with_values][populate][table_row]=*`,
       {
         headers: {
       Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
