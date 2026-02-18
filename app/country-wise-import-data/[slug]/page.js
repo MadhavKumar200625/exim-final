@@ -18,7 +18,7 @@ import CountrySection from "./CountryLinksSection";
 
 // /* ---------- NEXT CONFIG ---------- */
 // export const dynamic = "force-static";
-export const revalidate = 86400; // 24 hours (safe for bots + SEO)
+// export const revalidate = 86400; // 24 hours (safe for bots + SEO)
 
 
 
@@ -30,7 +30,7 @@ async function fetchImportPageFromStrapi(slug) {
         headers: {
           Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
         },
-        next: { revalidate: 86400 }, // 24 hours cache
+        // next: { revalidate: 86400 }, // 24 hours cache
       }
     );
     

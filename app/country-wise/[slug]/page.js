@@ -39,7 +39,7 @@ async function fetchCountryFromStrapi(slug) {
         headers: {
       Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
     },
-        next: { revalidate: 86400 },
+        // next: { revalidate: 86400 },
       }
     );
 

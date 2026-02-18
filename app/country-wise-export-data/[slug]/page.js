@@ -21,7 +21,7 @@ async function fetchExportPageFromStrapi(slug) {
         headers: {
           Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
         },
-        next: { revalidate: 86400 }, // 24h cache
+        // next: { revalidate: 86400 }, // 24h cache
       }
     );
 
@@ -40,7 +40,7 @@ import ExportClientsClient from "./ExportClientsClient";
 
 // /* ---------- NEXT CONFIG ---------- */
 // // export const dynamic = "force-static";
-export const revalidate = 86400; // 24h – ideal for bots + SEO
+// export const revalidate = 86400; // 24h – ideal for bots + SEO
 
 /* ---------- HELPERS ---------- */
 const normalizeSlug = (slug = "") =>
