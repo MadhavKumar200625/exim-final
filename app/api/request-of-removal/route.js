@@ -96,18 +96,18 @@ export async function POST(req) {
     });
 
     /* USER MAIL */
-    // await transporter.sendMail({
-    //   from: `"Exim Trade Data" <contact@eximtradedata.com>`,
-    //   to: safe.email,
-    //   subject: "Your removal request has been received",
-    //   html: `
-    //     <p>Hello ${safe.name},</p>
-    //     <p>We have received your company profile removal request.</p>
-    //     <p>Our compliance team will review it and respond within 24 hours.</p>
-    //     <br/>
-    //     <p>Regards,<br/>Exim Trade Data</p>
-    //   `,
-    // });
+    await transporter.sendMail({
+      from: `"Exim Trade Data" <contact@eximtradedata.com>`,
+      to: safe.email,
+      subject: "Your removal request has been received",
+      html: `
+        <p>Hello ${safe.name},</p>
+        <p>We have received your company profile removal request.</p>
+        <p>Our compliance team will review it and respond within 24 hours.</p>
+        <br/>
+        <p>Regards,<br/>Exim Trade Data</p>
+      `,
+    });
 
     return NextResponse.json({ message: "Request submitted" });
   } catch (err) {
