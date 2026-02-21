@@ -49,6 +49,7 @@ export async function POST(req) {
       "company",
       "submitAs",
       "requestType",
+      "urlCompany"
     ];
 
     for (const f of required) {
@@ -70,10 +71,13 @@ export async function POST(req) {
       },
     });
 
+    console.log("Received removal request:", safe);
+
     /* ADMIN MAIL */
+
     await transporter.sendMail({
       from: `"Exim Trade Data" <contact@eximtradedata.com>`,
-      to: "enquiry@eximtradedata.com",
+      to: "enquiry@eximtradedata.com ,madhavkumar200625@gmail.com",
       subject: "Company Profile Removal Request",
       html: `
         <h2>Company Removal Request</h2>
@@ -87,23 +91,23 @@ export async function POST(req) {
         <p><b>Request Type:</b> ${safe.requestType}</p>
         <p><b>Message:</b><br/>${safe.message}</p>
         <hr/>
-        <p><b>URL Context:</b> ${safe.countryFromUrl} / ${safe.companyFromUrl}</p>
+        <p><b>URL Context:</b> company-profile-removal-request/${safe.urlCountry}/${safe.urlCompany}</p>
       `,
     });
 
     /* USER MAIL */
-    await transporter.sendMail({
-      from: `"Exim Trade Data" <contact@eximtradedata.com>`,
-      to: safe.email,
-      subject: "Your removal request has been received",
-      html: `
-        <p>Hello ${safe.name},</p>
-        <p>We have received your company profile removal request.</p>
-        <p>Our compliance team will review it and respond within 24 hours.</p>
-        <br/>
-        <p>Regards,<br/>Exim Trade Data</p>
-      `,
-    });
+    // await transporter.sendMail({
+    //   from: `"Exim Trade Data" <contact@eximtradedata.com>`,
+    //   to: safe.email,
+    //   subject: "Your removal request has been received",
+    //   html: `
+    //     <p>Hello ${safe.name},</p>
+    //     <p>We have received your company profile removal request.</p>
+    //     <p>Our compliance team will review it and respond within 24 hours.</p>
+    //     <br/>
+    //     <p>Regards,<br/>Exim Trade Data</p>
+    //   `,
+    // });
 
     return NextResponse.json({ message: "Request submitted" });
   } catch (err) {
