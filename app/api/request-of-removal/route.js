@@ -77,20 +77,37 @@ export async function POST(req) {
 
     await transporter.sendMail({
       from: `"Exim Trade Data" <contact@eximtradedata.com>`,
-      to: "enquiry@eximtradedata.com ",
+      // to: "enquiry@eximtradedata.com ",
+      to:"madhavkumar200625@gmail.com",
       subject: "Company Profile Removal Request",
       html: `
         <h2>Company Removal Request</h2>
-        <p><b>Name:</b> ${safe.name}</p>
-        <p><b>Email:</b> ${safe.email}</p>
-        <p><b>Phone:</b> ${safe.phone || "-"}</p>
-        <p><b>Company:</b> ${safe.company}</p>
-        <p><b>Country:</b> ${safe.country}</p>
-        <p><b>Website:</b> ${safe.website || "-"}</p>
-        <p><b>Submitting As:</b> ${safe.submitAs}</p>
-        <p><b>Request Type:</b> ${safe.requestType}</p>
-        <p><b>Message:</b><br/>${safe.message}</p>
-        <hr/>
+
+<p><b>Name:</b> ${safe.name}</p>
+<p><b>Email:</b> ${safe.email}</p>
+<p><b>Phone:</b> ${safe.phone || "-"}</p>
+<p><b>Company:</b> ${safe.company || "-"}</p>
+<p><b>Country (User Selected):</b> ${safe.country || "-"}</p>
+<p><b>Website:</b> ${safe.website || "-"}</p>
+
+<hr/>
+
+<p><b>Submitting As:</b> ${safe.submitAs || "-"}</p>
+<p><b>Request Type:</b> ${safe.requestType || "-"}</p>
+<p><b>Other Request:</b> ${safe.otherRequest || "-"}</p>
+
+<p><b>Message:</b><br/>${safe.message || "-"}</p>
+
+<hr/>
+
+<p><b>URL Country (Page Country):</b> ${safe.urlCountry || "-"}</p>
+<p><b>URL Company (Slug):</b> ${safe.urlCompany || "-"}</p>
+
+<hr/>
+
+<p><b>Confirmation 1:</b> ${safe.confirm1}</p>
+<p><b>Confirmation 2:</b> ${safe.confirm2}</p>
+<p><b>Confirmation 3:</b> ${safe.confirm3}</p>
         <p><b>URL Context:</b> company-profile-removal-request/${safe.urlCountry}/${safe.urlCompany}</p>
       `,
     });
