@@ -77,8 +77,7 @@ export async function POST(req) {
 
     await transporter.sendMail({
       from: `"Exim Trade Data" <contact@eximtradedata.com>`,
-      // to: "enquiry@eximtradedata.com ",
-      to:"madhavkumar200625@gmail.com",
+      to: "enquiry@eximtradedata.com ",
       subject: "Company Profile Removal Request",
       html: `
         <h2>Company Removal Request</h2>
