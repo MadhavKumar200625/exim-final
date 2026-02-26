@@ -18,10 +18,11 @@ const Hero = ({ country, hero }) => {
 
         {/* Description */}
         {hero?.description && (
-          <p className="text-lg leading-relaxed">
-            {hero.description}
-          </p>
-        )}
+  <p
+    className="text-lg leading-relaxed"
+    dangerouslySetInnerHTML={{ __html: hero.description }}
+  />
+)}
 
         {/* Optional CTA Text */}
         {hero?.ctaText && (

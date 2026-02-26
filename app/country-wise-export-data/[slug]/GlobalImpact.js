@@ -69,7 +69,7 @@ export default function GlobalImpact({
                   className="flex items-start gap-3"
                 >
                   <span className="w-2 h-2 rounded-full bg-sky-500 mt-2 shrink-0" />
-                  <span className="text-black">{item}</span>
+                  <span className=""  dangerouslySetInnerHTML={{ __html: item}}></span>
                 </li>
               ))}
             </ul>
