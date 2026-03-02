@@ -26,6 +26,7 @@ const Stats = ({ country, imports, exports, data }) => {
       link: item.button?.[0]?.button_link || "/pricing",
     }))
   : null;
+  console.log(statsFromStrapi);
 
     const importValue = parseNumericValue(imports);
   const exportValue = parseNumericValue(exports);
@@ -97,7 +98,7 @@ const Stats = ({ country, imports, exports, data }) => {
             className="p-6 rounded-2xl shadow bg-white border flex flex-col items-center"
           >
             <a
-              href="/pricing"
+              href={stat.link}
               className="mb-4 border border-black px-3 py-2 text-sm hover:bg-slate-100 transition"
             >
               {stat.title}

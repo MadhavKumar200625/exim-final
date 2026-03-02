@@ -4,7 +4,6 @@ import Image from "next/image";
 export default function Hero({ country, hero }) {
   const countryName =
     country?.charAt(0).toUpperCase() + country?.slice(1);
-    
 
   const imageSrc = `/homepage/${country}-import-export-data.webp`;
 
@@ -14,29 +13,43 @@ export default function Hero({ country, hero }) {
 
         {/* Text Content */}
         <div className="flex-2 flex flex-col items-start space-y-6">
-          <h1 className="text-3xl md:text-4xl font-bold leading-tight">
-            {hero?.title ||
-              `${countryName} Customs Data | ${countryName} Trade Data 2024–25`}
-          </h1>
+          
+          {/* TITLE */}
+          <h1
+            className="text-3xl md:text-4xl font-bold leading-tight"
+            dangerouslySetInnerHTML={{
+              __html:
+                hero?.title ||
+                `${countryName} Customs Data | ${countryName} Trade Data 2024–25`,
+            }}
+          />
 
-          <p className="text-lg leading-relaxed">
-            {hero?.description}
-          </p>
+          {/* DESCRIPTION */}
+          {hero?.description && (
+            <div
+              className="text-lg leading-relaxed"
+              dangerouslySetInnerHTML={{
+                __html: hero.description,
+              }}
+            />
+          )}
 
           <div className="flex gap-4">
             <a
               href={hero?.onlineDataLink || "/pricing"}
               className="bg-blue-600 text-lg text-white px-6 py-2 shadow hover:scale-105 transition"
-            >
-              {hero?.onlineDataText || "Online Data"}
-            </a>
+              dangerouslySetInnerHTML={{
+                __html: hero?.onlineDataText || "Online Data",
+              }}
+            />
 
             <a
               href={hero?.offlineDataLink || "/contact"}
               className="bg-white border border-blue-600 text-lg text-black px-6 py-2 shadow hover:scale-105 transition"
-            >
-              {hero?.offlineDataText || "Offline Data"}
-            </a>
+              dangerouslySetInnerHTML={{
+                __html: hero?.offlineDataText || "Offline Data",
+              }}
+            />
           </div>
         </div>
 
@@ -48,8 +61,6 @@ export default function Hero({ country, hero }) {
               alt={`${countryName} import export trade map`}
               width={400}
               height={500}
-              
-              
               className="object-contain"
             />
           </div>
