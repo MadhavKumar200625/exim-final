@@ -107,7 +107,7 @@ export async function POST(req) {
 <p><b>Confirmation 1:</b> ${safe.confirm1}</p>
 <p><b>Confirmation 2:</b> ${safe.confirm2}</p>
 <p><b>Confirmation 3:</b> ${safe.confirm3}</p>
-        <p><b>URL Context:</b> company-profile-removal-request/${safe.urlCountry}/${safe.urlCompany}</p>
+        <p><b>URL Context:</b> https://eximtradedata.com/company-profile-removal-request/${safe.urlCountry}/${safe.urlCompany}</p>
       `,
     });
 

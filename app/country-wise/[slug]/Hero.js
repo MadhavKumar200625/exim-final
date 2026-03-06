@@ -52,7 +52,7 @@ export default function Hero({ country, hero }) {
             />
           </div>
         </div>
-
+ 
         {/* Image */}
         <div className="flex-1 flex justify-center md:justify-end">
           <div className="w-full max-w-sm">
