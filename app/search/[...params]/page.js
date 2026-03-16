@@ -13,22 +13,40 @@ import { getSearchData } from "@/lib/getSearchData";
 -------------------------------------------------- */
 function parseFilters(raw) {
   return raw.map((param) => {
-    const [label, ...value] = param.split("-");
+    const [label, ...valueParts] = param.split("-");
+
+    let value = valueParts.join(" ").replace(/_/g, " ");
+
+    const formattedLabel = label
+      .replace(/_/g, " ")
+      .replace(/^./, (s) => s.toUpperCase());
+
+    // ✅ special case for port-n-a
+    if (
+      formattedLabel.toLowerCase() === "port" &&
+      value.replace(/\s+/g, "").toLowerCase() === "na"
+    ) {
+      value = "N/A";
+    }
+
     return {
-      label: label.replace(/_/g, " ").replace(/^./, (s) => s.toUpperCase()),
-      value: value.join(" ").replace(/_/g, " "),
+      label: formattedLabel,
+      value,
     };
   });
 }
 
 function extractQuery(filters) {
+  const portRaw = filters.find((f) => f.label === "Port")?.value || "";
+  
+
   return {
     type: filters.find((f) => f.label === "Type")?.value?.toLowerCase() || "export",
     country: filters.find((f) => f.label === "Country")?.value || "",
     product: filters.find((f) => f.label === "Product")?.value || "",
     hscode: filters.find((f) => f.label === "Hscode")?.value || "",
     countryin: filters.find((f) => f.label === "Countryin")?.value || "",
-    port: filters.find((f) => f.label === "Port")?.value || "",
+    port: portRaw.toLowerCase() === "n a" ? "N/A" : portRaw,
   };
 }
 
@@ -226,6 +244,7 @@ export default async function Page({ params }) {
   const appliedFilters = parseFilters(raw);
   
   const query = extractQuery(appliedFilters);
+  
 
   let api;
   try {

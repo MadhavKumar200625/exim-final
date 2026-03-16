@@ -17,6 +17,7 @@ const MainSection = ({ data, appliedFilters ,country}) => {
           `${f.label.replace(/\s+/g, "-").toLowerCase()}-${f.value
             .replace(/\s+/g, "-")
             .toLowerCase()}`
+            .replaceAll("/","-") 
       )
       .join("/")}`;
   };

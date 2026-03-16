@@ -25,7 +25,7 @@ const ShowFilters = ({ appliedFilters }) => {
             >
 
               <span>
-                {filter.label}: {filter.value}
+                {filter.label}: {filter.value.replace("-","/")}
               </span>
 
               {/* Link instead of button */}
