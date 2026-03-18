@@ -2,62 +2,64 @@
 
 import React, { useEffect, useState } from 'react';
 import { motion } from "framer-motion";
+import Link from 'next/link';
 
-/* ---------- HELPER ---------- */
-const parseValue = (val = "") => {
-  const str = val.toString().trim().toUpperCase();
+/* ---------- HELPERS ---------- */
+const parseNumericValue = (val) => {
+  if (!val) return 0;
 
-  const unit = str.includes("B")
-    ? "B"
-    : str.includes("M")
-    ? "M"
-    : "";
+  const cleaned = val.toString().replace(/[, $]/g, '').toUpperCase();
 
-  const number = parseFloat(str.replace(/[^0-9.]/g, "")) || 0;
+  if (cleaned.includes('B')) return parseFloat(cleaned) * 1000;
+  if (cleaned.includes('M')) return parseFloat(cleaned);
 
-  return { number, unit };
+  return parseFloat(cleaned) || 0;
 };
 
 /* ---------- COMPONENT ---------- */
 const Stats = ({ country, imports, exports, data }) => {
 
   const statsFromStrapi = data?.figures?.length
-    ? data.figures.map((item) => {
-        const { number, unit } = parseValue(item.imp_exp_dynamic_fig);
-
-        return {
-          value: number,
-          unit,
-          label: item.Title,
-          title: item.button?.[0]?.button_text,
-          link: item.button?.[0]?.button_link || "/pricing",
-        };
-      })
+    ? data.figures.map((item) => ({
+        value: Number(item.imp_exp_dynamic_fig),
+        label: item.Title,
+        title: item.button?.[0]?.button_text,
+        link: item.button?.[0]?.button_link || "/pricing",
+        unit: item.unit || "M", // ✅ new
+      }))
     : null;
 
-  const { number: importValue, unit: importUnit } = parseValue(imports);
-  const { number: exportValue, unit: exportUnit } = parseValue(exports);
+  const importValue = parseNumericValue(imports);
+  const exportValue = parseNumericValue(exports);
 
   const stats = statsFromStrapi || [
     {
       value: importValue,
-      unit: importUnit,
       label: "Total Import Value",
       title: `${country.toUpperCase()} Import Data`,
       link: "/pricing",
+      unit: "M", // default
     },
     {
       value: exportValue,
-      unit: exportUnit,
       label: "Total Export Value",
       title: `${country.toUpperCase()} Export Data`,
       link: "/pricing",
+      unit: "M",
     },
   ];
 
   const [counts, setCounts] = useState(() => stats.map(() => 0));
 
   useEffect(() => {
+    if (
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      setCounts(stats.map((s) => Math.round(s.value)));
+      return;
+    }
+
     const duration = 2000;
     const frameRate = 16;
 
@@ -75,12 +77,12 @@ const Stats = ({ country, imports, exports, data }) => {
 
         setCounts((prev) => {
           const next = [...prev];
-          next[i] = Number(current.toFixed(1));
+          next[i] = Math.round(current);
           return next;
         });
       }, frameRate);
     });
-  }, [imports, exports]);
+  }, [importValue, exportValue]);
 
   return (
     <section className="bg-slate-100 py-12 px-4 sm:px-6 lg:px-12">
@@ -108,7 +110,7 @@ const Stats = ({ country, imports, exports, data }) => {
               }}
             />
 
-            {/* COUNTER */}
+            {/* VALUE */}
             <p className="text-2xl sm:text-3xl md:text-4xl font-semibold text-black my-3">
               ${counts[i].toLocaleString()}{stat.unit}
             </p>
