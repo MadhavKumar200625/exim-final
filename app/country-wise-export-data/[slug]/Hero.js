@@ -7,26 +7,35 @@ const Hero = ({ country, hero }) => {
       <div className="max-w-7xl mx-auto flex flex-col items-start space-y-6">
 
         {/* Upper Small Title */}
-        <p className="uppercase tracking-wider text-md font-semibold text-black">
-          {country} Export Data
-        </p>
+        <p
+          className="uppercase tracking-wider text-md font-semibold text-black"
+          dangerouslySetInnerHTML={{ __html: `${country} Export Data` }}
+        />
 
         {/* Main Heading */}
-        <h2 className="text-3xl md:text-4xl font-bold leading-tight">
-          {hero?.title || `Get Latest ${country} Export Customs Shipment Trade Data`}
-        </h2>
+        <h2
+          className="text-3xl md:text-4xl font-bold leading-tight"
+          dangerouslySetInnerHTML={{
+            __html:
+              hero?.title ||
+              `Get Latest ${country} Export Customs Shipment Trade Data`,
+          }}
+        />
 
         {/* Description */}
         {hero?.description && (
-  <p
-    className="text-lg leading-relaxed"
-    dangerouslySetInnerHTML={{ __html: hero.description }}
-  />
-)}
+          <p
+            className="text-lg leading-relaxed"
+            dangerouslySetInnerHTML={{ __html: hero.description }}
+          />
+        )}
 
         {/* Optional CTA Text */}
         {hero?.ctaText && (
-          <p className="italic text-gray-700">{hero.ctaText}</p>
+          <p
+            className="italic text-gray-700"
+            dangerouslySetInnerHTML={{ __html: hero.ctaText }}
+          />
         )}
 
         {/* Buttons */}
@@ -35,14 +44,22 @@ const Hero = ({ country, hero }) => {
             href={hero?.onlineDataLink || "/pricing"}
             className="bg-blue-600 text-lg text-white px-6 py-2 shadow cursor-pointer hover:scale-105 transition"
           >
-            {hero?.onlineDataText || "Online Data"}
+            <span
+              dangerouslySetInnerHTML={{
+                __html: hero?.onlineDataText || "Online Data",
+              }}
+            />
           </a>
 
           <a
             href={hero?.offlineDataLink || "/contact"}
             className="bg-white border-blue-600 border text-lg text-black px-6 py-2 shadow cursor-pointer hover:scale-105 transition"
           >
-            {hero?.offlineDataText || "Offline Data"}
+            <span
+              dangerouslySetInnerHTML={{
+                __html: hero?.offlineDataText || "Offline Data",
+              }}
+            />
           </a>
         </div>
 

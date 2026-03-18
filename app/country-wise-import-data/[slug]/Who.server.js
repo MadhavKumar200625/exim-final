@@ -36,13 +36,19 @@ export default function Who({
 
         {/* RIGHT — SERVER RENDERED CONTENT */}
         <div>
-          <p className="text-sm font-semibold uppercase tracking-wider mb-2">
-            {countryName}’s Top Import Partners
-          </p>
+          <p
+            className="text-sm font-semibold uppercase tracking-wider mb-2"
+            dangerouslySetInnerHTML={{
+              __html: `${countryName}’s Top Import Partners`,
+            }}
+          />
 
-          <h2 className="text-3xl font-bold mb-4">
-            {finalTitle}
-          </h2>
+          <h2
+            className="text-3xl font-bold mb-4"
+            dangerouslySetInnerHTML={{
+              __html: finalTitle,
+            }}
+          />
 
           {finalDescription && (
             <p
@@ -54,7 +60,11 @@ export default function Who({
           <div className="mt-6 flex justify-center md:justify-start">
             <a href={buttonLink}>
               <button className="bg-blue-600 text-lg text-white px-6 py-2 shadow hover:scale-105 transition">
-                {buttonText}
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: buttonText,
+                  }}
+                />
               </button>
             </a>
           </div>

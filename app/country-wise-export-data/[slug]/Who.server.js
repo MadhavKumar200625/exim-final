@@ -26,14 +26,21 @@ export default function Who({
 
         {/* ---------- RIGHT: TEXT (SERVER / SEO) ---------- */}
         <div>
-          <p className="text-sm font-semibold text-black uppercase tracking-wider mb-2">
-            {countryName}’s Top Export Partners
-          </p>
+          <p
+            className="text-sm font-semibold text-black uppercase tracking-wider mb-2"
+            dangerouslySetInnerHTML={{
+              __html: `${countryName}’s Top Export Partners`,
+            }}
+          />
 
-          <h2 className="text-3xl font-bold text-black mb-4">
-            {section5?.Title ||
-              `Where Does ${countryName} Export To?`}
-          </h2>
+          <h2
+            className="text-3xl font-bold text-black mb-4"
+            dangerouslySetInnerHTML={{
+              __html:
+                section5?.Title ||
+                `Where Does ${countryName} Export To?`,
+            }}
+          />
 
           {/* STRAPI DESCRIPTION */}
           {section5?.Description ? (
@@ -62,7 +69,11 @@ export default function Who({
               rel="noopener noreferrer"
               className="bg-blue-600 text-lg text-white px-6 py-2 flex items-center justify-center shadow hover:scale-105 transition"
             >
-              {buttonText}
+              <span
+                dangerouslySetInnerHTML={{
+                  __html: buttonText,
+                }}
+              />
             </a>
           </div>
         </div>

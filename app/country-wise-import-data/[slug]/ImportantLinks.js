@@ -62,9 +62,12 @@ const ImportantLinks = ({ country, section9 }) => {
           Important Links
         </p>
 
-        <h2 className="text-3xl font-bold text-black mb-8">
-          {finalTitle}
-        </h2>
+        <h2
+          className="text-3xl font-bold text-black mb-8"
+          dangerouslySetInnerHTML={{
+            __html: finalTitle,
+          }}
+        />
 
         {/* Links Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -79,9 +82,12 @@ const ImportantLinks = ({ country, section9 }) => {
                   size={18}
                   className="text-sky-500 shrink-0"
                 />
-                <span className="text-black font-medium underline group-hover:text-sky-600 transition">
-                  {item.title}
-                </span>
+                <span
+                  className="text-black font-medium underline group-hover:text-sky-600 transition"
+                  dangerouslySetInnerHTML={{
+                    __html: item.title,
+                  }}
+                />
               </div>
 
               <ArrowUpRight

@@ -58,12 +58,16 @@ export default function ImportantLinks({ country, section9 }) {
           Important Links
         </p>
 
-        <h2 className="text-3xl font-bold text-black mb-8">
-          {strapiTitle ||
-            `Important links related to ${
-              country?.replace(/^./, (s) => s.toUpperCase())
-            } Import and Export Data`}
-        </h2>
+        <h2
+          className="text-3xl font-bold text-black mb-8"
+          dangerouslySetInnerHTML={{
+            __html:
+              strapiTitle ||
+              `Important links related to ${
+                country?.replace(/^./, (s) => s.toUpperCase())
+              } Import and Export Data`,
+          }}
+        />
 
         {/* Links Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -78,9 +82,12 @@ export default function ImportantLinks({ country, section9 }) {
                   size={18}
                   className="text-sky-500 shrink-0"
                 />
-                <span className="text-black font-medium underline group-hover:text-sky-600 transition">
-                  {item.title}
-                </span>
+                <span
+                  className="text-black font-medium underline group-hover:text-sky-600 transition"
+                  dangerouslySetInnerHTML={{
+                    __html: item.title,
+                  }}
+                />
               </div>
 
               <ArrowUpRight

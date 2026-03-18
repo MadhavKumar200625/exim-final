@@ -35,20 +35,30 @@ const Suppliers = ({
         
         {/* Left Column */}
         <div className="lg:col-span-2">
-          <p className="text-sm font-semibold text-sky-600 uppercase tracking-wider mb-2">
-            Top Importers in {country}
-          </p>
+          <p
+            className="text-sm font-semibold text-sky-600 uppercase tracking-wider mb-2"
+            dangerouslySetInnerHTML={{
+              __html: `Top Importers in ${country}`,
+            }}
+          />
 
-          <h2 className="text-3xl font-bold text-black mb-6">
-            {finalTitle}
-          </h2>
+          <h2
+            className="text-3xl font-bold text-black mb-6"
+            dangerouslySetInnerHTML={{
+              __html: finalTitle,
+            }}
+          />
 
           {/* Buyers List */}
           <ul className="mb-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-3">
             {finalBuyers.map((name, idx) => (
               <li key={idx} className="text-black flex items-start gap-2">
                 <span className="w-2 h-2 rounded-full bg-sky-500 mt-2 shrink-0" />
-                <span>{name}</span>
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: name,
+                  }}
+                />
               </li>
             ))}
           </ul>
@@ -59,7 +69,11 @@ const Suppliers = ({
               href={buttonLink}
               className="bg-blue-600 text-lg text-white px-6 py-2 shadow hover:scale-105 transition-transform inline-flex"
             >
-              {buttonText}
+              <span
+                dangerouslySetInnerHTML={{
+                  __html: buttonText,
+                }}
+              />
             </a>
           </div>
         </div>

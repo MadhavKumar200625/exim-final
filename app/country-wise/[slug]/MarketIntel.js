@@ -13,9 +13,7 @@ const MarketIntel = ({ country, desc, data, section5 }) => {
   const hasStrapiTabs = Array.isArray(tradeTabs) && tradeTabs.length > 0;
 
   const [activeTab, setActiveTab] = useState(
-    hasStrapiTabs
-      ? tradeTabs[0]?.tab_type?.toLowerCase()
-      : "import"
+    hasStrapiTabs ? tradeTabs[0]?.tab_type?.toLowerCase() : "import"
   );
 
   /* ---------------- OLD FALLBACK DATA ---------------- */
@@ -51,19 +49,26 @@ const MarketIntel = ({ country, desc, data, section5 }) => {
             key={index}
             className="bg-white shadow-md border border-gray-200 p-6 rounded-xl"
           >
-            <h3 className="text-lg font-semibold">
-              {table.title}
-            </h3>
+            <h3
+              className="text-lg font-semibold"
+              dangerouslySetInnerHTML={{ __html: table.title }}
+            />
 
             <table className="w-full text-left text-black mt-4">
               {(table.label_1 || table.label_2) && (
                 <thead className="border-b">
                   <tr>
                     {table.label_1 && (
-                      <th className="py-2">{table.label_1}</th>
+                      <th
+                        className="py-2"
+                        dangerouslySetInnerHTML={{ __html: table.label_1 }}
+                      />
                     )}
                     {table.label_2 && (
-                      <th className="py-2">{table.label_2}</th>
+                      <th
+                        className="py-2"
+                        dangerouslySetInnerHTML={{ __html: table.label_2 }}
+                      />
                     )}
                   </tr>
                 </thead>
@@ -72,9 +77,15 @@ const MarketIntel = ({ country, desc, data, section5 }) => {
               <tbody>
                 {table.table_row?.map((row, idx) => (
                   <tr key={idx} className="border-b last:border-0">
-                    <td className="py-2">{row.label_1_text}</td>
+                    <td
+                      className="py-2"
+                      dangerouslySetInnerHTML={{ __html: row.label_1_text }}
+                    />
                     {table.label_2 && (
-                      <td className="py-2">{row.label_2__text}</td>
+                      <td
+                        className="py-2"
+                        dangerouslySetInnerHTML={{ __html: row.label_2__text }}
+                      />
                     )}
                   </tr>
                 ))}
@@ -91,11 +102,15 @@ const MarketIntel = ({ country, desc, data, section5 }) => {
     <div className="grid gap-8 md:grid-cols-3">
       {/* Countries */}
       <div className="bg-white shadow-md border border-gray-200 p-6 rounded-xl">
-        <h3 className="text-lg font-semibold">
-          {type === "import"
-            ? `Top Imports of ${countryName} by Country`
-            : `Top Exports of ${countryName} by Country`}
-        </h3>
+        <h3
+          className="text-lg font-semibold"
+          dangerouslySetInnerHTML={{
+            __html:
+              type === "import"
+                ? `Top Imports of ${countryName} by Country`
+                : `Top Exports of ${countryName} by Country`,
+          }}
+        />
 
         <table className="w-full text-left text-black mt-4">
           <thead className="border-b">
@@ -110,8 +125,14 @@ const MarketIntel = ({ country, desc, data, section5 }) => {
               : exportCountries
             ).map((item, idx) => (
               <tr key={idx} className="border-b last:border-0">
-                <td className="py-2">{item.country}</td>
-                <td className="py-2">{item.value}</td>
+                <td
+                  className="py-2"
+                  dangerouslySetInnerHTML={{ __html: item.country }}
+                />
+                <td
+                  className="py-2"
+                  dangerouslySetInnerHTML={{ __html: item.value }}
+                />
               </tr>
             ))}
           </tbody>
@@ -120,11 +141,15 @@ const MarketIntel = ({ country, desc, data, section5 }) => {
 
       {/* Products */}
       <div className="bg-white shadow-md border border-gray-200 p-6 rounded-xl">
-        <h3 className="text-lg font-semibold">
-          {type === "import"
-            ? `Top Imports of ${countryName} by Product`
-            : `Top Exports of ${countryName} by Product`}
-        </h3>
+        <h3
+          className="text-lg font-semibold"
+          dangerouslySetInnerHTML={{
+            __html:
+              type === "import"
+                ? `Top Imports of ${countryName} by Product`
+                : `Top Exports of ${countryName} by Product`,
+          }}
+        />
 
         <table className="w-full text-left text-black mt-4">
           <thead className="border-b">
@@ -139,8 +164,14 @@ const MarketIntel = ({ country, desc, data, section5 }) => {
               : exportProducts
             ).map((item, idx) => (
               <tr key={idx} className="border-b last:border-0">
-                <td className="py-2">{item.product}</td>
-                <td className="py-2">{item.value}</td>
+                <td
+                  className="py-2"
+                  dangerouslySetInnerHTML={{ __html: item.product }}
+                />
+                <td
+                  className="py-2"
+                  dangerouslySetInnerHTML={{ __html: item.value }}
+                />
               </tr>
             ))}
           </tbody>
@@ -149,21 +180,26 @@ const MarketIntel = ({ country, desc, data, section5 }) => {
 
       {/* Buyers / Suppliers */}
       <div className="bg-white shadow-md border border-gray-200 p-6 rounded-xl">
-        <h3 className="text-lg font-semibold">
-          {type === "import"
-            ? `${countryName} Buyers List`
-            : `${countryName} Suppliers List`}
-        </h3>
+        <h3
+          className="text-lg font-semibold"
+          dangerouslySetInnerHTML={{
+            __html:
+              type === "import"
+                ? `${countryName} Buyers List`
+                : `${countryName} Suppliers List`,
+          }}
+        />
 
         <table className="w-full text-left text-black mt-4">
           <tbody>
-            {(type === "import" ? buyers : suppliers).map(
-              (item, idx) => (
-                <tr key={idx} className="border-b last:border-0">
-                  <td className="py-2">{item}</td>
-                </tr>
-              )
-            )}
+            {(type === "import" ? buyers : suppliers).map((item, idx) => (
+              <tr key={idx} className="border-b last:border-0">
+                <td
+                  className="py-2"
+                  dangerouslySetInnerHTML={{ __html: item }}
+                />
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
@@ -179,18 +215,16 @@ const MarketIntel = ({ country, desc, data, section5 }) => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
           className="text-3xl md:text-4xl font-bold text-black text-center mb-4"
-        >
-          {finalTitle}
-        </motion.h1>
+          dangerouslySetInnerHTML={{ __html: finalTitle }}
+        />
 
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="text-lg md:text-xl text-black text-center mb-10"
-        >
-          {finalDescription}
-        </motion.p>
+          dangerouslySetInnerHTML={{ __html: finalDescription }}
+        />
 
         {/* Tabs */}
         <div className="flex justify-center gap-4 mb-10">
@@ -206,9 +240,10 @@ const MarketIntel = ({ country, desc, data, section5 }) => {
                   ? "bg-black text-white border-black"
                   : "bg-white text-black border-gray-300 hover:bg-gray-100"
               }`}
-            >
-              {tab.charAt(0).toUpperCase() + tab.slice(1)}
-            </button>
+              dangerouslySetInnerHTML={{
+                __html: tab.charAt(0).toUpperCase() + tab.slice(1),
+              }}
+            />
           ))}
         </div>
 

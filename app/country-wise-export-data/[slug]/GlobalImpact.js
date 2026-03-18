@@ -56,9 +56,12 @@ export default function GlobalImpact({
             Exim Global Trade Intelligence System
           </p>
 
-          <h2 className="text-3xl font-bold text-black mb-6">
-            {strapiTitle || "Make an impact in the global market"}
-          </h2>
+          <h2
+            className="text-3xl font-bold text-black mb-6"
+            dangerouslySetInnerHTML={{
+              __html: strapiTitle || "Make an impact in the global market",
+            }}
+          />
 
           {/* Points */}
           {finalPoints.length > 0 && (
@@ -69,7 +72,9 @@ export default function GlobalImpact({
                   className="flex items-start gap-3"
                 >
                   <span className="w-2 h-2 rounded-full bg-sky-500 mt-2 shrink-0" />
-                  <span className=""  dangerouslySetInnerHTML={{ __html: item}}></span>
+                  <span
+                    dangerouslySetInnerHTML={{ __html: item }}
+                  />
                 </li>
               ))}
             </ul>
@@ -81,7 +86,11 @@ export default function GlobalImpact({
               href={buttonLink}
               className="bg-blue-600 text-lg text-white px-6 py-2 flex items-center justify-center shadow hover:scale-105 transition"
             >
-              {buttonText}
+              <span
+                dangerouslySetInnerHTML={{
+                  __html: buttonText,
+                }}
+              />
             </a>
           </div>
         </div>

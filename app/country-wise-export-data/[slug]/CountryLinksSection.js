@@ -49,9 +49,12 @@ export default function CountryLinksSection({ section2 }) {
       <div className="max-w-7xl mx-auto bg-linear-to-b from-blue-50 via-sky-50 to-sky-50 rounded-md py-10 px-6 lg:px-20 shadow-2xl space-y-8">
 
         {/* Heading */}
-        <h2 className="text-3xl md:text-4xl font-bold text-center">
-          {section2?.Title || "Data available for 200+ other countries"}
-        </h2>
+        <h2
+          className="text-3xl md:text-4xl font-bold text-center"
+          dangerouslySetInnerHTML={{
+            __html: section2?.Title || "Data available for 200+ other countries",
+          }}
+        />
 
         {/* Country Grid */}
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8 border-t border-gray-200 pt-8">
@@ -63,9 +66,10 @@ export default function CountryLinksSection({ section2 }) {
                 key={continent.id}
                 className="bg-blue-100 rounded-xl p-5 shadow text-center"
               >
-                <h3 className="font-semibold text-lg mb-4">
-                  {continent.Continent_name}
-                </h3>
+                <h3
+                  className="font-semibold text-lg mb-4"
+                  dangerouslySetInnerHTML={{ __html: continent.Continent_name }}
+                />
 
                 <ul className="space-y-3">
                   {continent.button_with_image?.map((country) => (
@@ -82,9 +86,12 @@ export default function CountryLinksSection({ section2 }) {
                           loading="lazy"
                           className="rounded-sm object-cover"
                         />
-                        <span className="text-black hover:text-sky-600 hover:underline transition">
-                          {country.button_text}
-                        </span>
+                        <span
+                          className="text-black hover:text-sky-600 hover:underline transition"
+                          dangerouslySetInnerHTML={{
+                            __html: country.button_text,
+                          }}
+                        />
                       </a>
                     </li>
                   ))}
@@ -99,9 +106,10 @@ export default function CountryLinksSection({ section2 }) {
                 key={continent}
                 className="bg-blue-100 rounded-xl p-5 shadow text-center"
               >
-                <h3 className="font-semibold text-lg mb-4">
-                  {continent}
-                </h3>
+                <h3
+                  className="font-semibold text-lg mb-4"
+                  dangerouslySetInnerHTML={{ __html: continent }}
+                />
 
                 <ul className="space-y-3">
                   {countries.map(({ name, code }) => {
@@ -121,9 +129,10 @@ export default function CountryLinksSection({ section2 }) {
                             loading="lazy"
                             className="rounded-sm object-cover"
                           />
-                          <span className="text-black hover:text-sky-600 hover:underline transition">
-                            {name}
-                          </span>
+                          <span
+                            className="text-black hover:text-sky-600 hover:underline transition"
+                            dangerouslySetInnerHTML={{ __html: name }}
+                          />
                         </a>
                       </li>
                     );
@@ -137,14 +146,14 @@ export default function CountryLinksSection({ section2 }) {
         {/* CTA */}
         <div className="flex justify-center mt-10">
           <a
-            href={
-              section2?.button?.[0]?.button_link ||
-              "/pricing"
-            }
+            href={section2?.button?.[0]?.button_link || "/pricing"}
             className="bg-blue-600 text-lg text-white px-6 py-2 flex items-center gap-2 shadow hover:scale-105 transition"
           >
-            {section2?.button?.[0]?.button_text ||
-              "Enquire Now"}{" "}
+            <span
+              dangerouslySetInnerHTML={{
+                __html: section2?.button?.[0]?.button_text || "Enquire Now",
+              }}
+            />
             <ArrowRight size={18} />
           </a>
         </div>

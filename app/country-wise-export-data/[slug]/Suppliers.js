@@ -36,13 +36,21 @@ export default function Suppliers({
 
         {/* ---------- LEFT COLUMN ---------- */}
         <div className="lg:col-span-2">
-          <p className="text-sm font-semibold text-sky-600 uppercase tracking-wider mb-2">
-            {section6?.Title || `Top Exporters in ${countryName}`}
-          </p>
+          <p
+            className="text-sm font-semibold text-sky-600 uppercase tracking-wider mb-2"
+            dangerouslySetInnerHTML={{
+              __html:
+                section6?.Title ||
+                `Top Exporters in ${countryName}`,
+            }}
+          />
 
-          <h2 className="text-3xl font-bold text-black mb-6">
-            {countryName} Suppliers List
-          </h2>
+          <h2
+            className="text-3xl font-bold text-black mb-6"
+            dangerouslySetInnerHTML={{
+              __html: `${countryName} Suppliers List`,
+            }}
+          />
 
           {/* Suppliers List */}
           {finalList.length > 0 && (
@@ -53,7 +61,11 @@ export default function Suppliers({
                   className="text-black flex items-start gap-2"
                 >
                   <span className="w-2 h-2 rounded-full bg-sky-500 mt-2 shrink-0" />
-                  <span>{name}</span>
+                  <span
+                    dangerouslySetInnerHTML={{
+                      __html: name,
+                    }}
+                  />
                 </li>
               ))}
             </ul>
@@ -65,7 +77,11 @@ export default function Suppliers({
               href={buttonLink}
               className="bg-blue-600 text-lg text-white px-6 py-2 flex items-center justify-center shadow hover:scale-105 transition-transform"
             >
-              {buttonText}
+              <span
+                dangerouslySetInnerHTML={{
+                  __html: buttonText,
+                }}
+              />
             </a>
           </div>
         </div>

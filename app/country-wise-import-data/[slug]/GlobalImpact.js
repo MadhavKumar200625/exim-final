@@ -49,16 +49,24 @@ const GlobalImpact = ({ section8, points = [] }) => {
             Exim Global Trade Intelligence System
           </p>
 
-          <h2 className="text-3xl font-bold text-black mb-6">
-            {title}
-          </h2>
+          <h2
+            className="text-3xl font-bold text-black mb-6"
+            dangerouslySetInnerHTML={{
+              __html: title,
+            }}
+          />
 
           {/* Points List */}
           <ul className="mb-8 space-y-3">
             {finalPoints.map((item, idx) => (
               <li key={idx} className="flex items-start gap-3">
                 <span className="w-2 h-2 rounded-full bg-sky-500 mt-2 shrink-0" />
-                <span className="text-black">{item}</span>
+                <span
+                  className="text-black"
+                  dangerouslySetInnerHTML={{
+                    __html: item,
+                  }}
+                />
               </li>
             ))}
           </ul>
@@ -69,7 +77,11 @@ const GlobalImpact = ({ section8, points = [] }) => {
               href={ctaLink}
               className="bg-blue-600 text-lg text-white px-6 py-2 shadow hover:scale-105 transition inline-flex"
             >
-              {ctaText}
+              <span
+                dangerouslySetInnerHTML={{
+                  __html: ctaText,
+                }}
+              />
             </a>
           </div>
         </div>

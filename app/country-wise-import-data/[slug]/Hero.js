@@ -17,26 +17,37 @@ const Hero = ({ country, hero }) => {
       <div className="max-w-7xl mx-auto flex flex-col items-start space-y-6">
 
         {/* Eyebrow Title */}
-        <p className="uppercase tracking-wider text-sm font-semibold text-black">
-          {countryName} Import Data
-        </p>
+        <p
+          className="uppercase tracking-wider text-sm font-semibold text-black"
+          dangerouslySetInnerHTML={{
+            __html: `${countryName} Import Data`,
+          }}
+        />
 
         {/* Main Heading (H1) */}
-        <h1 className="text-3xl md:text-4xl font-bold leading-tight">
-          {hero?.title ||
-            `Get Latest ${countryName} Import Customs Shipment Trade Data`}
-        </h1>
+        <h1
+          className="text-3xl md:text-4xl font-bold leading-tight"
+          dangerouslySetInnerHTML={{
+            __html:
+              hero?.title ||
+              `Get Latest ${countryName} Import Customs Shipment Trade Data`,
+          }}
+        />
 
         {/* Description */}
         {hero?.description && (
-          <p className="text-lg leading-relaxed">
-            {hero.description}
-          </p>
+          <p
+            className="text-lg leading-relaxed"
+            dangerouslySetInnerHTML={{ __html: hero.description }}
+          />
         )}
 
         {/* Optional CTA text */}
         {hero?.ctaText && (
-          <p className="italic text-gray-700">{hero.ctaText}</p>
+          <p
+            className="italic text-gray-700"
+            dangerouslySetInnerHTML={{ __html: hero.ctaText }}
+          />
         )}
 
         {/* CTAs */}
@@ -52,7 +63,11 @@ const Hero = ({ country, hero }) => {
                     : "border border-blue-600 text-black text-lg px-6 py-2 shadow hover:scale-105 transition"
                 }
               >
-                {btn.button_text}
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: btn.button_text,
+                  }}
+                />
               </a>
             ))
           ) : (
@@ -61,14 +76,14 @@ const Hero = ({ country, hero }) => {
                 href="/pricing"
                 className="bg-blue-600 text-white text-lg px-6 py-2 shadow hover:scale-105 transition"
               >
-                Online Data
+                <span dangerouslySetInnerHTML={{ __html: "Online Data" }} />
               </a>
 
               <a
                 href="/contact"
                 className="border border-blue-600 text-black text-lg px-6 py-2 shadow hover:scale-105 transition"
               >
-                Offline Data
+                <span dangerouslySetInnerHTML={{ __html: "Offline Data" }} />
               </a>
             </>
           )}

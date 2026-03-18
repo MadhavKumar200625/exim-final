@@ -45,8 +45,14 @@ export default function DetailedTable({ country }) {
               key={idx}
               className="border-b last:border-0 hover:bg-gray-50 transition"
             >
-              <td className="px-4 py-2 border-r font-medium">{field}</td>
-              <td className="px-4 py-2">{value}</td>
+              <td
+                className="px-4 py-2 border-r font-medium"
+                dangerouslySetInnerHTML={{ __html: field }}
+              />
+              <td
+                className="px-4 py-2"
+                dangerouslySetInnerHTML={{ __html: value }}
+              />
             </tr>
           ))}
         </tbody>
@@ -58,16 +64,22 @@ export default function DetailedTable({ country }) {
     <section className="bg-white py-16">
       <div className="container mx-auto px-6">
         {/* Heading */}
-        <h2 className="text-2xl md:text-3xl font-bold text-black text-center mb-6">
-          {countryName} Import & Export Data Sample
-        </h2>
+        <h2
+          className="text-2xl md:text-3xl font-bold text-black text-center mb-6"
+          dangerouslySetInnerHTML={{
+            __html: `${countryName} Import & Export Data Sample`,
+          }}
+        />
 
-        <p className="text-lg text-black text-center max-w-4xl mx-auto mb-10">
-          Get a complete sample of {countryName} export-import data including HS
-          codes, product descriptions, origin & destination countries, shipment
-          quantity, trade value, and verified importer-exporter details. Custom
-          trade statistics are available on monthly, quarterly, and yearly basis.
-        </p>
+        <p
+          className="text-lg text-black text-center max-w-4xl mx-auto mb-10"
+          dangerouslySetInnerHTML={{
+            __html: `Get a complete sample of ${countryName} export-import data including HS
+            codes, product descriptions, origin & destination countries, shipment
+            quantity, trade value, and verified importer-exporter details. Custom
+            trade statistics are available on monthly, quarterly, and yearly basis.`,
+          }}
+        />
 
         {/* Tables */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -80,9 +92,10 @@ export default function DetailedTable({ country }) {
           <a
             href="/contact"
             className="inline-block bg-sky-600 text-white font-semibold px-6 py-3 rounded hover:bg-sky-700 transition"
-          >
-            Unlock Complete Trade Data
-          </a>
+            dangerouslySetInnerHTML={{
+              __html: "Unlock Complete Trade Data",
+            }}
+          />
         </div>
       </div>
     </section>

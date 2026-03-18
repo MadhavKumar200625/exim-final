@@ -37,17 +37,19 @@ const ClientsSection = ({ section7 }) => {
 
         {/* LEFT TEXT */}
         <div className="z-10">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-800 mb-4">
-            {title}
-          </h2>
+          <h2
+            className="text-4xl md:text-5xl font-extrabold text-gray-800 mb-4"
+            dangerouslySetInnerHTML={{ __html: title }}
+          />
 
           <h3 className="text-2xl text-black mb-4">
             Trusted By Top Brands
           </h3>
 
-          <p className="text-black text-lg leading-relaxed">
-            {description}
-          </p>
+          <p
+            className="text-black text-lg leading-relaxed"
+            dangerouslySetInnerHTML={{ __html: description }}
+          />
         </div>
 
         {/* RIGHT SLIDER */}

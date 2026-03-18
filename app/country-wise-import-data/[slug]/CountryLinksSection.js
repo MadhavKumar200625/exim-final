@@ -61,9 +61,10 @@ export default function CountrySection({ section2 }) {
       <div className="max-w-7xl mx-auto bg-linear-to-b from-blue-50 to-sky-50 rounded-md py-10 px-6 md:px-20 shadow-2xl space-y-8">
 
         {/* Heading */}
-        <h2 className="text-3xl md:text-4xl font-bold text-center">
-          {heading}
-        </h2>
+        <h2
+          className="text-3xl md:text-4xl font-bold text-center"
+          dangerouslySetInnerHTML={{ __html: heading }}
+        />
 
         {/* Continents */}
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8 border-t border-gray-200 pt-8">
@@ -73,9 +74,12 @@ export default function CountrySection({ section2 }) {
                   key={continent.id}
                   className="bg-blue-100 rounded-xl p-5 shadow-md text-center"
                 >
-                  <h3 className="font-semibold text-lg mb-4">
-                    {continent.Continent_name}
-                  </h3>
+                  <h3
+                    className="font-semibold text-lg mb-4"
+                    dangerouslySetInnerHTML={{
+                      __html: continent.Continent_name,
+                    }}
+                  />
 
                   <ul className="space-y-3">
                     {continent.button_with_image?.map((item) => (
@@ -90,9 +94,12 @@ export default function CountrySection({ section2 }) {
                             className="w-6 h-4 rounded-sm"
                             loading="lazy"
                           />
-                          <span className="hover:underline">
-                            {item.button_text}
-                          </span>
+                          <span
+                            className="hover:underline"
+                            dangerouslySetInnerHTML={{
+                              __html: item.button_text,
+                            }}
+                          />
                         </a>
                       </li>
                     ))}
@@ -105,9 +112,12 @@ export default function CountrySection({ section2 }) {
                     key={continent}
                     className="bg-blue-100 rounded-xl p-5 shadow-md text-center"
                   >
-                    <h3 className="font-semibold text-lg mb-4">
-                      {continent}
-                    </h3>
+                    <h3
+                      className="font-semibold text-lg mb-4"
+                      dangerouslySetInnerHTML={{
+                        __html: continent,
+                      }}
+                    />
 
                     <ul className="space-y-3">
                       {countries.map((c) => (
@@ -122,9 +132,12 @@ export default function CountrySection({ section2 }) {
                               className="w-6 h-4 rounded-sm"
                               loading="lazy"
                             />
-                            <span className="hover:underline">
-                              {c.name}
-                            </span>
+                            <span
+                              className="hover:underline"
+                              dangerouslySetInnerHTML={{
+                                __html: c.name,
+                              }}
+                            />
                           </a>
                         </li>
                       ))}
@@ -140,7 +153,11 @@ export default function CountrySection({ section2 }) {
             href={cta?.button_link || "/pricing"}
             className="bg-blue-600 text-white text-lg px-6 py-2 flex items-center gap-2 shadow hover:scale-105 transition"
           >
-            {cta?.button_text || "Enquire Now"}{" "}
+            <span
+              dangerouslySetInnerHTML={{
+                __html: cta?.button_text || "Enquire Now",
+              }}
+            />
             <ArrowRight size={18} />
           </a>
         </div>

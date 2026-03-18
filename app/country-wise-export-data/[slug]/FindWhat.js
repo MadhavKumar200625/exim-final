@@ -31,10 +31,14 @@ export default function FindWhat({ country, section10 }) {
   return (
     <section className="py-12 bg-gray-100">
       <div className="max-w-6xl mx-auto px-4 text-center">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8">
-          {strapiTitle ||
-            `Find What ${country.toUpperCase()} Exports to Other Countries`}
-        </h2>
+        <h2
+          className="text-2xl md:text-3xl font-bold text-gray-900 mb-8"
+          dangerouslySetInnerHTML={{
+            __html:
+              strapiTitle ||
+              `Find What ${country.toUpperCase()} Exports to Other Countries`,
+          }}
+        />
 
         <div className="flex flex-wrap justify-center gap-4">
           {finalButtons.map((item, idx) => (
@@ -43,7 +47,11 @@ export default function FindWhat({ country, section10 }) {
               href={item.url}
               className="bg-blue-600 text-white px-6 py-3 text-lg font-semibold transition-transform duration-300 transform hover:scale-105"
             >
-              {item.title}
+              <span
+                dangerouslySetInnerHTML={{
+                  __html: item.title,
+                }}
+              />
             </a>
           ))}
         </div>

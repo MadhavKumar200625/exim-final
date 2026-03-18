@@ -24,13 +24,19 @@ export default function What({
 
         {/* LEFT — SERVER RENDERED (SEO SAFE) */}
         <div>
-          <p className="uppercase tracking-wide font-semibold mb-2">
-            {countryName} Top Imports
-          </p>
+          <p
+            className="uppercase tracking-wide font-semibold mb-2"
+            dangerouslySetInnerHTML={{
+              __html: `${countryName} Top Imports`,
+            }}
+          />
 
-          <h2 className="text-3xl font-bold mb-4">
-            {finalTitle}
-          </h2>
+          <h2
+            className="text-3xl font-bold mb-4"
+            dangerouslySetInnerHTML={{
+              __html: finalTitle,
+            }}
+          />
 
           {finalDescription && (
             <p

@@ -15,14 +15,21 @@ export default function What({
 
         {/* ---------- LEFT CONTENT (SEO SAFE) ---------- */}
         <div>
-          <p className="uppercase tracking-wide font-semibold mb-2 text-black">
-            {countryName} Top 10 Major Exports
-          </p>
+          <p
+            className="uppercase tracking-wide font-semibold mb-2 text-black"
+            dangerouslySetInnerHTML={{
+              __html: `${countryName} Top 10 Major Exports`,
+            }}
+          />
 
-          <h2 className="text-3xl font-bold mb-4 text-black">
-            {section4?.Title ||
-              `What Does ${countryName} Export?`}
-          </h2>
+          <h2
+            className="text-3xl font-bold mb-4 text-black"
+            dangerouslySetInnerHTML={{
+              __html:
+                section4?.Title ||
+                `What Does ${countryName} Export?`,
+            }}
+          />
 
           {/* STRAPI DESCRIPTION */}
           {section4?.Description ? (

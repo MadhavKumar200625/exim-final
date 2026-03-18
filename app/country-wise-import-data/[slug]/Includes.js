@@ -47,13 +47,17 @@ export default function Includes({
     <section className="py-16 bg-white text-black">
       {/* ---------- HEADER ---------- */}
       <div className="max-w-7xl mx-auto px-4 text-center">
-        <p className="uppercase tracking-wide text-sm font-semibold">
-          {country} Import Trade Data
-        </p>
+        <p
+          className="uppercase tracking-wide text-sm font-semibold"
+          dangerouslySetInnerHTML={{
+            __html: `${country} Import Trade Data`,
+          }}
+        />
 
-        <h2 className="text-3xl font-bold mt-2">
-          {heading}
-        </h2>
+        <h2
+          className="text-3xl font-bold mt-2"
+          dangerouslySetInnerHTML={{ __html: heading }}
+        />
 
         {description && (
           <p
@@ -72,7 +76,7 @@ export default function Includes({
 
       {/* ---------- CONTENT ---------- */}
       <div className="max-w-7xl mx-auto mt-12 px-4 grid lg:grid-cols-2 gap-10">
-        {/* ---------- FEATURES (Always Static for now) ---------- */}
+        {/* ---------- FEATURES ---------- */}
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
           {FEATURES.map((item) => (
             <div
@@ -91,9 +95,10 @@ export default function Includes({
                 />
               </div>
 
-              <p className="text-lg font-medium text-center">
-                {item.text}
-              </p>
+              <p
+                className="text-lg font-medium text-center"
+                dangerouslySetInnerHTML={{ __html: item.text }}
+              />
             </div>
           ))}
         </div>
@@ -103,12 +108,18 @@ export default function Includes({
           <table className="w-full text-left border-collapse">
             <thead>
               <tr className="bg-linear-to-r from-gray-100 to-gray-200">
-                <th className="p-3 font-semibold border-r border-gray-300">
-                  {table?.label_1 || "Field Name"}
-                </th>
-                <th className="p-3 font-semibold">
-                  {table?.label_2 || "Detail"}
-                </th>
+                <th
+                  className="p-3 font-semibold border-r border-gray-300"
+                  dangerouslySetInnerHTML={{
+                    __html: table?.label_1 || "Field Name",
+                  }}
+                />
+                <th
+                  className="p-3 font-semibold"
+                  dangerouslySetInnerHTML={{
+                    __html: table?.label_2 || "Detail",
+                  }}
+                />
               </tr>
             </thead>
 
@@ -121,12 +132,18 @@ export default function Includes({
                         idx % 2 === 0 ? "bg-white" : "bg-gray-50"
                       }
                     >
-                      <td className="p-3 font-medium border-r border-gray-300">
-                        {row.label_1_text}
-                      </td>
-                      <td className="p-3">
-                        {row.label_2__text}
-                      </td>
+                      <td
+                        className="p-3 font-medium border-r border-gray-300"
+                        dangerouslySetInnerHTML={{
+                          __html: row.label_1_text,
+                        }}
+                      />
+                      <td
+                        className="p-3"
+                        dangerouslySetInnerHTML={{
+                          __html: row.label_2__text,
+                        }}
+                      />
                     </tr>
                   ))
                 : [
@@ -149,10 +166,14 @@ export default function Includes({
                         idx % 2 === 0 ? "bg-white" : "bg-gray-50"
                       }
                     >
-                      <td className="p-3 font-medium border-r border-gray-300">
-                        {field}
-                      </td>
-                      <td className="p-3">{detail}</td>
+                      <td
+                        className="p-3 font-medium border-r border-gray-300"
+                        dangerouslySetInnerHTML={{ __html: field }}
+                      />
+                      <td
+                        className="p-3"
+                        dangerouslySetInnerHTML={{ __html: detail }}
+                      />
                     </tr>
                   ))}
             </tbody>
