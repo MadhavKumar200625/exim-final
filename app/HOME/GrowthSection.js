@@ -12,24 +12,11 @@ const GrowthSection = () => {
           </h2>
 
           <p className="text-md md:text-lg text-gradient text-black bg-clip-text mb-4">
-            Get Meaningful Industrial Insights with Exim GTIS (Global Trade Information Service)
+            Get Meaningful Industrial Insights with Exim GTIS (Global Trade Information Service).
+We are amongst the top global <span className="font-bold">import and export data</span> providers and also the best market intelligence platform that helps identify the key performance factors for your company and streamline your workflow. Find the latest market trends, most traded HS codes, countries, ports, competitors, and top import-export companies. Mitigate financial risk and reach out to the verified buyers and suppliers. Double your sales and maximize revenue with our market research platform, which provides HS codes, country-wise trade data, <a href="/global-ports" className="text-blue-600 hover:underline">Ports Data</a>, and top import-export companies. Mitigate financial risk and reach out to the verified buyers and suppliers. Double your sales and maximize revenue with our market research platform.
           </p>
 
-          <p className="text-md text-black mb-6">
-            <span className="font-semibold text-black">Exim GTIS</span> (global trade information service) is amongst the top global import export trade data providers and also the best platform for market intelligence that helps identify the key performance factors for your company and streamline your workflow. Find the latest market trends, most traded HS codes, countries, ports, competitors, and top import-export companies. Mitigate financial risk and reach out to the verified buyers and suppliers. Double your sales and generate the maximum revenue through our market research platform.
-
-            <a
-              href="/global-hs-code-list"
-              
-              className="text-blue-500 font-semibold hover:underline"
-            >
-              {" "}HS codes
-            </a>
-            , countries, ports, competitors and top import-export companies.
-            Mitigate financial risk and reach out to the verified buyers and
-            suppliers. Double your sales and generate the maximum revenue
-            through our market research platform.
-          </p>
+          
 
           <div className="flex flex-wrap gap-4">
             {/* Explore Button */}

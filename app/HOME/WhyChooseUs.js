@@ -7,17 +7,17 @@ import { useInView } from "react-intersection-observer";
 const cardData = [
   {
     title: "Comprehensive Guide",
-    desc: "Get in-depth knowledge of existing market channels and consumer preferences around the globe. We provide a complete, comprehensive guide to the global trade market that helps you to align your business with international trade with the help of our Global Import Export Trade Data.",
+    desc: "Get in-depth knowledge of existing market channels and consumer preferences around the globe. We provide a complete, comprehensive guide to the global <span class=\"font-bold\">import export database</span> that helps you to align your business with international trade with the help of our Global <span class=\"font-bold\">Import and Export Data</span>.",
     image: "/comprehensive-guide.webp",
   },
   {
     title: "Explore Foreign Market",
-    desc: "With our Global Export Import Trade Data, find overseas customers and discover the best match that adds better economic value to your product. Simplified and genuine trade data pave the way to successful overseas trade for your business.",
+    desc: "With our Global <span class=\"font-bold\">Import Export Data</span>, find overseas customers and discover the best match that adds better economic value to your product. Simplified and genuine <span class=\"font-bold\">importers data</span> and <span class=\"font-bold\">exporters data</span> pave the way to successful overseas trade for your business.",
     image: "/explore-foreign-market.webp",
   },
   {
     title: "Build Valuable Partnership",
-    desc: "With our fine-tailored global import export trade data, assess your readiness for the target market and grow with your business. Understand the key aspects of international trade and associate with valuable industry peers.",
+    desc: "With our fine-tailored global <span class=\"font-bold\">import and export data</span>, assess your readiness for the target market and grow with your business. Understand the key aspects of international trade and associate with valuable industry peers.",
     image: "/build-valuable-partnership.webp",
   },
 ];
@@ -46,7 +46,7 @@ const Card = ({ title, desc, image }) => {
           <h3 className="text-2xl font-bold text-black mb-4">
             {title}
           </h3>
-          <p className="text-black text-md leading-relaxed">{desc}</p>
+          <p className="text-black text-md leading-relaxed" dangerouslySetInnerHTML={{ __html: desc }} />
         </div>
         <div className="absolute -inset-0.5 rounded-3xl"></div>
       </div>
@@ -94,7 +94,7 @@ const Card = ({ title, desc, image }) => {
         <h3 className="text-2xl font-bold text-black mb-4 group-hover:underline">
           {title}
         </h3>
-        <p className="text-black text-md leading-relaxed">{desc}</p>
+        <p className="text-black text-md leading-relaxed" dangerouslySetInnerHTML={{ __html: desc }} />
       </div>
 
       <div className="absolute -inset-0.5 rounded-3xl duration-400"></div>

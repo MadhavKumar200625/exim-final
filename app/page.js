@@ -12,6 +12,10 @@ import HomeClientsClient from "./HOME/HomeClientsClient";
 import HomeTestimonialsClient from "./HOME/HomeTestimonialSection";
 import Head from "next/head";
 
+export const metadata = {
+  title: "Import Export Database | Global Import Export Trade Data Provider",
+  description:"Access verified global import and export data and shipment records with Exim GTIS. Find authentic buyers, track competitors, and perform HS code lookups today."};
+
 export default function Home() {
   return (
     <>
