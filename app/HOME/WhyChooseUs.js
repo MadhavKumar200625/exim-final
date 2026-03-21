@@ -7,17 +7,17 @@ import { useInView } from "react-intersection-observer";
 const cardData = [
   {
     title: "Comprehensive Guide",
-    desc: "Get in-depth knowledge of existing market channels and consumer preferences around the globe. We provide a complete, comprehensive guide to the global <span class=\"font-bold\">import export database</span> that helps you to align your business with international trade with the help of our Global <span class=\"font-bold\">Import and Export Data</span>.",
+    desc: "Get in-depth knowledge of existing market channels and consumer preferences around the globe. We provide a complete, comprehensive guide to the global import export database that helps you to align your business with international trade with the help of our Global Import and Export Data.",
     image: "/comprehensive-guide.webp",
   },
   {
     title: "Explore Foreign Market",
-    desc: "With our Global <span class=\"font-bold\">Import Export Data</span>, find overseas customers and discover the best match that adds better economic value to your product. Simplified and genuine <span class=\"font-bold\">importers data</span> and <span class=\"font-bold\">exporters data</span> pave the way to successful overseas trade for your business.",
+    desc: "With our Global Import Export Data, find overseas customers and discover the best match that adds better economic value to your product. Simplified and genuine importers data and exporters data pave the way to successful overseas trade for your business.",
     image: "/explore-foreign-market.webp",
   },
   {
     title: "Build Valuable Partnership",
-    desc: "With our fine-tailored global <span class=\"font-bold\">import and export data</span>, assess your readiness for the target market and grow with your business. Understand the key aspects of international trade and associate with valuable industry peers.",
+    desc: "With our fine-tailored global import and export data, assess your readiness for the target market and grow with your business. Understand the key aspects of international trade and associate with valuable industry peers.",
     image: "/build-valuable-partnership.webp",
   },
 ];
@@ -107,7 +107,7 @@ const WhyChooseUs = () => {
     <section className="relative bg-linear-to-b from-blue-50 via-white to-blue-50 py-14 px-6 overflow-hidden">
       <div className="text-center mb-16">
         <h2 className="text-2xl md:text-3xl font-extrabold text-black">
-          Why Choose Us
+          Choose Exim Trade Data - Best Import and Export Data Provider in India
         </h2>
       </div>
 

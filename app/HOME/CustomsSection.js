@@ -26,7 +26,7 @@ const CustomsSection = () => {
             Actionable Insights
           </h3>
           <p className="text-gray-600 text-md text-center">
-            We combine the years of accumulated expertise of our data scientists and business intelligence tools to discover meaningful insights from the global <span className="font-bold">import export database</span> that also includes <a href="/global-trade-database" className="text-blue-600 hover:underline">country-wise import and export data</a>. All categories to make data-driven current market opportunities.
+            We combine the years of accumulated expertise of our data scientists and business intelligence tools to discover meaningful insights from the global import export database that also includes <a href="/import-export-data-country-wise" className="text-blue-600 font-bold hover:underline">country-wise import and export data</a>. All categories to make data-driven current market opportunities.
           </p>
         </div>
 
@@ -43,7 +43,7 @@ const CustomsSection = () => {
             Know Your Market
           </h3>
           <p className="text-gray-600 text-md text-center">
-            For any business, the main challenge is to find buyers for their products. Our well-researched global <span className="font-bold">import export database</span> helps you to evaluate and develop your marketing strategy to grab new buyers in the foreign market.
+            For any business, the main challenge is to find buyers for their products. Our well-researched global import export database helps you to evaluate and develop your marketing strategy to grab new buyers in the foreign market.
           </p>
         </div>
 
@@ -61,7 +61,7 @@ const CustomsSection = () => {
             Streamline Your Business
           </h3>
           <p className="text-gray-600 text-md text-center">
-            Streamline all your trading operations and pave the way for top-line growth for your business. With a precise overview of every business activity, discover the inefficient processes and optimize your business operation through our global <span className="font-bold">importers data and exporters data</span>.
+            Streamline all your trading operations and pave the way for top-line growth for your business. With a precise overview of every business activity, discover the inefficient processes and optimize your business operation through our global importers data and exporters data.
           </p>
         </div>
       </div>

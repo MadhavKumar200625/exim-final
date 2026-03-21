@@ -14,16 +14,16 @@ export default function Hero() {
 
         {/* Text Section */}
         <div className="flex-1 text-center lg:text-left">
-          <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 leading-tight mb-4">
-            Find <br className="hidden md:block" />
-            <span className="text-black">Global Buyers & Sellers</span>
+          <h1 className="text-3xl md:text-4xl font-extrabold text-black leading-tight mb-4">
+             Best Global Import and Export Data Provider
+
           </h1>
 
           <p className="text-md md:text-lg text-black mb-8">
-            Looking to grow your international import-export trade business? Access verified global <span className="font-bold">import and export data</span> to discover authentic buyers and sellers from over 200+ countries. Our platform delivers comprehensive customs shipment records, including detailed shipment records insights, and helps you connect with real trading partners through a world-class trade intelligence service.</p>
+            Looking to grow your international import-export trade business? Access verified global import and export data to discover authentic buyers and sellers from over 200+ countries. Our platform delivers comprehensive customs shipment records, including detailed shipment records insights, and helps you connect with real trading partners through a world-class trade intelligence service.</p>
 
           <p className="text-md md:text-lg text-black mb-8">
-           Our Global <span className="font-bold">Import Export Database</span> provides essential international trade statistics on who is trading what, where, and how much. It includes detailed information on buyers (importers) and sellers (exporters) such as company names, trade volumes, <a href="/global-hs-code-list" className="text-blue-600 hover:underline">HSN Code List</a>, product categories, shipment values, origin or destination countries, ports used, and transaction frequency.
+           Our Global Import Export Database provides essential international trade statistics on who is trading what, where, and how much. It includes detailed information on buyers (importers) and sellers (exporters) such as company names, trade volumes, <a href="/global-hs-code-list" className="text-blue-600 font-bold hover:underline">HSN Code List</a>, product categories, shipment values, origin or destination countries, ports used, and transaction frequency.
 </p>
 
           <div className="flex justify-center lg:justify-start">
