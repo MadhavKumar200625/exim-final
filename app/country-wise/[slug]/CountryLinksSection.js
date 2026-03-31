@@ -3,13 +3,61 @@ import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
 /* ===== STATIC DATA ===== */
-const continents = {
-  ASIA: ["india", "china", "japan", "turkey", "south-korea"],
-  AFRICA: ["chad", "ghana", "kenya", "tanzania", "south-africa"],
-  EUROPE: ["uk", "spain", "vietnam", "netherlands", "germany"],
-  AMERICA: ["us", "mexico", "argentina", "canada", "brazil"],
-  OCEANIA: ["fiji", "australia", "new-zealand"],
-};
+const defaultContinents = [
+  {
+    id: "asia",
+    name: "Asia",
+    countries: [
+      { name: "India", code: "in", link: "/india-import-data" },
+      { name: "China", code: "cn", link: "/china-import-data" },
+      { name: "Japan", code: "jp", link: "/country-wise-japan-import-data" },
+      { name: "Turkey", code: "tr", link: "/turkey-import-data" },
+      { name: "South Korea", code: "kr", link: "/country-wise-korea-import-data" },
+    ],
+  },
+  {
+    id: "africa",
+    name: "Africa",
+    countries: [
+      { name: "Chad", code: "td", link: "/chad-import-data" },
+      { name: "Ghana", code: "gh", link: "/ghana-import-data" },
+      { name: "Kenya", code: "ke", link: "/kenya-import-data" },
+      { name: "Tanzania", code: "tz", link: "/tanzania-import-data" },
+      { name: "South Africa", code: "za", link: "/country-wise-south-africa-import-data" },
+    ],
+  },
+  {
+    id: "europe",
+    name: "Europe",
+    countries: [
+      { name: "Italy", code: "it", link: "/country-wise-italy-import-data" },
+      { name: "Portugal", code: "pt", link: "/country-wise-portugal-import-data" },
+      { name: "Spain", code: "es", link: "/country-wise-spain-import-data" },
+      { name: "Serbia", code: "rs", link: "/country-wise-serbia-import-data" },
+      { name: "United Kingdom", code: "gb", link: "/country-wise-uk-import-data" },
+    ],
+  },
+  {
+    id: "america",
+    name: "America",
+    countries: [
+      { name: "Argentina", code: "ar", link: "/argentina-import-data" },
+      { name: "Brazil", code: "br", link: "/brazil-import-data" },
+      { name: "Canada", code: "ca", link: "/country-wise-canada-import-data" },
+      { name: "Mexico", code: "mx", link: "/mexico-import-data" },
+      { name: "USA", code: "us", link: "/us-import-export-data" },
+    ],
+  },
+  {
+    id: "oceania",
+    name: "Oceania",
+    countries: [
+      { name: "Australia", code: "au", link: "/australia-import-data" },
+      { name: "Fiji", code: "fj", link: "/country-wise-fiji-import-data" },
+      { name: "New Zealand", code: "nz", link: "/country-wise-new-zealand-import-data" },
+    ],
+  },
+];
 
 /* ===== SLUG → ISO CODE MAP (REQUIRED) ===== */
 const flagCodes = {
@@ -101,41 +149,36 @@ export default function CountrySection({ data }) {
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-5 gap-8 border-t border-gray-200 pt-8">
-            {Object.entries(continents).map(([continent, countries]) => (
-              <div
-                key={continent}
-                className="bg-blue-100 rounded-xl p-5 shadow text-center"
-              >
-                <h3
-                  className="font-semibold text-lg mb-4"
-                  dangerouslySetInnerHTML={{ __html: continent }}
-                />
+            {defaultContinents.map((continent) => (
+  <div
+    key={continent.id}
+    className="bg-blue-100 rounded-xl p-5 shadow text-center"
+  >
+    <h3 className="font-semibold text-lg mb-4">
+      {continent.name}
+    </h3>
 
-                <ul className="space-y-3">
-                  {countries.map((slug) => (
-                    <li key={slug}>
-                      <a
-                        href={`/country-wise-${slug}-import-data`}
-                        className="flex items-center gap-3 hover:translate-x-1 transition-transform"
-                      >
-                        <img
-                          src={`https://flagcdn.com/w40/${flagCodes[slug]}.png`}
-                          alt={`${formatName(slug)} import export data`}
-                          width={24}
-                          height={16}
-                          loading="lazy"
-                        />
-                        <span
-                          dangerouslySetInnerHTML={{
-                            __html: formatName(slug),
-                          }}
-                        />
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+    <ul className="space-y-3">
+      {continent.countries.map((country) => (
+        <li key={country.name}>
+          <a
+            href={country.link}
+            className="flex items-center gap-3 hover:translate-x-1 transition-transform"
+          >
+            <img
+              src={`https://flagcdn.com/w40/${country.code}.png`}
+              alt={`${country.name} import export data`}
+              width={24}
+              height={16}
+              loading="lazy"
+            />
+            <span>{country.name}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+))}
           </div>
         )}
 
