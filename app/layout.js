@@ -167,7 +167,7 @@ export default function RootLayout({ children }) {
         <Header />
         <main>{children}</main>
         <ScrollArrows />
-        <EximSmartBot></EximSmartBot>
+        {/* <EximSmartBot></EximSmartBot> */}
         <Footer />
       </body>
     </html>
