@@ -545,18 +545,18 @@ const countries = Object.entries(countryCodes).filter(([name]) =>
       </div>
 
       {/* JivoChat – humans only */}
-      {!isBot && (
+      {/* {!isBot && (
         <Script
           src="//code.jivosite.com/widget/7KuVu05nSB"
           strategy="lazyOnload"
         />
-      )}
+      )} */}
 
       {/* WhatsApp Float */}
       <a
         href="https://wa.me/918826195070?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20your%20services."
-        className={`fixed bottom-55 ${
-          scrolled ? "right-4" : "right-1"
+        className={`fixed bottom-65 ${
+          scrolled ? "right-5" : "right-1"
         } bg-green-500 text-white p-4 rounded-full shadow-lg transition-all z-50`}
         target="_blank"
         rel="noopener noreferrer"

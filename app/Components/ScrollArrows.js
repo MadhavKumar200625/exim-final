@@ -31,7 +31,7 @@ export default function ScrollArrows() {
     });
 
   return (
-    <div className="fixed right-4 bottom-24 z-40 flex flex-col gap-3 md:right-6 md:bottom-24">
+    <div className="fixed right-4 bottom-32 z-40 flex flex-col gap-3 md:right-6 md:bottom-32">
       {/* ⬆️ TOP */}
       {!atTop && (
         <ArrowButton className="cursor-pointer" onClick={scrollToTop} label="Scroll to top">
