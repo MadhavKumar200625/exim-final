@@ -27,7 +27,7 @@ const slugify = (str = "") =>
 --------------------------------------------------- */
 export default function Countries() {
   const continents = [...new Set(countries.map(c => c.continent))];
-  const [activeContinent, setActiveContinent] = useState(continents[0]);
+  const [activeContinent, setActiveContinent] = useState(sessionStorage.getItem("activeContinent") || continents[0]);
 
   const filteredCountries = countries.filter(
     c => c.continent === activeContinent
@@ -50,7 +50,11 @@ export default function Countries() {
           <button
             key={continent}
             type="button"
-            onClick={() => setActiveContinent(continent)}
+            onClick={() => {
+              sessionStorage.setItem("activeContinent", continent);
+              setActiveContinent(continent)}
+            
+            }
             className={`px-4 py-2 rounded-lg font-medium border ${
               activeContinent === continent
                 ? "bg-blue-600 text-white border-blue-600"
