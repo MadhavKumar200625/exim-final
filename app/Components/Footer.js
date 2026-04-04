@@ -545,12 +545,12 @@ const countries = Object.entries(countryCodes).filter(([name]) =>
       </div>
 
       {/* JivoChat – humans only */}
-      {!isBot && (
+      {/* {!isBot && (
         <Script
           src="//code.jivosite.com/widget/7KuVu05nSB"
           strategy="lazyOnload"
         />
-      )}
+      )} */}
 
       {/* WhatsApp Float */}
       <a
