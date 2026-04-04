@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { countries } from "@/lib/CountriesPageData";
@@ -27,7 +27,14 @@ const slugify = (str = "") =>
 --------------------------------------------------- */
 export default function Countries() {
   const continents = [...new Set(countries.map(c => c.continent))];
-  const [activeContinent, setActiveContinent] = useState(sessionStorage.getItem("activeContinent") || continents[0]);
+  const [activeContinent, setActiveContinent] = useState(continents[0]);
+
+  useEffect(() => {
+  const stored = sessionStorage.getItem("activeContinent");
+  if (stored) {
+    setActiveContinent(stored);
+  }
+}, []);
 
   const filteredCountries = countries.filter(
     c => c.continent === activeContinent
