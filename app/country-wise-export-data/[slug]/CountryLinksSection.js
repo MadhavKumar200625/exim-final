@@ -8,7 +8,7 @@ const defaultContinents = [
     id: "asia",
     name: "Asia",
     countries: [
-      { name: "India", code: "in", link: "/india-import-data" },
+      // { name: "India", code: "in", link: "/india-import-data" },
       { name: "China", code: "cn", link: "/china-import-data" },
       { name: "Japan", code: "jp", link: "/country-wise-japan-import-data" },
       { name: "Turkey", code: "tr", link: "/turkey-import-data" },
