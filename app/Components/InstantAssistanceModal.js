@@ -78,7 +78,7 @@ const countryCodes = {
   Honduras: { code: "+504", flag: "https://flagcdn.com/w40/hn.png" },
   Hungary: { code: "+36", flag: "https://flagcdn.com/w40/hu.png" },
   Iceland: { code: "+354", flag: "https://flagcdn.com/w40/is.png" },
-  India: { code: "+91", flag: "https://flagcdn.com/w40/in.png" },
+  // India: { code: "+91", flag: "https://flagcdn.com/w40/in.png" },
   Indonesia: { code: "+62", flag: "https://flagcdn.com/w40/id.png" },
   Iran: { code: "+98", flag: "https://flagcdn.com/w40/ir.png" },
   Iraq: { code: "+964", flag: "https://flagcdn.com/w40/iq.png" },
@@ -174,7 +174,7 @@ const countryCodes = {
 
 export default function InstantAssistanceModal({ open, onClose }) {
   const [loading, setLoading] = useState(false);
-  const [countryCode, setCountryCode] = useState("+91");
+  const [countryCode, setCountryCode] = useState("+84");
   const [showCodeDropdown, setShowCodeDropdown] = useState(false);
   const [codeSearch, setCodeSearch] = useState("");
   const [errors, setErrors] = useState({});

@@ -13,7 +13,7 @@ const Products = ({
   products = [],
   totalValues = 0,
    countries = [
-  { name: "India", code: "in" },
+  // { name: "India", code: "in" },
   { name: "Bangladesh", code: "bd" },
   { name: "Brazil", code: "br" },
   { name: "Indonesia", code: "id" },

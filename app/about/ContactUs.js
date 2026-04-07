@@ -82,7 +82,7 @@ const countryCodes = {
   Honduras: { code: "+504", flag: "https://flagcdn.com/w40/hn.png" },
   Hungary: { code: "+36", flag: "https://flagcdn.com/w40/hu.png" },
   Iceland: { code: "+354", flag: "https://flagcdn.com/w40/is.png" },
-  India: { code: "+91", flag: "https://flagcdn.com/w40/in.png" },
+  // // India: { code: "+91", flag: "https://flagcdn.com/w40/in.png" },
   Indonesia: { code: "+62", flag: "https://flagcdn.com/w40/id.png" },
   Iran: { code: "+98", flag: "https://flagcdn.com/w40/ir.png" },
   Iraq: { code: "+964", flag: "https://flagcdn.com/w40/iq.png" },
@@ -184,7 +184,7 @@ export default function ContactUs() {
   const [message, setMessage] = useState("");
   const [country, setCountry] = useState("");
   const [selectedCountry, setSelectedCountry] = useState(null);
-  const [selectedCountryCode, setSelectedCountryCode] = useState("India");
+  const [selectedCountryCode, setSelectedCountryCode] = useState("Vietnam");
   const [showDropdown, setShowDropdown] = useState(false);
   const [countryQuery, setCountryQuery] = useState("");
   const [loading, setLoading] = useState(false);

@@ -40,7 +40,7 @@ const countryCodes = {
   Cambodia: { code: "+855", flag: "https://flagcdn.com/w40/kh.png" },
   Cameroon: { code: "+237", flag: "https://flagcdn.com/w40/cm.png" },
   Canada: { code: "+1", flag: "https://flagcdn.com/w40/ca.png" },
-  India: { code: "+91", flag: "https://flagcdn.com/w40/in.png" },
+  // India: { code: "+91", flag: "https://flagcdn.com/w40/in.png" },
   United_States: { code: "+1", flag: "https://flagcdn.com/w40/us.png" },
   United_Kingdom: { code: "+44", flag: "https://flagcdn.com/w40/gb.png" },
 };
@@ -48,14 +48,14 @@ const countryCodes = {
 
 
 const ContactInfo = () => {
-  const [country, setCountry] = useState("India");
+  const [country, setCountry] = useState("Vietnam");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [company, setCompany] = useState("");
   const [mobile, setMobile] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
-  const [selectedCountry, setSelectedCountry] = useState("India");
+  const [selectedCountry, setSelectedCountry] = useState("Vietnam");
   const [showDropdown, setShowDropdown] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -119,8 +119,8 @@ const ContactInfo = () => {
       setCompany("");
       setMobile("");
       setMessage("");
-      setCountry("India");
-      setSelectedCountry("India");
+      setCountry("Vietnam");
+      setSelectedCountry("Vietnam");
       setSearchQuery("");
     }
   };
@@ -139,18 +139,18 @@ const ContactInfo = () => {
         <div className="bg-white/70 border border-gray-200 p-8 shadow-2xl">
           <h2 className="text-2xl font-bold text-black mb-4">Support</h2>
           <p className="text-black text-lg">
-            <p className="mt-5">
+            {/* <p className="mt-5">
               <span className="text-xl text-blue-600 font-bold">
                 Support & Other Enquiries:
               </span>{" "}
               8826195070
-            </p>
-            <p className="mt-5">
+            </p> */}
+            {/* <p className="mt-5">
               <span className="text-xl text-blue-600 font-bold">
                 Partner with Us:
               </span>{" "}
               9625812393
-            </p>
+            </p> */}
             <p className="mt-5">
               <span className="text-xl text-blue-600 font-bold">Mail us:</span>{" "}
               info@eximtradedata.com
