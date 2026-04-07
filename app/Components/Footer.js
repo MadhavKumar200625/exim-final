@@ -373,7 +373,7 @@ const countries = Object.entries(countryCodes).filter(([name]) =>
             Shpere Eximia Research Pvt Ltd <br />
             G-232, Noida Sector-63, Uttar Pradesh - 201301, India
             <br />
-            <span className="block mt-2">+91-9625812393</span>
+            {/* <span className="block mt-2">+91-9625812393</span> */}
             <a
               href="mailto:Info@eximtradedata.com"
               
