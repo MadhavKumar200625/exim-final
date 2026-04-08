@@ -38,10 +38,10 @@ export default function ArmeniaSections() {
           {/* IMAGE */}
          <motion.div
   {...fadeUp}
-  className="relative w-full h-[380px] rounded-2xl border border-gray-200 bg-gray-50 overflow-hidden"
+  className="relative w-full  rounded-2xl border border-gray-200 bg-gray-50 overflow-hidden"
 >
   <img
-    src="/search-data-results/search-global-export-import-trade-data.webp"
+    src="/search-data-results/sec2.jpg"
     alt=""
     className="w-full h-full object-cover"
   />
@@ -53,17 +53,19 @@ export default function ArmeniaSections() {
 
       {/* ================= SECTION 2 ================= */}
       <section className="py-5 px-6 border-b border-gray-100">
-        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+        <div className=" px-20 mx-auto grid lg:grid-cols-2 gap-16 items-center">
 
           {/* IMAGE */}
-          <motion.div
-            {...fadeUp}
-            className="relative w-full h-[380px] rounded-2xl border border-gray-200 bg-gray-50 flex items-center justify-center order-2 lg:order-1"
-          >
-            <span className="text-black text-sm">
-              Image Placeholder
-            </span>
-          </motion.div>
+         <motion.div
+  {...fadeUp}
+  className="w-full  rounded-2xl border border-gray-200 bg-gray-50 overflow-hidden flex items-center justify-center order-2 lg:order-1"
+>
+  <img
+    src="/search-data-results/common.jpg"
+    alt=""
+    className="max-w-full max-h-full object-contain"
+  />
+</motion.div>
 
           {/* TEXT */}
           <motion.div {...fadeUp} className="order-1 lg:order-2">
