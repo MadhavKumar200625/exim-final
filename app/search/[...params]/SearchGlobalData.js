@@ -36,14 +36,16 @@ export default function ArmeniaSections() {
           </motion.div>
 
           {/* IMAGE */}
-          <motion.div
-            {...fadeUp}
-            className="relative w-full h-[380px] rounded-2xl border border-gray-200 bg-gray-50 flex items-center justify-center"
-          >
-            <span className="text-black text-sm">
-              Image Placeholder
-            </span>
-          </motion.div>
+         <motion.div
+  {...fadeUp}
+  className="relative w-full h-[380px] rounded-2xl border border-gray-200 bg-gray-50 overflow-hidden"
+>
+  <img
+    src="/search-data-results/search-global-export-import-trade-data.webp"
+    alt=""
+    className="w-full h-full object-cover"
+  />
+</motion.div>
 
         </div>
       </section>
