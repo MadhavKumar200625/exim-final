@@ -403,7 +403,7 @@ export default async function Page({ params }) {
         country = {query.country}
       />
       <SearchGlobalData data={data.section5} />
-      <ContentImportExport></ContentImportExport>
+      {/* <ContentImportExport></ContentImportExport> */}
     </main>
   );
 }
