@@ -7,6 +7,7 @@ import ShowFilters from "./ShowFilters";
 import MainSection from "./MainSection";
 import SearchGlobalData from "./SearchGlobalData";
 import { getSearchData } from "@/lib/getSearchData";
+import ContentImportExport from "./ContentImportExport";
 
 /* -------------------------------------------------
    Helpers (same logic as before)
@@ -402,6 +403,7 @@ export default async function Page({ params }) {
         country = {query.country}
       />
       <SearchGlobalData data={data.section5} />
+      <ContentImportExport></ContentImportExport>
     </main>
   );
 }
