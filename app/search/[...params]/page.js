@@ -390,6 +390,47 @@ export default async function Page({ params }) {
     },
   };
 
+  async function getData(country) {
+  const res = await fetch(
+    `https://content-admin.eximtradedata.com/api/search-components?filters[country_name][$eqi]=${country}&fields[0]=import_export&fields[1]=import&fields[2]=export`,
+    {
+      headers: {
+      Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
+    },
+
+    }
+  );
+
+  const json = await res.json();
+  // console.log("Content API response:", json); // Debug log
+  return json?.data[0]|| null;
+}
+
+// helper to split heading + paragraphs
+function parseContent(text) {
+  if (!text) return { heading: "", paragraphs: [] };
+
+  const parts = text.split("\n").filter(Boolean);
+
+  return {
+    heading: parts[0] || "",
+    paragraphs: parts.slice(1),
+  };
+}
+
+
+  const d = await getData(query.country);
+
+  // SECTION 1 → always import_export
+  const section1 = parseContent(d?.import_export);
+
+
+  // SECTION 2 → depends on type
+  const section2Raw =
+    query.type === "export" ? d?.export : d?.import;
+
+  const section2 = parseContent(section2Raw);
+
   /* -------------------------------------------------
      Render SSR HTML
   -------------------------------------------------- */
@@ -403,7 +444,10 @@ export default async function Page({ params }) {
         country = {query.country}
       />
       <SearchGlobalData data={data.section5} />
-      {/* <ContentImportExport></ContentImportExport> */}
+      <ContentImportExport
+      section1={section1}
+      section2={section2}
+    />
     </main>
   );
 }
