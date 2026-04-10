@@ -444,10 +444,10 @@ function parseContent(text) {
         country = {query.country}
       />
       <SearchGlobalData data={data.section5} />
-      <ContentImportExport
+      {/* <ContentImportExport
       section1={section1}
       section2={section2}
-    />
+    /> */}
     </main>
   );
 }

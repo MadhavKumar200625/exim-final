@@ -66,11 +66,7 @@ const Page = () => {
         </h2>
 
         <p className="text-black text-lg mb-6">
-          We are dedicated to providing our customers with genuine and precise
-          global import export data. If you find inaccuracies in our global
-          trade reports within <span className="font-semibold">48 hours</span>,
-          we&apos;ll fix them and process your refund—whatever your payment
-          mode—within <span className="font-semibold">48 hours</span>!
+          We are dedicated to providing our customers with genuine and precise global import export data. You can only claim refund on the same day of payment. Once we have delivered the data, no refund is possible. Before making the payment, make sure to read the refund policy.
         </p>
 
         <p className="text-black text-lg mb-6">
