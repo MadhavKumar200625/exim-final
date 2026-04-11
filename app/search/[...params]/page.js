@@ -411,11 +411,17 @@ function parseContent(text) {
   if (!text) return { heading: "", paragraphs: [] };
 
   const parts = text.split("\n").filter(Boolean);
-
-  return {
+  let r = {
     heading: parts[0] || "",
     paragraphs: parts.slice(1),
   };
+  
+  if (r.heading.trim() != "" && r.paragraphs.length > 0) {
+    
+    return r
+  }
+
+  return null
 }
 
 
@@ -423,6 +429,7 @@ function parseContent(text) {
 
   // SECTION 1 → always import_export
   const section1 = parseContent(d?.import_export);
+
 
 
   // SECTION 2 → depends on type
@@ -444,10 +451,15 @@ function parseContent(text) {
         country = {query.country}
       />
       <SearchGlobalData data={data.section5} />
-      {/* <ContentImportExport
+      {
+        
+        d?.import_export !=undefined  &&
+        <ContentImportExport
       section1={section1}
       section2={section2}
-    /> */}
+    />
+      }
+      
     </main>
   );
 }
