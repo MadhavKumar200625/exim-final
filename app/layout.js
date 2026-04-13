@@ -115,7 +115,7 @@ export default function RootLayout({ children }) {
                 "Exim Trade Data is a global import-export data provider offering customs data, analytics, and international trade intelligence across 200+ countries.",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "G-232, G Block, Sector 63",
+                // "streetAddress": "G-232, G Block, Sector 63",
                 "addressLocality": "Noida",
                 "addressRegion": "Uttar Pradesh",
                 "postalCode": "201301",

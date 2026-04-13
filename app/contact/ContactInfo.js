@@ -164,8 +164,8 @@ const ContactInfo = () => {
           <p>
             Shpere Eximia Research Pvt Ltd
             <br />
-            G-232 , Noida Sector-63
-            <br /> Uttar Pradesh - 201301, India
+            {/* G-232 , Noida Sector-63
+            <br /> Uttar Pradesh - 201301, India */}
           </p>
         </div>
       </div>

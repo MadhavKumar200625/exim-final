@@ -370,8 +370,8 @@ const countries = Object.entries(countryCodes).filter(([name]) =>
           </form>
 
           <div className="text-lg text-black mt-4">
-            Shpere Eximia Research Pvt Ltd <br />
-            G-232, Noida Sector-63, Uttar Pradesh - 201301, India
+            {/* Shpere Eximia Research Pvt Ltd <br />
+            G-232, Noida Sector-63, Uttar Pradesh - 201301, India */}
             <br />
             {/* <span className="block mt-2">+91-9625812393</span> */}
             <a
