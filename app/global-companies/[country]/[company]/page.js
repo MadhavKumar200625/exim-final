@@ -6,6 +6,7 @@ import CompanyView from "./CompanyView";
 import { getCompanyData } from "@/lib/companies/getCompanyData";
 import CompanyRemovalCTA from "./CompanyRemovalCta";
 import CompanyNotFound from "./CompanyNotFound";
+import { getContinent } from "@/lib/continentMap";
 
 export async function generateMetadata({ params }) {
   params = await params
@@ -47,6 +48,7 @@ export default async function Page({ params }) {
       </main>
     );
   }
+  const continent = getContinent(country);
 
   return (
     <main>
@@ -55,6 +57,7 @@ export default async function Page({ params }) {
         companyName={data.companyName}
         data={data}
         country={country}
+        continent={continent}
       />
       <CompanyRemovalCTA country={country} company={company} />
     </main>
