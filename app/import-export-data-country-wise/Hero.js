@@ -64,7 +64,7 @@ export default function Hero() {
         Our Exim Global Trade Intelligence System will help you find verified importers and exporters
         from over 200+ countries. Align your business model according to the latest market trends,
         price forecasts, product demand, industry wise insights and various KPI indicators provided
-        in our platform. Explore top markets like China, USA, India, Turkey, Australia and European
+        in our platform. Explore top markets like China, USA, Turkey, Australia and European
         countries and find their top imports, exports, top trading markets, companies, ports volume.
       </p>
 

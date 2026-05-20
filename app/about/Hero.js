@@ -40,7 +40,7 @@ const HeroSection = () => {
           <p className="text-base md:text-lg text-black leading-relaxed">
             We are capable of delivering the most accurate systematic global
             export-import statistics that help you to analyze ongoing trade
-            inflow and suitable demand positions across India and around the
+            inflow and suitable demand positions around the
             globe.
           </p>
         </div>

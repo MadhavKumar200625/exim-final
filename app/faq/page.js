@@ -531,18 +531,18 @@ const GlobalMarketFacts = [
     question: "16. Which country is best to export?",
     answer: "Prior market research is very important in identifying the right market and target audience. Exim Trade Data helps you in thorough market research and brings the potential business leads through their quality import and export data."
   },
-  {
-    question: "17. What is India&apos;s main export?",
-    answer: "India&apos;s main exports include Aluminium, Zinc Alloys, Diamond, Medicines, Mobile Phones, and Frozen Shrimps."
-  },
-  {
-    question: "18. How to import clothes from Thailand to India?",
-    answer: "There are certain documents required while importing clothes from Thailand to India such as Customs Entry Document, Customs bond, Customs declarations, Import Licence, Letter of Credit, Packing List, Certificate of Origin, Insurance Certificate, Certificates of Inspection and many more. You can consult us at info@eximtradedata.com for more detailed information."
-  },
-  {
-    question: "19. How do I get India imports products list?",
-    answer: "Exim Trade Data provides the country wise global product list with detailed shipment data. To get India Imports Products List, please kindly visit India Imports Page."
-  }
+  // {
+  //   question: "17. What is India&apos;s main export?",
+  //   answer: "India&apos;s main exports include Aluminium, Zinc Alloys, Diamond, Medicines, Mobile Phones, and Frozen Shrimps."
+  // },
+  // {
+  //   question: "18. How to import clothes from Thailand to India?",
+  //   answer: "There are certain documents required while importing clothes from Thailand to India such as Customs Entry Document, Customs bond, Customs declarations, Import Licence, Letter of Credit, Packing List, Certificate of Origin, Insurance Certificate, Certificates of Inspection and many more. You can consult us at info@eximtradedata.com for more detailed information."
+  // },
+  // {
+  //   question: "19. How do I get India imports products list?",
+  //   answer: "Exim Trade Data provides the country wise global product list with detailed shipment data. To get India Imports Products List, please kindly visit India Imports Page."
+  // }
 ];
 
 const PricingPlans = [

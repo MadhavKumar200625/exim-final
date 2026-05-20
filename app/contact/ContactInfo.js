@@ -40,7 +40,7 @@ const countryCodes = {
   Cambodia: { code: "+855", flag: "https://flagcdn.com/w40/kh.png" },
   Cameroon: { code: "+237", flag: "https://flagcdn.com/w40/cm.png" },
   Canada: { code: "+1", flag: "https://flagcdn.com/w40/ca.png" },
-  // India: { code: "+91", flag: "https://flagcdn.com/w40/in.png" },
+  // // India: { code: "+91", flag: "https://flagcdn.com/w40/in.png" },
   United_States: { code: "+1", flag: "https://flagcdn.com/w40/us.png" },
   United_Kingdom: { code: "+44", flag: "https://flagcdn.com/w40/gb.png" },
 };

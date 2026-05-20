@@ -107,7 +107,7 @@ const WhyChooseUs = () => {
     <section className="relative bg-linear-to-b from-blue-50 via-white to-blue-50 py-14 px-6 overflow-hidden">
       <div className="text-center mb-16">
         <h2 className="text-2xl md:text-3xl font-extrabold text-black">
-          Choose Exim Trade Data - Best Import and Export Data Provider in India
+          Choose Exim Trade Data - Best Import and Export Data Provider
         </h2>
       </div>
 
