@@ -18,7 +18,7 @@ export async function POST(req) {
       service: "gmail",
       auth: {
         user: "contact@eximtradedata.com",   // e.g. support@gtdservice.com
-        pass: "fmdn jlsa ifhi onuz",   // app password from Gmail
+        pass: "ubig ldfm qgqk rwkq",   // app password from Gmail
       },
     });
 

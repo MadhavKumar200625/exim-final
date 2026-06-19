@@ -75,7 +75,7 @@ const Page = () => {
         <div>
           <h3 className="text-2xl font-semibold text-black mb-4 border-l-4 pl-4 border-blue-600">Collection of Personal Information</h3>
           <p className="text-black text-base leading-relaxed">
-            Your right to use the Website is personal to you. You agree not to reproduce, duplicate, copy, sell, resell, use or exploit for any commercial purposes, the Website or use of or access to the Website or any information or technology obtained from the Website. The contents of the Website, including, without limitation, any content, images, logos and other material are protected under both India and foreign copyright, patent, trademark, and other laws of Exim Trade Data.
+            Your right to use the Website is personal to you. You agree not to reproduce, duplicate, copy, sell, resell, use or exploit for any commercial purposes, the Website or use of or access to the Website or any information or technology obtained from the Website. The contents of the Website, including, without limitation, any content, images, logos and other material are protected under foreign copyright, patent, trademark, and other laws of Exim Trade Data.
           </p>
         </div>
 

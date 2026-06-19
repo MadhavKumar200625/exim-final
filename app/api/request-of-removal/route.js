@@ -67,7 +67,7 @@ export async function POST(req) {
       service: "gmail",
       auth: {
         user: "contact@eximtradedata.com",
-        pass: "fmdn jlsa ifhi onuz",
+        pass: "ubig ldfm qgqk rwkq",
       },
     });
 
