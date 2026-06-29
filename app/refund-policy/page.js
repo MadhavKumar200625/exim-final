@@ -57,52 +57,116 @@ export const metadata = {
 const Page = () => {
   return (
     <div className="bg-white px-4 pb-12 pt-32 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto bg-white p-8 shadow-xl  border border-zinc-200">
+      <div className="max-w-4xl mx-auto bg-white p-8 shadow-xl border border-zinc-200">
         <h1 className="text-4xl font-extrabold text-center text-black mb-4">
           Refund Policy
         </h1>
+
         <h2 className="text-xl font-semibold text-black mb-6 mt-10">
-          Refund Policy:
+          Refund Policy
         </h2>
 
         <p className="text-black text-lg mb-6">
-          We are dedicated to providing our customers with genuine and precise global import export data. You can only claim refund on the same day of payment. Once we have delivered the data, no refund is possible. Before making the payment, make sure to read the refund policy.
+          At Exim Trade Data, we are committed to providing authentic, accurate,
+          and reliable global import-export trade data. Customer satisfaction is
+          our priority, and we strive to deliver the best possible service.
+        </p>
+
+        <h3 className="text-lg font-semibold text-black mb-3">
+          Refund Eligibility
+        </h3>
+
+        <p className="text-black text-lg mb-6">
+          Customers may request a refund only on the same day the payment is
+          made, provided that the subscribed service or data has not been
+          delivered or activated.
         </p>
 
         <p className="text-black text-lg mb-6">
-          Please notify us via email at{" "}
+          Once the data access has been provided, the subscription has been
+          activated, or the service has been utilized, no refund will be
+          processed.
+        </p>
+
+        <h3 className="text-lg font-semibold text-black mb-3">
+          Government Restrictions
+        </h3>
+
+        <p className="text-black text-lg mb-6">
+          In certain situations, government authorities may impose restrictions,
+          suspend, or prohibit the distribution of specific import-export data
+          (including country-specific trade data). Such restrictions are beyond
+          the control of Exim Trade Data.
+        </p>
+
+        <p className="text-black text-lg mb-3">
+          In these circumstances:
+        </p>
+
+        <ul className="list-disc list-inside text-black text-lg mb-6 space-y-2">
+          <li>
+            Refund requests will not be accepted or processed due to the
+            unavailability of the restricted data.
+          </li>
+          <li>
+            As an alternative, Exim Trade Data will provide access to All
+            Country Trade Data or other available trade data relevant to your
+            business requirements, subject to the terms of your subscription.
+          </li>
+          <li>
+            Where applicable, we may also extend your subscription validity to
+            compensate for any interruption in service.
+          </li>
+        </ul>
+
+        <h3 className="text-lg font-semibold text-black mb-3">
+          Data Accuracy
+        </h3>
+
+        <p className="text-black text-lg mb-6">
+          If you identify any discrepancies or inaccuracies in the data
+          provided, please notify us immediately by emailing{" "}
           <a
             href="mailto:info@eximtradedata.com"
             className="text-blue-600 underline font-medium"
           >
             info@eximtradedata.com
-          </a>{" "}
-          to clarify any inaccuracies in our data.
+          </a>
+          . Our team will review your concern and make every reasonable effort
+          to resolve the issue.
         </p>
 
-        <p className="text-black text-lg mb-8">
-          Your complete satisfaction is our priority, and we aim to grow
-          together with our clients.
+        <h3 className="text-lg font-semibold text-black mb-3">
+          Refund Process
+        </h3>
+
+        <p className="text-black text-lg mb-6">
+          If your refund request is approved under the above eligibility
+          criteria, the refund will be processed through the original payment
+          method (Online Payment, Net Banking, UPI, or other applicable payment
+          mode).
         </p>
 
-        <div className="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-800 p-5 rounded-xl shadow-sm">
-          <p className="font-semibold mb-2 text-lg">Note:</p>
-          <ul className="list-disc list-inside text-base text-yellow-800 space-y-2">
-            <li>
-              You will get your refund as per your payment mode (Online, net
-              banking, or UPI).
-            </li>
-            <li>
-              <span className="font-semibold">TDS</span> should be deducted by
-              your own financial team or else we will{" "}
-              <span className="font-semibold">not initiate</span> any refund for
-              the same.
-            </li>
-          </ul>
-        </div>
+        <h3 className="text-lg font-semibold text-black mb-3">
+          TDS
+        </h3>
+
+        <p className="text-black text-lg mb-6">
+          If Tax Deducted at Source (TDS) has been deducted from the payment, it
+          is the customer's responsibility to manage the applicable TDS through
+          their finance or accounts department. Exim Trade Data will process
+          refunds only for the amount actually received and will not be
+          responsible for refunding any deducted TDS.
+        </p>
+
+        <p className="text-black text-lg">
+          By purchasing our services, you acknowledge that you have read,
+          understood, and agreed to this Refund Policy.
+        </p>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Page
+export default Page;
+
