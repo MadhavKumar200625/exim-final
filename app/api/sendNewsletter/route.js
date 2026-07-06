@@ -85,10 +85,11 @@ export async function POST(req) {
       req.headers.get("x-real-ip") ||
       "unknown";
 
-      console.log("Client IP:", ip);
-      return NextResponse.json({ message: "IP logged" }, { status: 200 });
+      
 
     const location = await getLocationFromIP(ip);
+
+    console.log(location);
 
     // Rate limit
     if (rateLimit(ip)) {
@@ -217,8 +218,8 @@ export async function POST(req) {
     /* =========================
        SEND EMAILS (ISOLATED)
     ========================= */
-    await transporter.sendMail(companyMailOptions).catch(console.error);
-    await transporter.sendMail(userMailOptions).catch(console.error);
+    // await transporter.sendMail(companyMailOptions).catch(console.error);
+    // await transporter.sendMail(userMailOptions).catch(console.error);
 
     return NextResponse.json(
       { message: "Subscription successful" },
