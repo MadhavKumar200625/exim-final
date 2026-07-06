@@ -43,31 +43,24 @@ const escapeHtml = (str = "") =>
 ========================= */
 async function getLocationFromIP(ip) {
   try {
-    console.log("Looking up IP:", ip);
-
-    const response = await fetch(`https://ipapi.co/${ip}/json/`, {
+    const response = await fetch(`https://ipinfo.io/${ip}/json`, {
       cache: "no-store",
     });
 
-    console.log("Status:", response.status);
-
     const data = await response.json();
-    console.log("Response:", data);
-
-    if (!response.ok) return null;
 
     return {
       city: data.city || "N/A",
       region: data.region || "N/A",
-      country: data.country_name || "N/A",
+      country: data.country || "N/A",
       postal: data.postal || "N/A",
-      latitude: data.latitude || "N/A",
-      longitude: data.longitude || "N/A",
+      latitude: data.loc?.split(",")[0] || "N/A",
+      longitude: data.loc?.split(",")[1] || "N/A",
       timezone: data.timezone || "N/A",
       organization: data.org || "N/A",
     };
   } catch (error) {
-    console.error(error);
+    console.error("IP lookup failed:", error);
     return null;
   }
 }
