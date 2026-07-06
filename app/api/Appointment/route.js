@@ -1,8 +1,58 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
+/* =========================
+   GET LOCATION FROM IP
+========================= */
+async function getLocationFromIP(ip) {
+  try {
+    if (
+      !ip ||
+      ip === "unknown" ||
+      ip === "::1" ||
+      ip.startsWith("192.168.") ||
+      ip.startsWith("10.") ||
+      ip.startsWith("172.")
+    ) {
+      return null;
+    }
+
+    const response = await fetch(`https://ipapi.co/${ip}/json/`, {
+      cache: "no-store",
+    });
+
+    if (!response.ok) return null;
+
+    const data = await response.json();
+
+    return {
+      city: data.city || "N/A",
+      region: data.region || "N/A",
+      country: data.country_name || "N/A",
+      postal: data.postal || "N/A",
+      latitude: data.latitude || "N/A",
+      longitude: data.longitude || "N/A",
+      timezone: data.timezone || "N/A",
+      organization: data.org || "N/A",
+    };
+  } catch (error) {
+    console.error("IP lookup failed:", error);
+    return null;
+  }
+}
+
 export async function POST(req) {
   try {
+    /* =========================
+       CLIENT IP & LOCATION
+    ========================= */
+    const ip =
+      req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+      req.headers.get("x-real-ip") ||
+      "unknown";
+
+    const location = await getLocationFromIP(ip);
+
     const {
       fullName,
       email,
@@ -35,12 +85,12 @@ export async function POST(req) {
       );
     }
 
-    // ✅ Mail transporter (ENV variable for security)
+    // ✅ Mail transporter
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
         user: "contact@eximtradedata.com",
-        pass:  "ubig ldfm qgqk rwkq",   // app password from Gmail
+        pass: "ubig ldfm qgqk rwkq",
       },
     });
 
@@ -52,6 +102,7 @@ export async function POST(req) {
       html: `
         <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; padding: 20px;">
           <h2 style="color: #004aad;">🚀 New Appointment Scheduled</h2>
+
           <p><strong>Name:</strong> ${fullName}</p>
           <p><strong>Email:</strong> ${email}</p>
           <p><strong>Company Name:</strong> ${CompanyName}</p>
@@ -65,7 +116,41 @@ export async function POST(req) {
           <p><strong>Appointment Time:</strong> ${AppointmentTime}</p>
           <p><strong>Message:</strong> ${Message || "-"}</p>
           <p><strong>Plan:</strong> ${Plan || "-"}</p>
+
           <hr style="margin: 30px 0;" />
+
+          <h3>Visitor Information</h3>
+
+          <p><strong>IP Address:</strong> ${ip}</p>
+
+          <p>
+            <strong>Location:</strong>
+            ${
+              location
+                ? `${location.city}, ${location.region}, ${location.country}`
+                : "Unavailable"
+            }
+          </p>
+
+          ${
+            location
+              ? `
+                <p><strong>Postal Code:</strong> ${location.postal}</p>
+                <p><strong>Latitude:</strong> ${location.latitude}</p>
+                <p><strong>Longitude:</strong> ${location.longitude}</p>
+                <p><strong>Timezone:</strong> ${location.timezone}</p>
+                <p><strong>ISP:</strong> ${location.organization}</p>
+              `
+              : ""
+          }
+
+          <p>
+            <strong>User Agent:</strong><br/>
+            ${req.headers.get("user-agent") || "Unknown"}
+          </p>
+
+          <hr style="margin: 30px 0;" />
+
           <p style="font-size: 12px; color: #888;">
             This enquiry was submitted from the Exim Trade Data website.
           </p>
@@ -125,6 +210,7 @@ export async function POST(req) {
     );
   } catch (error) {
     console.error("Send Email Error:", error);
+
     return NextResponse.json(
       { error: "Failed to send email" },
       { status: 500 }

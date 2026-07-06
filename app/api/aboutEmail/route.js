@@ -26,27 +26,91 @@ function isRateLimited(ip) {
    BASIC HTML SANITIZATION
 ========================= */
 const escapeHtml = (str = "") =>
-  str.replace(/[&<>"']/g, (m) =>
-    ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[m])
+  String(str).replace(
+    /[&<>"']/g,
+    (m) =>
+      ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;",
+      })[m]
   );
+
+/* =========================
+   GET LOCATION FROM IP
+========================= */
+async function getLocationFromIP(ip) {
+  try {
+    if (
+      !ip ||
+      ip === "unknown" ||
+      ip === "::1" ||
+      ip.startsWith("192.168.") ||
+      ip.startsWith("10.") ||
+      ip.startsWith("172.")
+    ) {
+      return null;
+    }
+
+    const response = await fetch(`https://ipapi.co/${ip}/json/`, {
+      cache: "no-store",
+    });
+
+    if (!response.ok) return null;
+
+    const data = await response.json();
+
+    return {
+      city: data.city || "N/A",
+      region: data.region || "N/A",
+      country: data.country_name || "N/A",
+      postal: data.postal || "N/A",
+      latitude: data.latitude || "N/A",
+      longitude: data.longitude || "N/A",
+      timezone: data.timezone || "N/A",
+      organization: data.org || "N/A",
+    };
+  } catch (error) {
+    console.error("IP lookup failed:", error);
+    return null;
+  }
+}
 
 export async function POST(req) {
   try {
+    /* =========================
+       CLIENT IP
+    ========================= */
     const ip =
-      req.headers.get("x-forwarded-for")?.split(",")[0] ||
+      req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+      req.headers.get("x-real-ip") ||
       "unknown";
 
-    /* Rate limit */
+    /* =========================
+       RATE LIMIT
+    ========================= */
     if (isRateLimited(ip)) {
       return NextResponse.json(
-        { error: "Too many requests. Please try again later." },
-        { status: 429 }
+        {
+          error: "Too many requests. Please try again later.",
+        },
+        {
+          status: 429,
+        }
       );
     }
 
-    const { name, email, mobile, message, country } = await req.json();
+    /* =========================
+       REQUEST DATA
+    ========================= */
+    const { name, email, mobile, message, country } =
+      await req.json();
 
-    /* Validation */
+    /* =========================
+       VALIDATION
+    ========================= */
     if (!name || !email || !mobile || !message || !country) {
       return NextResponse.json(
         { error: "Missing required fields" },
@@ -68,71 +132,154 @@ export async function POST(req) {
       );
     }
 
-    /* Sanitize */
+    /* =========================
+       SANITIZE
+    ========================= */
     const safeName = escapeHtml(name);
     const safeEmail = escapeHtml(email);
     const safeMobile = escapeHtml(mobile);
     const safeMessage = escapeHtml(message);
     const safeCountry = escapeHtml(country);
 
-    /* Mail Transport */
+    /* =========================
+       LOCATION LOOKUP
+    ========================= */
+    const location = await getLocationFromIP(ip);
+
+    /* =========================
+       MAIL TRANSPORT
+    ========================= */
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: "contact@eximtradedata.com",
-        pass: "ubig ldfm qgqk rwkq",
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
       },
     });
 
-    /* Company Mail */
+    /* =========================
+       COMPANY EMAIL
+    ========================= */
     const companyMail = {
-      from: `"Exim Trade Data" <${"contact@eximtradedata.com"}>`,
+      from: `"Exim Trade Data" <${process.env.EMAIL_USER}>`,
       to: "enquiry@eximtradedata.com",
       subject: "New Contact Enquiry",
       html: `
-        <div style="font-family:Arial;line-height:1.6">
+        <div style="font-family:Arial,sans-serif;line-height:1.7">
           <h2>📩 New Enquiry</h2>
+
           <p><strong>Name:</strong> ${safeName}</p>
           <p><strong>Email:</strong> ${safeEmail}</p>
           <p><strong>Phone:</strong> ${safeMobile}</p>
           <p><strong>Country:</strong> ${safeCountry}</p>
-          <p><strong>Message:</strong><br/>${safeMessage}</p>
+
+          <p>
+            <strong>Message:</strong><br/>
+            ${safeMessage}
+          </p>
+
           <hr/>
-          <small>Submitted from Exim Trade Data website</small>
+
+          <h3>Visitor Information</h3>
+
+          <p><strong>IP Address:</strong> ${ip}</p>
+
+          <p>
+            <strong>Location:</strong>
+            ${
+              location
+                ? `${location.city}, ${location.region}, ${location.country}`
+                : "Unavailable"
+            }
+          </p>
+
+          ${
+            location
+              ? `
+                <p><strong>Postal Code:</strong> ${location.postal}</p>
+                <p><strong>Latitude:</strong> ${location.latitude}</p>
+                <p><strong>Longitude:</strong> ${location.longitude}</p>
+                <p><strong>Timezone:</strong> ${location.timezone}</p>
+                <p><strong>ISP:</strong> ${location.organization}</p>
+              `
+              : ""
+          }
+
+          <p>
+            <strong>User Agent:</strong><br/>
+            ${escapeHtml(
+              req.headers.get("user-agent") || "Unknown"
+            )}
+          </p>
+
+          <hr/>
+
+          <small>
+            Submitted from Exim Trade Data website
+          </small>
         </div>
       `,
     };
 
-    /* User Mail */
+    /* =========================
+       USER EMAIL
+    ========================= */
     const userMail = {
-      from: `"Exim Trade Data" <${"contact@eximtradedata.com"}>`,
+      from: `"Exim Trade Data" <${process.env.EMAIL_USER}>`,
       to: safeEmail,
       subject: "We received your enquiry – Exim Trade Data",
       html: `
-        <div style="font-family:Arial;line-height:1.6">
+        <div style="font-family:Arial,sans-serif;line-height:1.6">
           <h2>Hello ${safeName} 👋</h2>
-          <p>Thank you for contacting <strong>Exim Trade Data</strong>.</p>
-          <p>Our team will review your enquiry and get back to you shortly.</p>
+
+          <p>
+            Thank you for contacting
+            <strong>Exim Trade Data</strong>.
+          </p>
+
+          <p>
+            Our team will review your enquiry
+            and get back to you shortly.
+          </p>
+
           <br/>
-          <p>Regards,<br/><strong>Exim Trade Data Team</strong></p>
-          <a href="https://eximtradedata.com">eximtradedata.com</a>
+
+          <p>
+            Regards,<br/>
+            <strong>Exim Trade Data Team</strong>
+          </p>
+
+          <a href="https://eximtradedata.com">
+            eximtradedata.com
+          </a>
         </div>
       `,
     };
 
-    /* Send emails safely */
-    await transporter.sendMail(companyMail).catch(console.error);
-    await transporter.sendMail(userMail).catch(console.error);
+    /* =========================
+       SEND EMAILS
+    ========================= */
+    await transporter.sendMail(companyMail);
+    await transporter.sendMail(userMail);
 
     return NextResponse.json(
-      { message: "Enquiry sent successfully" },
-      { status: 200 }
+      {
+        message: "Enquiry sent successfully",
+      },
+      {
+        status: 200,
+      }
     );
   } catch (error) {
-    console.error("About Email Error:", error);
+    console.error("Email Error:", error);
+
     return NextResponse.json(
-      { error: "Internal server error" },
-      { status: 500 }
+      {
+        error: "Internal server error",
+      },
+      {
+        status: 500,
+      }
     );
   }
 }

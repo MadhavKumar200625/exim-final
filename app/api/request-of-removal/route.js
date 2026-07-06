@@ -27,16 +27,69 @@ function isRateLimited(ip) {
 ========================= */
 const escapeHtml = (str = "") =>
   str.replace(/[&<>"']/g, (m) =>
-    ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[m])
+    ({
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#39;",
+    }[m])
   );
+
+/* =========================
+   GET LOCATION FROM IP
+========================= */
+async function getLocationFromIP(ip) {
+  try {
+    if (
+      !ip ||
+      ip === "unknown" ||
+      ip === "::1" ||
+      ip.startsWith("192.168.") ||
+      ip.startsWith("10.") ||
+      ip.startsWith("172.")
+    ) {
+      return null;
+    }
+
+    const response = await fetch(`https://ipapi.co/${ip}/json/`, {
+      cache: "no-store",
+    });
+
+    if (!response.ok) return null;
+
+    const data = await response.json();
+
+    return {
+      city: data.city || "N/A",
+      region: data.region || "N/A",
+      country: data.country_name || "N/A",
+      postal: data.postal || "N/A",
+      latitude: data.latitude || "N/A",
+      longitude: data.longitude || "N/A",
+      timezone: data.timezone || "N/A",
+      organization: data.org || "N/A",
+    };
+  } catch (error) {
+    console.error("IP lookup failed:", error);
+    return null;
+  }
+}
 
 export async function POST(req) {
   try {
     const ip =
-      req.headers.get("x-forwarded-for")?.split(",")[0] || "unknown";
+      req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+      req.headers.get("x-real-ip") ||
+      "unknown";
+
+    const location = await getLocationFromIP(ip);
 
     if (isRateLimited(ip)) {
-      return NextResponse.json({ error: "Too many requests" }, { status: 429 });
+      return NextResponse.json(
+        { error: "Too many requests" },
+        { status: 429 }
+      );
     }
 
     const data = await req.json();
@@ -49,19 +102,22 @@ export async function POST(req) {
       "company",
       "submitAs",
       "requestType",
-      "urlCompany"
+      "urlCompany",
     ];
 
     for (const f of required) {
-
       if (!data[f]) {
-      
-        return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
+        return NextResponse.json(
+          { error: "Missing required fields" },
+          { status: 400 }
+        );
       }
     }
 
     const safe = {};
-    Object.keys(data).forEach((k) => (safe[k] = escapeHtml(String(data[k]))));
+    Object.keys(data).forEach(
+      (k) => (safe[k] = escapeHtml(String(data[k]))
+    ));
 
     const transporter = nodemailer.createTransport({
       service: "gmail",
@@ -74,40 +130,75 @@ export async function POST(req) {
     console.log("Received removal request:", safe);
 
     /* ADMIN MAIL */
-
     await transporter.sendMail({
       from: `"Exim Trade Data" <contact@eximtradedata.com>`,
-      to: "enquiry@eximtradedata.com ",
+      to: "enquiry@eximtradedata.com",
       subject: "Company Profile Removal Request",
       html: `
         <h2>Company Removal Request</h2>
 
-<p><b>Name:</b> ${safe.name}</p>
-<p><b>Email:</b> ${safe.email}</p>
-<p><b>Phone:</b> ${safe.phone || "-"}</p>
-<p><b>Company:</b> ${safe.company || "-"}</p>
-<p><b>Country (User Selected):</b> ${safe.country || "-"}</p>
-<p><b>Website:</b> ${safe.website || "-"}</p>
+        <p><b>Name:</b> ${safe.name}</p>
+        <p><b>Email:</b> ${safe.email}</p>
+        <p><b>Phone:</b> ${safe.phone || "-"}</p>
+        <p><b>Company:</b> ${safe.company || "-"}</p>
+        <p><b>Country (User Selected):</b> ${safe.country || "-"}</p>
+        <p><b>Website:</b> ${safe.website || "-"}</p>
 
-<hr/>
+        <hr/>
 
-<p><b>Submitting As:</b> ${safe.submitAs || "-"}</p>
-<p><b>Request Type:</b> ${safe.requestType || "-"}</p>
-<p><b>Other Request:</b> ${safe.otherRequest || "-"}</p>
+        <p><b>Submitting As:</b> ${safe.submitAs || "-"}</p>
+        <p><b>Request Type:</b> ${safe.requestType || "-"}</p>
+        <p><b>Other Request:</b> ${safe.otherRequest || "-"}</p>
 
-<p><b>Message:</b><br/>${safe.message || "-"}</p>
+        <p><b>Message:</b><br/>${safe.message || "-"}</p>
 
-<hr/>
+        <hr/>
 
-<p><b>URL Country (Page Country):</b> ${safe.urlCountry || "-"}</p>
-<p><b>URL Company (Slug):</b> ${safe.urlCompany || "-"}</p>
+        <p><b>URL Country (Page Country):</b> ${safe.urlCountry || "-"}</p>
+        <p><b>URL Company (Slug):</b> ${safe.urlCompany || "-"}</p>
 
-<hr/>
+        <hr/>
 
-<p><b>Confirmation 1:</b> ${safe.confirm1}</p>
-<p><b>Confirmation 2:</b> ${safe.confirm2}</p>
-<p><b>Confirmation 3:</b> ${safe.confirm3}</p>
-        <p><b>URL Context:</b> https://eximtradedata.com/company-profile-removal-request/${safe.urlCountry}/${safe.urlCompany}</p>
+        <p><b>Confirmation 1:</b> ${safe.confirm1}</p>
+        <p><b>Confirmation 2:</b> ${safe.confirm2}</p>
+        <p><b>Confirmation 3:</b> ${safe.confirm3}</p>
+
+        <p>
+          <b>URL Context:</b>
+          https://eximtradedata.com/company-profile-removal-request/${safe.urlCountry}/${safe.urlCompany}
+        </p>
+
+        <hr/>
+
+        <h3>Visitor Information</h3>
+
+        <p><b>IP Address:</b> ${ip}</p>
+
+        <p>
+          <b>Location:</b>
+          ${
+            location
+              ? `${location.city}, ${location.region}, ${location.country}`
+              : "Unavailable"
+          }
+        </p>
+
+        ${
+          location
+            ? `
+              <p><b>Postal Code:</b> ${location.postal}</p>
+              <p><b>Latitude:</b> ${location.latitude}</p>
+              <p><b>Longitude:</b> ${location.longitude}</p>
+              <p><b>Timezone:</b> ${location.timezone}</p>
+              <p><b>ISP:</b> ${location.organization}</p>
+            `
+            : ""
+        }
+
+        <p>
+          <b>User Agent:</b><br/>
+          ${req.headers.get("user-agent") || "Unknown"}
+        </p>
       `,
     });
 
@@ -125,9 +216,15 @@ export async function POST(req) {
       `,
     });
 
-    return NextResponse.json({ message: "Request submitted" });
+    return NextResponse.json({
+      message: "Request submitted",
+    });
   } catch (err) {
     console.error(err);
-    return NextResponse.json({ error: "Server error" }, { status: 500 });
+
+    return NextResponse.json(
+      { error: "Server error" },
+      { status: 500 }
+    );
   }
 }

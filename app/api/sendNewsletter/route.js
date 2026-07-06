@@ -29,14 +29,63 @@ function rateLimit(ip) {
 ========================= */
 const escapeHtml = (str = "") =>
   str.replace(/[&<>"']/g, (m) =>
-    ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[m])
+    ({
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#39;",
+    }[m])
   );
+
+/* =========================
+   GET LOCATION FROM IP
+========================= */
+async function getLocationFromIP(ip) {
+  try {
+    if (
+      !ip ||
+      ip === "unknown" ||
+      ip === "::1" ||
+      ip.startsWith("192.168.") ||
+      ip.startsWith("10.") ||
+      ip.startsWith("172.")
+    ) {
+      return null;
+    }
+
+    const response = await fetch(`https://ipapi.co/${ip}/json/`, {
+      cache: "no-store",
+    });
+
+    if (!response.ok) return null;
+
+    const data = await response.json();
+
+    return {
+      city: data.city || "N/A",
+      region: data.region || "N/A",
+      country: data.country_name || "N/A",
+      postal: data.postal || "N/A",
+      latitude: data.latitude || "N/A",
+      longitude: data.longitude || "N/A",
+      timezone: data.timezone || "N/A",
+      organization: data.org || "N/A",
+    };
+  } catch (error) {
+    console.error("IP lookup failed:", error);
+    return null;
+  }
+}
 
 export async function POST(req) {
   try {
     const ip =
-      req.headers.get("x-forwarded-for")?.split(",")[0] ||
+      req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+      req.headers.get("x-real-ip") ||
       "unknown";
+
+    const location = await getLocationFromIP(ip);
 
     // Rate limit
     if (rateLimit(ip)) {
@@ -46,7 +95,8 @@ export async function POST(req) {
       );
     }
 
-    const { nname, nemail, nmobile , selectedCountry } = await req.json();
+    const { nname, nemail, nmobile, selectedCountry } =
+      await req.json();
 
     // Validation
     if (!nname || !nemail || !nmobile) {
@@ -76,8 +126,8 @@ export async function POST(req) {
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: "contact@eximtradedata.com",   // e.g. support@gtdservice.com
-        pass: "ubig ldfm qgqk rwkq",   // app password from Gmail
+        user: "contact@eximtradedata.com",
+        pass: "ubig ldfm qgqk rwkq",
       },
     });
 
@@ -91,11 +141,46 @@ export async function POST(req) {
       html: `
         <div style="font-family: Arial, sans-serif; line-height: 1.6;">
           <h2>📩 New Newsletter Subscription</h2>
+
           <p><strong>Name:</strong> ${safeName}</p>
           <p><strong>Email:</strong> ${safeEmail}</p>
           <p><strong>Mobile:</strong> ${safeMobile}</p>
           <p><strong>Country:</strong> ${safeCountry}</p>
+
           <hr />
+
+          <h3>Visitor Information</h3>
+
+          <p><strong>IP Address:</strong> ${ip}</p>
+
+          <p>
+            <strong>Location:</strong>
+            ${
+              location
+                ? `${location.city}, ${location.region}, ${location.country}`
+                : "Unavailable"
+            }
+          </p>
+
+          ${
+            location
+              ? `
+                <p><strong>Postal Code:</strong> ${location.postal}</p>
+                <p><strong>Latitude:</strong> ${location.latitude}</p>
+                <p><strong>Longitude:</strong> ${location.longitude}</p>
+                <p><strong>Timezone:</strong> ${location.timezone}</p>
+                <p><strong>ISP:</strong> ${location.organization}</p>
+              `
+              : ""
+          }
+
+          <p>
+            <strong>User Agent:</strong><br/>
+            ${req.headers.get("user-agent") || "Unknown"}
+          </p>
+
+          <hr />
+
           <p style="font-size:12px;color:#888;">
             Submitted from Exim Trade Data website
           </p>
@@ -138,6 +223,7 @@ export async function POST(req) {
     );
   } catch (error) {
     console.error("Newsletter Error:", error);
+
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 }
