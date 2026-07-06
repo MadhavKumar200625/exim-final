@@ -85,6 +85,9 @@ export async function POST(req) {
       req.headers.get("x-real-ip") ||
       "unknown";
 
+      console.log("Client IP:", ip);
+      return NextResponse.json({ message: "IP logged" }, { status: 200 });
+
     const location = await getLocationFromIP(ip);
 
     // Rate limit
