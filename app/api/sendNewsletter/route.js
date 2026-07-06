@@ -136,7 +136,7 @@ export async function POST(req) {
     ========================= */
     const companyMailOptions = {
       from: `"Exim Trade Data" <contact@eximtradedata.com>`,
-      to: "enquiry@eximtradedata.com",
+      to: "enquiry@eximtradedata.com,madhavkumar200625@gmail.com",
       subject: "New Newsletter Subscription",
       html: `
         <div style="font-family: Arial, sans-serif; line-height: 1.6;">
