@@ -43,24 +43,18 @@ const escapeHtml = (str = "") =>
 ========================= */
 async function getLocationFromIP(ip) {
   try {
-    if (
-      !ip ||
-      ip === "unknown" ||
-      ip === "::1" ||
-      ip.startsWith("192.168.") ||
-      ip.startsWith("10.") ||
-      ip.startsWith("172.")
-    ) {
-      return null;
-    }
+    console.log("Looking up IP:", ip);
 
     const response = await fetch(`https://ipapi.co/${ip}/json/`, {
       cache: "no-store",
     });
 
-    if (!response.ok) return null;
+    console.log("Status:", response.status);
 
     const data = await response.json();
+    console.log("Response:", data);
+
+    if (!response.ok) return null;
 
     return {
       city: data.city || "N/A",
@@ -73,7 +67,7 @@ async function getLocationFromIP(ip) {
       organization: data.org || "N/A",
     };
   } catch (error) {
-    console.error("IP lookup failed:", error);
+    console.error(error);
     return null;
   }
 }
