@@ -239,7 +239,7 @@ const SampleDataForm = ({ isOpen, onClose }) => {
 
     try {
       setLoading(true);
-      await fetch("/api/get-started", {
+      const res = await fetch("/api/get-started", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -252,6 +252,10 @@ const SampleDataForm = ({ isOpen, onClose }) => {
           country,
         }),
       });
+
+      if (!res.ok) {
+        throw new Error("Request failed");
+      }
 
       alert("Message sent successfully!");
       onClose();

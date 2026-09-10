@@ -391,19 +391,24 @@ export default async function Page({ params }) {
   };
 
   async function getData(country) {
-  const res = await fetch(
-    `https://content-admin.eximtradedata.com/api/search-components?filters[country_name][$eqi]=${country}&fields[0]=import_export&fields[1]=import&fields[2]=export`,
-    {
-      headers: {
-      Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
-    },
+    try {
+      const res = await fetch(
+        `https://content-admin.eximtradedata.com/api/search-components?filters[country_name][$eqi]=${country}&fields[0]=import_export&fields[1]=import&fields[2]=export`,
+        {
+          headers: {
+            Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
+          },
+        }
+      );
 
+      if (!res.ok) return null;
+
+      const json = await res.json();
+      return json?.data?.[0] || null;
+    } catch (error) {
+      console.error("Search content fetch failed:", error);
+      return null;
     }
-  );
-
-  const json = await res.json();
-  // console.log("Content API response:", json); // Debug log
-  return json?.data[0]|| null;
 }
 
 // helper to split heading + paragraphs
