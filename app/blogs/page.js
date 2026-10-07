@@ -1,6 +1,8 @@
 import BlogBrowser from "./BlogBrowser";
 import { getBlogs } from "@/lib/blogs";
 
+export const dynamic = "force-dynamic";
+
 export const metadata = {
   title: "Trade Data Insights & Guides | Exim Trade Data",
   description: "Explore practical guides and insights on global trade data, shipment records, and market research.",

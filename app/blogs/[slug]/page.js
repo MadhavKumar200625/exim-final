@@ -3,6 +3,8 @@ import { ArrowLeft, CalendarDays, Clock3 } from "lucide-react";
 import DataNotFound from "@/app/Components/DataNotFound";
 import { getBlogBySlug } from "@/lib/blogs";
 
+export const dynamic = "force-dynamic";
+
 const FALLBACK_COVER = "/global-trade-database/access-the-global-trade-database-of-over-200-countries.webp";
 
 function formatDate(value) {

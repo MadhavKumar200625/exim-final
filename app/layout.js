@@ -126,7 +126,7 @@ export default function RootLayout({ children }) {
               "sameAs": [
                 "https://www.facebook.com/eximtradedataofficial",
                 "https://www.instagram.com/eximtradedata/",
-                "https://x.com/eximtradedataa",
+                "https://x.com/Exim_Trade_Data",
                 "https://www.linkedin.com/company/exim-trade-data",
                 "https://in.pinterest.com/exim_trade_data/",
                 "https://www.youtube.com/channel/UCsbKPsVwgAgqJi4EB20iBvg"
