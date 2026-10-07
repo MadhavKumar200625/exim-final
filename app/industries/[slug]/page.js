@@ -20,20 +20,19 @@ export async function generateMetadata({ params }) {
     return {
       title: "Industry Not Found - Exim Trade Data",
       description: "The requested industry page does not exist.",
+      robots: { index: false, follow: true },
     };
   }
+
+  const canonical = `https://eximtradedata.com/industries/${slug}`;
 
   return {
     title: industry.meta?.title || `${slug} Industry Trade Data`,
     description: industry.meta?.description,
-      alternates: {
-  canonical: `https://eximtradedata.com/${slug}`,
-},
+    alternates: { canonical },
     openGraph: {
       title: industry.openGraph?.title || industry.meta?.title,
-      url:
-        industry.openGraph?.url ||
-        `https://eximtradedata.com/${slug}`,
+      url: canonical,
       images: [{ url: industry.openGraph?.image || "/logo.png" }],
     },
     twitter: industry.twitter || {

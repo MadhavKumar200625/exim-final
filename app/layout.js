@@ -43,10 +43,6 @@ export const metadata = {
     "Customs Data",
   ],
 
-  alternates: {
-    canonical: "/",
-  },
-
   robots: {
     index: true,
     follow: true,

@@ -37,6 +37,7 @@ async function fetchExportPageFromStrapi(slug) {
 /* ---------- DATA ---------- */
 import { countriesData } from "@/lib/data/countries_exp";
 import ExportClientsClient from "./ExportClientsClient";
+import DataNotFound from "@/app/Components/DataNotFound";
 
 // /* ---------- NEXT CONFIG ---------- */
 // // export const dynamic = "force-static";
@@ -81,8 +82,7 @@ export async function generateMetadata({ params }) {
     `Get verified ${slug} Export Data, ${slug} customs data and shipment data including exporters, buyers, trade patterns, HS codes and port information at Exim Trade Data.`;
 
   const canonical =
-    country?.meta?.canonical ||
-    `https://eximtradedata.com/country-wise-${slug}-export-data`;
+    `https://eximtradedata.com/country-wise-export-data/${slug}`;
 
   const keywords =
     strapiKeywords
@@ -103,6 +103,7 @@ export async function generateMetadata({ params }) {
     description,
     keywords,
     alternates: { canonical },
+    ...(!strapiEntry && { robots: { index: false, follow: true } }),
     openGraph: {
       title,
       description,
@@ -201,6 +202,7 @@ export default async function Page({ params }) {
     };
   
   const strapiEntry = await fetchExportPageFromStrapi(slug);
+  if (!strapiEntry) return <DataNotFound subject="Country export data" />;
 
   const countryData = countriesData[countryKey] || defaultData;
   const country = extractCountryFromSlug(slug);

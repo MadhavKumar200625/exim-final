@@ -95,7 +95,7 @@ const Header = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
-        <a href="/" >
+        <Link href="/" >
           <img
             src="/logo.png"
             alt="Exim Trade Data"
@@ -103,7 +103,7 @@ const Header = () => {
             loading="eager"
             decoding="async"
           />
-        </a>
+        </Link>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex flex-1 items-center justify-center gap-6">
@@ -111,6 +111,7 @@ const Header = () => {
             ["/", "Home"],
             ["/about", "About"],
             ["/services", "Services"],
+            ["/blogs", "Blogs"],
           ].map(([href, label]) => (
             <a
               key={href}
@@ -214,6 +215,7 @@ const Header = () => {
             ["/", "Home"],
             ["/about", "About"],
             ["/services", "Services"],
+            ["/blogs", "Blogs"],
             ["/search-global-trade-data", "Search Data"],
             ["/import-export-data-country-wise", "Countries"],
             ["/api-development-and-integration-company", "API"],

@@ -3,6 +3,7 @@ import Search from "../Search";
 import Link from "next/link";
 import FAQSection from "@/app/Components/FAQ";
 import { getHSCodeData } from "@/lib/global-hs-code/getHsCodeData";
+import DataNotFound from "@/app/Components/DataNotFound";
 
 const HSCodeFAQ = [
   {
@@ -223,7 +224,13 @@ export async function generateMetadata({ params }) {
     description = `Explore Chapter ${chapter} of the Global HS Code List: detailed Harmonized System codes for ${chapterDesc.toLowerCase()}. Find import-export classification codes and product descriptions.`;
     keywords = `Chapter ${chapter}, ${chapterDesc} HS Codes, harmonized system ${chapterDesc.toLowerCase()}, global hs code list`;
 
-    return { title, description, keywords };
+    return {
+      title,
+      description,
+      keywords,
+      alternates: { canonical: `https://eximtradedata.com/global-hs-code-list/${segments.join("/").toLowerCase()}` },
+      ...(!data?.rows?.length && { robots: { index: false, follow: true } }),
+    };
   }
 
   /* =========================
@@ -240,7 +247,13 @@ export async function generateMetadata({ params }) {
     description = `Explore Heading ${headingCode} in the Global HS Code List- covering ${headingDesc.toLowerCase()} with detailed harmonized system (HS) classification codes used in international trade.`;
     keywords = `Heading ${headingCode}, ${headingDesc} HS Code, harmonized system codes, global hs code list, import export classification`;
 
-    return { title, description, keywords };
+    return {
+      title,
+      description,
+      keywords,
+      alternates: { canonical: `https://eximtradedata.com/global-hs-code-list/${segments.join("/").toLowerCase()}` },
+      ...(!data?.rows?.length && { robots: { index: false, follow: true } }),
+    };
   }
 
   /* =========================
@@ -257,7 +270,13 @@ export async function generateMetadata({ params }) {
     description = `Discover HS Code ${hs} in the Global HS Code List: classification for ${hsDesc.toLowerCase()} used in international trade. Learn about HSN Codes for precise import-export documentation.`;
     keywords = `HS Code ${hs}, ${hsDesc} HS Code, harmonized system code, hsn code, global hs code list, import export classification, HS Code ${hs} description`;
 
-    return { title, description, keywords };
+    return {
+      title,
+      description,
+      keywords,
+      alternates: { canonical: `https://eximtradedata.com/global-hs-code-list/${segments.join("/").toLowerCase()}` },
+      ...(!data?.rows?.length && { robots: { index: false, follow: true } }),
+    };
   }
 
   /* =========================
@@ -268,12 +287,19 @@ export async function generateMetadata({ params }) {
     const product = seg1.replace("product-", "").replace(/-/g, " ");
     const productTitle =
       product.charAt(0).toUpperCase() + product.slice(1);
+    const data = await getHSCodeData("product", product);
 
     title = `HS Codes for ${productTitle} Products | Global HS Code List`;
     description = `Explore Harmonized System Code for ${productTitle} Products in the Global HS Code List. Find HS Classifications for ${productTitle.toLowerCase()} and related items to support accurate import-export documentation and customs compliance.`;
     keywords = `HS Code ${productTitle}, ${productTitle.toLowerCase()} hs code, harmonized system code ${productTitle.toLowerCase()}, global hs code list, import export ${productTitle.toLowerCase()} classification`;
 
-    return { title, description, keywords };
+    return {
+      title,
+      description,
+      keywords,
+      alternates: { canonical: `https://eximtradedata.com/global-hs-code-list/${segments.join("/").toLowerCase()}` },
+      ...(!data?.rows?.length && { robots: { index: false, follow: true } }),
+    };
   }
 
   /* =========================
@@ -288,18 +314,31 @@ export async function generateMetadata({ params }) {
     const product = seg2.replace("product-", "").replace(/-/g, " ");
     const productTitle =
       product.charAt(0).toUpperCase() + product.slice(1);
+    const data = await getHSCodeData("hs-product", hs, product);
 
     title = `HS Code ${hs} - ${productTitle} | Global HS Code List | Exim Trade Data`;
     description = `Browse HS Code ${hs} entries for ${productTitle.toLowerCase()} in the Global HS Code List. Find harmonized system codes for ${productTitle.toLowerCase()} and related items used in global import export classification.`;
     keywords = `HS Code ${hs}, HS Code ${productTitle}, ${productTitle.toLowerCase()} hs code, harmonized system code ${productTitle.toLowerCase()}, global hs code list, import export mobile classification`;
 
-    return { title, description, keywords };
+    return {
+      title,
+      description,
+      keywords,
+      alternates: { canonical: `https://eximtradedata.com/global-hs-code-list/${segments.join("/").toLowerCase()}` },
+      ...(!data?.rows?.length && { robots: { index: false, follow: true } }),
+    };
   }
 
   /* -------------------------
      FALLBACK
   -------------------------- */
-  return { title, description, keywords };
+  return {
+    title,
+    description,
+    keywords,
+    alternates: { canonical: `https://eximtradedata.com/global-hs-code-list/${segments.join("/").toLowerCase()}` },
+    robots: { index: false, follow: true },
+  };
 }
 function parseSegment(seg) {
   if (seg.startsWith("hs-code-")) {
@@ -353,8 +392,8 @@ export default async function Page({ params }) {
 
   const data = await getHSCodeData(type, value, extra);
 
-  if (!data) {
-    return <p className="p-8 text-red-600">Invalid search.</p>;
+  if (!data?.rows?.length) {
+    return <DataNotFound subject="HS code data" />;
   }
 
   const { rows, heading, tc1Heading } = data;

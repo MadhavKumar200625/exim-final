@@ -210,13 +210,22 @@ export const generateMetadata = async ({ params }) => {
     }
   }
 
-  const url = `${"https://eximtradedata.com"}/search/${raw.join("/")}`;
+  const url = `https://eximtradedata.com/search/${raw.map((segment) => segment.toLowerCase()).join("/")}`;
+  let hasSearchData = false;
+
+  try {
+    const result = await getSearchData(query);
+    hasSearchData = Array.isArray(result?.data) && result.data.length > 0;
+  } catch {
+    hasSearchData = false;
+  }
 
   return {
     title,
     description,
     keywords,
     alternates: { canonical: url },
+    ...(!hasSearchData && { robots: { index: false, follow: true } }),
     openGraph: {
       title,
       description,
@@ -269,6 +278,17 @@ export default async function Page({ params }) {
   -------------------------------------------------- */
   const rowsRaw = Array.isArray(api?.data) ? api.data : [];
   const unique = Array.isArray(api?.unique) ? api.unique : [];
+
+  if (rowsRaw.length === 0) {
+    return (
+      <main className="min-h-[50vh] px-6 py-20 text-center">
+        <h1 className="text-3xl font-semibold text-gray-900">Trade data not found</h1>
+        <p className="mt-3 text-gray-600">
+          No shipment records matched this search. Try changing or removing a filter.
+        </p>
+      </main>
+    );
+  }
 
   const filters = {
     hsCodes: unique

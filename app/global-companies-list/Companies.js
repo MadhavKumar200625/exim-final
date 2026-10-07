@@ -5,6 +5,8 @@ import { useState,useEffect } from "react";
 import React from "react";
 import { ChevronDown } from "lucide-react";
 
+const PAGE_SIZE = 100;
+
 const countries = {
   "Bangladesh": "https://flagcdn.com/w20/bd.png",
   "Brazil": "https://flagcdn.com/w20/br.png",
@@ -132,7 +134,8 @@ const Companies = ({
   const [country, setCountry] = useState(defaultCountry);
   const [showDropdown, setShowDropdown] = useState(false);
 
-  const totalPages = Math.max(1, Math.ceil(totalValues / 100));
+  const totalCount = Math.max(0, Number(totalValues) || 0);
+  const totalPages = Math.max(1, Math.ceil(totalCount / PAGE_SIZE));
 const [search, setSearch] = useState("");
   /* -----------------------------------------
      Sync state with parent props

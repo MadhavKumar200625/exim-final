@@ -15,6 +15,7 @@ import GetTradeData from "./GetTradeData";
 import { countriesData } from "@/lib/data/countries_imp";
 import ImportClientsClient from "./ImportClientsClient";
 import CountrySection from "./CountryLinksSection";
+import DataNotFound from "@/app/Components/DataNotFound";
 
 // /* ---------- NEXT CONFIG ---------- */
 // export const dynamic = "force-static";
@@ -92,14 +93,14 @@ export async function generateMetadata({ params }) {
         ];
 
   const canonical =
-    country?.meta?.canonical ||
-    `https://eximtradedata.com/country-wise-${slug}-import-data`;
+    `https://eximtradedata.com/country-wise-import-data/${slug}`;
 
   return {
     title,
     description,
     keywords,
     alternates: { canonical },
+    ...(!strapiEntry && { robots: { index: false, follow: true } }),
 
     openGraph: {
       title,
@@ -131,6 +132,7 @@ export default async function Page({ params }) {
   params= await params
   const slug = normalizeSlug(params.slug);
   const strapiEntry = await fetchImportPageFromStrapi(slug);
+  if (!strapiEntry) return <DataNotFound subject="Country import data" />;
   const countryKey = `${slug}_import_section`;
 
   /* ---------- SAFE FALLBACK (NO 404 = BETTER SEO) ---------- */

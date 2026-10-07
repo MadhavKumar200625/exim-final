@@ -24,7 +24,7 @@ export const metadata = {
     "Suppliers"
   ],
   alternates: {
-    canonical: "https://eximtradedata.com/faqs"
+    canonical: "https://eximtradedata.com/faq"
   },
   openGraph: {
     title: "Frequently Asked Questions | FAQs - Exim Trade Data",

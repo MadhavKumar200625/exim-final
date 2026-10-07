@@ -1,6 +1,7 @@
 import Hero from "@/app/global-products/Hero";
 import Products from "./Products";
 import { getGlobalProducts } from "@/lib/globalProducts";
+import DataNotFound from "@/app/Components/DataNotFound";
 
 export const revalidate = 3600;
 
@@ -8,16 +9,27 @@ export async function generateMetadata({ params }) {
   params = await params;
 
   const { products, country, type, page } = params;
+  const letter = products.replace("product-", "");
+  const countryName = country.replace("country-", "");
+  const tradeType = type.replace("type-", "");
+  const pageNumber = Number(page.replace("pg-", "")) || 1;
+  const data = await getGlobalProducts({
+    letter,
+    country: countryName,
+    type: tradeType,
+    page: pageNumber,
+  });
 
-  const letter = products.replace("product-", "").toUpperCase();
+  const readableLetter = letter.toUpperCase();
   const readableCountry = country.replace("country-", "").replace(/_/g, " ");
-  const trade = type.replace("type-", "");
+  const trade = tradeType;
 
   return {
-    title: `${readableCountry} ${trade} Products Starting With ${letter}`,
+    title: `${readableCountry} ${trade} Products Starting With ${readableLetter}`,
     alternates: {
-      canonical: `https://eximtradedata.com/global-products/${products}/${country}/${type}/${page}`,
+      canonical: `https://eximtradedata.com/global-products/${products.toLowerCase()}/${country.toLowerCase()}/${type.toLowerCase()}/${page.toLowerCase()}`,
     },
+    ...(!data.products.length && { robots: { index: false, follow: true } }),
   };
 }
 
@@ -35,6 +47,10 @@ export default async function Page({ params }) {
     type,
     page,
   });
+
+  if (!data.products.length) {
+    return <DataNotFound subject="Product data" />;
+  }
 
   const normalizeCountry = (v) =>
   v

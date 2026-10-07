@@ -11,6 +11,7 @@ import { getContinent } from "@/lib/continentMap";
 export async function generateMetadata({ params }) {
   params = await params
   const { country = "", company = "" } = params;
+  const data = await getCompanyData(params);
 
   const companyName = company
     .split("-")
@@ -19,12 +20,13 @@ export async function generateMetadata({ params }) {
 
   const countryName = country.charAt(0).toUpperCase() + country.slice(1);
 
-  const url = `https://eximtradedata.com/global-companies/${country}/${company}`;
+  const url = `https://eximtradedata.com/global-companies/${country.toLowerCase()}/${company.toLowerCase()}`;
 
   return {
     title: `${companyName} Import Export Trade Data | Exim Trade Data`,
     description: `Explore import export data, buyers, suppliers and shipment intelligence of ${companyName}.`,
     alternates: { canonical: url },
+    ...(data?.notFound && { robots: { index: false, follow: true } }),
     openGraph: {
       title: companyName,
       description: `Trade intelligence for ${companyName}`,

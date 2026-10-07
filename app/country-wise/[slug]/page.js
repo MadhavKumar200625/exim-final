@@ -8,6 +8,7 @@ import CtaImage from "./CtaImage";
 import { countriesData } from "@/lib/data/countries";
 import Hero from "./Hero";
 import FAQSection from "@/app/Components/FAQ";
+import DataNotFound from "@/app/Components/DataNotFound";
 
 /* ================== STATIC CONFIG ================== */
 // // export const dynamic = "force-static";
@@ -152,8 +153,7 @@ export async function generateMetadata({ params }) {
     ];
 
   const canonical =
-    country?.meta?.canonical ||
-    `https://eximtradedata.com/${slug}-import-export-data`;
+    `https://eximtradedata.com/country-wise/${slug}`;
 
   return {
     title: finalTitle,
@@ -163,6 +163,7 @@ export async function generateMetadata({ params }) {
     alternates: {
       canonical,
     },
+    ...(!strapiEntry && { robots: { index: false, follow: true } }),
 
     openGraph: {
       title: finalTitle,
@@ -185,6 +186,7 @@ export default async function Page({ params }) {
   params=await params
   const slug = getSlug(params);
   const strapiEntry = await fetchCountryFromStrapi(slug);
+  if (!strapiEntry) return <DataNotFound subject="Country trade data" />;
   const strapiHero = strapiEntry ? mapHeroSection(strapiEntry) : null;
 
   const DEFAULT_COUNTRY_DATA = {

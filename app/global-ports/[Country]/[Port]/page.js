@@ -6,12 +6,14 @@ import CtaImage from "./CtaImage";
 import DetailedTable from "./DetailedTable.server";
 import { getPortData } from "@/lib/global-ports/PortData";
 import FAQSection from "@/app/Components/FAQ";
+import DataNotFound from "@/app/Components/DataNotFound";
 
 const baseURL = "https://eximtradedata.com"
 
 /* ---------------- METADATA ---------------- */
 export async function generateMetadata({ params }) {
   const { Country, Port } = await params;
+  const data = await getPortData(Country.toLowerCase(), Port.toLowerCase());
 
   const readableCountry =
     Country.charAt(0).toUpperCase() + Country.slice(1).toLowerCase();
@@ -22,12 +24,13 @@ export async function generateMetadata({ params }) {
   const title = `${readablePort} Port - ${readableCountry} Port Data | Exim Trade Data`;
   const description = `View detailed import export shipment data, buyers, suppliers, HS codes and trade statistics for ${readablePort} port in ${readableCountry}.`;
 
-  const canonical = `${baseURL}/global-ports/${Country}/${Port}`;
+  const canonical = `${baseURL}/global-ports/${Country.toLowerCase()}/${Port.toLowerCase()}`;
 
   return {
     title,
     description,
     alternates: { canonical },
+    ...(!data && { robots: { index: false, follow: true } }),
     openGraph: {
       title,
       description,
@@ -50,16 +53,8 @@ export default async function Page({ params }) {
 
   const data = await getPortData(country, port);
 
-  // Safety fallback (SEO-safe, no crash)
   if (!data) {
-    return (
-      <main>
-        <Hero heading="Port Trade Data" />
-        <p className="p-10 text-center">
-          Port data is temporarily unavailable.
-        </p>
-      </main>
-    );
+    return <DataNotFound subject="Port data" />;
   }
 
   return (

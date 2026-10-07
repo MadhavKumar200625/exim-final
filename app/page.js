@@ -14,7 +14,9 @@ import Head from "next/head";
 
 export const metadata = {
   title: "Import Export Database | Global Import Export Trade Data Provider",
-  description:"Access verified global import and export data and shipment records with Exim GTIS. Find authentic buyers, track competitors, and perform HS code lookups today."};
+  description:"Access verified global import and export data and shipment records with Exim GTIS. Find authentic buyers, track competitors, and perform HS code lookups today.",
+  alternates: { canonical: "https://eximtradedata.com/" },
+};
 
 export default function Home() {
   return (
