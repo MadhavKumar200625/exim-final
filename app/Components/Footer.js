@@ -439,7 +439,7 @@ const countries = Object.entries(countryCodes).filter(([name]) =>
 </a>
 
 <a
-  href="https://x.com/eximtradedataa"
+  href="https://x.com/Exim_Trade_Data"
   target="_blank"
   rel="noopener noreferrer"
 >
