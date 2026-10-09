@@ -8,7 +8,6 @@ import CtaImage from "./CtaImage";
 import { countriesData } from "@/lib/data/countries";
 import Hero from "./Hero";
 import FAQSection from "@/app/Components/FAQ";
-import DataNotFound from "@/app/Components/DataNotFound";
 
 /* ================== STATIC CONFIG ================== */
 // // export const dynamic = "force-static";
@@ -38,16 +37,22 @@ async function fetchCountryFromStrapi(slug) {
       `https://content-admin.eximtradedata.com/api/country-common-pages?filters[slug][$eq]=${slug}&status=published&locale=en&populate[section_1][populate][button]=*&populate[section_1][populate][image]=*&populate[section_2][populate][Continent_name][populate][button_with_image]=*&populate[section_2][populate][button]=*&populate[section_3][populate][imp_exp_dynamic_fig][populate][button]=*&populate[section_4][populate][button]=*&populate[section_6][populate][button]=*&populate[section_7][populate][button]=*&populate[section_8][populate][faq_section]=*&populate[meta_tags][populate]=*&populate[section_5][populate][trade_tabs][populate][table_with_values][populate][table_row]=*`,
       {
         headers: {
-      Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
-    },
+          Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
+        },
+        signal: AbortSignal.timeout(15000),
         // next: { revalidate: 86400 },
       }
     );
 
 
-    if (!res.ok) return null;
+    if (!res.ok) {
+      throw new Error(`Country CMS request failed with status ${res.status}`);
+    }
 
     const json = await res.json();
+    if (!Array.isArray(json?.data)) {
+      throw new Error("Country CMS response did not contain a data array");
+    }
     return json?.data?.[0] || null;
   } catch (err) {
     console.error("Strapi fetch failed:", err);
@@ -163,8 +168,6 @@ export async function generateMetadata({ params }) {
     alternates: {
       canonical,
     },
-    ...(!strapiEntry && { robots: { index: false, follow: true } }),
-
     openGraph: {
       title: finalTitle,
       description: finalDescription,
@@ -186,7 +189,6 @@ export default async function Page({ params }) {
   params=await params
   const slug = getSlug(params);
   const strapiEntry = await fetchCountryFromStrapi(slug);
-  if (!strapiEntry) return <DataNotFound subject="Country trade data" />;
   const strapiHero = strapiEntry ? mapHeroSection(strapiEntry) : null;
 
   const DEFAULT_COUNTRY_DATA = {

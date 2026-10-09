@@ -13,7 +13,7 @@ export default function AllPageForm() {
     const shown = sessionStorage.getItem("instant_assistance_shown");
     if (!shown) {
       setTimeout(() => {
-        console.log("triggered")
+        // console.log("triggered")
         setShow(true);
         sessionStorage.setItem(
           "instant_assistance_shown",

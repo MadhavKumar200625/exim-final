@@ -15,7 +15,6 @@ import GetTradeData from "./GetTradeData";
 import { countriesData } from "@/lib/data/countries_imp";
 import ImportClientsClient from "./ImportClientsClient";
 import CountrySection from "./CountryLinksSection";
-import DataNotFound from "@/app/Components/DataNotFound";
 
 // /* ---------- NEXT CONFIG ---------- */
 // export const dynamic = "force-static";
@@ -31,14 +30,20 @@ async function fetchImportPageFromStrapi(slug) {
         headers: {
           Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
         },
+        signal: AbortSignal.timeout(15000),
         // next: { revalidate: 86400 }, // 24 hours cache
       }
     );
     
 
-    if (!res.ok) return null;
+    if (!res.ok) {
+      throw new Error(`Country import CMS request failed with status ${res.status}`);
+    }
 
     const json = await res.json();
+    if (!Array.isArray(json?.data)) {
+      throw new Error("Country import CMS response did not contain a data array");
+    }
     return json?.data?.[0] || null;
   } catch (err) {
     console.error("Strapi fetch failed:", err);
@@ -100,8 +105,6 @@ export async function generateMetadata({ params }) {
     description,
     keywords,
     alternates: { canonical },
-    ...(!strapiEntry && { robots: { index: false, follow: true } }),
-
     openGraph: {
       title,
       description,
@@ -132,7 +135,6 @@ export default async function Page({ params }) {
   params= await params
   const slug = normalizeSlug(params.slug);
   const strapiEntry = await fetchImportPageFromStrapi(slug);
-  if (!strapiEntry) return <DataNotFound subject="Country import data" />;
   const countryKey = `${slug}_import_section`;
 
   /* ---------- SAFE FALLBACK (NO 404 = BETTER SEO) ---------- */

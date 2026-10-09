@@ -116,7 +116,7 @@ export async function POST(req) {
       },
     });
 
-    console.log("Received removal request:", safe);
+    // console.log("Received removal request:", safe);
 
     /* ADMIN MAIL */
     await transporter.sendMail({

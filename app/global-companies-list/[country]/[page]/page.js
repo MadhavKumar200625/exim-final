@@ -1,7 +1,7 @@
 import Hero from "@/app/global-companies-list/Hero";
 import Companies from "@/app/global-companies-list/Companies";
 import { getCompaniesList } from "@/lib/companies/getCompaniesList";
-import DataNotFound from "@/app/Components/DataNotFound";
+import { notFound } from "next/navigation";
 
 // export const dynamic = "force-static";
 export const revalidate = 86400;
@@ -36,7 +36,7 @@ export default async function Page({ params }) {
   const data = await getCompaniesList({ country, page });
 
   if (data.companies.length === 0) {
-    return <DataNotFound subject={`${capWords(country)} companies data`} />;
+    notFound();
   }
 
   return (

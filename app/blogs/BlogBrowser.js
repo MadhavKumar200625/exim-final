@@ -67,7 +67,7 @@ export default function BlogBrowser({ blogs }) {
                 className={`group overflow-hidden border border-slate-200 bg-white transition duration-200 hover:border-slate-300 hover:shadow-[0_12px_32px_rgba(15,23,42,0.08)] ${index === 0 ? "lg:col-span-2 lg:grid lg:grid-cols-[1.05fr_1fr]" : ""}`}
               >
                 {blog.coverImage ? (
-                  <img src={blog.coverImage} alt="" className={`aspect-video w-full object-cover ${index === 0 ? "lg:h-full" : ""}`} />
+                     <img src={blog.coverImage} alt="" className={`aspect-video w-full bg-[#eaf2f8] object-contain ${index === 0 ? "lg:h-full" : ""}`} />
                 ) : (
                   <div aria-hidden="true" className={`relative flex aspect-video max-h-48 w-full items-end overflow-hidden bg-[#eaf2f8] p-5 md:max-h-56 ${index === 0 ? "lg:h-full lg:max-h-none" : ""}`}>
                     <div className="absolute inset-x-0 top-0 h-1 bg-[#ff7a18]" />
@@ -85,10 +85,13 @@ export default function BlogBrowser({ blogs }) {
                   </div>
                   <h3 className={`${index === 0 ? "text-2xl sm:text-3xl" : "text-xl"} font-semibold leading-snug text-slate-950`}>
                     <Link className="group-hover:text-[#005b9a]" href={`/blogs/${blog.slug}`}>
-                      {blog.title}
+                      <span dangerouslySetInnerHTML={{ __html: blog.titleHtml || blog.title }} />
                     </Link>
                   </h3>
-                  <p className="mt-3 text-sm leading-6 text-slate-600">{blog.excerpt}</p>
+                  <div
+                    className="mt-3 text-sm leading-6 text-slate-600"
+                    dangerouslySetInnerHTML={{ __html: blog.excerptHtml || blog.excerpt }}
+                  />
                   <Link href={`/blogs/${blog.slug}`} className="mt-auto inline-flex w-fit items-center gap-2 pt-6 text-sm font-semibold text-[#005b9a]">
                     Read article <ArrowUpRight aria-hidden="true" size={16} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </Link>

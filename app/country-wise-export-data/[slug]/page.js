@@ -21,13 +21,19 @@ async function fetchExportPageFromStrapi(slug) {
         headers: {
           Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
         },
+        signal: AbortSignal.timeout(15000),
         // next: { revalidate: 86400 }, // 24h cache
       }
     );
 
-    if (!res.ok) return null;
+    if (!res.ok) {
+      throw new Error(`Country export CMS request failed with status ${res.status}`);
+    }
 
     const json = await res.json();
+    if (!Array.isArray(json?.data)) {
+      throw new Error("Country export CMS response did not contain a data array");
+    }
     return json?.data?.[0] || null;
   } catch (err) {
     console.error("Strapi export fetch failed:", err);
@@ -37,7 +43,6 @@ async function fetchExportPageFromStrapi(slug) {
 /* ---------- DATA ---------- */
 import { countriesData } from "@/lib/data/countries_exp";
 import ExportClientsClient from "./ExportClientsClient";
-import DataNotFound from "@/app/Components/DataNotFound";
 
 // /* ---------- NEXT CONFIG ---------- */
 // // export const dynamic = "force-static";
@@ -103,7 +108,6 @@ export async function generateMetadata({ params }) {
     description,
     keywords,
     alternates: { canonical },
-    ...(!strapiEntry && { robots: { index: false, follow: true } }),
     openGraph: {
       title,
       description,
@@ -133,7 +137,6 @@ export async function generateMetadata({ params }) {
 export default async function Page({ params }) {
   params= await params
   const slug = normalizeSlug(params.slug);
-  
   const countryKey = `${slug}_export_section`;
   const formattedSlug = slug.replace(/^./, (s) => s.toUpperCase())
   /* ---------- SAFE FALLBACK (NO 404 = BETTER SEO) ---------- */
@@ -202,7 +205,6 @@ export default async function Page({ params }) {
     };
   
   const strapiEntry = await fetchExportPageFromStrapi(slug);
-  if (!strapiEntry) return <DataNotFound subject="Country export data" />;
 
   const countryData = countriesData[countryKey] || defaultData;
   const country = extractCountryFromSlug(slug);

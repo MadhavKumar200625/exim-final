@@ -2,6 +2,7 @@ import Hero from "@/app/global-products/Hero";
 import Products from "./Products";
 import { getGlobalProducts } from "@/lib/globalProducts";
 import DataNotFound from "@/app/Components/DataNotFound";
+import { notFound } from "next/navigation";
 
 export const revalidate = 3600;
 
@@ -49,7 +50,7 @@ export default async function Page({ params }) {
   });
 
   if (!data.products.length) {
-    return <DataNotFound subject="Product data" />;
+    notFound();
   }
 
   const normalizeCountry = (v) =>

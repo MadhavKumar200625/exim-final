@@ -5,7 +5,11 @@ export function proxy(request) {
   const pathname = url.pathname;
 
   // If pathname contains any uppercase letter
-  if (pathname !== pathname.toLowerCase() && !pathname.includes("/api/") ){
+  if (
+    pathname !== pathname.toLowerCase() &&
+    !pathname.includes("/api/") &&
+    !pathname.toLowerCase().endsWith(".xml")
+  ) {
     const lowercaseUrl = url.clone();
     lowercaseUrl.pathname = pathname.toLowerCase();
 

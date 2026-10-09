@@ -1,7 +1,7 @@
 import Hero from "./Hero";
 import MainSection from "./MainSection";
 import { getPortsData } from "@/lib/global-ports/getPortsData";
-import DataNotFound from "@/app/Components/DataNotFound";
+import { notFound } from "next/navigation";
 
 // export const dynamic = "force-static";
 export const revalidate = 86400; // bots + SEO safe
@@ -38,7 +38,7 @@ export default async function Page({ params }) {
   });
 
   if (!data.data.length) {
-    return <DataNotFound subject={`${country} port data`} />;
+    notFound();
   }
 
   return (

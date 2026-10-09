@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowLeft, CalendarDays, Clock3 } from "lucide-react";
-import DataNotFound from "@/app/Components/DataNotFound";
+import { notFound } from "next/navigation";
 import { getBlogBySlug } from "@/lib/blogs";
 
 export const dynamic = "force-dynamic";
@@ -14,8 +14,9 @@ function formatDate(value) {
     : date.toLocaleDateString("en", { year: "numeric", month: "long", day: "numeric" });
 }
 
-function estimateReadingMinutes(content = []) {
-  const wordCount = content.join(" ").trim().split(/\s+/).filter(Boolean).length;
+function estimateReadingMinutes(content = "") {
+  const text = Array.isArray(content) ? content.join(" ") : String(content ?? "");
+  const wordCount = text.trim().split(/\s+/).filter(Boolean).length;
   return Math.max(1, Math.ceil(wordCount / 200));
 }
 
@@ -42,7 +43,7 @@ export default async function BlogArticlePage({ params }) {
   const blog = await getBlogBySlug(slug);
 
   if (!blog) {
-    return <DataNotFound subject="Blog article" />;
+    notFound();
   }
 
   return (
@@ -65,13 +66,15 @@ export default async function BlogArticlePage({ params }) {
                   <span className="h-0.5 w-8 bg-[#ff7a18]" />
                   <p className="text-xs font-bold uppercase text-[#005b9a]">{blog.category}</p>
                 </div>
-                <h1 className="max-w-2xl text-3xl font-semibold leading-tight text-slate-950 sm:text-4xl lg:text-[2.75rem]">
-                  {blog.title}
-                </h1>
-                {blog.excerpt && (
-                  <p className="mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
-                    {blog.excerpt}
-                  </p>
+                <h1
+                  className="max-w-2xl text-3xl font-semibold leading-tight text-slate-950 sm:text-4xl lg:text-[2.75rem]"
+                  dangerouslySetInnerHTML={{ __html: blog.titleHtml || blog.title }}
+                />
+                {blog.excerptHtml && (
+                  <div
+                    className="mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8"
+                    dangerouslySetInnerHTML={{ __html: blog.excerptHtml }}
+                  />
                 )}
                 <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-slate-600">
                   {blog.publishedAt && formatDate(blog.publishedAt) && (
@@ -92,7 +95,7 @@ export default async function BlogArticlePage({ params }) {
                 <img
                   src={blog.coverImage || FALLBACK_COVER}
                   alt={blog.coverImage ? blog.title : "Trade data research and analytics"}
-                  className={`aspect-4/3 w-full ${blog.coverImage ? "object-cover" : "object-contain p-4 sm:p-7"}`}
+                  className={`aspect-4/3 w-full object-contain ${blog.coverImage ? "" : "p-4 sm:p-7"}`}
                 />
               </div>
             </div>
@@ -104,11 +107,15 @@ export default async function BlogArticlePage({ params }) {
             <span className="h-2 w-2 bg-[#ff7a18]" />
             <span>Article</span>
           </div>
-          <div className="space-y-6 text-base leading-8 text-slate-700 sm:text-[17px] sm:leading-8">
-            {blog.content.map((paragraph, index) => (
-              <p key={index} className={index === 0 ? "text-lg leading-8 text-slate-800 sm:text-xl sm:leading-9" : ""}>
-                {paragraph}
-              </p>
+          <div
+            className="space-y-6 text-base leading-8 text-slate-700 sm:text-[17px] sm:leading-8"
+          >
+            {(blog.contentParagraphsHtml || blog.content).map((paragraph, index) => (
+              <p
+                key={index}
+                className={index === 0 ? "text-lg leading-8 text-slate-800 sm:text-xl sm:leading-9" : ""}
+                dangerouslySetInnerHTML={{ __html: paragraph }}
+              />
             ))}
           </div>
           <div className="mt-12 border-t border-slate-200 pt-6">
