@@ -22,10 +22,10 @@ export default async function BlogsPage() {
               <p className="text-xs font-bold uppercase text-[#005b9a]">Exim Trade Data Journal</p>
             </div>
             <h1 className="text-4xl font-semibold leading-tight text-slate-950 sm:text-5xl">
-              Trade, in context.
+              Global Trade. Smarter Insights.
             </h1>
             <p className="mt-4 max-w-2xl text-base leading-7 text-slate-600">
-              Practical perspectives on products, markets, and the movement of goods around the world.
+              Discover Global Trade Trends, Import-Export Data, and Market Opportunities.
             </p>
           </div>
           <div className="hidden border-l border-slate-300 pl-6 md:block">

@@ -6,9 +6,9 @@ import IndustriesSection from "./IndustriesSection";
 export const revalidate = 86400; // 24 hours
 
 export const metadata = {
-  title: "Search Global Trade Data | Import Export Records | Exim Trade Data",
+  title: "Search Global Trade Data | Import Export Data | Exim Trade",
   description:
-    "Search detailed global trade data by product, HS code, country, or company. Access real-time import-export records and shipment insights worldwide.",
+    "Search global trade data by country, product or HS code. Explore import export records, shipment details and buyer-supplier information for market research.",
   keywords: [
     "search global trade data",
     "import export records",
@@ -20,6 +20,22 @@ export const metadata = {
   ],
   alternates: {
     canonical: "https://eximtradedata.com/search-global-trade-data",
+  },
+  openGraph: {
+    title: "Search Global Trade Data | Import Export Data | Exim Trade",
+    description:
+      "Search global trade data by country, product or HS code. Explore import export records, shipment details and buyer-supplier information for market research.",
+    url: "https://eximtradedata.com/search-global-trade-data",
+    siteName: "Exim Trade Data",
+    type: "website",
+    images: [{ url: "/logo.png", alt: "Exim Trade Data Logo" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Search Global Trade Data | Import Export Data | Exim Trade",
+    description:
+      "Search global trade data by country, product or HS code. Explore import export records, shipment details and buyer-supplier information for market research.",
+    images: ["/logo.png"],
   },
 };
 

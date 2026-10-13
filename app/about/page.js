@@ -13,9 +13,9 @@ import Head from "next/head";
 // import ContactUs from "../components/ContactUs";
 
 export const metadata = {
-  title: "Global Trade Data | About Exim Trade Data",
+  title: "About Exim Trade Data | Global Trade Intelligence",
   description:
-    "Exim Trade Data is the best global import export trade data provider, providing global trade data for 200+ countries.",
+    "Learn about Exim Trade Data and how our global trade intelligence platform helps businesses explore import-export data, research markets and identify trade opportunities.",
   keywords: [
     "Global Import Export Trade Data",
     "Import Export Data",
@@ -37,11 +37,11 @@ export const metadata = {
     canonical: "https://eximtradedata.com/about",
   },
   openGraph: {
-    title: "Exim Trade Data - Most trusted data providing company",
+    title: "About Exim Trade Data | Global Trade Intelligence",
     type: "website",
     url: "https://eximtradedata.com/about",
     description:
-      "Exim trade data helps you to provide accurate and custom-made data solutions and resolve all your export-import business operations.",
+      "Learn about Exim Trade Data and how our global trade intelligence platform helps businesses explore import-export data, research markets and identify trade opportunities.",
     siteName: "Exim Trade Data",
     images: [
       {
@@ -52,9 +52,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary",
-    title: "Exim Trade Data - Most trusted data providing company",
+    title: "About Exim Trade Data | Global Trade Intelligence",
     description:
-      "Exim trade data helps you to provide accurate and custom-made data solutions and resolve all your export-import business operations.",
+      "Learn about Exim Trade Data and how our global trade intelligence platform helps businesses explore import-export data, research markets and identify trade opportunities.",
     site: "@eximtradedata",
     creator: "@eximtradedata",
     url: "https://eximtradedata.com/about",

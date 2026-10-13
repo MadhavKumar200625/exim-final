@@ -6,9 +6,9 @@ import Link from "next/link";
 import CTAImage from "./CTAImage";
 
 export const metadata = {
-  title: "Unlock Global Trade Insights Across 200+ Countries | Import Export Data Country-wise",
+  title: "Import Export Data by Country | Global Trade Data & Insights",
   description:
-    "Access detailed import-export data for 200+ countries. Find verified trade information, including shipment records, market trends, and top trading partners worldwide.",
+    "Explore import export data by country to research global markets, review shipment records, identify potential buyers and suppliers, and understand trade trends.",
   keywords: [
     "import export data",
     "import export database",
@@ -23,11 +23,11 @@ export const metadata = {
     canonical: "https://eximtradedata.com/import-export-data-country-wise",
   },
   openGraph: {
-    title: "Import Export Data of 200+ Countries, Importer Exporters",
+    title: "Import Export Data by Country | Global Trade Data & Insights",
     type: "website",
     url: "https://eximtradedata.com/import-export-data-country-wise",
     description:
-      "Grow your business globally with country wise import export data. Discover 200+ markets, and get high ROI leads from importers exporters directory.",
+      "Explore import export data by country to research global markets, review shipment records, identify potential buyers and suppliers, and understand trade trends.",
     siteName: "Exim Trade Data",
     images: [
       {
@@ -38,9 +38,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Import Export Data of 200+ Countries, Importer Exporters",
+    title: "Import Export Data by Country | Global Trade Data & Insights",
     description:
-      "Grow your business globally with country wise import export data. Discover 200+ markets, and get high ROI leads from importers exporters directory.",
+      "Explore import export data by country to research global markets, review shipment records, identify potential buyers and suppliers, and understand trade trends.",
     site: "@eximtradedata",
     creator: "@eximtradedata",
     images: ["/logo.png"],

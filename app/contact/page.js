@@ -5,9 +5,9 @@ import Head from "next/head";
 
 
 export const metadata = {
-  title: 'Contact US - Get Expert Insights on Import-Export Market Trends | Exim Trade Data',
+  title: 'Contact Exim Trade Data | Import Export Data & Support',
   description:
-    'Get in touch with Exim Trade Data for reliable global trade data. Reach out for inquiries, support, or to learn more about how we can help your business grow.',
+    'Contact Exim Trade Data for import export data, global trade information, shipment records and assistance with your business research requirements.',
   keywords: [
     'export and import data',
     '60 countries global trade data',
@@ -21,11 +21,11 @@ export const metadata = {
     canonical: 'https://eximtradedata.com/contact',
   },
   openGraph: {
-    title: 'Exim Trade Data:- Contact Us',
+    title: 'Contact Exim Trade Data | Import Export Data & Support',
     type: 'website',
     url: 'https://eximtradedata.com/contact',
     description:
-      'To get information, reach out to us today to access reliable and up-to-date global import-export trade data for your business needs.',
+      'Contact Exim Trade Data for import export data, global trade information, shipment records and assistance with your business research requirements.',
     siteName: 'Exim Trade Data',
     images: [
       {
@@ -36,9 +36,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary',
-    title: 'Exim Trade Data:- Contact Us',
+    title: 'Contact Exim Trade Data | Import Export Data & Support',
     description:
-      'To get information, reach out to us today to access reliable and up-to-date global import-export trade data for your business needs.',
+      'Contact Exim Trade Data for import export data, global trade information, shipment records and assistance with your business research requirements.',
     site: '@eximtradedata',
     creator: '@eximtradedata',
     url: 'https://eximtradedata.com/contact',

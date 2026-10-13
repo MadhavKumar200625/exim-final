@@ -13,8 +13,37 @@ import HomeTestimonialsClient from "./HOME/HomeTestimonialSection";
 import Head from "next/head";
 
 export const metadata = {
-  title: "Import Export Database | Global Import Export Trade Data Provider",
-  description:"Access verified global import and export data and shipment records with Exim GTIS. Find authentic buyers, track competitors, and perform HS code lookups today.",
+  title: "Import Export Data | Global Trade Data – Exim Trade Data",
+  description:
+    "Find import export data, shipment records and importer-exporter details to research global markets, understand trade trends and discover new business opportunities.",
+  keywords: [
+    "import export data",
+    "global trade data",
+    "import data",
+    "export data",
+    "customs shipment data",
+    "importer exporter details",
+    "international trade data",
+    "trade statistics",
+    "import export database",
+    "global trade information",
+  ],
+  openGraph: {
+    title: "Import Export Data | Global Trade Data – Exim Trade Data",
+    description:
+      "Find import export data, shipment records and importer-exporter details to research global markets, understand trade trends and discover new business opportunities.",
+    url: "https://eximtradedata.com/",
+    siteName: "Exim Trade Data",
+    type: "website",
+    images: [{ url: "/logo.png", alt: "Exim Trade Data Logo" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Import Export Data | Global Trade Data – Exim Trade Data",
+    description:
+      "Find import export data, shipment records and importer-exporter details to research global markets, understand trade trends and discover new business opportunities.",
+    images: ["/logo.png"],
+  },
   alternates: { canonical: "https://eximtradedata.com/" },
 };
 

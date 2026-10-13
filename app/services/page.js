@@ -11,9 +11,9 @@ import Head from "next/head";
 
 
  export const metadata = {
-  title: "Exim Trade Data - Services | Global Import Export Trade Data Provider Company",
+  title: "Import Export Data Services | Exim Trade Data",
   description:
-    "Explore Exim Trade Data's comprehensive import-export trade data services. Get access to more than 200 countries Import and Export Trade Data.",
+    "Explore import export data, shipment records and trade information to find potential buyers, research suppliers and understand business opportunities in global markets.",
   keywords: [
     "Global Import Export Trade Data",
     "Import Export Data",
@@ -31,10 +31,10 @@ import Head from "next/head";
     canonical: "https://eximtradedata.com/services"
   },
   openGraph: {
-    title: "Import Export Data Provider Company - Exim Trade Data",
+    title: "Import Export Data Services | Exim Trade Data",
     type: "website",
     url: "https://eximtradedata.com/services",
-    description: "Enhance your market research with world's leading import export data provider company, Exim Trade Data. Discover Business leads from over 200+ countries.",
+    description: "Explore import export data, shipment records and trade information to find potential buyers, research suppliers and understand business opportunities in global markets.",
     siteName: "Exim Trade Data",
     images: [
       {
@@ -46,8 +46,8 @@ import Head from "next/head";
   
   twitter: {
     card: "summary",
-    title: "Import Export Data Provider Company - Exim Trade Data",
-    description: "Enhance your market research with world's leading import export data provider company, Exim Trade Data. Discover Business leads from over 200+ countries.",
+    title: "Import Export Data Services | Exim Trade Data",
+    description: "Explore import export data, shipment records and trade information to find potential buyers, research suppliers and understand business opportunities in global markets.",
     site: "@eximtradedata",
     creator: "@eximtradedata",
     url: "https://eximtradedata.com/services",
