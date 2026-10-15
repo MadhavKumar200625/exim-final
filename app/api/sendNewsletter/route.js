@@ -119,7 +119,7 @@ export async function POST(req) {
       service: "gmail",
       auth: {
         user: "contact@eximtradedata.com",
-        pass: "ubig ldfm qgqk rwkq",
+        pass: "ftbtokdaqcwrelan",
       },
     });
 
