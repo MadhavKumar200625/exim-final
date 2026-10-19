@@ -13,9 +13,9 @@ import HomeTestimonialsClient from "./HOME/HomeTestimonialSection";
 import Head from "next/head";
 
 export const metadata = {
-  title: "Import Export Data | Global Trade Data – Exim Trade Data",
+  title: "Global Import Export Data Provider | 200+ Countries",
   description:
-    "Find import export data, shipment records and importer-exporter details to research global markets, understand trade trends and discover new business opportunities.",
+    "Explore import-export data from over 200 countries with Exim Trade Data. Access shipment records by product, HS code, and port to understand global markets and discover new business opportunities.",
   keywords: [
     "import export data",
     "global trade data",
@@ -29,9 +29,9 @@ export const metadata = {
     "global trade information",
   ],
   openGraph: {
-    title: "Import Export Data | Global Trade Data – Exim Trade Data",
+    title: "Global Import Export Data Provider | 200+ Countries",
     description:
-      "Find import export data, shipment records and importer-exporter details to research global markets, understand trade trends and discover new business opportunities.",
+      "Explore import-export data from over 200 countries with Exim Trade Data. Access shipment records by product, HS code, and port to understand global markets and discover new business opportunities.",
     url: "https://eximtradedata.com/",
     siteName: "Exim Trade Data",
     type: "website",
@@ -39,9 +39,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Import Export Data | Global Trade Data – Exim Trade Data",
+    title: "Global Import Export Data Provider | 200+ Countries",
     description:
-      "Find import export data, shipment records and importer-exporter details to research global markets, understand trade trends and discover new business opportunities.",
+      "Explore import-export data from over 200 countries with Exim Trade Data. Access shipment records by product, HS code, and port to understand global markets and discover new business opportunities.",
     images: ["/logo.png"],
   },
   alternates: { canonical: "https://eximtradedata.com/" },
