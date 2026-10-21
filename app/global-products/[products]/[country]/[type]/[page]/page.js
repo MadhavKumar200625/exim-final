@@ -54,7 +54,7 @@ export default async function Page({ params }) {
   }
 
   const pageSize = 50;
-  const totalPages = Math.ceil(data.products.length / pageSize);
+  const totalPages = Math.ceil(data.total / pageSize);
   if (page > totalPages) {
     notFound();
   }
