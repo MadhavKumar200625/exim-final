@@ -53,6 +53,16 @@ export default async function Page({ params }) {
     notFound();
   }
 
+  const pageSize = 50;
+  const totalPages = Math.max(1, Math.ceil(data.total / pageSize));
+  if (page > totalPages) {
+    notFound();
+  }
+  const pageProducts = data.products.slice(
+    (page - 1) * pageSize,
+    page * pageSize
+  );
+
   const normalizeCountry = (v) =>
   v
     .replace(/_/g, " ")
@@ -70,7 +80,7 @@ export default async function Page({ params }) {
   defaultCountry={normalizeCountry(country)}
   defaultTradeType={type === "import" ? "Import" : "Export"}
   currentPage={page}
-  products={data.products}
+  products={pageProducts}
   totalValues={data.total}
 />
     </main>
