@@ -1,6 +1,6 @@
 import Hero from "@/app/global-products/Hero";
 import Products from "./Products";
-import { getGlobalProducts } from "@/lib/globalProducts";
+import { getGlobalProducts, MAX_PAGES } from "@/lib/globalProducts";
 import DataNotFound from "@/app/Components/DataNotFound";
 import { notFound } from "next/navigation";
 
@@ -14,6 +14,9 @@ export async function generateMetadata({ params }) {
   const countryName = country.replace("country-", "");
   const tradeType = type.replace("type-", "");
   const pageNumber = Number(page.replace("pg-", "")) || 1;
+  if (pageNumber > MAX_PAGES) {
+    return { robots: { index: false, follow: true } };
+  }
   const data = await getGlobalProducts({
     letter,
     country: countryName,
@@ -42,6 +45,10 @@ export default async function Page({ params }) {
   const type = params.type.replace("type-", "");
   const page = Number(params.page.replace("pg-", "")) || 1;
 
+  if (page < 1 || page > MAX_PAGES) {
+    notFound();
+  }
+
   const data = await getGlobalProducts({
     letter,
     country,
@@ -54,7 +61,7 @@ export default async function Page({ params }) {
   }
 
   const pageSize = 100;
-  const totalPages = Math.ceil(data.total / pageSize);
+  const totalPages = Math.min(MAX_PAGES, Math.ceil(data.total / pageSize));
   if (page > totalPages) {
     notFound();
   }
