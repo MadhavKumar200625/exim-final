@@ -54,7 +54,7 @@ export default async function Page({ params }) {
   }
 
   const pageSize = 50;
-  const totalPages = Math.max(1, Math.ceil(data.total / pageSize));
+  const totalPages = Math.ceil(data.products.length / pageSize);
   if (page > totalPages) {
     notFound();
   }
@@ -81,7 +81,7 @@ export default async function Page({ params }) {
   defaultTradeType={type === "import" ? "Import" : "Export"}
   currentPage={page}
   products={pageProducts}
-  totalValues={data.total}
+  totalPages={totalPages}
 />
     </main>
   );

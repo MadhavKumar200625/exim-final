@@ -11,7 +11,7 @@ const Products = ({
   defaultTradeType = "Import",
   currentPage = 1,
   products = [],
-  totalValues = 0,
+  totalPages = 1,
    countries = [
   // { name: "India", code: "in" },
   { name: "Bangladesh", code: "bd" },
@@ -36,7 +36,6 @@ const Products = ({
   useEffect(() => setTradeType(defaultTradeType), [defaultTradeType]);
 
   const activePage = Number(currentPage) || 1;
-  const totalPages = Math.max(1, Math.ceil(totalValues / 50));
 
   const buildUrl = (page, l = letter, c = country, t = tradeType) =>
     `/global-products/product-${l.toLowerCase()}/country-${slugify(
