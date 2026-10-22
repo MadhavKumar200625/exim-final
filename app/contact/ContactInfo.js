@@ -139,12 +139,12 @@ const ContactInfo = () => {
         <div className="bg-white/70 border border-gray-200 p-8 shadow-2xl">
           <h2 className="text-2xl font-bold text-black mb-4">Support</h2>
           <p className="text-black text-lg">
-            {/* <p className="mt-5">
+            <p className="mt-5">
               <span className="text-xl text-blue-600 font-bold">
                 Support & Other Enquiries:
               </span>{" "}
-              8826195070
-            </p> */}
+              9315619475
+            </p>
             {/* <p className="mt-5">
               <span className="text-xl text-blue-600 font-bold">
                 Partner with Us:
