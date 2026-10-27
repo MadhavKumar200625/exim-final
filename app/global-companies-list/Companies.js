@@ -136,6 +136,7 @@ const Companies = ({
 
   const totalCount = Math.max(0, Number(totalValues) || 0);
   const totalPages = Math.max(1, Math.ceil(totalCount / PAGE_SIZE));
+  const activePage = Number(currentPage) || 1;
 const [search, setSearch] = useState("");
   /* -----------------------------------------
      Sync state with parent props
@@ -172,9 +173,9 @@ const filteredCountries = Object.entries(countries).filter(([name]) =>
     if (totalPages <= 5) {
       for (let i = 1; i <= totalPages; i++) pages.push(i);
     } else {
-      if (currentPage <= 3) {
+      if (activePage <= 3) {
         pages.push(1, 2, 3, 4, "...", totalPages);
-      } else if (currentPage >= totalPages - 2) {
+      } else if (activePage >= totalPages - 2) {
         pages.push(
           1,
           "...",
@@ -187,9 +188,9 @@ const filteredCountries = Object.entries(countries).filter(([name]) =>
         pages.push(
           1,
           "...",
-          currentPage - 1,
-          currentPage,
-          currentPage + 1,
+          activePage - 1,
+          activePage,
+          activePage + 1,
           "...",
           totalPages
         );
@@ -294,8 +295,8 @@ const filteredCountries = Object.entries(countries).filter(([name]) =>
 
         {/* ---------------- Pagination ---------------- */}
         <div className="flex justify-center gap-2 mb-10">
-          {currentPage > 1 && (
-            <a href={buildUrl(currentPage - 1)} className="px-3 py-1 border">
+          {activePage > 1 && (
+            <a href={buildUrl(activePage - 1)} className="px-3 py-1 border">
               &lt;&lt;
             </a>
           )}
@@ -308,7 +309,7 @@ const filteredCountries = Object.entries(countries).filter(([name]) =>
                 key={i}
                 href={buildUrl(p)}
                 className={`px-3 py-1 border ${
-                  p === currentPage
+                  p === activePage
                     ? "bg-blue-600 text-white"
                     : "text-blue-600"
                 }`}
@@ -318,8 +319,8 @@ const filteredCountries = Object.entries(countries).filter(([name]) =>
             )
           )}
 
-          {currentPage < totalPages && (
-            <a href={buildUrl(currentPage + 1)} className="px-3 py-1 border">
+          {activePage < totalPages && (
+            <a href={buildUrl(activePage + 1)} className="px-3 py-1 border">
               &gt;&gt;
             </a>
           )}
