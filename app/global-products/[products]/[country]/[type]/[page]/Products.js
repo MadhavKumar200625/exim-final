@@ -87,7 +87,7 @@ const Products = ({
           {products.map((item, idx) => (
             <a
               key={idx}
-              href={`/search/country-${slugify(country)}/type-${tradeType.toLowerCase()}/product-${item.product
+              href={`/search/type-${tradeType.toLowerCase()}/country-${slugify(country)}/product-${item.product
                 .replace(/\s+/g, "-")
                 .toLowerCase()}`}
               className="p-4 border hover:border-blue-400"

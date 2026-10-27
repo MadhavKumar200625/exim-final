@@ -11,7 +11,16 @@ const MainSection = ({ data, appliedFilters ,country}) => {
 
   const baseUrl = "/search";
   const buildUrl = (filters) => {
-    return `${baseUrl}/${filters
+    const order = ["type", "country", "product", "hscode"];
+    const sortedFilters = [...filters].sort((a, b) => {
+      const aLabel = a.label.toLowerCase();
+      const bLabel = b.label.toLowerCase();
+      const aIndex = order.indexOf(aLabel);
+      const bIndex = order.indexOf(bLabel);
+      return (aIndex === -1 ? order.length : aIndex) - (bIndex === -1 ? order.length : bIndex);
+    });
+
+    return `${baseUrl}/${sortedFilters
       .map(
         (f) =>
           `${f.label.replace(/\s+/g, "-").toLowerCase()}-${f.value
