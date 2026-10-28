@@ -95,7 +95,7 @@ const Header = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
-        <Link href="/" >
+        <a href="/" >
           <img
             src="/logo.png"
             alt="Exim Trade Data"
@@ -103,7 +103,7 @@ const Header = () => {
             loading="eager"
             decoding="async"
           />
-        </Link>
+        </a>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex flex-1 items-center justify-center gap-6">
