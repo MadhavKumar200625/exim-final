@@ -47,7 +47,7 @@ const ExclusiveFeatures = () => {
               <li className="flex items-start gap-2"><span className="text-blue-600 text-lg">★</span> Buyers Dashboard</li>
               <li className="flex items-start gap-2"><span className="text-blue-600 text-lg">★</span> Exporters Directory</li>
               <li className="flex items-start gap-2"><span className="text-blue-600 text-lg">★</span> Contact Information</li>
-              <li className="flex items-start gap-2"><span className="text-blue-600 text-lg">★</span> Global Company Profiles</li>
+              {/* <li className="flex items-start gap-2"><span className="text-blue-600 text-lg">★</span> Global Company Profiles</li> */}
               <li className="flex items-start gap-2"><span className="text-blue-600 text-lg">★</span> Importers Exporters Tree</li>
             </ul>
           </div>

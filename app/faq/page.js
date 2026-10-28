@@ -71,7 +71,7 @@ const AboutEximTradeData =   [
       • BI powered import-export analytics<br />
       • Customs data<br />
       • Ports data<br />
-      • Global products and global companies&apos; data reports to our customers.
+      • Global products data reports to our customers.
     `,
   },
   {
@@ -88,7 +88,6 @@ const AboutEximTradeData =   [
       Exim Trade Data gives you instant access to:<br />
       • 200+ countries data<br />
       • Global products data<br />
-      • Global companies shipments data<br />
       • Global HS Code List<br />
       • Free sample data<br />
       • Unlimited data search on its portal
@@ -100,7 +99,6 @@ const AboutEximTradeData =   [
       Suppose, we are given an ITC HS Code: 9009840000<br /><br />
       ✅ High Quality Data and actionable insights<br />
       ✅ Identify global market trends, demand and risks<br />
-      ✅ Track and Monitor Competitors with global companies&apos; database<br />
       ✅ Discover genuine buyers & Suppliers for your business<br />
       ✅ Enhance your sales potential by generating quality leads
     `,
@@ -217,12 +215,8 @@ const FeaturesAndBenefits = [
     answer: `You can find GST rates for various HS Codes on our HSN GST rates list. To view the full list, click here.`
   },
   {
-    question: "11. Do you provide a Global companies List?",
-    answer: `Yes, we have an exclusive database of country-wise importers and exporters. You can find genuine leads from the Global Companies Database Directory.`
-  },
-  {
     question: "12. Can I track my competitor’s shipment activities?",
-    answer: `Yes, we help businesses with in-depth competitor analysis. Our Global companies database helps you track all the shipment activities of your competitors from various countries such as Vietnam, Turkey, Indonesia, Tanzania, etc.`
+    answer: `Yes, we help businesses with in-depth competitor analysis using shipment activity data from various countries such as Vietnam, Turkey, Indonesia, Tanzania, etc.`
   },
   {
     question: "13. Can I search for global trade data online?",
@@ -660,7 +654,7 @@ const page = () => {
       "name": "What are your services?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We provide customized data solutions to meet our clients’ requirements. We offer BI-powered import-export analytics, customs data, ports data, global products and global companies’ data reports."
+        "text": "We provide customized data solutions to meet our clients’ requirements. We offer BI-powered import-export analytics, customs data, ports data, and global products data reports."
       }
     },
     {
@@ -676,7 +670,7 @@ const page = () => {
       "name": "Why should I use Exim Trade Data?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Exim Trade Data gives instant access to 60+ countries data, global products data, global companies shipments data, global HS Code list, free sample data, and unlimited data search on its portal."
+        "text": "Exim Trade Data gives instant access to 60+ countries data, global products data, global HS Code list, free sample data, and unlimited data search on its portal."
       }
     },
     {
@@ -684,7 +678,7 @@ const page = () => {
       "name": "How can Exim Trade Data help my business?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We help identify global market trends, demand and risks, track competitors through our global companies database, discover genuine buyers and suppliers, and generate quality leads to boost sales."
+        "text": "We help identify global market trends, demand and risks, discover genuine buyers and suppliers, and generate quality leads to boost sales."
       }
     },
     {
@@ -761,18 +755,12 @@ const page = () => {
     },
     {
       "@type": "Question",
-      "name": "Do you provide a global companies list?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, we provide a comprehensive database of global importers and exporters to help generate verified leads."
-      }
-    },
     {
       "@type": "Question",
       "name": "Can I track competitor shipment activities?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, you can track competitor shipment activities using our global companies shipment database."
+        "text": "Yes, you can track competitor shipment activities using import and export shipment data."
       }
     },
     {

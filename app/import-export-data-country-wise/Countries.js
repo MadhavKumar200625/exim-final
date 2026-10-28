@@ -159,7 +159,7 @@ export default function Countries() {
                   <ArrowUpRight className="ml-1 w-4 h-4" />
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a
                   href={`/global-companies-list/${slug}/a-1`}
                   className="flex items-center text-sm underline"
@@ -167,7 +167,7 @@ export default function Countries() {
                   {country.name} Companies
                   <ArrowUpRight className="ml-1 w-4 h-4" />
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
         )}

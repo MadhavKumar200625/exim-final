@@ -28,10 +28,10 @@ const ImportantLinks = ({ country, section9 }) => {
       title: "Global Port Volume Report",
       url: `/global-ports`,
     },
-    {
+    /* {
       title: "Global Companies List",
       url: `/global-companies-list`,
-    },
+    }, */
     {
       title: "Country Wise Trade Data",
       url: `/import-export-data-country-wise`,
@@ -42,9 +42,10 @@ const ImportantLinks = ({ country, section9 }) => {
     },
   ];
 
+  // Filter legacy CMS links so the directory is no longer linked anywhere.
   const links =
     Array.isArray(strapiLinks) && strapiLinks.length > 0
-      ? strapiLinks
+      ? strapiLinks.filter((item) => !/global[ -]?compan(?:ies|y)|global[ -]?compaies|company-profile-(?:remove|removal-request)/i.test(`${item.title} ${item.url}`))
       : defaultLinks;
 
   const finalTitle =

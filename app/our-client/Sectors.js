@@ -28,7 +28,7 @@ const sectors = [
     title: 'Research & Consulting',
     subtitle: 'Global Trade Intelligence Platform for Research & Consulting Companies',
     description:
-      'Empower your market research through our global trade intelligence platform. Make more accurate decisions based on our business intelligence reports. Identify the most profitable markets by HSN Code, product details, quantity, price, port shipments, country, buyers, and supplier details. Reach to the top trading companies through our global companies list and discover the potential business growth opportunities.',
+      'Empower your market research through our global trade intelligence platform. Make more accurate decisions based on our business intelligence reports. Identify the most profitable markets by HSN Code, product details, quantity, price, port shipments, and country to discover potential business growth opportunities.',
     image: '/solutions/research-and-consulting.webp',
     link:'/research-and-consulting'
   },

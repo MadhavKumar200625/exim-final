@@ -9,7 +9,7 @@ import Reputation from './Reputation';
  export const metadata = {
   title: "Clients - Trusted by Global Importers & Exporters | Global Trade Data of 200+ Countries",
   description:
-    "Discover the global companies and businesses that trust Exim Trade Data for accurate import-export data solutions. Join our growing list of satisfied clients worldwide.",
+    "Discover the businesses that trust Exim Trade Data for accurate import-export data solutions. Join our growing list of satisfied clients worldwide.",
   keywords: [
     "Exim Trade Data clients",
     "import export clients",

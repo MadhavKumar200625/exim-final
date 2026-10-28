@@ -529,7 +529,7 @@ const countries = Object.entries(countryCodes).filter(([name]) =>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-2 text-sm text-black">
               <a href="/get-started">Get Trial</a>
               <a href="/import-export-data-country-wise">Countries Covered</a>
-              <a href="/global-companies-list">Global Companies</a>
+              {/* <a href="/global-companies-list">Global Companies</a> */}
               <a href="/global-ports">Global Ports</a>
               <a href="/industries-covered">Industries Covered</a>
               <a href="/global-trade-database">Global Trade Database</a>

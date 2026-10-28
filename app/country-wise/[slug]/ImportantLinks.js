@@ -38,10 +38,10 @@ export default function ImportantLinks({ country, section7 }) {
       title: "Global Port Volume Report",
       url: `/global-ports`,
     },
-    {
+    /* {
       title: "Global Companies List",
       url: `/global-companies-list`,
-    },
+    }, */
     {
       title: "Country Wise Trade Data",
       url: `/import-export-data-country-wise`,
@@ -58,7 +58,10 @@ export default function ImportantLinks({ country, section7 }) {
     ? section7.links
     : null;
 
-  const finalLinks = strapiLinks || links;
+  // Filter legacy CMS links so the directory is no longer linked anywhere.
+  const finalLinks = strapiLinks
+    ? strapiLinks.filter((item) => !/global[ -]?compan(?:ies|y)|global[ -]?compaies|company-profile-(?:remove|removal-request)/i.test(`${item.title} ${item.url}`))
+    : links;
 
   return (
     <section className="px-6 md:px-16 py-12 bg-white">
