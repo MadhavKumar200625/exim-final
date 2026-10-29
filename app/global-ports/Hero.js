@@ -22,19 +22,11 @@ const Hero = () => {
 
         <div className="space-y-6">
           <h2 className="text-3xl md:text-4xl font-bold text-zinc-900">
-            Global Ports Data
+            Global Ports Data: Port-wise Import and Export
           </h2>
 
           <p className="text-lg text-zinc-700 leading-relaxed">
-            Explore the global supply chain networks through our{" "}
-            <span className="font-semibold text-blue-700">global ports data</span>{" "}
-            reports. Find the total import export shipment volume, traded goods,
-            value, quantity, import and export companies through our container
-            ports data. Improve your market research with proper planning,
-            coordination and scheduling of shipment activities. Search{" "}
-            <span className="font-semibold text-blue-700">global ports data</span>{" "}
-            by country through our port database. Also, you can download the
-            shipment data of the world sea port list in Excel/PDF.
+            See which ports handle which goods, and how trade moves through them. Our port data shows the main products, trading partners and shipment volumes for ports around the world. Search by port name or country to explore products, trading partners and volumes.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 pt-2">

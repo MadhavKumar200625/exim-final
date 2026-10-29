@@ -18,31 +18,23 @@ const CodeOfConductSection = () => {
         {/* Right Text Content */}
         <div className="w-full lg:w-2/3 px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">
-            Our Code of Conduct
+            Our Mission and Values
           </h2>
 
           <p className="text-black mb-4 leading-relaxed">
-            Exim Trade Data is highly specialized in providing{" "}
-            <strong>export-import data analysis services</strong> and serves the
-            highest aspirations of the customer and their business requirement.
+            Our mission is to make international trade data accessible, accurate and actionable for every exporter, importer and researcher.
           </p>
 
           <p className="text-black mb-4 leading-relaxed">
-            Our primary objective is to meet the expectations set by our
-            customers. To ensure trust and confidence, we strongly believe in
-            maintaining a fair and transparent process in all matters that may
-            affect the interests of our customers.
+            We put accuracy first, make trade statistics clear and easy to use, and support customers from demo to deal, not just until the invoice.
           </p>
 
           <p className="text-black mb-6 leading-relaxed">
-            <strong>Exim Trade Data</strong> leaves no stone unturned in carrying
-            out data analysis research and data analysis mining to prove its
-            authentic code of conduct.
+            We serve exporters looking for buyers, importers looking for suppliers, corporations tracking competitors, banks and law firms checking counterparties, and universities studying trade flows.
           </p>
 
           <blockquote className="italic text-blue-600 font-semibold text-lg border-l-4 border-blue-600 pl-4">
-            Honesty is integrated into the soul of our company values and
-            professional conduct.
+            A world where any business can enter any market with the same visibility as a large corporation.
           </blockquote>
         </div>
       </div>

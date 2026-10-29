@@ -4,8 +4,8 @@ import { getBlogs } from "@/lib/blogs";
 export const dynamic = "force-dynamic";
 
 export const metadata = {
-  title: "Trade Data Insights & Guides | Exim Trade Data",
-  description: "Explore practical guides and insights on global trade data, shipment records, and market research.",
+  title: "Trade Data Blog | Import Export Insights and Guides",
+  description: "Guides, market trends and HS code insights for exporters and importers. Learn how to use trade data to find buyers and suppliers.",
   alternates: { canonical: "https://eximtradedata.com/blogs" },
 };
 
@@ -22,10 +22,10 @@ export default async function BlogsPage() {
               <p className="text-xs font-bold uppercase text-[#005b9a]">Exim Trade Data Journal</p>
             </div>
             <h1 className="text-4xl font-semibold leading-tight text-slate-950 sm:text-5xl">
-              Global Trade. Smarter Insights.
+              Trade Data Blog: Guides and Market Insights
             </h1>
             <p className="mt-4 max-w-2xl text-base leading-7 text-slate-600">
-              Discover Global Trade Trends, Import-Export Data, and Market Opportunities.
+              Practical guides for exporters, importers and analysts. Learn to read customs shipment data, find overseas buyers, understand HS codes and follow market trends.
             </p>
           </div>
           <div className="hidden border-l border-slate-300 pl-6 md:block">

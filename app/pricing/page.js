@@ -10,9 +10,9 @@ import Head from "next/head";
 
 
 export const metadata = {
-  title: "Affordable Global Trade Data Solutions | Exim Trade Data",
+  title: "Import Export Data Pricing and Plans | Exim Trade Data",
   description:
-    "Explore flexible pricing plans for Exim Trade Data’s global trade data. Choose from Starter to Premium plans with customizable options for unlimited access and detailed insights.",
+    "Compare Exim Trade Data plans for single-country and multi-country access, with API and priority support options. Get a custom quote.",
   keywords: [
     "import export data",
     "global trade data",
@@ -27,10 +27,10 @@ export const metadata = {
     canonical: "https://eximtradedata.com/pricing"
   },
   openGraph: {
-    title: "Import Export data of 200+ Countries - Exim Trade Data",
+    title: "Import Export Data Pricing and Plans | Exim Trade Data",
     type: "website",
     url: "https://eximtradedata.com/pricing",
-    description: "With the latest updated import export data of over 200+ countries, expand your reach to most diverse markets.",
+    description: "Compare plans for single-country and multi-country access, with API and priority support options. Get a custom quote.",
     siteName: "Exim Trade Data",
     images: [
       {
@@ -42,8 +42,8 @@ export const metadata = {
   
   twitter: {
     card: "summary",
-    title: "Import Export data of 200+ Countries - Exim Trade Data",
-    description: "With the latest updated import export data of over 200+ countries, expand your reach to most diverse markets.",
+    title: "Import Export Data Pricing and Plans | Exim Trade Data",
+    description: "Compare plans for single-country and multi-country access, with API and priority support options. Get a custom quote.",
     site: "@eximtradedata",
     creator: "@eximtradedata",
     url: "https://eximtradedata.com/pricing",
@@ -58,7 +58,7 @@ const faqs = [
   {
     question: "What is Exim GTIS? How can Exim GTIS help my company?",
     answer:
-      "Exim GTIS is the leading trade intelligence platform helping businesses to prosper in the global market We provide expert market intelligence reports that highlight the latest market trends, product lists, port shipment records, importers, and exporters listsThrough our platform, you could mitigate the financial risk involved in the business by reaching out to the genuine buyers and suppliers from the international market. In return, you can generate more ROI and create a strong brand presence.",
+      "Exim GTIS (Global Trade Information Service) is a searchable global trade database built from customs shipment data. Use it to find buyers and suppliers, follow competitors and understand where demand is moving.",
 
 
   },
@@ -114,7 +114,7 @@ const faqs = [
   {
     question: "What's the difference between the plans? How do I decide which plan is best for me?",
     answer:
-      "We have 5 plans: Starter, Basic, Plus, Pro, and Premium.Each plan has different search limits, download credits, and user licenses.ou can compare different plans, you can choose your desired plan and also, and you can also customize your plan according to your requirements & budget.",
+      "Plans are based on the number of countries you need, the amount of data you view or download, and whether you need API access. Starter covers one or two countries, Professional covers several countries with a larger data allowance, and Enterprise can include all required countries, API access and priority support. Contact us for pricing.",
   },
   {
     question: "How can I subscribe to Exim GTIS? How does your point system work?",
@@ -176,17 +176,17 @@ Feel free to connect with our experts for any kind of assistance.
   {
     question: "How much time will it take for my account to be activated?",
     answer:
-      "Once you make the payment, you will receive an activation email. After the verification, your account will be activated.",
+      "Our team explains your plan and data allowance clearly before you subscribe. Contact us to discuss access and onboarding.",
   },
   {
     question: "How can I contact you to create my Customized Data Plan as per my requirements and budget?",
     answer:
-      "To cater to our customers' requirements, we provide customized data plans that best suit their needs and budget. You could simply write an email to us at info@eximtradedata.com with your requirement, and we will get back to you soon.",
+      "Tell us your products, HS codes, countries and budget through the Contact page, on WhatsApp at +91 93146 19475 or by email at info@eximtradedata.com. Our team will reply with a tailored proposal.",
   },
   {
     question: "How do I get customer support?",
     answer:
-      "Our Team of Experts is available 24*7 to provide assistance to our customers. Also, you can connect with us for any help or training at +91-9625812393."
+      "Our team can help you from your first demo through onboarding and beyond. Contact us at +91 93146 19475 or info@eximtradedata.com."
   },
 ];
 

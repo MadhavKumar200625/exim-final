@@ -13,9 +13,9 @@ import HomeTestimonialsClient from "./HOME/HomeTestimonialSection";
 import Head from "next/head";
 
 export const metadata = {
-  title: "Global Import Export Data Provider | 200+ Countries",
+  title: "Import Export Data of 200+ Countries | Exim Trade Data",
   description:
-    "Explore import-export data from over 200 countries with Exim Trade Data. Access shipment records by product, HS code, and port to understand global markets and discover new business opportunities.",
+    "Search customs shipment data by product, HS code and port. Find verified importers and exporters worldwide. Book a free demo.",
   keywords: [
     "import export data",
     "global trade data",
@@ -29,9 +29,9 @@ export const metadata = {
     "global trade information",
   ],
   openGraph: {
-    title: "Global Import Export Data Provider | 200+ Countries",
+    title: "Import Export Data of 200+ Countries | Exim Trade Data",
     description:
-      "Explore import-export data from over 200 countries with Exim Trade Data. Access shipment records by product, HS code, and port to understand global markets and discover new business opportunities.",
+      "Search customs shipment data by product, HS code and port. Find verified importers and exporters worldwide. Book a free demo.",
     url: "https://eximtradedata.com/",
     siteName: "Exim Trade Data",
     type: "website",
@@ -39,9 +39,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Global Import Export Data Provider | 200+ Countries",
+    title: "Import Export Data of 200+ Countries | Exim Trade Data",
     description:
-      "Explore import-export data from over 200 countries with Exim Trade Data. Access shipment records by product, HS code, and port to understand global markets and discover new business opportunities.",
+      "Search customs shipment data by product, HS code and port. Find verified importers and exporters worldwide. Book a free demo.",
     images: ["/logo.png"],
   },
   alternates: { canonical: "https://eximtradedata.com/" },

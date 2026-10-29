@@ -9,41 +9,23 @@ export default function Hero() {
   const plans = [
     {
       name: "Starter",
-      description:
-        "Highly Recommended for Beginners. For Better Analysis & Market Research.",
-      inr: 4999,
-      usd: 70,
-      downloads: "5,000",
-      validity: "6 Months",
+      description: "Access one or two countries for focused market research.",
+      priceLabel: "Quote",
+      features: ["1–2 countries", "Data allowance for search and download", "Onboarding support"],
       gradient: "bg-gradient-to-r from-orange-400 to-yellow-400",
     },
     {
-      name: "Basic",
-      description:
-        "More Searches, More Downloads, & More Control With the Basic Plan.",
-      inr: 9999,
-      usd: 140,
-      downloads: "10,000",
-      validity: "12 Months",
+      name: "Professional",
+      description: "Access several countries with a larger data allowance for regular research.",
+      priceLabel: "Quote",
+      features: ["Several countries", "Larger data allowance", "Onboarding support"],
       gradient: "bg-gradient-to-r from-red-500 to-orange-400",
     },
     {
-      name: "Plus",
-      description:
-        "Explore Emerging Markets, Trends, & Get More Download Credits.",
-      inr: 19999,
-      usd: 300,
-      downloads: "30,000",
-      validity: "24 Months",
-      gradient: "bg-gradient-to-r from-purple-500 to-indigo-500",
-    },
-    {
-      name: "Premium",
-      description: "Access Detailed Trade Info by Product, Country, & Ports.",
-      inr: 29999,
-      usd: 350,
-      downloads: "50,000",
-      validity: "30 Months",
+      name: "Enterprise",
+      description: "Configure required countries, API access and priority support for your team.",
+      priceLabel: "Quote",
+      features: ["Required countries", "API access", "Priority support"],
       gradient: "bg-gradient-to-r from-cyan-400 to-blue-500",
     },
   ];
@@ -57,20 +39,14 @@ export default function Hero() {
         {/* Hero Heading */}
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
-            Welcome to the World&apos;s Largest <br />
-            <span className="text-blue-600 drop-shadow-lg">
-              Global Trade Analysis
-            </span>
+            Import Export Data Plans <br />
+            <span className="text-blue-600 drop-shadow-lg">and Pricing</span>
           </h2>
           <h3 className="text-xl md:text-2xl font-semibold text-black mb-4 tracking-wide">
-            Import Export Trade Analysis
+            Exim GTIS Dashboard Access
           </h3>
           <p className="text-lg max-w-3xl mx-auto font-medium">
-            With the latest updated import export trade analysis, expand your
-            reach to the most diverse markets <br />
-            Drive{" "}
-            <span className="text-blue-600 font-semibold">high-quality ROI</span>{" "}
-            leads from all over the globe.
+            Choose a plan that fits the markets you trade in and the way you work. Every plan includes dashboard access, search by product, HS code and port, and onboarding support.
           </p>
         </div>
 
@@ -126,9 +102,9 @@ export default function Hero() {
                 {/* Price Circle */}
                 <div className="absolute left-1/2 -translate-x-1/2 -bottom-8 z-10">
                   <div className="bg-gray-900 text-white rounded-full border-4 border-white w-28 h-28 flex items-center justify-center text-2xl font-bold shadow-lg">
-                    {currency === "INR"
+                    {plan.priceLabel || (currency === "INR"
                       ? `₹${plan.inr.toLocaleString("en-IN")}`
-                      : `$${plan.usd.toLocaleString("en-US")}`}
+                      : `$${plan.usd.toLocaleString("en-US")}`)}
                   </div>
                 </div>
               </div>
@@ -141,24 +117,12 @@ export default function Hero() {
               {/* Features */}
               <div className="px-6 py-4 text-sm">
                 <ul className="space-y-2">
-                  <li>
-                    <span className={`mr-2 ${plan.gradient} bg-clip-text text-transparent`}>
-                      ✔️
-                    </span>
-                    Full Data Search
-                  </li>
-                  <li>
-                    <span className={`mr-2 ${plan.gradient} bg-clip-text text-transparent`}>
-                      ✔️
-                    </span>
-                    {plan.downloads} Download Credits
-                  </li>
-                  <li>
-                    <span className={`mr-2 ${plan.gradient} bg-clip-text text-transparent`}>
-                      ✔️
-                    </span>
-                    {plan.validity} Validity
-                  </li>
+                  {plan.features.map((feature) => (
+                    <li key={feature}>
+                      <span className={`mr-2 ${plan.gradient} bg-clip-text text-transparent`}>✔️</span>
+                      {feature}
+                    </li>
+                  ))}
                 </ul>
               </div>
 
@@ -169,7 +133,7 @@ export default function Hero() {
                   onClick={() => setIsOpen(true)}
                   className={`block w-full py-2 rounded-lg ${plan.gradient} text-white font-semibold hover:scale-105 transition`}
                 >
-                  Explore More →
+                  Get a Custom Quote →
                 </button>
               </div>
             </div>

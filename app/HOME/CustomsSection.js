@@ -8,7 +8,7 @@ const CustomsSection = () => {
     >
       <div className="max-w-8xl text-center mb-12 animate-fadeUp">
         <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
-          Empower Your Market Research With Global Import Export Data
+          What You Get in Our Import Export Database
         </h2>
       </div>
 
@@ -23,10 +23,10 @@ const CustomsSection = () => {
             decoding="async"
           />
           <h3 className="text-xl font-semibold text-black mb-3 text-center">
-            Actionable Insights
+            Importer and Exporter Details
           </h3>
           <p className="text-gray-600 text-md text-center">
-            We combine the years of accumulated expertise of our data scientists and business intelligence tools to discover meaningful insights from the global import export database that also includes <a href="/import-export-data-country-wise" className="text-blue-600 font-bold hover:underline">country-wise import and export data</a>. All categories to make data-driven current market opportunities.
+            Review trading partners and shipment history to find suppliers, buyers and new markets. Explore <a href="/import-export-data-country-wise" className="text-blue-600 font-bold hover:underline">country-wise import and export data</a> to compare activity by market.
           </p>
         </div>
 
@@ -40,10 +40,10 @@ const CustomsSection = () => {
             decoding="async"
           />
           <h3 className="text-xl font-semibold text-black mb-3 text-center">
-            Know Your Market
+            HS Code and Product Data
           </h3>
           <p className="text-gray-600 text-md text-center">
-            For any business, the main challenge is to find buyers for their products. Our well-researched global import export database helps you to evaluate and develop your marketing strategy to grab new buyers in the foreign market.
+            Search shipments by HS code or product description to see where goods are traded and compare origins.
           </p>
         </div>
 
@@ -58,10 +58,10 @@ const CustomsSection = () => {
             decoding="async"
           />
           <h3 className="text-xl font-semibold text-black mb-3 text-center">
-            Streamline Your Business
+            Trade Statistics, Ports and Routes
           </h3>
           <p className="text-gray-600 text-md text-center">
-            Streamline all your trading operations and pave the way for top-line growth for your business. With a precise overview of every business activity, discover the inefficient processes and optimize your business operation through our global importers data and exporters data.
+            Compare values, volumes and unit prices to size a market. See which ports and routes carry which goods, and review trade activity by country.
           </p>
         </div>
       </div>

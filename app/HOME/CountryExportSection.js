@@ -21,13 +21,13 @@ export default function CountryStatsSection() {
       <section className="py-14 bg-white text-gray-900">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-black mb-3">
-            Global Import Export Database
+            Import Export Data by Country
           </h2>
           <h3 className="text-xl md:text-4xl text-black mb-3">
-            Global Trade Data Analysis Country-wise
+            Country-wise Trade Data
           </h3>
           <p className="text-sm md:text-base text-black max-w-2xl mx-auto">
-            Discover country-wise global import-export data Statistics from our exclusive Global Trade Database.
+            Browse country-wise import export data to see top products, trading partners, active importers and exporters, and port volumes.
           </p>
         </div>
 
@@ -55,13 +55,13 @@ export default function CountryStatsSection() {
     <section className="py-14 bg-white text-gray-900">
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-black mb-3">
-          Global Import Export Database
+          Import Export Data by Country
         </h2>
         <h3 className="text-xl md:text-4xl text-black mb-3">
-          Global Trade Data Analysis Country-wise
+          Country-wise Trade Data
         </h3>
         <p className="text-sm md:text-base text-black max-w-2xl mx-auto">
-          Discover country-wise global import-export data Statistics from our exclusive Global Trade Database.
+          Browse country-wise import export data to see top products, trading partners, active importers and exporters, and port volumes.
         </p>
       </div>
 

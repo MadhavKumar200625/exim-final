@@ -4,16 +4,16 @@ import { useInView } from "react-intersection-observer";
 
 const points = [
   {
-    title: "Emerging Markets",
-    desc: "Explore the emerging markets through our interactive platform. Get accurate forecasts on top market trends, demands, risks, competitors and growth opportunities.",
+    title: "Shipment Records",
+    desc: "Search customs shipment data by HS code or product and review quantities, values, ports and dates where available.",
   },
   {
-    title: "Trending Products",
-    desc: "Through our impressive visual reports, you can discover top product trends, analyze production quantity and evaluate appropriate pricing for your product.",
+    title: "Country Trade Statistics",
+    desc: "Review top imports, exports and trading partners for each market.",
   },
   {
-    title: "Global Buyers & Suppliers",
-    desc: "Expand your network to the global market through our Global buyers & suppliers list. Get quality business leads from Exim GTIS & double your revenue.",
+    title: "Port Data and Trends",
+    desc: "See which goods move through each port and follow products and markets that are rising or falling.",
   },
 ];
 
@@ -25,12 +25,10 @@ export default function FeaturesSection() {
       {/* Top heading */}
       <div className="text-center max-w-6xl mx-auto mb-16">
         <h2 className="text-3xl md:text-4xl font-bold text-black">
-          Become a Leader in Import Export Industry with Exim GTIS
+          What You Can Do in Exim GTIS
         </h2>
         <p className="text-lg text-black mt-4">
-          Unlock the most cost-effective business tool for comprehensive market research. 
-          Successfully expand your business to the global market with improved decision making 
-          based on Exim GTIS reports.
+          Search by HS code or product, compare unit prices across origins, save and share searches, download results or connect through the API.
         </p>
       </div>
 

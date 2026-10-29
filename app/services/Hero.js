@@ -18,10 +18,10 @@ const Hero = () => {
         {/* Right Content */}
         <div className="space-y-6">
           <h2 className="text-3xl md:text-4xl font-bold text-black leading-tight">
-            Import Export Data Analysis <span className="text-blue-600">| Services</span>
+            Import Export Data Services for Growing Trade Businesses
           </h2>
           <p className="text-black text-lg">
-          Discover business opportunities from the global market with the world's leading import export data Analysis company, Exim Trade Data. We have an efficient business intelligence market platform that tracks the supply chain and shipping activity of all the major shipping companies around the world to provide deep insights into the global export-import data for business. Our trade statistics and market access information help you to identify the right suppliers and connect with potential sales prospects.
+          Exim Trade Data turns customs shipment data into market intelligence. See who is buying, who is selling and where demand is moving. Use trade statistics to shortlist reliable suppliers and reach buyers who already import your product.
 </p>
           {/* <p className="text-black text-lg">
             Leverage our trade statistics and market access data to identify reliable suppliers and connect with high-quality sales prospects worldwide.

@@ -1,43 +1,43 @@
 const benefits = [
   {
     img: "reduce-the-risk-involved.webp",
-    title: "Reduce the Risk Involved",
-    desc: "Our market analysis reports help you evaluate the overall supply chain, demand, and trends in the global trade market eliminating all the potential risks involved in trading.",
+    title: "Lower Your Trading Risk",
+    desc: "Check a buyer's or supplier's trade history before you commit to a shipment.",
   },
   {
     img: "expand-your-business-network.webp",
-    title: "Expand Your Business Network",
-    desc: "Build relations in the overseas market using our international global import export trade data and meet potential buyers and suppliers in the foreign trade market.",
+    title: "Grow Your Network",
+    desc: "Meet potential buyers and suppliers in overseas markets using trade activity.",
   },
   {
     img: "find-potential-market.webp",
-    title: "Find Potential Market",
-    desc: "Discover a new marketplace for your import-export trade business with our analytically designed database of global import-export data.",
+    title: "Discover Untapped Markets",
+    desc: "See where your product is already in demand and compare markets before you expand.",
   },
   {
     img: "researched-market-data.webp",
-    title: "Researched Market Data",
-    desc: "In-depth market intelligence reports to help you gain complete transparency into the global import-export trade market and statistics.",
+    title: "Back Decisions With Evidence",
+    desc: "Use trade statistics instead of guesswork when you plan your next move.",
   },
   {
     img: "affordable-pricing.webp",
-    title: "Affordable pricing",
-    desc: "We have programs for every sector and business, from small & medium companies to large corporations, and supply import-export data at competitive pricing.",
+    title: "Plan Pricing",
+    desc: "Benchmark prices across origins and competitors to support your pricing decisions.",
   },
   {
     img: "navigate-global-market.webp",
-    title: "Navigate Global Market",
-    desc: "Cover the communication gap, interact more frequently with your clients across global countries with our latest and smartly developed tools and grab more business opportunities.",
+    title: "Save Time",
+    desc: "Spend less time on leads that go nowhere by filtering shipment activity for your target market.",
   },
   {
     img: "overcome-the-trade-challenges.webp",
-    title: "Overcome the Trade Challenges",
-    desc: "Form your import-export trade strategy based on the current market scenario with our customized global import-export trade data and stay ahead of the market competition.",
+    title: "Custom Dashboards",
+    desc: "View the trade metrics that matter to you and share findings with your team.",
   },
   {
     img: "find-an-ideal-match-to-meet-your-business.webp",
-    title: "Find an Ideal Match to Meet Your Business",
-    desc: "Target relevant and potential audiences and markets for your trade business with Exim's import-export trade data and enhance the overall productivity of your trade business.",
+    title: "Reports on Request",
+    desc: "Order customised import export data reports for your products and target countries.",
   },
 ];
 

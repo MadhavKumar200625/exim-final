@@ -4,9 +4,9 @@ import PortDataByCountry from './PortDataByCountry';
 import ContactUs from '../about/ContactUs';
 
 export const metadata = {
-  title: 'Global Ports Data by Country – Container Port Information & Statistics | Exim Trade Data',
+  title: 'Global Ports Data | Port-wise Import Export Data | Exim Trade Data',
   description:
-    'Access detailed global port data by country. Explore thousands of international sea ports and download the complete world port list in Excel or PDF format.',
+    'Browse global ports and see which goods move through each one. Explore port-wise import and export data from Exim Trade Data.',
   keywords: [
     'Global ports data',
     'Container ports data',
@@ -28,9 +28,9 @@ export const metadata = {
     canonical: 'https://eximtradedata.com/global-ports',
   },
   openGraph: {
-    title: 'Global Ports Data by Country – Container Port Information & Statistics | Exim Trade Data',
+    title: 'Global Ports Data | Port-wise Import Export Data | Exim Trade Data',
     description:
-      'Access detailed global port data by country. Explore thousands of international sea ports and download the complete world port list in Excel or PDF format.',
+      'Browse global ports and see which goods move through each one. Explore port-wise import and export data from Exim Trade Data.',
     url: 'https://eximtradedata.com/global-ports',
     type: 'website',
     siteName: 'Exim Trade Data',
@@ -45,9 +45,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Global Ports Data by Country – Container Port Information & Statistics | Exim Trade Data',
+    title: 'Global Ports Data | Port-wise Import Export Data | Exim Trade Data',
     description:
-      'Access detailed global port data by country. Explore thousands of international sea ports and download the complete world port list in Excel or PDF format.',
+      'Browse global ports and see which goods move through each one. Explore port-wise import and export data from Exim Trade Data.',
     site: '@eximtradedata',
     creator: '@eximtradedata',
     url: 'https://eximtradedata.com/global-ports',

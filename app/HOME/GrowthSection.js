@@ -8,12 +8,11 @@ const GrowthSection = () => {
         {/* Left Section */}
         <div>
           <h2 className="text-2xl md:text-3xl font-bold text-black mb-4">
-            Best Market Research Platform: Exim GTIS
+            Exim GTIS: Global Trade Information Service
           </h2>
 
           <p className="text-md md:text-lg text-gradient text-black bg-clip-text mb-4">
-            Get Meaningful Industrial Insights with Exim GTIS (Global Trade Information Service).
-We are amongst the top global import and export data providers and also the best market intelligence platform that helps identify the key performance factors for your company and streamline your workflow. Find the latest market trends, most traded HS codes, countries, ports, competitors, and top import-export companies. Mitigate financial risk and reach out to the verified buyers and suppliers. Double your sales and maximize revenue with our market research platform, which provides HS codes, country-wise trade data, <a href="/global-ports" className="text-blue-600 font-bold hover:underline">Ports Data</a>, and top import-export companies. Mitigate financial risk and reach out to the verified buyers and suppliers. Double your sales and maximize revenue with our market research platform.
+            Exim GTIS is our trade intelligence platform. In one dashboard you can follow market trends, the most-traded HS codes, key ports, competitors and top importers and exporters. Check a buyer&apos;s or supplier&apos;s shipment history before you commit to a deal and reduce the risk of working with the wrong partner.
           </p>
 
           

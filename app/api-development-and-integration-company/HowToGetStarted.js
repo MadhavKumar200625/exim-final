@@ -6,16 +6,16 @@ import React from "react";
 
 const points = [
   {
-    title: "API Development",
-    desc: "Our Developers will create really fast APIs with secure connections along with an API key & documentation to understand functionality.",
+    title: "Tell Us Your Use Case",
+    desc: "Share the products, countries and shipment data your team needs.",
   },
   {
-    title: "API integration",
-    desc: "Then after reviewing the API documentation, you will make API calls and synchronize it into your applications.",
+    title: "Receive API Access",
+    desc: "Get API access and documentation, with help from our developers.",
   },
   {
-    title: "Execute strategies",
-    desc: "Once you are done API integration, the next step is to execute strategies to create an exceptional user interface.",
+    title: "Integrate and Go Live",
+    desc: "Connect the API to your systems, then scale as your needs grow.",
   },
 ];
 
@@ -26,7 +26,7 @@ const HowToGetStarted = () => {
     <section className="bg-white py-20 relative">
       <div className="text-center max-w-6xl mx-auto mb-16">
         <h2 className="text-3xl md:text-4xl font-bold text-black">
-          How to get started?
+          How It Works
         </h2>
       </div>
 

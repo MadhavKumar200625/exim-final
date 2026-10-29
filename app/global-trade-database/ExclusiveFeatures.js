@@ -17,8 +17,8 @@ const benefits = [
     image: "/global-trade-database/advance-search.webp",
   },
   {
-    title: "Importer-Exporter Tree",
-    desc: "Discover the worldwide supply chain network through our exclusive feature called Importer Exporter Tree. With this feature, you can access the network of a buyer or supplier. You can find their connections from which they are sourcing or exporting their goods.",
+    title: "Country Trade Statistics",
+    desc: "Review top imports, exports and trading partners for each market.",
     image: "/global-trade-database/importer-exporter-tree.webp",
   },
   {
@@ -27,7 +27,7 @@ const benefits = [
     image: "/global-trade-database/customized-data-reports.webp",
   },
   {
-    title: "24×7 Customer Support",
+    title: "Team Support",
     desc: (
       <>
         We believe in growing with our clients. We are always here to provide assistance to our customers. Our experts will guide you throughout the process. Also, you can contact us at{" "}
@@ -39,10 +39,10 @@ const benefits = [
         </a>{" "}
         or call us at{" "}
         <a
-          href="tel:+919625812393"
+          href="tel:+919314619475"
           className="text-blue-600 hover:underline"
         >
-          +91-9625812393
+          +91 93146 19475
         </a>
         .
       </>
@@ -56,10 +56,10 @@ export default function EximBenefitsSection() {
     <section className="py-16 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 text-center">
         <h2 className="text-4xl font-bold text-black mb-4">
-          Exim Global Trade Information System
+          What Is Inside Exim GTIS
         </h2>
         <p className="text-black text-xl mb-10 max-w-3xl mx-auto">
-          Some Exclusive Features of our Global Trade Database
+          Customs shipment records, HS codes, country trade statistics, port data and trend views help you understand international trade activity.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -3,9 +3,9 @@ import FAQSection from '../Components/FAQ';
 
 
 export const metadata = {
-  title: "Learn More: FAQs on Global Trade Insights and Services | Exim Trade Data",
+  title: "FAQs | Import Export Data and Exim GTIS",
   description:
-    "Find answers to common questions about Exim Trade Data’s global trade data solutions. Learn about our services, data accuracy, and how we can support your business growth.",
+    "Answers about Exim GTIS, data coverage, plans, subscriptions and custom data plans. Book a free demo with Exim Trade Data.",
   keywords: [
     "Global Import Export Trade Data",
     "Import Export Data",
@@ -27,10 +27,10 @@ export const metadata = {
     canonical: "https://eximtradedata.com/faq"
   },
   openGraph: {
-    title: "Frequently Asked Questions | FAQs - Exim Trade Data",
+    title: "FAQs | Import Export Data and Exim GTIS",
     type: "website",
     url: "https://eximtradedata.com/faq",
-    description: "Exim Trade Data Frequently Asked Questions (FAQs) gives all answers to your queries regarding global import export shipment and customs data.",
+    description: "Answers about Exim GTIS, data coverage, plans, subscriptions and custom data plans. Book a free demo with Exim Trade Data.",
     siteName: "Exim Trade Data",
     images: [
       {
@@ -42,8 +42,8 @@ export const metadata = {
   
   twitter: {
     card: "summary",
-    title: "Frequently Asked Questions | FAQs - Exim Trade Data",
-    description: "Exim Trade Data Frequently Asked Questions (FAQs) gives all answers to your queries regarding global import export shipment and customs data.",
+    title: "FAQs | Import Export Data and Exim GTIS",
+    description: "Answers about Exim GTIS, data coverage, plans, subscriptions and custom data plans. Book a free demo with Exim Trade Data.",
     site: "@eximtradedata",
     creator: "@eximtradedata",
     url: "https://eximtradedata.com/faq",
@@ -57,103 +57,57 @@ export const metadata = {
 
 const AboutEximTradeData =   [
   {
-    question: "1. What is Exim Trade Data?",
+    question: "1. What is Exim GTIS and how can it help my company?",
     answer: `
-      Exim Trade Data is the most trusted data service provider company across the world.<br /><br/>
-      We provide in-depth insights into the global market through our exclusive database of over 200+ countries.
+      Exim GTIS (Global Trade Information Service) is our trade intelligence platform. It brings customs shipment records and trade statistics into one searchable place. Use it to find buyers and suppliers, check a partner&apos;s trading history, track competitors and spot growing products and markets.
     `,
   },
   {
-    question: "2. What services does Exim Trade Data provide?",
+    question: "2. How many countries are covered, and what data do you provide?",
     answer: `
-      We provide customized data solutions to meet our clients&apos; requirements.<br />
-      We offer:<br/><br/>
-      • BI powered import-export analytics<br />
-      • Customs data<br />
-      • Ports data<br />
-      • Global products data reports to our customers.
+      Our database covers more than 200 countries. Available shipment details can include importer and exporter names, product descriptions, HS codes, quantity, value, unit price, origin and destination countries, ports and dates. Exact fields vary by country, depending on what each customs authority publishes.
     `,
   },
   {
-    question: "3. How many countries does Exim Trade Data cover in its database?",
+    question: "3. What is the difference between the plans?",
     answer: `
-      Through our expertise in data mining and data processing, we have created an impressive database<br />
-      that helps businesses understand the global trade market.<br />
-      ✅ We provide verified import-export data of over 200+ countries.
+      Plans differ by the number of countries you can access, the amount of data you can view or download, and options such as API access and priority support. Starter covers one or two countries, Professional covers several countries with a larger data allowance, and Enterprise includes the countries and support your team needs.
     `,
   },
   {
-    question: "4. Why should I use Exim Trade Data?",
+    question: "4. How can I subscribe, and how does the point system work?",
     answer: `
-      Exim Trade Data gives you instant access to:<br />
-      • 200+ countries data<br />
-      • Global products data<br />
-      • Global HS Code List<br />
-      • Free sample data<br />
-      • Unlimited data search on its portal
+      Contact our team to compare plans and discuss the data allowance for searching, viewing and downloading records. We will explain how your plan works before you subscribe.
     `,
   },
   {
-    question: "5. How can Exim Trade Data help my business?",
+    question: "5. How can I get a customised data plan?",
     answer: `
-      Suppose, we are given an ITC HS Code: 9009840000<br /><br />
-      ✅ High Quality Data and actionable insights<br />
-      ✅ Identify global market trends, demand and risks<br />
-      ✅ Discover genuine buyers & Suppliers for your business<br />
-      ✅ Enhance your sales potential by generating quality leads
+      Tell us your products, HS codes, countries and budget through the Contact page, on WhatsApp at +91 93146 19475 or by email at <a href="mailto:info@eximtradedata.com">info@eximtradedata.com</a>. Our team will reply with a tailored proposal.
     `,
   },
   {
-    question: "6. How is Exim Trade Data different from other Market Intelligence Platforms available in the market?",
+    question: "6. Where does your data come from?",
     answer: `
-      Although there are various Market Intelligence Platforms available in the market,<br />
-      Exim Trade Data offers some exclusive services to its clients. These include:<br />
-      • 200+ countries data<br />
-      • Global Ports Shipment Data<br />
-      • Global Importers Shipment Data<br />
-      • Global Exporters Shipment Data<br />
-      • Global Products Shipment Data<br />
-      • Global HS Code List<br />
-      • Free Sample Data<br />
-      • Unlimited Free Data Search<br />
-      • Customized Reports (yearly, monthly & quarterly)
+      Data comes from customs authorities, trade ministries and port authorities in the countries we cover.
     `,
   },
   {
-    question: "7. Who are your clients?",
+    question: "7. Can I download data or use an API?",
     answer: `
-      Over the years, we have worked with some of the top clients:<br />
-      • Dell<br />
-      • Bajaj<br />
-      • Mahindra<br />
-      • Hero Motorcorp<br />
-      • Orient bell Tiles
+      Yes. You can download search results and connect shipment data to your own systems through our API.
     `,
   },
   {
-    question: "8. Do you provide verified data? What is the source of Data and its accuracy?",
+    question: "8. Can I try Exim Trade Data before I buy?",
     answer: `
-      Our data is based on:<br />
-      • Global bills of lading<br />
-      • Commercial invoices<br />
-      • Customs data<br />
-      • Ports shipments<br />
-      • Government bodies<br />
-      • Trade associates<br />
-      • Logistics and other trusted sources in import-export business<br /><br />
-      We are teamed up with global partners and have a wide reach in the global market.<br />
-      ✅ You can consider us the most reliable data service provider company.<br />
-      ✅ We are known for our accuracy and quality in data.
+      Yes. Book a free demo or start a free trial and we will show shipment records for your product.
     `,
   },
   {
-    question: "9. Where can I get additional assistance using Exim Trade Data Services?",
+    question: "9. How do I get customer support?",
     answer: `
-      Exim Trade Data provides seamless support to its customers.<br />
-      ✅ You can reach us via:<br />
-      • Email: <a href="mailto:info@eximtradedata.com">info@eximtradedata.com</a><br />
-      • Live Chat<br />
-      • Phone: +91-9625812393
+      Contact our team by email at <a href="mailto:info@eximtradedata.com">info@eximtradedata.com</a> or call +91 93146 19475.
     `,
   },
 ];
@@ -184,7 +138,7 @@ const FeaturesAndBenefits = [
   },
   {
     question: "3. How many countries data do you provide in your services?",
-    answer: `We provide over 60+ countries&apos; import and export data. You can find top imports, exports, buyers lists, and suppliers lists of top trading nations such Russia, Vietnam, Turkey, Indonesia, Philippines, and more.`
+    answer: `Our database covers more than 200 countries. Available shipment fields vary by country depending on what each customs authority publishes.`
   },
   {
     question: "4. Which data fields do you cover in your data reports?",
@@ -228,7 +182,7 @@ const FeaturesAndBenefits = [
   },
   {
     question: "15. Which is the best site for import export data?",
-    answer: `Exim Trade Data provides the best import export data solutions for all the businesses. They have over 60+ countries&apos; trade data.`
+    answer: `Exim Trade Data provides searchable import export data for more than 200 countries.`
   },
   {
     question: "16. What is export/import data?",
@@ -242,7 +196,7 @@ const FeaturesAndBenefits = [
   },
   {
     question: "17. Where can I find trade data?",
-    answer: `Exim Trade Data is the best global trade data service provider company offering the global import export data of over 60+ countries. Find genuine leads for your business and enhance your market revenue with their global import export database.`
+    answer: `Exim Trade Data provides customs shipment records and trade statistics to help exporters and importers research markets and find buyers and suppliers.`
   },
   {
     question: "18. How do I renew my plan?",
@@ -485,7 +439,7 @@ const GlobalMarketFacts = [
   },
   {
     question: "8. Which country is best for import export business?",
-    answer: "China, Germany, Russia and Ireland are the top trading countries with less trade deficit. Exim Trade Data provides the complete guide on how to start a successful import export business. You can consult us at info@eximtradedata.com or call us at +91-9625812393."
+    answer: "China, Germany, Russia and Ireland are major trading markets. Contact us at info@eximtradedata.com or call +91 93146 19475 to discuss your target countries."
   },
   {
     question: "9. Where can I get U.S. import data?",
@@ -605,7 +559,7 @@ const PricingPlans = [
       <ul class="list-disc list-inside">
         <li>Email: info@eximtradedata.com</li>
         <li>Live Chat</li>
-        <li>Phone: +91-9625812393</li>
+        <li>Phone: +91 93146 19475</li>
       </ul>
     `
   },
@@ -646,7 +600,7 @@ const page = () => {
       "name": "What is Exim Trade Data?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Exim Trade Data is the most trusted data service provider company across the world. We provide in-depth insights into the global market through our exclusive database of over 60+ countries."
+        "text": "Exim GTIS (Global Trade Information Service) is our trade intelligence platform. It brings customs shipment records and trade statistics into one searchable place to help find buyers and suppliers, check trading history, track competitors and spot growing products and markets."
       }
     },
     {
@@ -662,7 +616,7 @@ const page = () => {
       "name": "How many countries do you cover in your database?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We provide verified import-export data of over 60+ countries."
+        "text": "Our database covers more than 200 countries. Available shipment details vary by country depending on what each customs authority publishes."
       }
     },
     {
@@ -670,7 +624,7 @@ const page = () => {
       "name": "Why should I use Exim Trade Data?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Exim Trade Data gives instant access to 60+ countries data, global products data, global HS Code list, free sample data, and unlimited data search on its portal."
+        "text": "Plans differ by country access, data allowance and options such as API access and priority support. Book a demo and we will suggest a plan for your products and target countries."
       }
     },
     {
@@ -686,7 +640,7 @@ const page = () => {
       "name": "How is Exim Trade Data different from other Market Intelligence Platforms?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Exim Trade Data offers exclusive services including 60+ countries data, global ports shipment data, importer and exporter shipment data, global products shipment data, global HS Code list, free sample data, unlimited free data search, and customized reports."
+        "text": "Exim Trade Data provides customs shipment records, port data, product data, HS code search, a free demo and customised reports for more than 200 countries."
       }
     },
     {
@@ -710,7 +664,7 @@ const page = () => {
       "name": "Where can I get additional assistance using Exim Trade Data services?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "You can contact us via email at info@eximtradedata.com, use live chat, or call us at +91-9625812393."
+        "text": "You can contact us by email at info@eximtradedata.com or call +91 93146 19475."
       }
     },
     {
@@ -808,7 +762,7 @@ const page = () => {
       "name": "How can I contact Exim Trade Data for support or queries?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "You can reach us via email, live chat, or phone at +91-9625812393 for quick assistance."
+        "text": "You can reach us by email at info@eximtradedata.com or by phone at +91 93146 19475."
       }
     },
     {

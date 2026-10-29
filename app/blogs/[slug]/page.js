@@ -102,22 +102,17 @@ export default async function BlogArticlePage({ params }) {
           </div>
         </header>
 
-        <div className="mx-auto max-w-3xl px-5 py-10 sm:py-14">
+        <div className="mx-auto max-w-3xl px-5 py-6 sm:py-8">
           <div className="mb-8 flex items-center gap-3 text-xs font-bold uppercase text-[#005b9a]">
             <span className="h-2 w-2 bg-[#ff7a18]" />
             <span>Article</span>
           </div>
           <div
-            className="space-y-6 text-base leading-8 text-slate-700 sm:text-[17px] sm:leading-8"
-          >
-            {(blog.contentParagraphsHtml || blog.content).map((paragraph, index) => (
-              <p
-                key={index}
-                className={index === 0 ? "text-lg leading-8 text-slate-800 sm:text-xl sm:leading-9" : ""}
-                dangerouslySetInnerHTML={{ __html: paragraph }}
-              />
-            ))}
-          </div>
+            className="blog-article-content text-base leading-8 text-slate-700 sm:text-[17px] sm:leading-8"
+            dangerouslySetInnerHTML={{
+              __html: blog.contentHtml || (blog.contentParagraphsHtml || blog.content).join(""),
+            }}
+          />
           <div className="mt-12 border-t border-slate-200 pt-6">
             <Link href="/blogs" className="inline-flex items-center gap-2 text-sm font-semibold text-[#005b9a] transition hover:text-[#ff7a18]">
               <ArrowLeft aria-hidden="true" size={16} />

@@ -12,11 +12,10 @@ const Hero = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-12">
         <div>
           <h2 className="text-4xl md:text-5xl font-bold text-black leading-tight mb-4">
-            Access the Global Trade Database of over 200+ Countries.
+            Global Trade Database: Exim GTIS
           </h2>
           <p className="text-xl text-black mb-8">
-            Find High ROI business opportunities. Maximize your profit through{" "}
-            <strong>Exim Global Trade Information System</strong>.
+            Exim GTIS (Global Trade Information Service) is a searchable global trade database built from customs shipment data. Use it to find buyers and suppliers, follow competitors and understand where demand is moving.
           </p>
 
           <div className="flex  gap-4">

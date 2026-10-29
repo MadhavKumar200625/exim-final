@@ -6,18 +6,18 @@ import { useInView } from "react-intersection-observer";
 
 const cardData = [
   {
-    title: "Comprehensive Guide",
-    desc: "Get in-depth knowledge of existing market channels and consumer preferences around the globe. We provide a complete, comprehensive guide to the global import export database that helps you to align your business with international trade with the help of our Global Import and Export Data.",
+    title: "Know Your Market",
+    desc: "See real demand, prices and competitors before you commit to a market.",
     image: "/comprehensive-guide.webp",
   },
   {
-    title: "Explore Foreign Market",
-    desc: "With our Global Import Export Data, find overseas customers and discover the best match that adds better economic value to your product. Simplified and genuine importers data and exporters data pave the way to successful overseas trade for your business.",
+    title: "Find Overseas Customers",
+    desc: "Locate buyers that already import your product and explore new markets.",
     image: "/explore-foreign-market.webp",
   },
   {
-    title: "Build Valuable Partnership",
-    desc: "With our fine-tailored global import and export data, assess your readiness for the target market and grow with your business. Understand the key aspects of international trade and associate with valuable industry peers.",
+    title: "Reduce Risk",
+    desc: "Check a partner's trading history before you ship or pay, and use evidence to guide decisions.",
     image: "/build-valuable-partnership.webp",
   },
 ];
@@ -107,7 +107,7 @@ const WhyChooseUs = () => {
     <section className="relative bg-linear-to-b from-blue-50 via-white to-blue-50 py-14 px-6 overflow-hidden">
       <div className="text-center mb-16">
         <h2 className="text-2xl md:text-3xl font-extrabold text-black">
-          Choose Exim Trade Data - Best Import and Export Data Provider
+          Why Choose Exim Trade Data
         </h2>
       </div>
 

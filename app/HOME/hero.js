@@ -20,10 +20,11 @@ export default function Hero() {
           </h1>
 
           <p className="text-md md:text-lg text-black mb-8">
-            Looking to grow your international import-export trade business? Access verified global import and export data to discover authentic buyers and sellers from over 200+ countries. Our platform delivers comprehensive customs shipment records, including detailed shipment records insights, and helps you connect with real trading partners through a world-class trade intelligence service.</p>
+            Want to take your international trade business further? Our verified import and export data helps you find genuine buyers and sellers in more than 200 countries. You get detailed customs shipment records and the insights behind them, so you can reach real trading partners with confidence.
+          </p>
 
           <p className="text-md md:text-lg text-black mb-8">
-           Our Global Import Export Database provides essential international trade statistics on who is trading what, where, and how much. It includes detailed information on buyers (importers) and sellers (exporters) such as company names, trade volumes, <a href="/global-hs-code-list" className="text-blue-600 font-bold hover:underline">HSN Code List</a>, product categories, shipment values, origin or destination countries, ports used, and transaction frequency.
+           Our Global Import Export Database shows who is trading what, where, and in what quantity. For every importer and exporter, you can see the company name, trade volume, HSN Code List codes, product category, shipment value, origin and destination country, ports used, and how often they trade.
 </p>
 
           <div className="flex justify-center lg:justify-start">
@@ -32,7 +33,7 @@ export default function Hero() {
               className="relative inline-block px-6 py-3 text-white font-semibold text-sm md:text-lg overflow-hidden group bg-blue-600"
             >
               <span className="absolute inset-0 w-full h-full bg-linear-to-br from-white/10 to-white/5 opacity-0 group-hover:opacity-100 transition duration-300 blur-sm"></span>
-              <span className="relative z-10">Consult Our Expert</span>
+              <span className="relative z-10">Get a Demo</span>
             </button>
           </div>
         </div>

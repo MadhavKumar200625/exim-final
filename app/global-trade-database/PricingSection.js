@@ -9,45 +9,25 @@ export default function PricingSection() {
   const plans = [
     {
       name: "Starter",
-      description:
-        "Highly Recommended for Beginners. For Better Analysis & Market Research.",
-      inr: 4999,
-      usd: 70,
-      downloads: "5,000",
-      validity: "6 Months",
+      description: "Access one or two countries for focused market research.",
+      priceLabel: "Quote",
+      features: ["1–2 countries", "Data allowance for search and download", "Onboarding support"],
       gradient: "from-orange-400 to-yellow-400",
       icon: "🌐",
     },
     {
-      name: "Basic",
-      description:
-        "More Searches, More Downloads, & More Control With the Basic Plan.",
-      inr: 9999,
-      usd: 140,
-      downloads: "10,000",
-      validity: "12 Months",
+      name: "Professional",
+      description: "Access several countries with a larger data allowance for regular research.",
+      priceLabel: "Quote",
+      features: ["Several countries", "Larger data allowance", "Onboarding support"],
       gradient: "from-red-500 to-orange-400",
       icon: "💼",
     },
     {
-      name: "Plus",
-      description:
-        "Explore Emerging Markets, Trends, & Get More Download Credits.",
-      inr: 19999,
-      usd: 300,
-      downloads: "30,000",
-      validity: "24 Months",
-      gradient: "from-purple-500 to-indigo-500",
-      icon: "🏆",
-    },
-    {
-      name: "Premium",
-      description:
-        "Access Detailed Trade Info by Product, Country, & Ports.",
-      inr: 29999,
-      usd: 350,
-      downloads: "50,000",
-      validity: "30 Months",
+      name: "Enterprise",
+      description: "Configure required countries, API access and priority support for your team.",
+      priceLabel: "Quote",
+      features: ["Required countries", "API access", "Priority support"],
       gradient: "from-cyan-400 to-blue-500",
       icon: "💎",
     },
@@ -106,12 +86,10 @@ export default function PricingSection() {
                   </div>
 
                   <div className="text-3xl font-bold">
-                    {currency === "INR"
-                      ? `₹${plan.inr}`
-                      : `$${plan.usd}`}
+                    {plan.priceLabel || (currency === "INR" ? `₹${plan.inr}` : `$${plan.usd}`)}
                   </div>
 
-                  <div className="text-sm opacity-80">Per plan</div>
+                  <div className="text-sm opacity-80">Contact for pricing</div>
                 </div>
 
                 {/* Body */}
@@ -122,9 +100,7 @@ export default function PricingSection() {
                   </p>
 
                   <ul className="space-y-2 text-sm mb-6 flex-1">
-                    <li>✔️ Full Data Search</li>
-                    <li>✔️ {plan.downloads} Download Credits</li>
-                    <li>✔️ {plan.validity} Validity</li>
+                    {plan.features.map((feature) => <li key={feature}>✔️ {feature}</li>)}
                   </ul>
 
                   <a
@@ -132,7 +108,7 @@ export default function PricingSection() {
                     
                     className="block text-center py-2 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 transition"
                   >
-                    Explore More →
+                    Get a Custom Quote →
                   </a>
                 </div>
               </div>
@@ -147,26 +123,26 @@ export default function PricingSection() {
           {/* Heading */}
           <div className="text-center mb-10">
             <h2 className="text-4xl font-bold text-black mb-3">
-              Customized Plan
+              Need a Custom Plan?
             </h2>
             <p className="text-lg text-gray-700">
-              Create Your Own Plan
+              Tell us your products, HS codes, countries and budget, and we will build a plan around them.
             </p>
           </div>
 
           {/* Features */}
           <div className="grid sm:translate-x-14 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-black text-base font-medium mb-12 text-center sm:text-left">
             <div className="space-y-3">
-              <p>✅ Choose From 200+ Countries</p>
-              <p>✅ Complete Historical Data Access</p>
+              <p>✅ Choose the countries you need</p>
+              <p>✅ Set a data allowance for your team</p>
             </div>
             <div className="space-y-3">
-              <p>✅ Unlimited Searches</p>
-              <p>✅ Customizable Download Records</p>
+              <p>✅ Search and download shipment records</p>
+              <p>✅ Add API access if needed</p>
             </div>
             <div className="space-y-3">
-              <p>✅ Customized User Licence</p>
-              <p>✅ Priority Customer Support</p>
+              <p>✅ Onboarding support</p>
+              <p>✅ Priority support options</p>
             </div>
           </div>
 
@@ -177,7 +153,7 @@ export default function PricingSection() {
               
               className="inline-block px-6 py-3 text-lg font-semibold text-white bg-[#0067b8] hover:scale-105 transition duration-300"
             >
-              Get Free Trial
+              Get a Custom Quote
             </a>
           </div>
         </div>

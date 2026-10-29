@@ -13,9 +13,9 @@ const industries = [
   {
     title: "Asset Management",
     heading:
-      "Best Market Research Platform for Assets & Investment Companies",
+      "Trade Data That Supports Investment Research",
     description:
-      "Exim Trade Data provides the best market research platform for assets and investment companies. Explore the tons of global import and export companies’ profiles. Get into their shipment activities, identify their top assets and evaluate their market share. Identify the most profitable opportunities for investment and enhance your company’s assets.",
+      "Track company shipments as a leading indicator, monitor commodity and sector trade flows, assess supply chain concentration and risk, and support investment views with trade statistics.",
     link: "asset-management",
   },
   {
@@ -29,9 +29,9 @@ const industries = [
   {
     title: "Importers",
     heading:
-      "Identify the Current Market Trends & Demands in the Automotive Market",
+      "Trade Intelligence Platform for Global Importers",
     description:
-      "The Automotive Market is a very fast paced market in which everyone wants to excel with each other. Through our impressive trade intelligence platform, you can stand out amongst your competitors. Our interactive business intelligence reports help you with the accurate forecasts of the latest market technology, trends, and demands.",
+      "Find suppliers in 200+ countries, compare unit prices, check shipment history and reduce dependence on a single supplier.",
     link: "importers",
   },
 ];

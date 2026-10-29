@@ -13,7 +13,7 @@ import Head from "next/head";
  export const metadata = {
   title: "Import Export Data Services | Exim Trade Data",
   description:
-    "Explore import export data, shipment records and trade information to find potential buyers, research suppliers and understand business opportunities in global markets.",
+    "Find new markets, buyers and suppliers with searchable import export data, custom dashboards and trade reports. Request a free demo.",
   keywords: [
     "Global Import Export Trade Data",
     "Import Export Data",
@@ -34,7 +34,7 @@ import Head from "next/head";
     title: "Import Export Data Services | Exim Trade Data",
     type: "website",
     url: "https://eximtradedata.com/services",
-    description: "Explore import export data, shipment records and trade information to find potential buyers, research suppliers and understand business opportunities in global markets.",
+    description: "Find new markets, buyers and suppliers with searchable import export data, custom dashboards and trade reports. Request a free demo.",
     siteName: "Exim Trade Data",
     images: [
       {
@@ -47,7 +47,7 @@ import Head from "next/head";
   twitter: {
     card: "summary",
     title: "Import Export Data Services | Exim Trade Data",
-    description: "Explore import export data, shipment records and trade information to find potential buyers, research suppliers and understand business opportunities in global markets.",
+    description: "Find new markets, buyers and suppliers with searchable import export data, custom dashboards and trade reports. Request a free demo.",
     site: "@eximtradedata",
     creator: "@eximtradedata",
     url: "https://eximtradedata.com/services",

@@ -119,7 +119,7 @@ export default function RootLayout({ children }) {
               },
               "contactPoint": {
                 "@type": "ContactPoint",
-                "telephone": "+91-9625812393",
+                "telephone": "+91 93146 19475",
                 "contactType": "customer support",
                 "email": "info@eximtradedata.com"
               },

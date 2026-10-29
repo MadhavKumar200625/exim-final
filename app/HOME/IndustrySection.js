@@ -6,27 +6,27 @@ import Link from "next/link";
 const industries = [
   {
     name: "Importers",
-    desc: "Leading Trade Intelligence Platform for Global Importers",
+    desc: "Find suppliers, compare prices and check shipment history before you source.",
     img: "/importer.webp",
     link: "importers"
   },
   {
     name: "Exporters",
-    desc: "Enhance Your Sales Potential with Our Global Exporters Database",
+    desc: "Build buyer lists and find high-demand markets for your products.",
     img: "/exporters.webp",
     link: "importers"
   },
   {
     name: "Corporation",
-    desc: "Best Market Intelligence Platform for Corporate Companies",
+    desc: "Benchmark competitors and follow supply chain risks with trade data.",
     img: "/corporation.webp",
     link: "corporation"
   },
   {
-    name: "Automotive",
-    desc: "Identify the Current Market Trends & Demands in the Automotive Market",
-    img: "/automative.webp",
-    link: "automative"
+    name: "Sales and Marketing",
+    desc: "Build B2B lead lists from real trade activity and reach relevant prospects.",
+    img: "/sales-and-marketing.webp",
+    link: "sales-and-marketing"
   },
 ];
 

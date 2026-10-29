@@ -13,9 +13,9 @@ import Head from "next/head";
 
 
 export const metadata = {
-  title: "Custom API Development & Integration | Exim Trade Data",
+  title: "Trade Data API | Import Export Data Integration",
   description:
-    "Streamline your global trade processes with Exim Trade Data’s custom API development and integration. Secure, scalable APIs for import-export, logistics, and more.",
+    "Bring shipment records and trade statistics into your CRM, ERP or BI tool with the Exim Trade Data API. Request API access today.",
   keywords: [
     "best api development services",
     "api development",
@@ -34,10 +34,10 @@ export const metadata = {
     canonical: "https://eximtradedata.com/api-development-and-integration-company"
   },
   openGraph: {
-    title: "Best API Development Services - Exim Trade Data",
+    title: "Trade Data API | Import Export Data Integration",
     type: "website",
     url: "https://eximtradedata.com/api-development-and-integration-company",
-    description: "Get fast, secure and highly scalable API development & integration solutions.",
+    description: "Bring shipment records and trade statistics into your CRM, ERP or BI tool with the Exim Trade Data API. Request API access today.",
     siteName: "Exim Trade Data",
     images: [
       {
@@ -49,8 +49,8 @@ export const metadata = {
   
   twitter: {
     card: "summary",
-    title: "Best API Development Services - Exim Trade Data",
-    description: "Get fast, secure and highly scalable API development & integration solutions.",
+    title: "Trade Data API | Import Export Data Integration",
+    description: "Bring shipment records and trade statistics into your CRM, ERP or BI tool with the Exim Trade Data API. Request API access today.",
     site: "@eximtradedata",
     creator: "@eximtradedata",
     url: "https://eximtradedata.com/api-development-and-integration-company",
@@ -73,19 +73,19 @@ const faq = [
   },
   {
     question: "What is a Trade API?",
-    answer: "A Trade API is a quality product developed by Exim Trade Data developer team. It is the best application to streamline trade information and make the most out of the data. You can make various requests like gathering country wise import-export data, importer-exporter wise data, search by specific time duration, etc. Through this API, company’s can make their own market search portal and improve their company’s productivity.",
+    answer: "The Exim Trade Data API delivers shipment records and trade statistics into your CRM, ERP, BI dashboard or product.",
   },
   {
     question: "What are the benefits of using a Trade API?",
-    answer: "There are various benefits of using our Trade API such as improved market research, global market insights, instant access to over 200+ countries import export records, global buyers suppliers shipment records, quantity, price evaluation etc.",
+    answer: "Use the API to enrich your CRM, power dashboards, automate research by product, HS code or country, and build products with trade statistics.",
   },
   {
     question: "How to get started with your API?",
-    answer: "We provide our customers with detailed API documentation. Through which you get a brief overview of our API and easy steps to integrate it into your application. Also, we provide complete support to our clients throughout the process.",
+    answer: "Tell us your use case, products and countries. We will provide API access and documentation, help with integration, then support you as you go live and scale.",
   },
   {
     question: "What is the cost of developing an API from Exim Trade Data?",
-    answer: "Exim Trade Data provides the most cost-effective API development and integration services. Our team of dedicated developers, quality testers are fully experienced in delivering the most robust and prompt API project delivery.",
+    answer: "Contact us with your products, countries and integration needs for a custom quote.",
   },
   {
     question: "How to reach out to your project manager for any inquiry?",
@@ -96,10 +96,10 @@ const faq = [
           info@eximtradedata.com
         </a>{" "}
         or call at{" "}
-        <a href="tel:+919625812393" className="text-blue-600 hover:underline">
-          +91-9625812393
+        <a href="tel:+919314619475" className="text-blue-600 hover:underline">
+          +91 93146 19475
         </a>
-        . We are 24*7 available for your assistance.
+        . Our team can help with API access and onboarding.
       </>
     ),
   },

@@ -50,27 +50,22 @@ export default function Hero() {
     <section className="bg-linear-to-b from-sky-100 via-sky-50 to-white pt-28 pb-12 px-6">
       {/* Top Text */}
       <p className="text-lg font-medium text-black text-center mb-2">
-        Import Export Data of 200+ Countries
+        Discover New Markets with the Exim GTIS Import Export Database
       </p>
 
       {/* Heading */}
       <h2 className="text-3xl md:text-4xl font-bold text-black text-center mb-4">
-        Explore 200+ Markets with Exim GTIS Import Export Database
+        Trade Data for 200+ Countries, All in One Place
       </h2>
 
       {/* Sub Heading */}
       <p className="text-base text-black text-center max-w-4xl mx-auto mb-4">
-        Find buyers from all around the world through our exclusive import export data reports.
-        Our Exim Global Trade Intelligence System will help you find verified importers and exporters
-        from over 200+ countries. Align your business model according to the latest market trends,
-        price forecasts, product demand, industry wise insights and various KPI indicators provided
-        in our platform. Explore top markets like China, USA, Turkey, Australia and European
-        countries and find their top imports, exports, top trading markets, companies, ports volume.
+        Want to find buyers abroad? Our import export data reports show you who is buying and selling, and where. With the Exim Global Trade Intelligence System (GTIS), you can look up verified importers and exporters in more than 200 countries and contact the right people directly. You can also use the platform to follow market trends, price movements and product demand, with industry-wise insights and key performance indicators to help shape your plans. Check the top imports, exports, trading partners, companies and port volumes in major markets such as China, the USA, Turkey, Australia and across Europe.
       </p>
 
       {/* Italic Text */}
       <p className="italic text-black text-center mb-6">
-        Request a sample trade data report or schedule a free demo to transform your business
+        Not sure where to begin? Ask for a sample trade data report or book a free demo, and see what real shipment data can do for your business.
       </p>
 
       {/* Buttons */}
@@ -79,14 +74,14 @@ export default function Hero() {
           href="/contact"
           className="bg-blue-600 text-xl text-white px-6 py-2 shadow hover:scale-105 transition"
         >
-          Online Data
+          Get a Sample Report
         </a>
 
         <a
           href="/contact"
           className="bg-green-600 text-xl text-white px-6 py-2 shadow hover:scale-105 transition"
         >
-          Offline Data
+          Book a Free Demo
         </a>
       </div>
 

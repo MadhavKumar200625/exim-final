@@ -7,7 +7,7 @@ const CustomApi = () => {
   <div className="max-w-7xl mx-auto px-6 lg:px-12">
     <div className="text-center mb-12">
       <h2 className="text-4xl font-bold text-black">
-        Custom API Development & Integration
+        Trade Data API for Your Own Systems
       </h2>
       <div className="mt-4 w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
     </div>
@@ -19,7 +19,7 @@ const CustomApi = () => {
 
       <div>
         <p className="text-lg text-black leading-relaxed">
-          Leverage the power of import export data through our set of Trade-APIs. Automate your market research by applying a specific set of rules. These include various parameters like data type, country wise, importer, exporter wise, time duration etc. Streamline your company goals and improve sales potential with well organized information. Exim Trade Data is the leading custom API development and integration service provider company offering dedicated APIs that help you create advanced web applications.
+          Get global trade data where your team already works. The Exim Trade Data API delivers shipment records and trade statistics into your CRM, ERP, BI dashboard or product, so your team does not have to download and upload files by hand.
         </p>
       </div>
     </div>

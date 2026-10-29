@@ -8,13 +8,12 @@ const Benifits = () => {
       id: "01",
       title: (
         <>
-          Discover a new marketplace for your import-export trade business with
-          our analytically designed{" "}
+          Find new markets for your import-export trade business with searchable{" "}
           <a
             href="/search-global-trade-data"
             className="text-blue-600 underline hover:text-blue-800 transition"
           >
-            global import export database
+            import export data
           </a>
           .
         </>
@@ -23,17 +22,17 @@ const Benifits = () => {
     {
       id: "02",
       title:
-        "Find new, potential & active buyers and suppliers for your import-export trade business with our smartly developed tools and data.",
+        "Reach active importers and exporters, including prospects new to your radar.",
     },
     {
       id: "03",
       title:
-        "Closely monitor the performance of your products in the global trade markets with the help of our latest and smartly developed tools and keep track of the market competition.",
+        "Watch competitor shipments, prices and partners to understand market activity.",
     },
     {
       id: "04",
       title:
-        "With our innovative and analytically built big databases, you can have fast access to thousands of millions of worldwide import export trade data to gain real-time insights into the global trade markets.",
+        "Filter a large customs database in seconds instead of reading raw trade files.",
     },
   ];
 

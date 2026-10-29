@@ -44,7 +44,7 @@ image:"/solutions/research-and-consulting.webp",
     subheading: 'Best Market Intelligence Platform for Corporate Companies',
 image:"/solutions/corporation.webp",
     description:
-      'Exim Trade Data provides the best market intelligence platform for corporate companies. Get in-depth insights into the international trade markets, industry specific trends, demand, and competitor analysis. Discover the best investment opportunities in the global market through our global companies’ portfolio. Drive more sales for your business in a cost-effective manner. Outrank your competitors in the international market through our impressive trade intelligence reports.',
+      'Exim Trade Data helps corporate teams track trade trends, demand, competitors and supply chain risk. Use trade statistics to support investment, market entry and sales decisions.',
     link: 'corporation'
   },
   {
@@ -125,7 +125,7 @@ image:"/solutions/insurance-companies.webp",
     subheading: 'Best Market Intelligence Platform for Construction Companies',
 image:"/solutions/construction.webp",
     description:
-      'Analyze the global construction market of over 60+ countries through our market intelligence platform. Utilize the financial trade data of countries, companies and commodities for an efficient project planning. Eliminate market risks, overspending, project delays, workflaws and discover profitable investment opportunities.',
+      'Analyze the global construction market of more than 200 countries through our market intelligence platform. Utilize the financial trade data of countries, companies and commodities for an efficient project planning. Eliminate market risks, overspending, project delays, workflaws and discover profitable investment opportunities.',
     link: 'construction'
   },
   {
@@ -184,16 +184,93 @@ image:"/solutions/aerospace-and-defence.webp",
   }
 ];
 
+const documentIndustryCopy = {
+  Agribusiness: {
+    name: "Agribusiness",
+    subheading: "Trade Data for Agribusiness",
+    description: "See where grains, spices, oils, fruit and processed foods are going, and at what price. Track seasonal demand, benchmark origins and discover export destinations.",
+  },
+  Automotive: {
+    name: "Automotive",
+    subheading: "Identify Market Trends and Demand in the Automotive Industry",
+    description: "Track vehicle, parts, component, EV and battery trade. Compare import volumes by country and port, and identify suppliers, distributors and OEM buyers.",
+  },
+  Chemical: {
+    name: "Chemical",
+    subheading: "Global Trade Data for the Chemical Industry",
+    description: "Find importers of specific chemicals, follow regional demand and price movement, identify alternative origins and benchmark trade activity.",
+  },
+  "Energy & Natural Resources": {
+    name: "Energy",
+    subheading: "Trade Data for the Energy Sector",
+    description: "Monitor fuel and commodity trade flows, track solar, wind and battery equipment, identify buyers and suppliers, and follow port-level volumes.",
+  },
+  Construction: {
+    name: "Construction",
+    subheading: "Trade Intelligence for the Construction Industry",
+    description: "Find suppliers of steel, tiles, fittings, machinery and building materials. Compare prices and plan procurement around trade flow trends.",
+  },
+  Retail: {
+    name: "Retail",
+    subheading: "Trade Intelligence for Retail and E-commerce",
+    description: "Spot trending products by country, find suppliers, compare landed price benchmarks and track sourcing patterns over time.",
+  },
+  "Aerospace & Defence": {
+    name: "Aerospace and Defence",
+    subheading: "Supply Chain Visibility for Aerospace and Defence",
+    description: "Research component and raw material suppliers, monitor supplier concentration and track commercial aerospace trade flows.",
+  },
+  "Asset Management": {
+    name: "Asset Management",
+    subheading: "Trade Data That Supports Investment Research",
+    description: "Track trade flows, assess supply chain concentration and risk, and support investment research with shipment data and trade statistics.",
+  },
+  "Law Firms": {
+    name: "Law Firms",
+    subheading: "Verified Trade Records for Legal Teams",
+    description: "Use shipment records for counterparty due diligence, trade and customs research, trade remedy work and compliance checks.",
+  },
+  "Academic & Education": {
+    name: "Academic and Education",
+    subheading: "International Trade Data for Researchers and Students",
+    description: "Use real shipment records to study country and commodity trade flows, build case studies and teach HS codes, ports and trade documentation.",
+  },
+  "Sales & Marketing": {
+    name: "Sales and Marketing",
+    subheading: "Turn Trade Data Into Qualified B2B Leads",
+    description: "Create targeted lead lists by HS code and country, prioritise prospects by shipment volume and personalise outreach using trade history.",
+  },
+  Importers: {
+    name: "Importers",
+    subheading: "Trade Intelligence Platform for Global Importers",
+    description: "Find suppliers in 200+ countries, compare unit prices, check shipment history and reduce dependence on a single source.",
+  },
+  Exporters: {
+    name: "Exporters",
+    subheading: "Grow Your Export Sales With Trade Data",
+    description: "Build buyer lists by product and country, identify high-demand markets, study competitor prices and spot new opportunities.",
+  },
+  "Corporate Companies": {
+    name: "Corporation",
+    subheading: "Market Intelligence for Corporate Teams",
+    description: "Benchmark trade flows, check supplier risk, plan market entry and bring trade data into internal dashboards through the API.",
+  },
+};
+
+const displayedIndustries = industries
+  .filter((industry) => documentIndustryCopy[industry.name])
+  .map((industry) => ({ ...industry, ...documentIndustryCopy[industry.name] }));
+
 const Hero = () => {
   return (
     <section className="bg-white pt-32 pb-14 px-4 sm:px-10 lg:px-20">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl sm:text-5xl font-extrabold text-black text-center mb-16">
-          Industries We Cover
+          Trade Data for Every Industry
         </h2>
 
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-          {industries.map((industry) => (
+          {displayedIndustries.map((industry) => (
             <div
               key={industry.id}
               className="bg-white  overflow-hidden shadow-xl  hover:shadow-2xl transition-all  duration-300 border border-slate-200"

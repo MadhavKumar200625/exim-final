@@ -24,21 +24,10 @@ const BenifitsSection = () => {
     <section className="bg-[#f4f9ff] py-20 px-6 lg:px-24">
       <div className="max-w-7xl mx-auto text-center mb-14">
         <h2 className="text-4xl lg:text-5xl font-extrabold text-black mb-6">
-          Benefits of Import Export Data Analysis
+          How We Work With Data
         </h2>
         <p className="text-lg text-black max-w-2xl mx-auto">
-          Accelerate your export-import trade by data-analysis-based decisions
-          and avoid risk.
-          <br />
-          Align your business model with global strategic planning and stay
-          ahead.
-          <br />
-          Monitor and track the competition and grab the upcoming business
-          opportunity.
-          <br />
-          Exim trade data is equipped with the latest business intelligence tools
-          for data analysis and visualization to uncover hidden possibilities
-          that are locked in the data.
+          Collect customs and trade records, clean duplicates and inconsistent names, standardise them for search and comparison, then deliver the data through dashboards, downloads and API.
         </p>
       </div>
 

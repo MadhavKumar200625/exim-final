@@ -5,9 +5,9 @@ import Head from "next/head";
 
 
  export const metadata = {
-  title: "Import Export Data by Industries | Global Trade Data of 200+ Countries",
+  title: "Industries Covered | Trade Data by Industry",
   description:
-    "Discover the wide range of industries covered by Exim Trade Data. Get trade insights for agriculture, chemicals, electronics, textiles, and more sectors.",
+    "Explore trade data for agribusiness, automotive, chemical, energy, construction, retail and more. Find buyers, suppliers and trends.",
   keywords: [
     "industries covered",
     "trade data by sector",
@@ -21,10 +21,10 @@ import Head from "next/head";
     canonical: "https://eximtradedata.com/industries-covered"
   },
   openGraph: {
-    title: "Market Research Reports & Consulting for All Industries",
+    title: "Industries Covered | Trade Data by Industry",
     type: "website",
     url: "https://eximtradedata.com/industries-covered",
-    description: "Stay ahead of your competition with industry specific insights through our comprehensive market research reports & consulting for all industries and sectors.",
+    description: "Explore trade data for agribusiness, automotive, chemical, energy, construction, retail and more. Find buyers, suppliers and trends.",
     siteName: "Exim Trade Data",
     images: [
       {
@@ -36,8 +36,8 @@ import Head from "next/head";
   
   twitter: {
     card: "summary",
-    title: "Market Research Reports & Consulting for All Industries",
-    description: "Stay ahead of your competition with industry specific insights through our comprehensive market research reports & consulting for all industries and sectors.",
+    title: "Industries Covered | Trade Data by Industry",
+    description: "Explore trade data for agribusiness, automotive, chemical, energy, construction, retail and more. Find buyers, suppliers and trends.",
     site: "@eximtradedata",
     creator: "@eximtradedata",
     url: "https://eximtradedata.com/industries-covered",

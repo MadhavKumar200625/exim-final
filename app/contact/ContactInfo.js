@@ -143,7 +143,7 @@ const ContactInfo = () => {
               <span className="text-xl text-blue-600 font-bold">
                 Support & Other Enquiries:
               </span>{" "}
-              9315619475
+              +91 93146 19475
             </p>
             {/* <p className="mt-5">
               <span className="text-xl text-blue-600 font-bold">
@@ -164,7 +164,7 @@ const ContactInfo = () => {
           <p>
             Shpere Eximia Research Pvt Ltd
             <br />
-            G-232 , Noida Sector-63
+            G-232, Sector 63, Noida
             <br /> Uttar Pradesh - 201301, India
           </p>
         </div>
@@ -256,7 +256,7 @@ const ContactInfo = () => {
 
           <textarea
             className="border px-4 py-2 md:col-span-2"
-            placeholder="Message"
+            placeholder="Product or HS code of interest and message"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
           />

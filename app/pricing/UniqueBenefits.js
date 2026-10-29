@@ -2,23 +2,23 @@
 
 const benefits = [
   {
-    title: "Visual Reports",
-    desc: "Find the spot on visual reports for comprehensive market research. Discover top 10 HS codes, month wise, country wise, Importer Exporter wise shipment records. Utilize this information for crucial business decisions.",
+    title: "Trade Metrics",
+    desc: "Use values, volumes and unit prices to size a market and compare origins.",
     image: "/VISUAL-REPORT.webp",
   },
   {
     title: "Product Trends",
-    desc: "Stay ahead of your competition with the latest market trends. Discover the latest product trends by HS Code, Chapter, Heading, Subheading, Destination Country, Exporter, Exporter District & State, Mode of Transport, and Port of Discharge/Loading etc.",
+    desc: "Spot rising products and markets with trade activity over time.",
     image: "/PRODUCT-TRENDS.webp",
   },
   {
-    title: "Advance Search",
-    desc: "Keeping the user convenience in mind, we have an advanced search option that helps you sort the information as per your requirement. You can select country, data type, data duration, and product. Also, you can download your search query results in Excel/PDF format.",
+    title: "Advanced Search",
+    desc: "Filter by product, HS code, country, port, date, quantity and value.",
     image: "/ADVANCE-SEARCH.webp",
   },
   {
-    title: "Importer Exporter Tree",
-    desc: "Find product sourcing, new buyers, and suppliers through our Importer Exporter Tree. It helps you identify the 3 levels of the network of Importers and Exporters. That helps you gain quality business leads and expand your market at the international level.",
+    title: "API Access",
+    desc: "Connect shipment data to your CRM, ERP, BI dashboard or product.",
     image: "/Importer-Exporter-Tree.webp",
   },
 ];
@@ -28,11 +28,11 @@ export default function EximBenefitsSection() {
     <section className="py-16 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 text-center">
         <h2 className="text-4xl font-bold text-black mb-4">
-          Unlock Unique Benefits of Exim GTIS
+          Plan Features for Exim GTIS
         </h2>
 
         <p className="text-black mb-10 max-w-3xl mx-auto">
-          Gain unparalleled insights and elevate your business with our powerful analytics platform.
+          Plans include dashboard access and onboarding support, with data allowances and optional API access based on your needs.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">

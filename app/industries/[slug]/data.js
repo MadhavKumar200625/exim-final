@@ -46,7 +46,7 @@ export const industries = Object.freeze({
         {
           heading: "Supply Chain & Logistics",
           description:
-            "Get access to the tons of global companies’ profiles at our platform. Fill the gap between supply and demand through trade statistics reports. Discover the genuine buyers and suppliers for your goods. Ensure an efficient supply chain process for a complete customer’s satisfaction.",
+            "Use trade statistics to connect supply and demand, find buyers and suppliers for your goods, and support efficient supply chain operations.",
           icon: "",
         },
       ],
@@ -271,7 +271,7 @@ export const industries = Object.freeze({
         {
           heading: "Mitigate Risks & Find Opportunities",
           description:
-            "The Energy Industry is prone to market risks. Our interactive market intelligence platform offers all the necessary insights into the global energy market and helps you evaluate market demand. Explore the thousands of global company profiles at our portal and identify the possible business opportunities in the global energy market.",
+            "Energy markets move quickly. Use shipment-level trade statistics to follow fuel and equipment flows, identify demand and evaluate business opportunities in the global energy market.",
           icon: "",
         },
         {
@@ -355,7 +355,7 @@ export const industries = Object.freeze({
       title:
         "Global Trade Intelligence Platform for Research & Consulting Companies",
       description:
-        "Empower your market research through our global trade intelligence platform. Make more accurate decisions based on our business intelligence reports. Identify the most profitable markets by HSN Code, product details, quantity, price, port shipments, country, buyers, and supplier details. Reach to the top trading companies through our global companies list and discover the potential business growth opportunities.",
+        "Empower your market research through trade intelligence. Compare HS codes, product details, quantity, prices, port shipments and countries to identify potential business growth opportunities.",
       image: "",
     },
     section2: {
@@ -397,7 +397,7 @@ export const industries = Object.freeze({
         {
           heading: "Business Growth Opportunities",
           description:
-            "Get detailed insights into the shipment activities of the leading global companies through our portal. Discover the genuine business prospects from our global companies list and identify the most profitable investment opportunities. Give more exposure to your business by doing valuable business partnerships in the global market.",
+            "Use shipment activity and trade statistics to assess business prospects and identify investment opportunities in global markets.",
           icon: "",
         },
       ],
@@ -494,7 +494,7 @@ export const industries = Object.freeze({
         {
           heading: "Get Quality Leads",
           description:
-            "Generate quality business leads with high ROI from our Global Companies Database. We provide in-depth insights into shipment activities of your business prospects. It helps you analyze their behaviour and identify customers to whom you could sell your service",
+            "Generate quality business leads with shipment activity insights. Review trade patterns to understand prospects and identify customers for your services.",
         },
         {
           heading: "Proactive Decision-Making",
@@ -532,7 +532,7 @@ export const industries = Object.freeze({
           heading:
             "Global Trade Intelligence Platform for Research & Consulting Companies",
           description:
-            "Empower your market research through our global trade intelligence platform. Make more accurate decisions based on our business intelligence reports. Identify the most profitable markets by HSN Code, product details, quantity, price, port shipments, country, buyers, and supplier details. Reach to the top trading companies through our global companies list and discover the potential business growth opportunities.",
+            "Empower your market research through trade intelligence. Compare HS codes, product details, quantity, prices, port shipments and countries to identify potential business growth opportunities.",
           link: "research-and-consulting",
         },
         {
@@ -626,7 +626,7 @@ export const industries = Object.freeze({
         {
           heading: "Discover Opportunities",
           description:
-            "Our Market Intelligence Platform provides you with an array of opportunities. We have a diverse portfolio of top trading companies in the global market. Get complete transparency into their shipment activities and finalize your potential business prospects. Discover tons of company profiles at our portal and enhance your sales potential.",
+            "Our market intelligence platform helps you follow trade activity, evaluate demand and identify business prospects in global markets.",
           icon: "",
         },
       ],
@@ -668,7 +668,7 @@ export const industries = Object.freeze({
           heading:
             "Best Market Intelligence Platform for Construction Companies",
           description:
-            "Analyze the global construction market of over 60+ countries through our market intelligence platform. Utilize the financial trade data of countries, companies and commodities for an efficient project planning. Eliminate market risks, overspending, project delays, workflaws and discover profitable investment opportunities.",
+            "Analyze the global construction market of more than 200 countries through our market intelligence platform. Utilize the financial trade data of countries, companies and commodities for an efficient project planning. Eliminate market risks, overspending, project delays, workflaws and discover profitable investment opportunities.",
           link: "construction",
         },
       ],
@@ -701,7 +701,7 @@ export const industries = Object.freeze({
     section1: {
       title: "Best Market Intelligence Platform for Corporate Companies",
       description:
-        "Exim Trade Data provides the best market intelligence platform for corporate companies. Get in-depth insights into the international trade markets, industry specific trends, demand, and competitor analysis. Discover the best investment opportunities in the global market through our global companies’ portfolio. Drive more sales for your business in a cost-effective manner. Outrank your competitors in the international market through our impressive trade intelligence reports.",
+        "Exim Trade Data gives corporate teams international trade data for market trends, demand, competitor benchmarking and supply chain risk. Use the findings to plan market entry and support sales decisions.",
       image: "",
     },
     section3: {
@@ -723,7 +723,7 @@ export const industries = Object.freeze({
         {
           heading: "Financial Data Analysis",
           description:
-            "Understand the trade flow of the global market through our verified customs data of 60+ countries. Access the import-export shipment details, transactions, invoices and bills from our global shipment records. Leverage this financial data to predict future prices, market demand and risks.",
+            "Understand the trade flow of the global market through our verified customs data of 200+ countries. Access the import-export shipment details, transactions, invoices and bills from our global shipment records. Leverage this financial data to predict future prices, market demand and risks.",
         },
         {
           heading: "Competitor Analysis",
@@ -738,7 +738,7 @@ export const industries = Object.freeze({
         {
           heading: "Identify Investment Opportunities",
           description:
-            "We keep you versed with the upcoming global market trends and risks through accurate trade forecasts. Our global companies profile helps you find genuine buyers and suppliers from the foreign market that could be interested in your business. You can leverage our data to identify profitable investment opportunities and get ahead of your competition.",
+            "Follow global market trends and risks through trade data. Use product and country activity to identify buyers and suppliers, assess investment opportunities and plan for competition.",
         },
       ],
     },
@@ -865,7 +865,7 @@ export const industries = Object.freeze({
           heading:
             "Customized market intelligence report for sales & Marketing",
           description:
-            "Analyze the global construction market of over 60+ countries through our market intelligence platform. Utilize the financial trade data of countries, companies and commodities for an efficient project planning. Eliminate market risks, overspending, project delays, workflaws and discover profitable investment opportunities.",
+            "Analyze the global construction market of more than 200 countries through our market intelligence platform. Utilize the financial trade data of countries, companies and commodities for an efficient project planning. Eliminate market risks, overspending, project delays, workflaws and discover profitable investment opportunities.",
           link: "sales-and-marketing",
         },
         {
@@ -936,7 +936,7 @@ export const industries = Object.freeze({
         {
           heading: "Identify Most Profitable Assets",
           description:
-            "We provide the trade intelligence reports of 60+ countries. Get key highlights from the global market such as top imports, exports, trading countries along with buyer and supplier information. Analyze market risks and identify the most profitable assets to start with.",
+            "We provide the trade intelligence reports of 200+ countries. Get key highlights from the global market such as top imports, exports, trading countries along with buyer and supplier information. Analyze market risks and identify the most profitable assets to start with.",
           icon: "",
         },
         {
@@ -948,7 +948,7 @@ export const industries = Object.freeze({
         {
           heading: "Increased Operational Efficiency",
           description:
-            "Ensure efficient operations in your company with detailed intelligence reports. Identify your most beneficial assets through our accurate global shipment records. Find buyers and suppliers from our global company’s portal. Get high Return on Investment (ROI) and achieve your business goals.",
+            "Use detailed trade reports to understand global shipment activity, identify buyers and suppliers, and support efficient operations and investment decisions.",
           icon: "",
         },
         {
@@ -1052,7 +1052,7 @@ export const industries = Object.freeze({
         {
           heading: "Global Trade Analysis",
           description:
-            "Our global trade intelligence platform assists government agencies in detailed global trade analysis. Get business intelligence reports of over 60+ countries. Identify the top performing countries, their top selling commodities along with price, quantity, port, buyer, and supplier information.",
+            "Our global trade intelligence platform assists government agencies in detailed global trade analysis. Get business intelligence reports of more than 200 countries. Identify the top performing countries, their top selling commodities along with price, quantity, port, buyer, and supplier information.",
         },
         {
           heading: "Enhance Tariff Revenues",
@@ -1077,7 +1077,7 @@ export const industries = Object.freeze({
         {
           heading: "Enhanced Foreign Investment",
           description:
-            "Our global importers exporters’ directory gives instant access to the company profiles of over 60+ countries. It assists government agencies in identifying the most profitable opportunities in the foreign market. A valuable business partnership with foreign investors ensures efficient flow of foreign currency in the country and contributes to economic growth.",
+            "Country-wise trade statistics help government agencies understand international market trends, demand and risks, supporting strategic decisions and trade policy research.",
         },
       ],
     },
@@ -1169,7 +1169,7 @@ export const industries = Object.freeze({
         {
           heading: "Save your time & money",
           description:
-            "Legal proceedings take lots of time, effort and money. Through our trade intelligence platform, you can save your time of legal research and money on specific cases. Our Business intelligence reports provides the factual trading history of various global companies that assists in analyzing whether to proceed in or to negotiate.",
+            "Use documented shipment records to research customs activity, trade disputes and counterparties. Trade data can support background research alongside official documents and legal advice.",
         },
         {
           heading: "Make accurate law decisions",
@@ -1212,7 +1212,7 @@ export const industries = Object.freeze({
           heading:
             "Global Trade Intelligence Platform for Research & Consulting Companies",
           description:
-            "Empower your market research through our global trade intelligence platform. Make more accurate decisions based on our business intelligence reports. Identify the most profitable markets by HSN Code, product details, quantity, price, port shipments, country, buyers, and supplier details. Reach to the top trading companies through our global companies list and discover the potential business growth opportunities.",
+            "Empower your market research through trade intelligence. Compare HS codes, product details, quantity, prices, port shipments and countries to identify potential business growth opportunities.",
           link: "research-and-consulting",
         },
         {
@@ -1263,7 +1263,7 @@ export const industries = Object.freeze({
     section1: {
       title: "Best Market Intelligence Platform for Construction Companies",
       description:
-        "Analyze the global construction market of over 60+ countries through our market intelligence platform. Utilize the financial trade data of countries, companies and commodities for an efficient project planning. Eliminate market risks, overspending, project delays, workflaws and discover profitable investment opportunities.",
+        "Analyze the global construction market of more than 200 countries through our market intelligence platform. Utilize the financial trade data of countries, companies and commodities for an efficient project planning. Eliminate market risks, overspending, project delays, workflaws and discover profitable investment opportunities.",
       image: "",
     },
     section2: {
@@ -1330,7 +1330,7 @@ export const industries = Object.freeze({
           heading:
             "Global Trade Intelligence Platform for Research & Consulting Companies",
           description:
-            "Empower your market research through our global trade intelligence platform. Make more accurate decisions based on our business intelligence reports. Identify the most profitable markets by HSN Code, product details, quantity, price, port shipments, country, buyers, and supplier details. Reach to the top trading companies through our global companies list and discover the potential business growth opportunities.",
+            "Empower your market research through trade intelligence. Compare HS codes, product details, quantity, prices, port shipments and countries to identify potential business growth opportunities.",
           link: "research-and-consulting",
         },
         {
@@ -1407,7 +1407,7 @@ export const industries = Object.freeze({
         {
           heading: "Customer Analysis",
           description:
-            "Perform a detailed customer Analysis with our market intelligence platform. Explore global chemical markets through detailed customs data of 60+ countries. Get in-depth insights into customer behaviour, buying patterns, reviews and requirements. Develop innovative solutions to resolve consumer’s requirements and win over them for healthy returns.",
+            "Perform a detailed customer Analysis with our market intelligence platform. Explore global chemical markets through detailed customs data of 200+ countries. Get in-depth insights into customer behaviour, buying patterns, reviews and requirements. Develop innovative solutions to resolve consumer’s requirements and win over them for healthy returns.",
         },
         {
           heading: "Enhanced Production",
@@ -1441,7 +1441,7 @@ export const industries = Object.freeze({
           heading:
             "Best Market Intelligence Platform for Construction Companies",
           description:
-            "Analyze the global construction market of over 60+ countries through our market intelligence platform. Utilize the financial trade data of countries, companies and commodities for an efficient project planning. Eliminate market risks, overspending, project delays, workflaws and discover profitable investment opportunities.",
+            "Analyze the global construction market of more than 200 countries through our market intelligence platform. Utilize the financial trade data of countries, companies and commodities for an efficient project planning. Eliminate market risks, overspending, project delays, workflaws and discover profitable investment opportunities.",
           link: "construction",
         },
         {
@@ -1553,7 +1553,7 @@ export const industries = Object.freeze({
           heading:
             "Best Market Intelligence Platform for Construction Companies",
           description:
-            "Analyze the global construction market of over 60+ countries through our market intelligence platform. Utilize the financial trade data of countries, companies and commodities for an efficient project planning. Eliminate market risks, overspending, project delays, workflaws and discover profitable investment opportunities.",
+            "Analyze the global construction market of more than 200 countries through our market intelligence platform. Utilize the financial trade data of countries, companies and commodities for an efficient project planning. Eliminate market risks, overspending, project delays, workflaws and discover profitable investment opportunities.",
           link: "sales-and-marketing",
         },
         {
@@ -1683,7 +1683,7 @@ export const industries = Object.freeze({
           title: "Corporation",
           heading: "Best Market Intelligence Platform for Corporate Companies",
           description:
-            "Exim Trade Data provides the best market intelligence platform for corporate companies. Get in-depth insights into the international trade markets, industry specific trends, demand, and competitor analysis. Discover the best investment opportunities in the global market through our global companies’ portfolio. Drive more sales for your business in a cost-effective manner. Outrank your competitors in the international market through our impressive trade intelligence reports.",
+        "Exim Trade Data gives corporate teams international trade data for market trends, demand, competitor benchmarking and supply chain risk. Use the findings to plan market entry and support sales decisions.",
           link: "corporation",
         },
         {
@@ -1753,7 +1753,7 @@ export const industries = Object.freeze({
         {
           heading: "Discover top buyers",
           description:
-            "Expand your business beyond boundaries. Find genuine buyers for your product. Through our global companies’ database, you could reach a wider audience in the international market. Explore the portfolios of top import companies by product and country.",
+            "Expand your business beyond boundaries. Find overseas buyers for your product by searching import activity by product and country.",
           icon: "",
         },
         {
@@ -1803,7 +1803,7 @@ export const industries = Object.freeze({
         {
           heading: "Computers",
           description:
-            "Computers & Its accessories are the 5th most imported products in the global market. As per 2021, computer import data, the total imports were worth 473 Billion US Dollars. The United States, Hong Kong, Germany, Netherlands and Japan are the top 5 computer importer countries in the world. With our global companies’ database, you can discover and monitor the shipments of top computer buyer companies in the world. That will help you increase your sales and generate more revenue for your business.",
+            "Computer and accessory trade data can help you compare import markets, review shipment trends and identify destinations for your products.",
         },
         {
           heading: "Medicaments",
@@ -1822,7 +1822,7 @@ export const industries = Object.freeze({
           title: "Corporation",
           heading: "Best Market Intelligence Platform for Corporate Companies",
           description:
-            "Exim Trade Data provides the best market intelligence platform for corporate companies. Get in-depth insights into the international trade markets, industry specific trends, demand, and competitor analysis. Discover the best investment opportunities in the global market through our global companies’ portfolio. Drive more sales for your business in a cost-effective manner. Outrank your competitors in the international market through our impressive trade intelligence reports.",
+        "Exim Trade Data gives corporate teams international trade data for market trends, demand, competitor benchmarking and supply chain risk. Use the findings to plan market entry and support sales decisions.",
           link: "corporation",
         },
         {
@@ -1889,7 +1889,7 @@ export const industries = Object.freeze({
       heading:
         "Grab New Opportunities in the Global Market with Actionable Insights",
       subheading:
-        "Discover business opportunities from over 60+ countries. Gain key insights of the top trading markets such as top imports, exports, buyers and suppliers shipments and build a successful marketing strategy.",
+        "Discover business opportunities from more than 200 countries. Gain key insights of the top trading markets such as top imports, exports, buyers and suppliers shipments and build a successful marketing strategy.",
       points: [
         {
           heading: "Targeted Marketing",
@@ -1924,7 +1924,7 @@ export const industries = Object.freeze({
         {
           heading: "Smooth warehouse operations",
           description:
-            "By analyzing our global trade intelligence reports, you can predict the demand of goods from your warehouses. Also, you can find genuine buyers for your stock products through our global companies’ directory. You can make better decisions based on data and ensure efficient warehouse operations.",
+            "Use global trade data to review product demand, identify overseas buyers for stock and make better warehouse and sourcing decisions.",
           icon: "",
         },
       ],
@@ -1957,7 +1957,7 @@ export const industries = Object.freeze({
           title: "Corporation",
           heading: "Best Market Intelligence Platform for Corporate Companies",
           description:
-            "Exim Trade Data provides the best market intelligence platform for corporate companies. Get in-depth insights into the international trade markets, industry specific trends, demand, and competitor analysis. Discover the best investment opportunities in the global market through our global companies’ portfolio. Drive more sales for your business in a cost-effective manner. Outrank your competitors in the international market through our impressive trade intelligence reports.",
+        "Exim Trade Data gives corporate teams international trade data for market trends, demand, competitor benchmarking and supply chain risk. Use the findings to plan market entry and support sales decisions.",
           link: "corporation",
         },
         {
@@ -2011,7 +2011,7 @@ export const industries = Object.freeze({
         {
           heading: "Extensive Market Research",
           description:
-            "Perform an extensive market research through our trade intelligence platform. Explore the shipment records of over 60+ countries by HS Code, product description, quantity, value, country, and company name. Analyze these reports to integrate it in your company’s software.",
+            "Perform an extensive market research through our trade intelligence platform. Explore the shipment records of more than 200 countries by HS Code, product description, quantity, value, country, and company name. Analyze these reports to integrate it in your company’s software.",
           icon: "",
         },
         {
@@ -2153,7 +2153,7 @@ export const industries = Object.freeze({
         {
           heading: "Sales with high ROI",
           description:
-            "Achieve your revenue goals through our global companies’ database. We help you to connect with the top import-export companies from the international market. Get in-depth insights into their shipment activities and identify the sales prospects with high ROI. You can generate a lot of quality business leads through our portal with minimal investment.",
+            "Build targeted B2B lead lists from import and export activity. Review shipment history to prioritise prospects by product, country and volume.",
         },
       ],
     },
@@ -2176,7 +2176,7 @@ export const industries = Object.freeze({
           heading:
             "Global Trade Intelligence Platform for Research & Consulting Companies",
           description:
-            "Empower your market research through our global trade intelligence platform. Make more accurate decisions based on our business intelligence reports. Identify the most profitable markets by HSN Code, product details, quantity, price, port shipments, country, buyers, and supplier details. Reach to the top trading companies through our global companies list and discover the potential business growth opportunities.",
+            "Empower your market research through trade intelligence. Compare HS codes, product details, quantity, prices, port shipments and countries to identify potential business growth opportunities.",
           link: "research-and-consulting",
         },
         {
@@ -2312,7 +2312,7 @@ export const industries = Object.freeze({
           heading:
             "Best Market Intelligence Platform for Construction Companies",
           description:
-            "Analyze the global construction market of over 60+ countries through our market intelligence platform. Utilize the financial trade data of countries, companies and commodities for an efficient project planning. Eliminate market risks, overspending, project delays, workflaws and discover profitable investment opportunities.",
+            "Analyze the global construction market of more than 200 countries through our market intelligence platform. Utilize the financial trade data of countries, companies and commodities for an efficient project planning. Eliminate market risks, overspending, project delays, workflaws and discover profitable investment opportunities.",
           link: "construction",
         },
       ],

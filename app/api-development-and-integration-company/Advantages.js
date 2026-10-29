@@ -2,24 +2,24 @@ import React from "react";
 
 const advantagesData = [
   {
-    title: "User Friendly",
-    desc: "Our developers are expert at creating simple and easy to use APIs that assist you in building an impactful tool for market research.",
+    title: "Enrich Your CRM",
+    desc: "Add importer and exporter activity to your leads and accounts.",
   },
   {
-    title: "Fast & Secure",
-    desc: "Get really fast and seamless API solutions with added security. We provide proper API keys or bearer tokens to block unwanted requests.",
+    title: "Power Dashboards",
+    desc: "Feed import and export data into Power BI, Tableau or your own tools.",
   },
   {
-    title: "Testing Environment",
-    desc: "Our team of quality assurance and testing engineers apply advanced API testing tools and practises to ensure smooth functionality & performance.",
+    title: "Automate Research",
+    desc: "Pull shipments for a product, HS code or country on a schedule.",
   },
   {
-    title: "Documentation",
-    desc: "We provide our clients with detailed API documentation (user manual) that helps developers to easily understand functionality & integrate applications.",
+    title: "Build Products",
+    desc: "Use trade statistics inside your own application.",
   },
   {
-    title: "Competitive Pricing",
-    desc: "With years of expertise in delivering successful API solutions, we provide high quality APIs at the best price with expert support.",
+    title: "Developer Support",
+    desc: "Get secure authentication, documentation and onboarding help from our team.",
   },
 ];
 
@@ -30,7 +30,7 @@ const Advantages = () => {
         {/* Heading */}
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-black">
-            Advantages of executing your algorithmic trading through the Flattrade API
+            What You Can Do With the API
           </h2>
           <div className="mt-4 w-24 h-1 bg-blue-600 mx-auto"></div>
         </div>

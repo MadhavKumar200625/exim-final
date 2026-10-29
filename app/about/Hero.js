@@ -21,27 +21,18 @@ const HeroSection = () => {
         {/* Right: Text */}
         <div className="text-black">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-snug">
-            About Us
+            We Turn Global Trade Data Into Business Opportunity
           </h2>
 
           <p className="text-base md:text-lg text-black mb-4 leading-relaxed">
-            At{" "}
-            <span className="font-semibold text-blue-600">
-              Exim Trade Data
-            </span>{" "}
-            analysis helps you provide global export and import trade analysis.
-            Exim Trade Data was founded to resolve all your export-import business
-            operations. We have come up with a modern infrastructure setup that
-            provides more accurate and custom-made data analysis solutions. Our
-            highly professional technical team has more than a decade of
-            expertise in data mining and data processing.
+            Exim Trade Data provides global export and import trade analysis. We started with a simple goal: to make the day-to-day work of exporters and importers easier. To do that, we built a modern data infrastructure that delivers accurate, customised analysis for each client.
           </p>
 
           <p className="text-base md:text-lg text-black leading-relaxed">
-            We are capable of delivering the most accurate systematic global
-            export-import statistics that help you to analyze ongoing trade
-            inflow and suitable demand positions around the
-            globe.
+            Our technical team brings more than ten years of experience in data mining and data processing. That experience goes into organised, reliable global export-import statistics, so you can follow current trade flows and see where demand is strongest around the world.
+          </p>
+          <p className="text-base md:text-lg text-black leading-relaxed mt-4">
+            We collect customs shipment data from official sources across 200+ countries, clean and standardise it, and organise it by product, HS code, port, company and country. The result is an import export database you can search in seconds.
           </p>
         </div>
       </div>

@@ -5,9 +5,9 @@ import Link from "next/link";
 import SampleDataForm from "../Components/SampleDataForm";
 
 const features = [
-  "Measure trade metrics and evaluate the market with a unique do-it-yourself alternative to cumbersome raw trade data that includes on-screen assistance from a professional business analyst for a low pay-per-record fee.",
-  "Create an organized database by cleaning and categorize your workplace with import export customs data fields and auto rules.",
-  "Access our highly advanced customized dashboards and global export import trade data to make profitable business decisions based on current data reports and valuable industry insights.",
+  "Self-service search with expert help: run your own analysis and ask our analysts for guidance.",
+  "Organised records: search shipments by HS code, product, company, port and country.",
+  "Custom dashboards: view the trade metrics that matter to your team.",
   <>
     Easily organize fresh and old data. Dashboards, shipping records, and custom
     fields including{" "}
@@ -16,10 +16,11 @@ const features = [
     </a>{" "}
     are all accessible on the move.
   </>,
-  "Access the latest import export trade data & business intelligence reports, equipped with cutting-edge features and reliable global trade.",
-  "A cutting-edge platform that allows users to change trade plans based on market data by finding increasing items, markets, and the appropriate price range, as well as contact information for exporters and importers.",
-  "Our import export data services empower you to spice up your database with actionable and customizable ready-to-use import export data.",
-  "A platform that allows you to create, share and communicate while enlisting the help of your team and advancing your company strategies.",
+  "Reports on request: order customised import export data reports for your products and countries.",
+  "Price insight: compare the price range buyers pay and spot rising products and markets.",
+  "Export-ready data: download results into your database or sales list.",
+  "Team sharing: share findings with colleagues so everyone works from the same data.",
+  "API access: connect shipment data to your CRM, ERP or BI tool.",
 ];
 
 export default function FeaturesSection() {

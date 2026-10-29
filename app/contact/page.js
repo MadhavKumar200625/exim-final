@@ -5,9 +5,9 @@ import Head from "next/head";
 
 
 export const metadata = {
-  title: 'Contact Exim Trade Data | Import Export Data & Support',
+  title: 'Contact Exim Trade Data | Book a Free Demo',
   description:
-    'Contact Exim Trade Data for import export data, global trade information, shipment records and assistance with your business research requirements.',
+    'Tell us your product, HS code and target countries and we will show you real shipment data in a live demo. Contact our team today.',
   keywords: [
     'export and import data',
     '60 countries global trade data',
@@ -21,11 +21,11 @@ export const metadata = {
     canonical: 'https://eximtradedata.com/contact',
   },
   openGraph: {
-    title: 'Contact Exim Trade Data | Import Export Data & Support',
+    title: 'Contact Exim Trade Data | Book a Free Demo',
     type: 'website',
     url: 'https://eximtradedata.com/contact',
     description:
-      'Contact Exim Trade Data for import export data, global trade information, shipment records and assistance with your business research requirements.',
+      'Tell us your product, HS code and target countries and we will show you real shipment data in a live demo. Contact our team today.',
     siteName: 'Exim Trade Data',
     images: [
       {
@@ -36,9 +36,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary',
-    title: 'Contact Exim Trade Data | Import Export Data & Support',
+    title: 'Contact Exim Trade Data | Book a Free Demo',
     description:
-      'Contact Exim Trade Data for import export data, global trade information, shipment records and assistance with your business research requirements.',
+      'Tell us your product, HS code and target countries and we will show you real shipment data in a live demo. Contact our team today.',
     site: '@eximtradedata',
     creator: '@eximtradedata',
     url: 'https://eximtradedata.com/contact',

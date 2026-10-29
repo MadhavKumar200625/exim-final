@@ -13,9 +13,9 @@ import Stats from "./Stats";
 
 
 export const metadata = {
-  title: "Global Trade Database | Verified Import Export Data at Exim Trade Data",
+  title: "Global Trade Database | Exim GTIS Trade Data",
   description:
-    "Access real-time global trade database with detailed import-export records, HS codes, and shipment data. Trusted by businesses worldwide for market insights.",
+    "Explore Exim GTIS, a searchable global trade database with customs shipment records, HS codes, ports and trade trends.",
   keywords: [
     "global trade database",
     "import export data",
@@ -33,7 +33,7 @@ export const metadata = {
     type: "website",
     url: "https://eximtradedata.com/global-trade-database",
     description:
-      "Find high ROI sales through our Global trade database of 200+ countries. Search top product trends, countries, ports, buyers, and suppliers by HS Code.",
+      "Explore Exim GTIS, a searchable global trade database built from customs shipment records, HS codes, ports and trade statistics.",
     siteName: "Exim Trade Data",
     images: [
       {
@@ -46,7 +46,7 @@ export const metadata = {
     card: "summary",
     title: "Global Trade Database – import export market intelligence",
     description:
-      "Find high ROI sales through our Global trade database of 200+ countries. Search top product trends, countries, ports, buyers, and suppliers by HS Code.",
+      "Explore Exim GTIS, a searchable global trade database built from customs shipment records, HS codes, ports and trade statistics.",
     site: "@eximtradedata",
     creator: "@eximtradedata",
     url: "https://eximtradedata.com/global-trade-database",
@@ -63,51 +63,34 @@ export default function Page() {
       question:
         "1. What is the Exim Global Trade Information System? How can it help my business?",
       answer: `
-        Exim Global Trade Information System is the leading trade intelligence platform helping businesses thrive in the global market.<br /><br/>
-        We provide expert market intelligence reports of <b>200+ countries</b> that highlight the latest market trends, product lists, port shipment records, and importer/exporter lists.<br /><br/>
-        Through our platform, you can mitigate financial risk by connecting with genuine buyers and suppliers worldwide — helping you generate higher ROI and establish a strong global brand presence.
+        Exim GTIS (Global Trade Information Service) is a searchable global trade database built from customs shipment data. Use it to find buyers and suppliers, follow competitors and understand where demand is moving.
       `,
     },
     {
       question:
         "2. How many countries are covered in your global trade database? What types of data do you provide?",
       answer: `
-        Our global trade database covers <b>200+ countries</b>, including exclusive data for Turkey, Bangladesh, Thailand, Ghana, Chad, Mexico, Tanzania, and more.<br /><br/>
-        We provide detailed trade statistics reports based on shipment transactions, invoices, bills, port shipments, and customs data.<br /><br/>
-        <b>Our database contains 4 types of data:</b><br/>
-        <ul class="list-disc ml-6">
-          <li><b>Statistical Data:</b> Identifies market trends, demand, and evaluates product pricing.</li>
-          <li><b>Customs Data:</b> Official customs data with HS Code, buyer, supplier, and ports.</li>
-          <li><b>Mirror Data:</b> Extracted from partner countries for limited-coverage regions.</li>
-          <li><b>Bill of Lading Data:</b> Shipping records excluding pricing.</li>
-        </ul>
+        Available details can include importer and exporter names, product descriptions, HS codes, quantity, value, ports and dates. Country trade statistics show top imports, exports and partners. Exact fields vary by country, depending on what customs authorities publish.
       `,
     },
     {
       question:
         "3. What's the difference between the plans? How do I decide which plan is best?",
       answer: `
-        We offer multiple plans — Starter, Basic, Plus, Pro, and Premium — each with different
-        search limits, download credits, and user licenses.<br /><br/>
-        You can also request a fully customized plan based on your budget and requirements.
+        Plans are based on the countries you need, the amount of data you view or download, and whether you need API access. Starter covers one or two countries, Professional covers several countries with a larger allowance, and Enterprise adds required countries, API access and priority support. Contact us for pricing.
       `,
     },
     {
       question:
         "4. How can I subscribe to Exim GTIS? How does the point system work?",
       answer: `
-        Visit our pricing page, compare plans, and complete payment. After verification,
-        your account will be activated.<br /><br/>
-        <ul class="list-disc ml-6">
-          <li>1 point = 1 shipment for Indonesia / Vietnam</li>
-          <li>10 points = 1 shipment for Turkey Direct Export data</li>
-        </ul>
+        Visit the Pricing page to compare plans. Our team will explain the data allowance and onboarding before you subscribe.
       `,
     },
     {
       question: "5. How much time does account activation take?",
       answer: `
-        Account activation happens shortly after payment verification.
+        Our team will explain the onboarding timeline when you choose a plan.
       `,
     },
     {
@@ -121,8 +104,8 @@ export default function Page() {
     {
       question: "7. How do I get customer support?",
       answer: `
-        Our experts are available <b>24×7</b>.<br /><br/>
-        Call <a href="tel:+919625812393" class="text-blue-600">+91-9625812393</a>
+        Contact our team for help with your account or API integration.<br /><br/>
+        Call <a href="tel:+919314619475" class="text-blue-600">+91 93146 19475</a>
         or email <a href="mailto:info@eximtradedata.com" class="text-blue-600">info@eximtradedata.com</a>.
       `,
     },

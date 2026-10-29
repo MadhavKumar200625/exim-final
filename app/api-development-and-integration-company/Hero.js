@@ -11,11 +11,11 @@ const Hero = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-12">
         <div>
           <h1 className="text-4xl md:text-5xl font-bold text-black leading-tight mb-4">
-            Best API Development Services
+            Trade Data API for Your Own Systems
           </h1>
 
           <p className="text-xl text-black mb-8">
-            Our API development services deliver fast, secure, and scalable solutions designed to power innovative and data-driven applications. At Exim Trade Data, we specialize in custom API development and integration for import–export businesses, ensuring smooth connectivity across global markets, suppliers, and logistics systems.
+            Get global trade data where your team already works. The Exim Trade Data API delivers shipment records and trade statistics into your CRM, ERP, BI dashboard or product, so your team does not have to download and upload files by hand.
           </p>
 
           <div className="flex gap-4">
@@ -23,7 +23,7 @@ const Hero = () => {
               onClick={()=>{setShowForm(true)}}
               className="px-6 py-3 bg-blue-600 text-white text-base font-medium hover:scale-105 transition-transform duration-200"
             >
-              Consult Our Expert
+              Request API Access
             </button>
           </div>
         </div>

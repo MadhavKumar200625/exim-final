@@ -16,23 +16,23 @@ export default function CustomPlan() {
       <div className="bg-white border border-zinc-200 shadow-xl  max-w-6xl mx-auto p-10">
         {/* Heading */}
         <div className="text-center mb-10">
-          <h2 className="text-4xl font-bold text-black mb-3">Customized Plan</h2>
-          <p className="text-lg text-gray-700">Create Your Own Plan</p>
+          <h2 className="text-4xl font-bold text-black mb-3">Need a Custom Plan?</h2>
+          <p className="text-lg text-gray-700">Tell us your products, HS codes, countries and budget, and we will build a plan around them.</p>
         </div>
 
         {/* Features */}
         <div className="grid sm:translate-x-14 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-black text-base font-medium mb-12 text-center sm:text-left">
           <div className="space-y-3">
-            <p>✅ Choose From 200+ Countries</p>
-            <p>✅ Complete Historical Data Access</p>
+            <p>✅ Choose the countries you need</p>
+            <p>✅ Set a data allowance for your team</p>
           </div>
           <div className="space-y-3">
-            <p>✅ Unlimited Searches</p>
-            <p>✅ Customizable Download Records</p>
+            <p>✅ Search and download shipment records</p>
+            <p>✅ Add API access if needed</p>
           </div>
           <div className="space-y-3">
-            <p>✅ Customized User Licence</p>
-            <p>✅ Priority Customer Support</p>
+            <p>✅ Onboarding support</p>
+            <p>✅ Priority support options</p>
           </div>
         </div>
 
@@ -70,7 +70,7 @@ export default function CustomPlan() {
   
   className="inline-block px-6 py-3 text-lg font-semibold text-white bg-[#0067b8] hover:scale-105 transition duration-300"
 >
-            Get Free Trial
+            Get a Custom Quote
           </a>
         </div>
       </div>

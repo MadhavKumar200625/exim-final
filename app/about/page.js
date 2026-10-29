@@ -13,9 +13,9 @@ import Head from "next/head";
 // import ContactUs from "../components/ContactUs";
 
 export const metadata = {
-  title: "About Exim Trade Data | Global Trade Intelligence",
+  title: "About Exim Trade Data | Global Trade Data Company",
   description:
-    "Learn about Exim Trade Data and how our global trade intelligence platform helps businesses explore import-export data, research markets and identify trade opportunities.",
+    "Learn how Exim Trade Data collects, cleans and organises customs shipment data to help exporters and importers find buyers and suppliers.",
   keywords: [
     "Global Import Export Trade Data",
     "Import Export Data",
@@ -37,11 +37,11 @@ export const metadata = {
     canonical: "https://eximtradedata.com/about",
   },
   openGraph: {
-    title: "About Exim Trade Data | Global Trade Intelligence",
+    title: "About Exim Trade Data | Global Trade Data Company",
     type: "website",
     url: "https://eximtradedata.com/about",
     description:
-      "Learn about Exim Trade Data and how our global trade intelligence platform helps businesses explore import-export data, research markets and identify trade opportunities.",
+      "Learn how Exim Trade Data collects, cleans and organises customs shipment data to help exporters and importers find buyers and suppliers.",
     siteName: "Exim Trade Data",
     images: [
       {
@@ -52,9 +52,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary",
-    title: "About Exim Trade Data | Global Trade Intelligence",
+    title: "About Exim Trade Data | Global Trade Data Company",
     description:
-      "Learn about Exim Trade Data and how our global trade intelligence platform helps businesses explore import-export data, research markets and identify trade opportunities.",
+      "Learn how Exim Trade Data collects, cleans and organises customs shipment data to help exporters and importers find buyers and suppliers.",
     site: "@eximtradedata",
     creator: "@eximtradedata",
     url: "https://eximtradedata.com/about",

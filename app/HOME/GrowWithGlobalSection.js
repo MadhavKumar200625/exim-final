@@ -29,7 +29,7 @@ const GrowWithGlobalSection = () => {
           })}
         >
           <h2 className="text-3xl md:text-4xl md:max-w-2xl w-full font-extrabold text-black mb-12 tracking-tight">
-            GROW WITH GLOBAL IMPORT EXPORT AND SHIPMENT RECORDS
+            Ready to Grow With Trade Data?
           </h2>
 
           {/* CTA */}
@@ -38,7 +38,7 @@ const GrowWithGlobalSection = () => {
             
             className="relative inline-flex items-center justify-center px-8 py-4 text-md overflow-hidden font-semibold text-white transition-all duration-300 bg-blue-600 shadow-md group"
           >
-            <span className="relative z-10">Schedule A Demo</span>
+            <span className="relative z-10">Schedule a Demo</span>
           </a>
         </MotionWrapper>
       </div>

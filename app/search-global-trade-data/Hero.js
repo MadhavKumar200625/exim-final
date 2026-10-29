@@ -14,16 +14,11 @@ const Hero = () => {
         {/* First Block */}
         <div>
           <h2 className="text-2xl md:text-3xl mx-auto max-w-6xl text-center font-bold text-black mb-4">
-            Search Global Trade Data by Country, HS Code &amp; Product
+            Search Global Trade Data in Seconds
           </h2>
 
           <p className="text-black max-w-6xl mx-auto text-center mb-6">
-            Get unlimited access to our online global trade data portal. Perform
-            free search on global trade data by country, HS Code and product.
-            Find detailed shipment records with essential data fields including
-            product description, quantity, unit, value, country of
-            origin/destination, buyer supplier name and port of
-            loading/unloading.
+            Type a product, HS code or country and see matching customs shipment data. Narrow the results by date, port, quantity and value to find the trade flow you need.
           </p>
 
           <div className="mb-8">
@@ -34,16 +29,11 @@ const Hero = () => {
         {/* Second Block */}
         <div className="text-center">
           <h3 className="text-2xl md:text-3xl font-bold text-black mb-4">
-            Discover World Bank Trade Data by Country with Exim GTIS
+            Search the Import Export Database
           </h3>
 
           <p className="text-gray-700 mb-6">
-            Exim Global Trade Information System is a cost effective business
-            tool that helps you find potential business opportunities in the
-            international market. Get accurate analytics and forecasts on
-            industry wise international imports and exports, product pricing,
-            production quantity, importers exporters shipments, competitors and
-            risk involved in the business.
+            Search by product or HS code to see who trades it, where and at what price. Search by company, country or port, compare suppliers and prices, build a buyer list, and spot new markets where imports are growing.
           </p>
 
           <button onClick={()=>{setShowForm(true)}}
