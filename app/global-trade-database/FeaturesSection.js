@@ -5,15 +5,15 @@ import { useInView } from "react-intersection-observer";
 const points = [
   {
     title: "Shipment Records",
-    desc: "Search customs shipment data by HS code or product and review quantities, values, ports and dates where available.",
+    desc: "Review importer, exporter, product, HS code, quantity, value, ports and dates.",
   },
   {
-    title: "Country Trade Statistics",
-    desc: "Review top imports, exports and trading partners for each market.",
+    title: "Company Profiles",
+    desc: "Explore shipment history, trading partners and a company's main products.",
   },
   {
-    title: "Port Data and Trends",
-    desc: "See which goods move through each port and follow products and markets that are rising or falling.",
+    title: "Country Trade Statistics and Port Data",
+    desc: "See top imports, exports and partners, which goods move through each port, and rising or falling products and markets.",
   },
 ];
 

@@ -12,7 +12,7 @@ const GrowthSection = () => {
           </h2>
 
           <p className="text-md md:text-lg text-gradient text-black bg-clip-text mb-4">
-            Exim GTIS is our trade intelligence platform. In one dashboard you can follow market trends, the most-traded HS codes, key ports, competitors and top importers and exporters. Check a buyer&apos;s or supplier&apos;s shipment history before you commit to a deal and reduce the risk of working with the wrong partner.
+            Exim GTIS (Global Trade Information Service) is our trade intelligence platform. In one dashboard you can follow market trends, the most-traded HS codes, key ports, competitors and top importers and exporters. Check a buyer&apos;s or supplier&apos;s shipment history before you commit to a deal and reduce the risk of working with the wrong partner.
           </p>
 
           

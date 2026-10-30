@@ -111,7 +111,7 @@ export async function generateMetadata({ params }) {
     };
   }
 
-  const canonical = `https://eximtradedata.com/industries/${slug}`;
+  const canonical = `https://eximtradedata.com/${slug === "automative" ? "automotive" : slug}`;
 
   return {
     title: documentCopy[slug]?.metaTitle || industry.meta?.title || `${slug} Industry Trade Data`,

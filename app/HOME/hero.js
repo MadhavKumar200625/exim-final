@@ -15,16 +15,16 @@ export default function Hero() {
         {/* Text Section */}
         <div className="flex-1 text-center lg:text-left">
           <h1 className="text-3xl md:text-4xl font-extrabold text-black leading-tight mb-4">
-             Best Global Import and Export Data Provider
+             Import Export Data of 200+ Countries
 
           </h1>
 
           <p className="text-md md:text-lg text-black mb-8">
-            Want to take your international trade business further? Our verified import and export data helps you find genuine buyers and sellers in more than 200 countries. You get detailed customs shipment records and the insights behind them, so you can reach real trading partners with confidence.
+            Exim Trade Data gives exporters, importers and researchers searchable customs shipment data from more than 200 countries. See who is trading what, where, in what quantity and at what price, then use that information to find real buyers, reliable suppliers and new markets.
           </p>
 
           <p className="text-md md:text-lg text-black mb-8">
-           Our Global Import Export Database shows who is trading what, where, and in what quantity. For every importer and exporter, you can see the company name, trade volume, HSN Code List codes, product category, shipment value, origin and destination country, ports used, and how often they trade.
+           Our global import export database brings together importer and exporter names, HS codes, product descriptions, shipment values, quantities, origin and destination countries, ports and shipment dates. The exact fields vary by country, depending on what each customs authority publishes.
 </p>
 
           <div className="flex justify-center lg:justify-start">
@@ -33,7 +33,7 @@ export default function Hero() {
               className="relative inline-block px-6 py-3 text-white font-semibold text-sm md:text-lg overflow-hidden group bg-blue-600"
             >
               <span className="absolute inset-0 w-full h-full bg-linear-to-br from-white/10 to-white/5 opacity-0 group-hover:opacity-100 transition duration-300 blur-sm"></span>
-              <span className="relative z-10">Get a Demo</span>
+              <span className="relative z-10">Get a Free Demo</span>
             </button>
           </div>
         </div>

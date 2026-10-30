@@ -50,22 +50,22 @@ export default function Hero() {
     <section className="bg-linear-to-b from-sky-100 via-sky-50 to-white pt-28 pb-12 px-6">
       {/* Top Text */}
       <p className="text-lg font-medium text-black text-center mb-2">
-        Discover New Markets with the Exim GTIS Import Export Database
+        International Trade Data by Country
       </p>
 
       {/* Heading */}
       <h2 className="text-3xl md:text-4xl font-bold text-black text-center mb-4">
-        Trade Data for 200+ Countries, All in One Place
+        Import Export Data by Country
       </h2>
 
       {/* Sub Heading */}
       <p className="text-base text-black text-center max-w-4xl mx-auto mb-4">
-        Want to find buyers abroad? Our import export data reports show you who is buying and selling, and where. With the Exim Global Trade Intelligence System (GTIS), you can look up verified importers and exporters in more than 200 countries and contact the right people directly. You can also use the platform to follow market trends, price movements and product demand, with industry-wise insights and key performance indicators to help shape your plans. Check the top imports, exports, trading partners, companies and port volumes in major markets such as China, the USA, Turkey, Australia and across Europe.
+        Our country-wise import export data covers more than 200 countries. Open a country to see its top imports and exports, trading partners, active importers and exporters, and port volumes. Use Exim GTIS to look up companies and follow market trends, price movements and product demand.
       </p>
 
       {/* Italic Text */}
       <p className="italic text-black text-center mb-6">
-        Not sure where to begin? Ask for a sample trade data report or book a free demo, and see what real shipment data can do for your business.
+        Browse by region: Asia, Africa, Europe, North America, Oceania and South America. Not sure where to begin? Ask for a sample trade data report or book a free demo.
       </p>
 
       {/* Buttons */}

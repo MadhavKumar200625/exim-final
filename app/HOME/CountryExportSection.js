@@ -27,7 +27,7 @@ export default function CountryStatsSection() {
             Country-wise Trade Data
           </h3>
           <p className="text-sm md:text-base text-black max-w-2xl mx-auto">
-            Browse country-wise import export data to see top products, trading partners, active importers and exporters, and port volumes.
+            Our country-wise import export data covers more than 200 countries. Open a country to see its top imports and exports, trading partners, active importers and exporters, and port volumes.
           </p>
         </div>
 
@@ -61,7 +61,7 @@ export default function CountryStatsSection() {
           Country-wise Trade Data
         </h3>
         <p className="text-sm md:text-base text-black max-w-2xl mx-auto">
-          Browse country-wise import export data to see top products, trading partners, active importers and exporters, and port volumes.
+          Our country-wise import export data covers more than 200 countries. Open a country to see its top imports and exports, trading partners, active importers and exporters, and port volumes.
         </p>
       </div>
 

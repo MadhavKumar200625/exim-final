@@ -6,9 +6,9 @@ import Link from "next/link";
 import CTAImage from "./CTAImage";
 
 export const metadata = {
-  title: "Import Export Data by Country | Global Trade Data & Insights",
+  title: "Import Export Data by Country | Country-wise Trade Data",
   description:
-    "Explore import export data by country to research global markets, review shipment records, identify potential buyers and suppliers, and understand trade trends.",
+    "Browse country-wise import export data for Asia, Europe, Africa and the Americas. See top products, importers, exporters and ports.",
   keywords: [
     "import export data",
     "import export database",
@@ -23,11 +23,11 @@ export const metadata = {
     canonical: "https://eximtradedata.com/import-export-data-country-wise",
   },
   openGraph: {
-    title: "Import Export Data by Country | Global Trade Data & Insights",
+    title: "Import Export Data by Country | Country-wise Trade Data",
     type: "website",
     url: "https://eximtradedata.com/import-export-data-country-wise",
     description:
-      "Explore import export data by country to research global markets, review shipment records, identify potential buyers and suppliers, and understand trade trends.",
+      "Browse country-wise import export data for Asia, Europe, Africa and the Americas. See top products, importers, exporters and ports.",
     siteName: "Exim Trade Data",
     images: [
       {
@@ -38,9 +38,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Import Export Data by Country | Global Trade Data & Insights",
+    title: "Import Export Data by Country | Country-wise Trade Data",
     description:
-      "Explore import export data by country to research global markets, review shipment records, identify potential buyers and suppliers, and understand trade trends.",
+      "Browse country-wise import export data for Asia, Europe, Africa and the Americas. See top products, importers, exporters and ports.",
     site: "@eximtradedata",
     creator: "@eximtradedata",
     images: ["/logo.png"],

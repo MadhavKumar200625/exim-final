@@ -25,7 +25,7 @@ export default async function BlogsPage() {
               Trade Data Blog: Guides and Market Insights
             </h1>
             <p className="mt-4 max-w-2xl text-base leading-7 text-slate-600">
-              Practical guides for exporters, importers and analysts. Learn to read customs shipment data, find overseas buyers, understand HS codes and follow market trends.
+              Practical guides for exporters, importers and analysts. Learn how to read customs shipment data, find overseas buyers, understand HS codes and follow market trends.
             </p>
           </div>
           <div className="hidden border-l border-slate-300 pl-6 md:block">

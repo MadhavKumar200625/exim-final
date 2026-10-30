@@ -26,7 +26,7 @@ const Hero = () => {
           </h2>
 
           <p className="text-lg text-zinc-700 leading-relaxed">
-            See which ports handle which goods, and how trade moves through them. Our port data shows the main products, trading partners and shipment volumes for ports around the world. Search by port name or country to explore products, trading partners and volumes.
+            See which ports handle which goods, and how trade moves through them. Our port data shows the main products, trading partners and shipment volumes for ports around the world. Search for a port by name or country, then open its page to explore the products, partners and volumes that move through it.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 pt-2">

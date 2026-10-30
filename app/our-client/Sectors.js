@@ -14,7 +14,7 @@ const sectors = [
     description:
       'The Automotive Market is a very fast paced market in which everyone wants to excel with each other. Through our impressive trade intelligence platform, you can stand out amongst your competitors. Our interactive business intelligence reports help you with the accurate forecasts of the latest market technology, trends, and demands.',
     image: '/solutions/automotive.webp',
-    link:'/automative'
+    link:'/automotive'
   },
   {
     title: 'Energy & Natural Resources',

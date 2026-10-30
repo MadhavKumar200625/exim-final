@@ -4,9 +4,9 @@ import PortDataByCountry from './PortDataByCountry';
 import ContactUs from '../about/ContactUs';
 
 export const metadata = {
-  title: 'Global Ports Data | Port-wise Import Export Data | Exim Trade Data',
+  title: 'Global Ports Data | Port-wise Import Export Data',
   description:
-    'Browse global ports and see which goods move through each one. Explore port-wise import and export data from Exim Trade Data.',
+    'Browse global ports and see which goods move through each one. Port-wise import and export data from Exim Trade Data.',
   keywords: [
     'Global ports data',
     'Container ports data',

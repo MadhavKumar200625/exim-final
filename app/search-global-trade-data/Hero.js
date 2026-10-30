@@ -18,7 +18,7 @@ const Hero = () => {
           </h2>
 
           <p className="text-black max-w-6xl mx-auto text-center mb-6">
-            Type a product, HS code or country and see matching customs shipment data. Narrow the results by date, port, quantity and value to find the trade flow you need.
+            Type a product, HS code, company name or country and see matching customs shipment data. Narrow the results by date, port, quantity and value to find exactly the trade flow you need.
           </p>
 
           <div className="mb-8">
@@ -33,7 +33,7 @@ const Hero = () => {
           </h3>
 
           <p className="text-gray-700 mb-6">
-            Search by product or HS code to see who trades it, where and at what price. Search by company, country or port, compare suppliers and prices, build a buyer list, and spot new markets where imports are growing.
+            Search by product, HS code, company, country or port. Review importer, exporter, product description, quantity, value, origin and destination, ports and shipment dates, depending on the country. Build buyer lists, compare supplier prices and spot growing markets.
           </p>
 
           <button onClick={()=>{setShowForm(true)}}

@@ -8,7 +8,7 @@ const industries = [
     name: "Importers",
     desc: "Find suppliers, compare prices and check shipment history before you source.",
     img: "/importer.webp",
-    link: "importers"
+    link: "exporters"
   },
   {
     name: "Exporters",

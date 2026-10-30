@@ -25,14 +25,14 @@ const HeroSection = () => {
           </h2>
 
           <p className="text-base md:text-lg text-black mb-4 leading-relaxed">
-            Exim Trade Data provides global export and import trade analysis. We started with a simple goal: to make the day-to-day work of exporters and importers easier. To do that, we built a modern data infrastructure that delivers accurate, customised analysis for each client.
+            Exim Trade Data is a global import export data provider. We began with a simple goal: make the daily work of exporters and importers easier. To do that we built a data platform that turns customs shipment records into clear, searchable information.
           </p>
 
           <p className="text-base md:text-lg text-black leading-relaxed">
-            Our technical team brings more than ten years of experience in data mining and data processing. That experience goes into organised, reliable global export-import statistics, so you can follow current trade flows and see where demand is strongest around the world.
+            We collect customs shipment data from official sources, clean and standardise it, and organise it by product, HS code, port, company and country. You can search the result in seconds and use it to find buyers and suppliers, follow competitors and understand demand.
           </p>
           <p className="text-base md:text-lg text-black leading-relaxed mt-4">
-            We collect customs shipment data from official sources across 200+ countries, clean and standardise it, and organise it by product, HS code, port, company and country. The result is an import export database you can search in seconds.
+            Our mission is to make international trade data accessible, accurate and actionable for every exporter, importer and researcher. We envision a world where any business can enter any market with the same visibility as large corporations.
           </p>
         </div>
       </div>

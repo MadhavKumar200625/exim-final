@@ -63,7 +63,7 @@ export const industries = Object.freeze({
             "Identify the Current Market Trends & Demands in the Automotive Market",
           description:
             "The Automotive Market is a very fast paced market in which everyone wants to excel with each other. Through our impressive trade intelligence platform, you can stand out amongst your competitors. Our interactive business intelligence reports help you with the accurate forecasts of the latest market technology, trends, and demands.",
-          link: "automative",
+          link: "automotive",
         },
         {
           image: "",
@@ -414,7 +414,7 @@ export const industries = Object.freeze({
             "Identify the Current Market Trends & Demands in the Automotive Market",
           description:
             "The Automotive Market is a very fast paced market in which everyone wants to excel with each other. Through our impressive trade intelligence platform, you can stand out amongst your competitors. Our interactive business intelligence reports help you with the accurate forecasts of the latest market technology, trends, and demands.",
-          link: "automative",
+          link: "automotive",
         },
         {
           image: "",
@@ -983,7 +983,7 @@ export const industries = Object.freeze({
             "Identify the Current Market Trends & Demands in the Automotive Market",
           description:
             "The Automotive Market is a very fast paced market in which everyone wants to excel with each other. Through our impressive trade intelligence platform, you can stand out amongst your competitors. Our interactive business intelligence reports help you with the accurate forecasts of the latest market technology, trends, and demands.",
-          link: "automative",
+          link: "automotive",
         },
         {
           image: "",
@@ -1093,7 +1093,7 @@ export const industries = Object.freeze({
             "Identify the Current Market Trends & Demands in the Automotive Market",
           description:
             "The Automotive Market is a very fast paced market in which everyone wants to excel with each other. Through our impressive trade intelligence platform, you can stand out amongst your competitors. Our interactive business intelligence reports help you with the accurate forecasts of the latest market technology, trends, and demands.",
-          link: "automative",
+          link: "automotive",
         },
         {
           image: "",
@@ -2058,7 +2058,7 @@ export const industries = Object.freeze({
             "Identify the Current Market Trends & Demands in the Automotive Market",
           description:
             "The Automotive Market is a very fast paced market in which everyone wants to excel with each other. Through our impressive trade intelligence platform, you can stand out amongst your competitors. Our interactive business intelligence reports help you with the accurate forecasts of the latest market technology, trends, and demands.",
-          link: "automative",
+          link: "automotive",
         },
         {
           image: "",

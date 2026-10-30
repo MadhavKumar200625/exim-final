@@ -508,7 +508,7 @@ const countries = Object.entries(countryCodes).filter(([name]) =>
               <a href="/agribusiness">Agribusiness</a>
               <a href="/asset-management">Asset Management</a>
               <a href="/academic-and-education">Academic and Education</a>
-              <a href="/automative">Automotive</a>
+              <a href="/automotive">Automotive</a>
               <a href="/aerospace-and-defence">Aerospace and Defence</a>
               <a href="/construction">Construction</a>
               <a href="/chemical">Chemical</a>

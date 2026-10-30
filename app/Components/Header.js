@@ -28,7 +28,7 @@ import ScheduleADemo from "./ScheduleADemo";
 
 const solutions = [
   { title: "Agribusiness", link: "/agribusiness", icon: Tractor },
-  { title: "Automotive", link: "/automative", icon: Car },
+  { title: "Automotive", link: "/automotive", icon: Car },
   { title: "Energy Sector", link: "/energy", icon: Flame },
   { title: "Research & Consulting", link: "/research-and-consulting", icon: BookOpen },
   { title: "Insurance Companies", link: "/insurance-companies", icon: Shield },
