@@ -163,7 +163,7 @@ export async function generateMetadata({ params }) {
   return {
     title: finalTitle,
     description: finalDescription,
-    keywords: finalKeywords,
+    // keywords: finalKeywords
 
     alternates: {
       canonical,

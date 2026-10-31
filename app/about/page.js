@@ -16,7 +16,7 @@ export const metadata = {
   title: "About Exim Trade Data | Global Trade Data Company",
   description:
     "Learn how Exim Trade Data collects, cleans and organises customs shipment data to help exporters and importers find buyers and suppliers.",
-  keywords: [
+  /* keywords: [
     "Global Import Export Trade Data",
     "Import Export Data",
     "Export Import Data",
@@ -32,7 +32,7 @@ export const metadata = {
     "Exporters",
     "Buyers",
     "Suppliers",
-  ],
+  ], */
   alternates: {
     canonical: "https://eximtradedata.com/about",
   },

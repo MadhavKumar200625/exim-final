@@ -16,7 +16,7 @@ export const metadata = {
   title: "Global Trade Database | Exim GTIS Trade Data",
   description:
     "Explore Exim GTIS, a searchable global trade database with customs shipment records, HS codes, ports and trade trends.",
-  keywords: [
+  /* keywords: [
     "global trade database",
     "import export data",
     "trade data platform",
@@ -24,7 +24,7 @@ export const metadata = {
     "hs code data",
     "international trade statistics",
     "global trade data",
-  ],
+  ], */
   alternates: {
     canonical: "https://eximtradedata.com/global-trade-database",
   },

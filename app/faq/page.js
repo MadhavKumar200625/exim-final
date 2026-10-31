@@ -6,7 +6,7 @@ export const metadata = {
   title: "FAQs | Import Export Data and Exim GTIS",
   description:
     "Answers about Exim GTIS, data coverage, plans, subscriptions and custom data plans. Book a free demo with Exim Trade Data.",
-  keywords: [
+  /* keywords: [
     "Global Import Export Trade Data",
     "Import Export Data",
     "Export Import Data",
@@ -22,7 +22,7 @@ export const metadata = {
     "Exporters",
     "Buyers",
     "Suppliers"
-  ],
+  ], */
   alternates: {
     canonical: "https://eximtradedata.com/faq"
   },

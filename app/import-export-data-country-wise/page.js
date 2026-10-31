@@ -9,7 +9,7 @@ export const metadata = {
   title: "Import Export Data by Country | Country-wise Trade Data",
   description:
     "Browse country-wise import export data for Asia, Europe, Africa and the Americas. See top products, importers, exporters and ports.",
-  keywords: [
+  /* keywords: [
     "import export data",
     "import export database",
     "importers exporters directory",
@@ -18,7 +18,7 @@ export const metadata = {
     "import export trade data",
     "import export customs data",
     "import export data with importer name",
-  ],
+  ], */
   alternates: {
     canonical: "https://eximtradedata.com/import-export-data-country-wise",
   },

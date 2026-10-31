@@ -5,7 +5,7 @@ export const metadata = {
   title: "Review Exim Trade Data's Refund Policy",
   description:
     "Review Exim Trade Data's refund policy for global trade data. Learn how to request a refund within 48 hours for any discrepancies in our import-export reports.",
-  keywords: [
+  /* keywords: [
     "Global Import Export Trade Data",
     "Import Export Data",
     "Export Import Data",
@@ -21,7 +21,7 @@ export const metadata = {
     "Exporters",
     "Buyers",
     "Suppliers"
-  ],
+  ], */
   alternates: {
     canonical: "https://eximtradedata.com/refund-policy"
   },
@@ -56,8 +56,8 @@ export const metadata = {
 
 const Page = () => {
   return (
-    <div className="bg-white px-4 pb-12 pt-32 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto bg-white p-8 shadow-xl border border-zinc-200">
+    <main className="bg-white px-4 pb-12 pt-32 sm:px-6 lg:px-8">
+      <article className="max-w-4xl mx-auto bg-white p-8 shadow-xl border border-zinc-200">
         <h1 className="text-4xl font-extrabold text-center text-black mb-4">
           Refund Policy
         </h1>
@@ -163,8 +163,8 @@ const Page = () => {
           By purchasing our services, you acknowledge that you have read,
           understood, and agreed to this Refund Policy.
         </p>
-      </div>
-    </div>
+      </article>
+    </main>
   );
 };
 

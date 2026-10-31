@@ -31,7 +31,7 @@ export const metadata = {
   description:
     "Get global import-export trade data from 200+ countries with Exim Trade Data to drive informed decisions, optimize supply chains, and boost sales.",
 
-  keywords: [
+  /* keywords: [
     "Global Import Export Trade Data",
     "Import Export Data",
     "Export Import Data",
@@ -41,7 +41,7 @@ export const metadata = {
     "Export Data",
     "Shipments Data",
     "Customs Data",
-  ],
+  ], */
 
   robots: {
     index: true,

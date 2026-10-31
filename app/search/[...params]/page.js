@@ -223,7 +223,7 @@ export const generateMetadata = async ({ params }) => {
   return {
     title,
     description,
-    keywords,
+    // keywords,
     alternates: { canonical: url },
     ...(!hasSearchData && { robots: { index: false, follow: true } }),
     openGraph: {

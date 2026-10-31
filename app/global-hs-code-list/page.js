@@ -20,8 +20,9 @@ export async function generateMetadata() {
       canonical: "https://eximtradedata.com/global-hs-code-list",
     },
 
-    keywords:
+    /* keywords:
       "global hs code list, hs code search, harmonized system codes, import export hs code, custom tariffs codes, international trade hs codes",
+    */
   };
 }
 

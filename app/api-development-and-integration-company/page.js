@@ -16,7 +16,7 @@ export const metadata = {
   title: "Trade Data API | Import Export Data Integration",
   description:
     "Bring shipment records and trade statistics into your CRM, ERP or BI tool with the Exim Trade Data API. Request API access today.",
-  keywords: [
+  /* keywords: [
     "best api development services",
     "api development",
     "api development companies in usa",
@@ -29,7 +29,7 @@ export const metadata = {
     "rest api integration services",
     "api integration company",
     "api development and integration services"
-  ],
+  ], */
   alternates: {
     canonical: "https://eximtradedata.com/api-development-and-integration-company"
   },

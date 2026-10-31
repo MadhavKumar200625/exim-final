@@ -39,7 +39,7 @@ export async function generateMetadata({ params }) {
     "global hs code list, hs code search, harmonized system codes, import export hs code, custom tariffs codes, international trade hs codes";
 
   if (segments.length === 0) {
-    return { title, description, keywords };
+    return { title, description /* keywords */ };
   }
 
   const seg1 = segments[0];
@@ -62,7 +62,7 @@ export async function generateMetadata({ params }) {
     return {
       title,
       description,
-      keywords,
+      // keywords,
       alternates: { canonical: `https://eximtradedata.com/global-hs-code-list/${segments.join("/").toLowerCase()}` },
       ...(!data?.rows?.length && { robots: { index: false, follow: true } }),
     };
@@ -85,7 +85,7 @@ export async function generateMetadata({ params }) {
     return {
       title,
       description,
-      keywords,
+      // keywords,
       alternates: { canonical: `https://eximtradedata.com/global-hs-code-list/${segments.join("/").toLowerCase()}` },
       ...(!data?.rows?.length && { robots: { index: false, follow: true } }),
     };
@@ -108,7 +108,7 @@ export async function generateMetadata({ params }) {
     return {
       title,
       description,
-      keywords,
+      // keywords,
       alternates: { canonical: `https://eximtradedata.com/global-hs-code-list/${segments.join("/").toLowerCase()}` },
       ...(!data?.rows?.length && { robots: { index: false, follow: true } }),
     };
@@ -131,7 +131,7 @@ export async function generateMetadata({ params }) {
     return {
       title,
       description,
-      keywords,
+      // keywords,
       alternates: { canonical: `https://eximtradedata.com/global-hs-code-list/${segments.join("/").toLowerCase()}` },
       ...(!data?.rows?.length && { robots: { index: false, follow: true } }),
     };
@@ -158,7 +158,7 @@ export async function generateMetadata({ params }) {
     return {
       title,
       description,
-      keywords,
+      // keywords,
       alternates: { canonical: `https://eximtradedata.com/global-hs-code-list/${segments.join("/").toLowerCase()}` },
       ...(!data?.rows?.length && { robots: { index: false, follow: true } }),
     };
@@ -170,7 +170,7 @@ export async function generateMetadata({ params }) {
   return {
     title,
     description,
-    keywords,
+    // keywords,
     alternates: { canonical: `https://eximtradedata.com/global-hs-code-list/${segments.join("/").toLowerCase()}` },
     robots: { index: false, follow: true },
   };

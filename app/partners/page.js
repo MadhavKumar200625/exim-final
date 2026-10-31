@@ -9,14 +9,14 @@ export const metadata = {
   title: "Global Trade Data Network | Partners - Exim Trade Data",
   description:
     "Meet our trusted global partners who help deliver accurate trade data insights. Explore our growing network of data providers, agents, and trade experts.",
-  keywords: [
+  /* keywords: [
     "exim trade data partners",
     "global trade data network",
     "trade data providers",
     "import export data partners",
     "data agents",
     "international trade collaboration"
-  ],
+  ], */
   alternates: {
     canonical: "https://eximtradedata.com/partners"
   },

@@ -8,7 +8,7 @@ export const metadata = {
   title: 'Contact Exim Trade Data | Book a Free Demo',
   description:
     'Tell us your product, HS code and target countries and we will show you real shipment data in a live demo. Contact our team today.',
-  keywords: [
+  /* keywords: [
     'export and import data',
     '60 countries global trade data',
     'contact us',
@@ -16,7 +16,7 @@ export const metadata = {
     'global trade data',
     'data by hs code',
     'hs code list'
-  ],
+  ], */
   alternates: {
     canonical: 'https://eximtradedata.com/contact',
   },

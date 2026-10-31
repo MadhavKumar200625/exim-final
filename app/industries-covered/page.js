@@ -8,7 +8,7 @@ import Head from "next/head";
   title: "Industries Covered | Trade Data by Industry",
   description:
     "Explore trade data for agribusiness, automotive, chemical, energy, construction, retail and more. Find buyers, suppliers and trends.",
-  keywords: [
+  /* keywords: [
     "industries covered",
     "trade data by sector",
     "import export industries",
@@ -16,7 +16,7 @@ import Head from "next/head";
     "electronics trade insights",
     "global trade sectors",
     "Exim Trade Data"
-  ],
+  ], */
   alternates: {
     canonical: "https://eximtradedata.com/industries-covered"
   },

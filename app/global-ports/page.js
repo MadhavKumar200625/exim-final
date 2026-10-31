@@ -7,7 +7,7 @@ export const metadata = {
   title: 'Global Ports Data | Port-wise Import Export Data',
   description:
     'Browse global ports and see which goods move through each one. Port-wise import and export data from Exim Trade Data.',
-  keywords: [
+  /* keywords: [
     'Global ports data',
     'Container ports data',
     'World sea port list',
@@ -23,7 +23,7 @@ export const metadata = {
     'International sea ports directory',
     'Port traffic statistics',
     'Export import ports data',
-  ],
+  ], */
   alternates: {
     canonical: 'https://eximtradedata.com/global-ports',
   },

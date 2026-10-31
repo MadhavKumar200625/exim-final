@@ -4,7 +4,7 @@ export const metadata = {
   title: "Global Import-Export Products Directory (A-Z) | Exim Trade Data",
   description:
     "Explore Exim’s global import-export product directory from A to Z with detailed trade information for international businesses.",
-  keywords: [
+  /* keywords: [
     "Global import-export directory",
     "Import export products A to Z",
     "International trade products",
@@ -13,7 +13,7 @@ export const metadata = {
     "Alphabetical list of export items",
     "Import export product information",
     "Global trade data",
-  ],
+  ], */
   alternates: {
     canonical: "https://eximtradedata.com/global-products",
   },

@@ -14,7 +14,7 @@ import Head from "next/head";
   title: "Import Export Data Services | Exim Trade Data",
   description:
     "Find new markets, buyers and suppliers with searchable import export data, custom dashboards and trade reports. Request a free demo.",
-  keywords: [
+  /* keywords: [
     "Global Import Export Trade Data",
     "Import Export Data",
     "Export Import Data",
@@ -26,7 +26,7 @@ import Head from "next/head";
     "export data provider",
     "Free Import Export Data",
     "Import Export Report"
-  ],
+  ], */
   alternates: {
     canonical: "https://eximtradedata.com/services"
   },

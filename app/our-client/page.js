@@ -10,7 +10,7 @@ import Reputation from './Reputation';
   title: "Clients - Trusted by Global Importers & Exporters | Global Trade Data of 200+ Countries",
   description:
     "Discover the businesses that trust Exim Trade Data for accurate import-export data solutions. Join our growing list of satisfied clients worldwide.",
-  keywords: [
+  /* keywords: [
     "Exim Trade Data clients",
     "import export clients",
     "global trade data customers",
@@ -19,7 +19,7 @@ import Reputation from './Reputation';
     "client testimonials",
     "trusted by exporters",
     "importers clients list"
-  ],
+  ], */
   alternates: {
     canonical: "https://eximtradedata.com/our-client"
   },

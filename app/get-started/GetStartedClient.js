@@ -239,8 +239,8 @@ const filteredCountries = countries.filter((c) =>
 };
 
   return (
-    <div className="bg-linear-to-br from-[#e8f0ff] to-[#f4fafe] px-6 pb-10 pt-24 md:px-12 min-h-screen overflow-auto">
-      <div className="text-center max-w-4xl mx-auto mb-8">
+    <main className="bg-linear-to-br from-[#e8f0ff] to-[#f4fafe] px-6 pb-10 pt-24 md:px-12 min-h-screen overflow-auto">
+      <header className="text-center max-w-4xl mx-auto mb-8">
         <h1 className="text-3xl md:text-4xl font-bold text-black">
           Exim Global Trade Intelligence System
         </h1>
@@ -248,10 +248,10 @@ const filteredCountries = countries.filter((c) =>
           World's largest <span className="text-blue-600 font-semibold">global trade database</span>. 
           Connect with millions of international <span className="text-blue-600 font-semibold">buyers and suppliers</span> in one go.
         </h2>
-      </div>
+      </header>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
-        <div className="bg-white shadow-xl p-6 sm:p-8 md:p-10 border border-blue-100 overflow-y-auto max-h-[75vh]">
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
+        <section className="bg-white shadow-xl p-6 sm:p-8 md:p-10 border border-blue-100 overflow-y-auto max-h-[75vh]">
           <h2 className="text-xl md:text-2xl font-semibold text-black mb-6">
             Get Started With Exim GTIS Platform
           </h2>
@@ -365,12 +365,12 @@ const filteredCountries = countries.filter((c) =>
               {loading ? "Sending..." : "Get Started"}
             </button>
           </form>
-        </div>
+        </section>
 
-        <div className="flex justify-center md:justify-center">
+        <figure className="flex justify-center md:justify-center">
           <img src="/get-started/get-trial.webp" alt="Global Trade" />
-        </div>
-      </div>
-    </div>
+        </figure>
+      </section>
+    </main>
   );
 }

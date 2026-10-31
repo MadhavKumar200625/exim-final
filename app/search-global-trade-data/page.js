@@ -9,7 +9,7 @@ export const metadata = {
   title: "Search Global Trade Data by HS Code and Product",
   description:
     "Search import and export shipment records by product, HS code, company, port or country. Filter by date, value and quantity. Start free.",
-  keywords: [
+  /* keywords: [
     "search global trade data",
     "import export records",
     "hs code search",
@@ -17,7 +17,7 @@ export const metadata = {
     "trade analytics",
     "international trade data",
     "exim search tool",
-  ],
+  ], */
   alternates: {
     canonical: "https://eximtradedata.com/search-global-trade-data",
   },

@@ -13,7 +13,7 @@ export const metadata = {
   title: "Import Export Data Pricing and Plans | Exim Trade Data",
   description:
     "Compare Exim Trade Data plans for single-country and multi-country access, with API and priority support options. Get a custom quote.",
-  keywords: [
+  /* keywords: [
     "import export data",
     "global trade data",
     "global trade database",
@@ -22,7 +22,7 @@ export const metadata = {
     "international trade imports and exports",
     "imports and exports data by country",
     "import export platform"
-  ],
+  ], */
   alternates: {
     canonical: "https://eximtradedata.com/pricing"
   },
