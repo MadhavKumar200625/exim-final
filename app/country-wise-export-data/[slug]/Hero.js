@@ -13,7 +13,7 @@ const Hero = ({ country, hero }) => {
         />
 
         {/* Main Heading */}
-        <h2
+        <h1
           className="text-3xl md:text-4xl font-bold leading-tight"
           dangerouslySetInnerHTML={{
             __html:

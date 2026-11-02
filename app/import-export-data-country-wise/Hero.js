@@ -54,9 +54,9 @@ export default function Hero() {
       </p>
 
       {/* Heading */}
-      <h2 className="text-3xl md:text-4xl font-bold text-black text-center mb-4">
+      <h1 className="text-3xl md:text-4xl font-bold text-black text-center mb-4">
         Import Export Data by Country
-      </h2>
+      </h1>
 
       {/* Sub Heading */}
       <p className="text-base text-black text-center max-w-4xl mx-auto mb-4">

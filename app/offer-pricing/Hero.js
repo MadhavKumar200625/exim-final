@@ -163,12 +163,12 @@ const [isOpen, setIsOpen] = useState(false);
       <div className="max-w-7xl mx-auto px-4">
         {/* Heading */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
+          <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
             Welcome to the World&apos;s Largest <br />
             <span className="text-blue-600 drop-shadow-lg">
               Global Trade Analysis
             </span>
-          </h2>
+          </h1>
           <h3 className="text-xl md:text-2xl font-semibold text-black mb-4 tracking-wide">
             Import Export Trade Analysis That Delivers Results
           </h3>
@@ -177,9 +177,9 @@ const [isOpen, setIsOpen] = useState(false);
             
           </p>
 
-          <h1 className="text-xl font-semibold text-black mt-8">Exclusive Pricing</h1>
-                    <h1 className="text-2xl font-bold text-black mt-2">Affordable and Flexible Pricing
-</h1>
+          <h2 className="text-xl font-semibold text-black mt-8">Exclusive Pricing</h2>
+                    <h3 className="text-2xl font-bold text-black mt-2">Affordable and Flexible Pricing
+</h3>
 
         </div>
 

@@ -13,9 +13,9 @@ const Hero = () => {
       <div className="mx-auto space-y-12">
         {/* First Block */}
         <div>
-          <h2 className="text-2xl md:text-3xl mx-auto max-w-6xl text-center font-bold text-black mb-4">
+          <h1 className="text-2xl md:text-3xl mx-auto max-w-6xl text-center font-bold text-black mb-4">
             Search Global Trade Data in Seconds
-          </h2>
+          </h1>
 
           <p className="text-black max-w-6xl mx-auto text-center mb-6">
             Type a product, HS code, company name or country and see matching customs shipment data. Narrow the results by date, port, quantity and value to find exactly the trade flow you need.

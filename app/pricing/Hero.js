@@ -38,10 +38,10 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-4">
         {/* Hero Heading */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
+          <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
             Import Export Data Plans <br />
             <span className="text-blue-600 drop-shadow-lg">and Pricing</span>
-          </h2>
+          </h1>
           <h3 className="text-xl md:text-2xl font-semibold text-black mb-4 tracking-wide">
             Exim GTIS Dashboard Access
           </h3>

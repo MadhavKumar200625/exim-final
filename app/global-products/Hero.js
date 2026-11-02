@@ -10,9 +10,9 @@ const Hero = ({heading}) => {
     <section className="bg-blue-50 pb-12 pt-32">
       <div className="max-w-6xl mx-auto px-6 text-center">
         {/* Heading */}
-        <h2 className="text-3xl md:text-4xl font-bold text-black mb-8">
+        <h1 className="text-3xl md:text-4xl font-bold text-black mb-8">
           {heading ?? "Directory Of Import Export Products Starting With A Alphabet"}
-        </h2>
+        </h1>
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row justify-center gap-4">

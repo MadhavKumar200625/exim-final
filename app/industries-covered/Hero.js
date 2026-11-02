@@ -265,9 +265,9 @@ const Hero = () => {
   return (
     <section className="bg-white pt-32 pb-14 px-4 sm:px-10 lg:px-20">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl sm:text-5xl font-extrabold text-black text-center mb-16">
+        <h1 className="text-4xl sm:text-5xl font-extrabold text-black text-center mb-16">
           Trade Data for Every Industry
-        </h2>
+        </h1>
 
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
           {displayedIndustries.map((industry) => (

@@ -239,7 +239,7 @@ export default async function Page({ params }) {
 
       <section className=" px-4 py-12 text-center bg-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-black mb-4">
+          <h1 className="text-3xl font-bold text-black mb-4">
             {type == "hs"
               ? `Harmonized System code ${value} - ${heading}`
               : `${
@@ -251,7 +251,7 @@ export default async function Page({ params }) {
                           : `Harmonized System code`
                       }`
                 }`}
-          </h2>
+          </h1>
 
           <h3 className="text-2xl  text-black mb-4">
             Search by product name or code to find a classification, then explore trade data for that code.

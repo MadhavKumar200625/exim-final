@@ -16,10 +16,10 @@ const Hero = () => {
 
         {/* Content */}
         <div className="lg:text-left text-center">
-          <h2 className="text-3xl  md:text-4xl font-bold text-black mb-4 leading-tight">
+          <h1 className="text-3xl  md:text-4xl font-bold text-black mb-4 leading-tight">
             Be a <span className="text-blue-600">Profitable Partner</span> with
             Us!
-          </h2>
+          </h1>
 
           <p className="text-black mb-4 text-lg">
             Our mission is to provide more sustainable, cost-effective, and

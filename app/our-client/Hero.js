@@ -6,10 +6,10 @@ const Hero = () => {
       <div className="max-w-7xl mx-auto px-4 md:px-6 text-center relative z-10">
         {/* Heading */}
         <div >
-          <h2 className="text-3xl pb-10 sm:text-4xl lg:text-5xl font-extrabold text-black leading-tight tracking-tight">
+          <h1 className="text-3xl pb-10 sm:text-4xl lg:text-5xl font-extrabold text-black leading-tight tracking-tight">
             Helping <span className="text-[#0067b8] drop-shadow-md">Businesses</span> with Improved
             Decision Making & Strategic Planning
-          </h2>
+          </h1>
         </div>
 
         {/* Paragraphs Section */}

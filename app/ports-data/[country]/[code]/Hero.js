@@ -15,9 +15,9 @@ const Hero = ({countryName}) => {
         </div>
     
         <div className="space-y-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-zinc-900">
+          <h1 className="text-3xl md:text-4xl font-bold text-zinc-900">
             Ports Data of {countryName}
-          </h2>
+          </h1>
           <p className="text-lg text-zinc-700 leading-relaxed">
 Get detailed insights into the top {countryName} sea ports with verified <strong>port data {countryName}</strong>. Find a comprehensive report on {countryName}&apos;s top seaports shipment volumes, top traded goods, country of origin, destination, districts, buyers and suppliers through {countryName} ports container data. Gain the latest insights on shipment activities across {countryName} sea ports. Access the export import port data {countryName} year wise with Exim Intelligence Platform.          </p>
     

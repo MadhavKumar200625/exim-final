@@ -20,9 +20,9 @@ const HeroSection = () => {
 
         {/* Right: Text */}
         <div className="text-black">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-snug">
+          <h1 className="text-3xl md:text-4xl font-bold mb-6 leading-snug">
             We Turn Global Trade Data Into Business Opportunity
-          </h2>
+          </h1>
 
           <p className="text-base md:text-lg text-black mb-4 leading-relaxed">
             Exim Trade Data is a global import export data provider. We began with a simple goal: make the daily work of exporters and importers easier. To do that we built a data platform that turns customs shipment records into clear, searchable information.

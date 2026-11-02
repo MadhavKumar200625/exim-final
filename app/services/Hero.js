@@ -17,9 +17,9 @@ const Hero = () => {
 
         {/* Right Content */}
         <div className="space-y-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-black leading-tight">
+          <h1 className="text-3xl md:text-4xl font-bold text-black leading-tight">
             Import Export Data Services for Growing Trade Businesses
-          </h2>
+          </h1>
           <p className="text-black text-lg">
           Exim Trade Data turns customs shipment data into market intelligence. See who is buying, who is selling and where demand is moving. Use trade statistics to shortlist reliable suppliers and reach buyers who already import your product.
 </p>

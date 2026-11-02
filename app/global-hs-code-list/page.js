@@ -83,10 +83,10 @@ const page = async () => {
 
         <section className=" px-4 py-12 text-center bg-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-black mb-4">
+          <h1 className="text-3xl font-bold text-black mb-4">
             Global HS Code and HSN Code List
 
-          </h2>
+          </h1>
 
           <h3 className="text-2xl  text-black mb-4">
             The Harmonized System classifies traded goods. Search by product name or code, then explore the trade data for that code.

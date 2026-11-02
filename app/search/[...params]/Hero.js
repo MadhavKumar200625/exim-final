@@ -8,9 +8,9 @@ const Hero = ({data,query}) => {
       <div className=" mx-auto space-y-12">
         {/* First Block */}
         <div>
-          <h2 className="text-2xl md:text-3xl mx-auto max-w-6xl text-center font-bold text-black mb-4">
+          <h1 className="text-2xl md:text-3xl mx-auto max-w-6xl text-center font-bold text-black mb-4">
             {data.heading ?? "Search Global Trade Data by Country, HS Code &amp; Product"}
-          </h2>
+          </h1>
           <p className="text-black max-w-6xl mx-auto text-center mb-6">
             {data.subheading ?? `Get unlimited access to our online global trade data portal. Perform
             free search on global trade data by country, HS Code and product.

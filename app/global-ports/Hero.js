@@ -21,9 +21,9 @@ const Hero = () => {
         </div>
 
         <div className="space-y-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-zinc-900">
+          <h1 className="text-3xl md:text-4xl font-bold text-zinc-900">
             Global Ports Data: Port-wise Import and Export
-          </h2>
+          </h1>
 
           <p className="text-lg text-zinc-700 leading-relaxed">
             See which ports handle which goods, and how trade moves through them. Our port data shows the main products, trading partners and shipment volumes for ports around the world. Search for a port by name or country, then open its page to explore the products, partners and volumes that move through it.
