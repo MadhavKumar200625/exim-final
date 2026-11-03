@@ -453,7 +453,10 @@ function parseContent(text) {
   const d = await getData(query.country);
 
   // SECTION 1 → always import_export
-  const section1 = parseContent(d?.import_export);
+  const section1 = parseContent(d?.import_export) || {
+    heading: data.section1.heading,
+    paragraphs: [data.section1.subheading],
+  };
 
 
 
@@ -461,7 +464,10 @@ function parseContent(text) {
   const section2Raw =
     query.type === "export" ? d?.export : d?.import;
 
-  const section2 = parseContent(section2Raw);
+  const section2 = parseContent(section2Raw) || {
+    heading: data.section5.heading,
+    paragraphs: [data.section5.content],
+  };
 
   /* -------------------------------------------------
      Render SSR HTML
@@ -476,15 +482,10 @@ function parseContent(text) {
         country = {query.country}
       />
       <SearchGlobalData data={data.section5} />
-      {
-        
-        d?.import_export !=undefined  &&
-        <ContentImportExport
+      <ContentImportExport
       section1={section1}
       section2={section2}
     />
-      }
-      
     </main>
   );
 }
