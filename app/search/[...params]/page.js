@@ -8,6 +8,7 @@ import MainSection from "./MainSection";
 import SearchGlobalData from "./SearchGlobalData";
 import { getSearchData } from "@/lib/getSearchData";
 import ContentImportExport from "./ContentImportExport";
+import NoDataPopup from "./NoDataPopup";
 
 /* -------------------------------------------------
    Helpers (same logic as before)
@@ -279,17 +280,6 @@ export default async function Page({ params }) {
   const rowsRaw = Array.isArray(api?.data) ? api.data : [];
   const unique = Array.isArray(api?.unique) ? api.unique : [];
 
-  if (rowsRaw.length === 0) {
-    return (
-      <main className="min-h-[50vh] px-6 py-20 text-center">
-        <h1 className="text-3xl font-semibold text-gray-900">Trade data not found</h1>
-        <p className="mt-3 text-gray-600">
-          No shipment records matched this search. Try changing or removing a filter.
-        </p>
-      </main>
-    );
-  }
-
   const filters = {
     hsCodes: unique
       .filter((u) => u.startsWith("hs_code:"))
@@ -474,6 +464,7 @@ function parseContent(text) {
   -------------------------------------------------- */
   return (
     <main>
+      {rowsRaw.length === 0 && <NoDataPopup />}
       <Hero data={data.section1} query={query} />
       <ShowFilters appliedFilters={data.section3.appliedFilters} />
       <MainSection

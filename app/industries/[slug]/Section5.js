@@ -45,7 +45,11 @@ const Section5 = ({ industries }) => {
                 </p>
 
                 <a
-                  href={industry.link || "/industries-covered"}
+                  href={industry.link
+                    ? industry.link.startsWith("/")
+                      ? industry.link
+                      : `/${industry.link}`
+                    : "/industries-covered"}
                   
                   className="mt-3 inline-block text-sm font-medium text-blue-600 transition"
                 >

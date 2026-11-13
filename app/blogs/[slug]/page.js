@@ -47,17 +47,17 @@ export default async function BlogArticlePage({ params }) {
   }
 
   return (
-    <main className="min-h-screen bg-white pt-20">
+    <main className="min-h-screen bg-slate-50 pt-20">
       <article>
-        <header className="border-b border-slate-200 bg-[#f1f6fa]">
-          <div className="mx-auto max-w-6xl px-5 pb-10 pt-7 sm:pb-14 sm:pt-9">
+        <header className="border-b border-slate-200 bg-gradient-to-br from-[#f1f6fa] via-white to-[#eaf3f9]">
+          <div className="mx-auto max-w-7xl px-5 pb-10 pt-7 sm:px-8 sm:pb-16 sm:pt-9">
             <nav aria-label="Breadcrumb" className="mb-8 flex items-center gap-2 text-sm">
               <Link href="/blogs" className="inline-flex items-center gap-2 font-semibold text-[#005b9a] transition hover:text-[#ff7a18]">
                 <ArrowLeft aria-hidden="true" size={16} />
                 <span>Journal</span>
               </Link>
               <span aria-hidden="true" className="text-slate-400">/</span>
-              <span className="truncate text-slate-500">{blog.category}</span>
+              <span className="truncate rounded-full bg-white/80 px-3 py-1 text-slate-600">{blog.category}</span>
             </nav>
 
             <div className="grid items-center gap-8 md:grid-cols-[1.08fr_0.92fr] md:gap-12">
@@ -90,19 +90,19 @@ export default async function BlogArticlePage({ params }) {
                 </div>
               </div>
 
-              <div className="relative overflow-hidden border border-[#d5e2ec] bg-[#e5eff7]">
+              <div className="relative overflow-hidden rounded-2xl border border-[#d5e2ec] bg-[#e5eff7] shadow-lg shadow-slate-900/10">
                 <div className="absolute inset-x-0 top-0 z-10 h-1 bg-[#ff7a18]" />
                 <img
                   src={blog.coverImage || FALLBACK_COVER}
                   alt={blog.coverImage ? blog.title : "Trade data research and analytics"}
-                  className={`aspect-4/3 w-full object-contain ${blog.coverImage ? "" : "p-4 sm:p-7"}`}
+                  className={`aspect-4/3 w-full object-cover ${blog.coverImage ? "" : "p-4 sm:p-7"}`}
                 />
               </div>
             </div>
           </div>
         </header>
 
-        <div className="mx-auto max-w-3xl px-5 py-6 sm:py-8">
+        <div className="mx-auto my-8 max-w-4xl rounded-2xl border border-slate-200 bg-white px-5 py-8 shadow-sm sm:my-12 sm:px-10 sm:py-10">
           <div className="mb-8 flex items-center gap-3 text-xs font-bold uppercase text-[#005b9a]">
             <span className="h-2 w-2 bg-[#ff7a18]" />
             <span>Article</span>
