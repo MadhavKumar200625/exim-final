@@ -221,16 +221,20 @@ export const generateMetadata = async ({ params }) => {
     hasSearchData = false;
   }
 
+  const canonicalUrl = hasSearchData
+    ? url
+    : "https://eximtradedata.com/search-global-trade-data";
+
   return {
     title,
     description,
     // keywords,
-    alternates: { canonical: url },
+    alternates: { canonical: canonicalUrl },
     ...(!hasSearchData && { robots: { index: false, follow: true } }),
     openGraph: {
       title,
       description,
-      url,
+      url: canonicalUrl,
       siteName: 'Exim Trade Data',
       type: 'website',
       images: [{ url: 'https://eximtradedata.com/images/logo.svg', alt: 'Exim Trade Data' }],

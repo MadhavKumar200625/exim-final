@@ -8,13 +8,13 @@ const industries = [
     name: "Importers",
     desc: "Find suppliers, compare prices and check shipment history before you source.",
     img: "/importer.webp",
-    link: "exporters"
+    link: "importers"
   },
   {
     name: "Exporters",
     desc: "Build buyer lists and find high-demand markets for your products.",
     img: "/exporters.webp",
-    link: "importers"
+    link: "exporters"
   },
   {
     name: "Corporation",

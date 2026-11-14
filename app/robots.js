@@ -22,8 +22,8 @@ const AI_CRAWLERS = [
 export default function robots() {
   return {
     rules: [
-      { userAgent: "*", allow: "/" },
-      { userAgent: AI_CRAWLERS, allow: "/" },
+      { userAgent: "*", allow: "/", disallow: "/api/" },
+      { userAgent: AI_CRAWLERS, allow: "/", disallow: "/api/" },
     ],
     sitemap: "https://eximtradedata.com/sitemap.xml",
     host: "https://eximtradedata.com",
