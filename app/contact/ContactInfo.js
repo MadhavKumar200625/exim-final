@@ -108,7 +108,7 @@ const ContactInfo = () => {
 
       if (!res.ok) throw new Error("Request failed");
 
-      alert("Message sent successfully!");
+      window.location.assign("/thank-you/contact-us");
     } catch (error) {
       console.error(error);
       alert("Something went wrong");

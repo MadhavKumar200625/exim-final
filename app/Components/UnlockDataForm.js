@@ -280,7 +280,7 @@ export default function UnlockDataForm({ isOpen, onClose, country }) {
       });
 
       if (!res.ok) throw new Error("Failed");
-      onClose();
+      window.location.assign("/thank-you/unlock-full-data");
     } catch {
       setLoading(false);
     }

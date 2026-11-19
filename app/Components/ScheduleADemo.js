@@ -267,7 +267,7 @@ useEffect(() => {
     });
 
     if (!res.ok) throw new Error("Failed");
-    onClose();
+    window.location.assign("/thank-you/demo-request");
   } catch {
     setLoading(false);
   }

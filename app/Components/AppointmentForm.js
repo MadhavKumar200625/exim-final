@@ -310,7 +310,7 @@ today.setHours(0, 0, 0, 0); // normalize to start of day
 
       if (!res.ok) throw new Error("Request failed");
 
-      setStep(3);
+      router.push("/thank-you/pricing-quote");
     } catch (e) {
       alert("Something went wrong");
       console.error(e);

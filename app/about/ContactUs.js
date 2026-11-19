@@ -260,7 +260,7 @@ export default function ContactUs() {
 
       if (!res.ok) throw new Error("Request failed");
 
-      alert("Message sent successfully!");
+      window.location.assign("/thank-you/contact-us");
     } catch (err) {
       alert("Something went wrong!");
     } finally {
