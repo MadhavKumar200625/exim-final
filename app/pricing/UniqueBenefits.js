@@ -4,22 +4,22 @@ const benefits = [
   {
     title: "Trade Metrics",
     desc: "Use values, volumes and unit prices to size a market and compare origins.",
-    image: "/VISUAL-REPORT.webp",
+    image: "/pricing/VISUAL-REPORT.webp",
   },
   {
     title: "Product Trends",
     desc: "Spot rising products and markets with trade activity over time.",
-    image: "/PRODUCT-TRENDS.webp",
+    image: "/pricing/PRODUCT-TRENDS.webp",
   },
   {
     title: "Advanced Search",
     desc: "Filter by product, HS code, country, port, date, quantity and value.",
-    image: "/ADVANCE-SEARCH.webp",
+    image: "/pricing/ADVANCE-SEARCH.webp",
   },
   {
     title: "API Access",
     desc: "Connect shipment data to your CRM, ERP, BI dashboard or product.",
-    image: "/Importer-Exporter-Tree.webp",
+    image: "/pricing/Importer-Exporter-Tree.webp",
   },
 ];
 
