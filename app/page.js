@@ -67,6 +67,21 @@ export default function Home() {
 }
 `}
         </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": "https://eximtradedata.com/#webpage",
+            url: "https://eximtradedata.com/",
+            name: "Import Export Data of 200+ Countries | Exim Trade Data",
+            description:
+              "Access global import export data from 200+ countries. Explore customs shipment records, importer and exporter details, HS codes, product trends and international trade intelligence with Exim Trade Data.",
+            isPartOf: { "@id": "https://eximtradedata.com/#website" },
+            about: { "@id": "https://eximtradedata.com/#organization" },
+            mainEntity: { "@id": "https://eximtradedata.com/#gtis" },
+            inLanguage: "en",
+          })}
+        </script>
       </head>
       <main>
         {/* SEO-critical */}

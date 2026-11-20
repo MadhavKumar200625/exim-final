@@ -19,6 +19,113 @@ const roboto = Roboto({
   display: "swap",
 });
 
+const siteStructuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://eximtradedata.com/#organization",
+      name: "Exim Trade Data",
+      url: "https://eximtradedata.com/",
+      logo: "https://eximtradedata.com/logo.png",
+      description:
+        "Exim Trade Data is a global trade intelligence platform providing import-export data, customs shipment records, importer-exporter details, trade analytics and international market insights across 200+ countries.",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Noida",
+        addressRegion: "Uttar Pradesh",
+        postalCode: "201301",
+        addressCountry: "IN",
+      },
+      contactPoint: {
+        "@type": "ContactPoint",
+        telephone: "+91 93146 19475",
+        email: "info@eximtradedata.com",
+        contactType: "customer support",
+        availableLanguage: ["English", "Hindi"],
+      },
+      sameAs: [
+        "https://www.facebook.com/eximtradedataofficial",
+        "https://www.instagram.com/eximtradedata/",
+        "https://x.com/Exim_Trade_Data",
+        "https://www.linkedin.com/company/exim-trade-data",
+        "https://in.pinterest.com/exim_trade_data/",
+        "https://www.youtube.com/channel/UCsbKPsVwgAgqJi4EB20iBvg",
+      ],
+      knowsAbout: [
+        "Import Export Data",
+        "Global Trade Data",
+        "International Trade Intelligence",
+        "Customs Shipment Records",
+        "Importer and Exporter Database",
+        "Global Buyers and Suppliers",
+        "HS Code Data",
+        "Country Wise Import Export Data",
+        "Product Wise Trade Data",
+        "International Trade Statistics",
+        "Global Market Research",
+        "Port Shipment Data",
+        "Global Import Export Data Provider",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://eximtradedata.com/#website",
+      url: "https://eximtradedata.com/",
+      name: "Exim Trade Data",
+      publisher: { "@id": "https://eximtradedata.com/#organization" },
+      inLanguage: "en",
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://eximtradedata.com/#gtis",
+      name: "Exim GTIS",
+      alternateName: "Exim Global Trade Intelligence System",
+      applicationCategory: "BusinessApplication",
+      applicationSubCategory: "Global Trade Intelligence Platform",
+      operatingSystem: "Web",
+      url: "https://eximtradedata.com/",
+      description:
+        "Exim GTIS is a global trade intelligence platform that helps businesses research international shipments, identify potential buyers and suppliers, analyse product-wise trade data, explore HS codes and discover market opportunities across 200+ countries.",
+      publisher: { "@id": "https://eximtradedata.com/#organization" },
+      featureList: [
+        "Global Import Export Data",
+        "Country Wise Trade Data",
+        "Importer and Exporter Information",
+        "Global Buyer and Supplier Database",
+        "HS Code and Product Search",
+        "Customs Shipment Records",
+        "International Trade Statistics",
+        "Global Port Data",
+        "Product Market Research",
+        "Competitor Trade Analysis",
+      ],
+    },
+    {
+      "@type": "Service",
+      "@id": "https://eximtradedata.com/#trade-data-service",
+      name: "Global Import Export Data Services",
+      serviceType: "Global Trade Data and Market Intelligence",
+      provider: { "@id": "https://eximtradedata.com/#organization" },
+      url: "https://eximtradedata.com/",
+      description:
+        "Exim Trade Data provides global import export data, customs shipment records, importer and exporter details, HS code information, product-wise trade statistics and international market intelligence across 200+ countries.",
+      areaServed: { "@type": "Place", name: "Worldwide" },
+      audience: {
+        "@type": "BusinessAudience",
+        audienceType: [
+          "Importers",
+          "Exporters",
+          "Manufacturers",
+          "International Traders",
+          "Market Researchers",
+          "Business Development Professionals",
+        ],
+      },
+    },
+  ],
+};
+
 /**
  * Global metadata
  * Kept minimal + crawler friendly
@@ -100,39 +207,7 @@ export default function RootLayout({ children }) {
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "LocalBusiness",
-              "name": "Exim Trade Data",
-              "url": "https://eximtradedata.com/",
-              "logo": "https://eximtradedata.com/logo.png",
-              "description":
-                "Exim Trade Data is a global import-export data provider offering customs data, analytics, and international trade intelligence across 200+ countries.",
-              "address": {
-                "@type": "PostalAddress",
-                // "streetAddress": "G-232, G Block, Sector 63",
-                "addressLocality": "Noida",
-                "addressRegion": "Uttar Pradesh",
-                "postalCode": "201301",
-                "addressCountry": "IN"
-              },
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "+91 93146 19475",
-                "contactType": "customer support",
-                "email": "info@eximtradedata.com"
-              },
-              "sameAs": [
-                "https://www.facebook.com/eximtradedataofficial",
-                "https://www.instagram.com/eximtradedata/",
-                "https://x.com/Exim_Trade_Data",
-                "https://www.linkedin.com/company/exim-trade-data",
-                "https://in.pinterest.com/exim_trade_data/",
-                "https://www.youtube.com/channel/UCsbKPsVwgAgqJi4EB20iBvg"
-              ]
-            })
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteStructuredData) }}
         />
       </head>
       <body className="antialiased font-sans">
