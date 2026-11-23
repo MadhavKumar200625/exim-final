@@ -9,6 +9,10 @@ import { buildSearchUrl } from "@/lib/searchUrl";
 const MainSection = ({ data, appliedFilters ,country}) => {
   const { filters, table } = data;
   const [showUnlockForm, setShowUnlockForm] = useState(false);
+  const tradeType =
+    appliedFilters.find((filter) => filter.label.toLowerCase() === "type")?.value?.toLowerCase() ||
+    "export";
+  const portFilterLabel = tradeType === "export" ? "Port of Loading" : "Port of Unloading";
 
   const buildUrl = (filters) => buildSearchUrl(filters);
 
@@ -80,10 +84,10 @@ const MainSection = ({ data, appliedFilters ,country}) => {
           </ul>
         </details>
 
-        {/* Port of Unloading Filter */}
+        {/* Port Filter */}
         <details open className="space-y-3">
           <summary className="cursor-pointer flex justify-between items-center text-sm font-medium text-white mb-2 tracking-wide">
-            <div>Port of Unloading <span className="text-white">({filters.ports.length})</span></div>
+            <div>{portFilterLabel} <span className="text-white">({filters.ports.length})</span></div>
             <ChevronDown size={16} className="text-white" />
           </summary>
 <ul className="list-disc list-outside space-y-2 px-4 marker:text-white text-sm break-words">

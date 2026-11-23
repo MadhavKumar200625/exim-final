@@ -10,6 +10,7 @@ import { getSearchData } from "@/lib/getSearchData";
 import ContentImportExport from "./ContentImportExport";
 import NoDataPopup from "./NoDataPopup";
 import { buildSearchUrl } from "@/lib/searchUrl";
+import { notFound } from "next/navigation";
 
 /* -------------------------------------------------
    Helpers (same logic as before)
@@ -53,10 +54,29 @@ function extractQuery(filters) {
   };
 }
 
+function isDisallowedSearchUrl(raw = []) {
+  const normalized = raw.map((segment) => String(segment).toLowerCase());
+  const hasOldTypeCountryOrder =
+    normalized[0]?.split("-")[0] === "type" &&
+    normalized[1]?.split("-")[0] === "country";
+  const hasUnderscoreProduct = normalized.some(
+    (segment) => segment.startsWith("product-") && segment.includes("_")
+  );
+
+  return hasOldTypeCountryOrder || hasUnderscoreProduct;
+}
+
 
 export const generateMetadata = async ({ params }) => {
   params = await params
   const raw = params.params || [];
+  if (isDisallowedSearchUrl(raw)) {
+    return {
+      title: "Page Not Found | Exim Trade Data",
+      robots: { index: false, follow: false },
+    };
+  }
+
   const applied = parseFilters(raw);
   const query = extractQuery(applied);
 
@@ -257,6 +277,8 @@ export const generateMetadata = async ({ params }) => {
 export default async function Page({ params }) {
   params = await params
   const raw = params.params || [];
+  if (isDisallowedSearchUrl(raw)) notFound();
+
   const appliedFilters = parseFilters(raw);
   
   const query = extractQuery(appliedFilters);
