@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { buildSearchUrl } from "@/lib/searchUrl";
 
 const slugify = (v = "") =>
   String(v).trim().toLowerCase().replace(/\s+/g, "_");
@@ -87,9 +88,11 @@ const Products = ({
           {products.map((item, idx) => (
             <a
               key={idx}
-              href={`/search/type-${tradeType.toLowerCase()}/country-${slugify(country)}/product-${item.product
-                .replace(/\s+/g, "-")
-                .toLowerCase()}`}
+              href={buildSearchUrl([
+                { label: "country", value: country },
+                { label: "type", value: tradeType },
+                { label: "product", value: item.product },
+              ])}
               className="p-4 border hover:border-blue-400"
             >
               {item.product}

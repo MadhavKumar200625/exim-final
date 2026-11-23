@@ -4,6 +4,7 @@ import Link from "next/link";
 import FAQSection from "@/app/Components/FAQ";
 import { getHSCodeData } from "@/lib/global-hs-code/getHsCodeData";
 import DataNotFound from "@/app/Components/DataNotFound";
+import { buildSearchUrl } from "@/lib/searchUrl";
 
 const HSCodeFAQ = [
   {
@@ -309,7 +310,7 @@ export default async function Page({ params }) {
                     </td>
                     <td className="px-4 py-4 border-b border-gray-200 border-l">
                       <a
-                        href={`/search/type-import/country-vietnam/hscode-${row.hs_code}`}
+                        href={buildSearchUrl([{ label: "country", value: "Vietnam" }, { label: "type", value: "import" }, { label: "hscode", value: row.hs_code }])}
                         className="block bg-blue-600 text-white p-2 text-x cursor-pointer underline text-center w-full"
                       >
                         HS Code - {row.hs_code}
@@ -317,7 +318,7 @@ export default async function Page({ params }) {
                     </td>
                     <td className="px-4 py-4 border-b border-gray-200 border-l">
                       <a
-                        href={`/search/type-export/country-vietnam/hscode-${row.hs_code}`}
+                        href={buildSearchUrl([{ label: "country", value: "Vietnam" }, { label: "type", value: "export" }, { label: "hscode", value: row.hs_code }])}
                         className="block text-center bg-gray-400 p-2 text-white underline cursor-pointer  w-full"
                       >
                         HS Code - {row.hs_code}

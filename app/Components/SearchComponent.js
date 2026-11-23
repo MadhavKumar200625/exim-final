@@ -4,6 +4,7 @@ import { useState, useRef, useEffect, useTransition } from "react";
 import { ChevronDown, LoaderCircle, Search, X } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { countries } from "@/lib/data";
+import { buildSearchUrl } from "@/lib/searchUrl";
 
 export default function SearchComponent({ heading, subHeading ,defaults = {} }) {
   const router = useRouter();
@@ -100,15 +101,13 @@ const [showNoDataPopup, setShowNoDataPopup] = useState(false);
     setError("");
     setShowNoDataPopup(false);
 
-    let url = `/search/type-${selectedType
-      .replace(/\s+/g, "-")
-      .toLowerCase()}/country-${selectedCountry
-      .replace(/\s+/g, "-")
-      .toLowerCase()}`;
-
-    if (product)
-      url += `/product-${product.replace(/\s+/g, "-").toLowerCase()}`;
-    if (hsCode) url += `/hscode-${hsCode.toLowerCase()}`;
+    const searchFilters = [
+      { label: "country", value: selectedCountry },
+      { label: "type", value: selectedType },
+    ];
+    if (product) searchFilters.push({ label: "product", value: product });
+    if (hsCode) searchFilters.push({ label: "hscode", value: hsCode });
+    const url = buildSearchUrl(searchFilters);
 
     setIsSearching(true);
 

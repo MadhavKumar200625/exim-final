@@ -9,6 +9,7 @@ import SearchGlobalData from "./SearchGlobalData";
 import { getSearchData } from "@/lib/getSearchData";
 import ContentImportExport from "./ContentImportExport";
 import NoDataPopup from "./NoDataPopup";
+import { buildSearchUrl } from "@/lib/searchUrl";
 
 /* -------------------------------------------------
    Helpers (same logic as before)
@@ -211,7 +212,7 @@ export const generateMetadata = async ({ params }) => {
     }
   }
 
-  const url = `https://eximtradedata.com/search/${raw.map((segment) => segment.toLowerCase()).join("/")}`;
+  const url = `https://eximtradedata.com${buildSearchUrl(applied)}`;
   let hasSearchData = false;
 
   try {

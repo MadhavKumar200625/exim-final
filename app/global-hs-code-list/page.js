@@ -3,6 +3,7 @@ import Search from './Search'
 import { getHSChapters } from '@/lib/global-hs-code/getHsChapters';
 import FAQSection from '../Components/FAQ';
 import Head from "next/head";
+import { buildSearchUrl } from "@/lib/searchUrl";
 
 
 export const dynamic = "force-dynamic";
@@ -129,10 +130,10 @@ const page = async () => {
                       <a href={`global-hs-code-list/chapter-${row.hs_code}`} className="block w-full">{row.HS_code_Description}</a>
                     </td>
                     <td className="px-4 py-4 border-b border-gray-200 border-l">
-                      <a href={`/search/type-import/country-vietnam/hscode-${row.hs_code}`} className="block bg-blue-600 text-white p-2 text-x cursor-pointer underline text-center w-full">Chapter - {row.hs_code}</a>
+                      <a href={buildSearchUrl([{ label: "country", value: "Vietnam" }, { label: "type", value: "import" }, { label: "hscode", value: row.hs_code }])} className="block bg-blue-600 text-white p-2 text-x cursor-pointer underline text-center w-full">Chapter - {row.hs_code}</a>
                     </td>
                     <td className="px-4 py-4 border-b border-gray-200 border-l">
-                      <a href={`/search/type-export/country-vietnam/hscode-${row.hs_code}`} className="block text-center bg-gray-400 p-2 text-white underline cursor-pointer  w-full">Chapter - {row.hs_code}</a>
+                      <a href={buildSearchUrl([{ label: "country", value: "Vietnam" }, { label: "type", value: "export" }, { label: "hscode", value: row.hs_code }])} className="block text-center bg-gray-400 p-2 text-white underline cursor-pointer  w-full">Chapter - {row.hs_code}</a>
                     </td>
                   </tr>
                 ))}
