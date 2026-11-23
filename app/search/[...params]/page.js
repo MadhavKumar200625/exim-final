@@ -55,12 +55,26 @@ function extractQuery(filters) {
 }
 
 function isDisallowedSearchUrl(raw = []) {
-  const normalized = raw.map((segment) => String(segment).toLowerCase());
+  const normalized = raw.map((segment) => {
+    let value = String(segment);
+    // Route params are normally decoded by Next.js; decode again safely in
+    // case the underscore was percent-encoded once or twice in the URL.
+    for (let i = 0; i < 2; i += 1) {
+      try {
+        const decoded = decodeURIComponent(value);
+        if (decoded === value) break;
+        value = decoded;
+      } catch {
+        break;
+      }
+    }
+    return value.toLowerCase();
+  });
   const hasOldTypeCountryOrder =
     normalized[0]?.split("-")[0] === "type" &&
     normalized[1]?.split("-")[0] === "country";
   const hasUnderscoreProduct = normalized.some(
-    (segment) => segment.startsWith("product-") && segment.includes("_")
+    (segment) => /^product[-_]/.test(segment) && segment.includes("_")
   );
 
   return hasOldTypeCountryOrder || hasUnderscoreProduct;
