@@ -342,7 +342,7 @@ export default async function Page({ params }) {
       .filter((u) =>
         u.startsWith(
           query.type === "export"
-            ? "Port_of_loading:"
+            ? "Port_of_Loading:"
             : "Port_of_Unloading:"
         )
       )
@@ -456,8 +456,7 @@ export default async function Page({ params }) {
 
       const json = await res.json();
       return json?.data?.[0] || null;
-    } catch (error) {
-      console.error("Search content fetch failed:", error);
+    } catch {
       return null;
     }
 }
