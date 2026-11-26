@@ -211,6 +211,19 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="antialiased font-sans">
+        <Script id="gtm-init" strategy="beforeInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+              "gtm.start": new Date().getTime(),
+              event: "gtm.js",
+            });`}
+        </Script>
+        <Script
+          id="gtm-loader"
+          src="https://www.googletagmanager.com/gtm.js?id=GTM-W3SCBS3C"
+          strategy="afterInteractive"
+        />
+
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-WC3TFBQ989"
           strategy="lazyOnload"
